@@ -1,0 +1,6 @@
+search intval: 25 30
+result: 26 26
+search intval: 5 45
+result: 16 21
+search intval: 22 24
+result: NULL

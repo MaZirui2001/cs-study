@@ -1,0 +1,12 @@
+delete intvals:
+15 23
+25 30
+6 10
+middle traverse result:
+0 3 3
+5 8 10
+8 9 9
+16 21 26
+17 19 19
+19 20 26
+26 26 26

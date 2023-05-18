@@ -1,0 +1,4 @@
+@func: 
+total time on stack: 4014
+@main: 
+total time on stack: 0

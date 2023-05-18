@@ -1,0 +1,21 @@
+@myFunc: 
+total time on stack: 0
+#0	r4	
+r6	r7	
+    Ldr r6, =0
+    Mov r7, r4
+
+r4	
+r5	
+    Mov r5, r4
+
+r6	
+r5	
+    Mov r5, r6
+
+r5	
+r7	
+    Mov r7, r5
+
+@main: 
+total time on stack: 0

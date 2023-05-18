@@ -1,0 +1,20 @@
+Scale = 10
+LCS length:	5
+LCS is:	D A B A B 
+
+Scale = 15
+LCS length:	8
+LCS is:	A C C B D C C C 
+
+Scale = 20
+LCS length:	12
+LCS is:	C B A C D A D C B B D A 
+
+Scale = 25
+LCS length:	14
+LCS is:	C D D B B B C C D D B A D D 
+
+Scale = 30
+LCS length:	16
+LCS is:	A D D B B C D B B C D D D C B D 
+

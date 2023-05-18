@@ -1,0 +1,8 @@
+@testParam8: 
+total time on stack: 0
+@testParam16: 
+total time on stack: 98
+@testParam32: 
+total time on stack: 702
+@main: 
+total time on stack: 0

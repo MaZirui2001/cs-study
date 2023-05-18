@@ -1,0 +1,10 @@
+diff a/SysYF_Backend_Student/test/Test_H/Medium_H/array_test.sy b/SysYF_Backend_Student/test/Test_H/Medium_H/array_test.sy	(rejected hunks)
+@@ -9,7 +9,7 @@ int main(){
+     int cnt = 0;
+     while (a < arr[a]) {
+         a = arr[a];
+-        if (arr[a + arr[a] - 1] > arr[a] - 1.5) {
++        if (arr[a + arr[a] - 1] > arr[a] - 2) {
+             cnt = arr[cnt] + 1;
+         }
+     }

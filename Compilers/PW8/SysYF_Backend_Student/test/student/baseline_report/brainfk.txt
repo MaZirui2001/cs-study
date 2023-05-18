@@ -1,0 +1,89 @@
+@read_program: 
+total time on stack: 0
+#0	
+r5	
+    Ldr r5, =0
+
+r6	
+r5	
+    Mov r5, r6
+
+@interpret: 
+total time on stack: 0
+#0	
+r4	
+    Ldr r4, =0
+
+r4	r5	r6	
+r7	r8	r9	
+    Mov r7, r4
+    Mov r8, r5
+    Mov r9, r6
+
+r10	r8	r9	
+r4	r5	r6	
+    Mov r4, r10
+    Mov r5, r8
+    Mov r6, r9
+
+r4	r5	r6	
+r7	r8	r9	
+    Mov r7, r4
+    Mov r8, r5
+    Mov r9, r6
+
+r4	r5	r6	
+r7	r8	r9	
+    Mov r7, r4
+    Mov r8, r5
+    Mov r9, r6
+
+r4	r5	r6	
+r7	r8	r9	
+    Mov r7, r4
+    Mov r8, r5
+    Mov r9, r6
+
+r4	r5	r6	
+r7	r8	r9	
+    Mov r7, r4
+    Mov r8, r5
+    Mov r9, r6
+
+r4	r5	r6	
+r7	r8	r9	
+    Mov r7, r4
+    Mov r8, r5
+    Mov r9, r6
+
+r4	r5	r6	
+r7	r8	r9	
+    Mov r7, r4
+    Mov r8, r5
+    Mov r9, r6
+
+r4	r5	r6	
+r7	r8	r9	
+    Mov r7, r4
+    Mov r8, r5
+    Mov r9, r6
+
+r4	#1	r6	
+r7	r8	r9	
+    Mov r7, r4
+    Ldr r8, =1
+    Mov r9, r6
+
+r8	
+r10	
+    Mov r10, r8
+
+r9	r10	r7	
+r7	r8	r9	
+    str r7, [sp, #-8]
+    Mov r7, r9
+    Mov r8, r10
+    ldr r9, [sp, #-8]
+
+@main: 
+total time on stack: 0

@@ -1,0 +1,19 @@
+int add(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o){
+    return a + b + c + d + e + f + g + h + i + j + k + l + m + n + o;
+}
+int sub(int a, int b){
+    return a - b;
+}
+int main(){
+    int a, b, c, d, e, f, g, h, i, j, k, l, m, n, o;
+    a = 1;
+    b = 2;
+    e = 3;
+    c = sub(a, b);
+    d = c - e;
+    f = sub(d, a);
+    g = f + 3;
+    c = sub(f, e);
+    g = c - 3;
+    return c;
+}

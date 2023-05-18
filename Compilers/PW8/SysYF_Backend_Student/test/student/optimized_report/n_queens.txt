@@ -1,0 +1,26 @@
+@printans: 
+total time on stack: 0
+#1	
+r4	
+    Ldr r4, =1
+
+r5	
+r4	
+    Mov r4, r5
+
+@f: 
+total time on stack: 0
+#1	
+r5	
+    Ldr r5, =1
+
+r6	
+r5	
+    Mov r5, r6
+
+@main: 
+total time on stack: 0
+r6	
+r5	
+    Mov r5, r6
+

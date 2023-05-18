@@ -1,0 +1,32 @@
+@charset "utf-8";
+body {
+	background-image: url(img/bkground.jpeg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+	font-family: "宋体";
+	font-size: 16px;
+	
+	color: #333;
+}
+.sign-box{
+    width: 500px;
+    height: 500px;
+    margin: 0px auto;
+    position: relative;
+}
+            
+.sign-box img{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    transition: all 0.2s;
+}
+.sign-box img:hover{
+    transform: scale(1.2);
+}
+.weather { 
+    width: 200px; 
+	height: 88px; 
+	margin: 10px 2px 10px 6px;
+	padding: 20px 2px 2px 65px; 
+}

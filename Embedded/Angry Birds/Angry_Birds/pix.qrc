@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/BackButton.png</file>
+        <file>img/BackButtonSelected.png</file>
+        <file>img/background.jpeg</file>
+        <file>img/icon.png</file>
+        <file>img/LevelIcon.png</file>
+        <file>img/obstacles_1.png</file>
+        <file>img/obstacles_2.png</file>
+        <file>img/obstacles_3.png</file>
+        <file>img/pig.png</file>
+        <file>img/red_bird.png</file>
+        <file>img/wood.png</file>
+        <file>img/yellow_bird.png</file>
+        <file>img/boom.png</file>
+        <file>img/bord.jpg</file>
+        <file>img/choose.jpg</file>
+        <file>img/exit.png</file>
+        <file>img/hide.png</file>
+        <file>img/log.jpeg</file>
+        <file>img/show.png</file>
+        <file>img/start.jpg</file>
+    </qresource>
+</RCC>

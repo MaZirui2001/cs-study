@@ -1,0 +1,21 @@
+filename                mem_access_diff     baseline_runtime    optimized_runtime   stack_time_shorter                                              
+16_func_test            0                   5                   4                                                                                   
+19_gcd                  2                   231                 226                                                                                 
+arr_expr_len            1                   148                 139                                                                                 
+backpack                0                   198                 131                                                                                 
+big_int_mul             8                   214                 193                 main: 1588                                                      
+bitset                  0                   7277268             7111584                                                                             
+brainfk                 0                   1413                1222                                                                                
+conv                    6                   32584836            31267412            convn: 460                                                      
+expr_eval               2                   306                 300                                                                                 
+fft                     1                   27910566            27596752            fft: 274                                                        
+hanoi                   0                   666                 652                                                                                 
+kmp                     0                   305                 271                                                                                 
+long_array              8                   2360                2182                long_array: 594                                                 
+long_code               1                   334                 321                                                                                 
+many_param_call         0                   213                 188                 testParam16: 32 testParam32: 180                                
+max_subsequence_sum     1                   7                   6                                                                                   
+n_queens                0                   954                 952                                                                                 
+nested_calls            0                   223                 204                 main: 204                                                       
+register_realloc        0                   6                   4                   func: 1270                                                      
+sort_test6              0                   201                 192                                                                                 

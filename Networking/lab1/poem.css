@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+body {
+	background-image: url(img/bkground.jpeg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+.article{
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    right: 20%;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.title{
+    font-family: "SimHei";
+    font-weight: 600;
+	font-size: 30px;
+    color: rgb(0, 0, 0);
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.article_item{
+    display: flex;
+    justify-content: center;
+    
+}
+.article_item_title{
+    font-family: "SimHei";
+    font-weight: 600;
+	font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.article_item_poem{
+    font-family: "楷体";
+    font-weight: 600;
+	font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.article_item_etymology{
+    font-family: "楷体";
+    font-weight: 600;
+	font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    text-align: left;
+    line-height: 2;
+}
+.article_item_pic{
+    width: 25%;
+    height: 25%;
+    margin-top: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 25px;
+    transition: all 0.1s;
+}
+.article_item_pic:hover{
+    transform: scale(1.5);
+}

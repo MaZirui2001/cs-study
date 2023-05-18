@@ -1,0 +1,83 @@
+@long_array: 
+total time on stack: 0
+#0	
+r2	
+    Ldr r2, =0
+
+r0	
+r2	
+    Mov r2, r0
+
+#0	
+r5	
+    Ldr r5, =0
+
+r0	
+r5	
+    Mov r5, r0
+
+#0	
+r5	
+    Ldr r5, =0
+
+r0	
+r5	
+    Mov r5, r0
+
+#0	#0	
+r8	r7	
+    Ldr r7, =0
+    Ldr r8, =0
+
+r1	
+r8	
+    Mov r8, r1
+
+r0	
+r7	
+    Mov r7, r0
+
+#5000	
+r6	
+    Ldr r6, =5000
+
+r0	
+r8	
+    Mov r8, r0
+
+r0	
+r6	
+    Mov r6, r0
+
+r8	
+r0	
+    Mov r0, r8
+
+#5000	
+r5	
+    Ldr r5, =5000
+
+r8	
+r0	
+    Mov r0, r8
+
+r8	
+r0	
+    Mov r0, r8
+
+r0	r8	
+r5	r0	
+    Mov r5, r0
+    Mov r0, r8
+
+r0	r10	
+r5	r0	
+    Mov r5, r0
+    Mov r0, r10
+
+r0	
+r8	
+    Mov r8, r0
+
+@main: 
+total time on stack: 0

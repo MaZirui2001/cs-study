@@ -1,0 +1,95 @@
+@multiply: 
+total time on stack: 0
+#0	
+r5	
+    Ldr r5, =0
+
+r6	
+r5	
+    Mov r5, r6
+
+r7	r7	
+r5	r8	
+    Mov r5, r7
+    Mov r8, r7
+
+r7	r7	
+r5	r8	
+    Mov r5, r7
+    Mov r8, r7
+
+@power: 
+total time on stack: 0
+#1	
+r6	
+    Ldr r6, =1
+
+r7	r5	
+r5	r6	
+    str r5, [sp, #-8]
+    Mov r5, r7
+    ldr r6, [sp, #-8]
+
+r7	r7	
+r5	r6	
+    Mov r5, r7
+    Mov r6, r7
+
+@memmove: 
+total time on stack: 0
+#0	
+r8	
+    Ldr r8, =0
+
+r9	
+r8	
+    Mov r8, r9
+
+@fft: 
+total time on stack: 548
+#1	
+r2	
+    Ldr r2, =1
+
+#0	
+r8	
+    Ldr r8, =0
+
+#1	#0	
+r9	r10	
+    Ldr r9, =1
+    Ldr r10, =0
+
+r4	
+r8	
+    Mov r8, r4
+
+r4	r5	
+r9	r10	
+    Mov r9, r4
+    Mov r10, r5
+
+r9	r10	#0	
+r0	r1	r2	
+    Mov r0, r9
+    Mov r1, r10
+    Ldr r2, =0
+
+@main: 
+total time on stack: 0
+#0	
+r7	
+    Ldr r7, =0
+
+r8	
+r7	
+    Mov r7, r8
+
+#0	
+r8	
+    Ldr r8, =0
+
+r9	
+r8	
+    Mov r8, r9
+

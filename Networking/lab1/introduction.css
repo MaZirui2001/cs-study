@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+body {
+	background-image: url(img/bkground.jpeg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+.introduce{
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    right: 20%;
+    background-color: rgba(250, 250, 249, 0.5);
+}
+.introduce_item{
+    display: flex;
+    justify-content: space-between;
+}
+.introduce_item_info_content{
+    font-family: "楷体";
+    font-weight: 600;
+	font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.introduce_item_resume_content{
+    font-family: "SimHei";
+	font-size: 18px;
+    color: rgb(0, 0, 0);
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.introduce_item_prize_content{
+    font-family: "SimHei";
+	font-size: 18px;
+    color: rgb(0, 0, 0);
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.introduce_item_img {
+    width: 25%;
+    height: 25%;
+    margin-top: 70px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 25px;
+    transition: all 0.1s;
+    border: 2px solid white
+}
+.introduce_item_img:hover{
+    transform: scale(1.1);
+}
+.introduce_item_prize_img {
+    width: 50%;
+    height: 50%;
+    margin-top: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 25px;
+    transition: all 0.1s;
+    border: 2px solid white
+}
+.introduce_item_prize_img:hover{
+    transform: scale(1.1);
+}
+/* .introduce {
+    display: flex;
+    flex-direction: column;
+}
+
+.introduce_item {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+.introduce_item_img {
+    width: 800px;
+    height: 500px;
+}
+
+.introduce_item_title {
+    width: 300px;
+    font-size: 18px;
+    line-height: 36px;
+    align-self: center;
+    padding-left: 100px;
+}
+
+.introduce_item_titles {
+    width: 300px;
+    font-size: 18px;
+    line-height: 36px;
+    align-self: center;
+    padding-right: 100px;
+} */

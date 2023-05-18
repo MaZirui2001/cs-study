@@ -1,0 +1,15 @@
+Scale = 10
+Total time:	216383
+
+Scale = 15
+Total time:	10773
+
+Scale = 20
+Total time:	31640
+
+Scale = 25
+Total time:	2194
+
+Scale = 30
+Total time:	4282
+

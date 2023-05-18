@@ -1,0 +1,90 @@
+@next_char: 
+total time on stack: 0
+@is_space: 
+total time on stack: 0
+#1	
+r4	
+    Ldr r4, =1
+
+#0	
+r4	
+    Ldr r4, =0
+
+@is_num: 
+total time on stack: 0
+#1	
+r4	
+    Ldr r4, =1
+
+#0	
+r4	
+    Ldr r4, =0
+
+@next_token: 
+total time on stack: 0
+@panic: 
+total time on stack: 0
+@get_op_prec: 
+total time on stack: 0
+#10	
+r4	
+    Ldr r4, =10
+
+#20	
+r4	
+    Ldr r4, =20
+
+#0	
+r4	
+    Ldr r4, =0
+
+@stack_push: 
+total time on stack: 0
+@stack_pop: 
+total time on stack: 0
+@stack_peek: 
+total time on stack: 0
+@stack_size: 
+total time on stack: 0
+@eval_op: 
+total time on stack: 0
+r6	
+r4	
+    Mov r4, r6
+
+r6	
+r4	
+    Mov r4, r6
+
+r6	
+r4	
+    Mov r4, r6
+
+r6	
+r4	
+    Mov r4, r6
+
+r5	
+r4	
+    Mov r4, r5
+
+#0	
+r4	
+    Ldr r4, =0
+
+@eval: 
+total time on stack: 0
+r0	
+r5	
+    Mov r5, r0
+
+r0	
+r5	
+    Mov r5, r0
+
+@main: 
+total time on stack: 0
+r6	
+r5	
+    Mov r5, r6
+

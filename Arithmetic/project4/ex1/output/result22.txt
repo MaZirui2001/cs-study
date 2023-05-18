@@ -1,0 +1,6561 @@
+0   0  : 0  0
+0   1  : unreachable
+0   2  : unreachable
+0   3  : 0, 53, 32, 5, 6, 22, 9, 45, 3  177
+0   4  : unreachable
+0   5  : 0, 53, 32, 5  53
+0   6  : 0, 53, 32, 5, 6  85
+0   7  : unreachable
+0   8  : unreachable
+0   9  : 0, 53, 32, 5, 6, 22, 9  115
+0   10 : 0, 53, 32, 5, 6, 22, 10  123
+0   11 : unreachable
+0   12 : 0, 44, 18, 33, 41, 12  221
+0   13 : 0, 44, 18, 33, 41, 12, 43, 76, 13  256
+0   14 : unreachable
+0   15 : unreachable
+0   16 : unreachable
+0   17 : unreachable
+0   18 : 0, 44, 18  79
+0   19 : unreachable
+0   20 : unreachable
+0   21 : 0, 44, 18, 21  116
+0   22 : 0, 53, 32, 5, 6, 22  123
+0   23 : 0, 53, 32, 5, 6, 22, 9, 45, 56, 27, 23  231
+0   24 : unreachable
+0   25 : 0, 53, 32, 5, 6, 22, 9, 45, 56, 63, 38, 25  171
+0   26 : 0, 44, 18, 33, 26  184
+0   27 : 0, 53, 32, 5, 6, 22, 9, 45, 56, 27  201
+0   28 : 0, 53, 32, 5, 6, 28  127
+0   29 : unreachable
+0   30 : unreachable
+0   31 : unreachable
+0   32 : 0, 53, 32  23
+0   33 : 0, 44, 18, 33  95
+0   34 : 0, 44, 18, 33, 41, 12, 43, 34  257
+0   35 : unreachable
+0   36 : unreachable
+0   37 : unreachable
+0   38 : 0, 53, 32, 5, 6, 22, 9, 45, 56, 63, 38  174
+0   39 : unreachable
+0   40 : unreachable
+0   41 : 0, 44, 18, 33, 41  178
+0   42 : unreachable
+0   43 : 0, 44, 18, 33, 41, 12, 43  217
+0   44 : 0, 44  34
+0   45 : 0, 53, 32, 5, 6, 22, 9, 45  129
+0   46 : unreachable
+0   47 : unreachable
+0   48 : 0, 53, 32, 5, 6, 22, 9, 45, 56, 63, 78, 48  248
+0   49 : 0, 44, 18, 33, 26, 57, 49  189
+0   50 : unreachable
+0   51 : unreachable
+0   52 : unreachable
+0   53 : 0, 53  21
+0   54 : unreachable
+0   55 : unreachable
+0   56 : 0, 53, 32, 5, 6, 22, 9, 45, 56  163
+0   57 : 0, 44, 18, 33, 26, 57  188
+0   58 : unreachable
+0   59 : 0, 44, 18, 33, 26, 57, 49, 59  219
+0   60 : unreachable
+0   61 : unreachable
+0   62 : 0, 44, 18, 33, 41, 12, 43, 76, 62  233
+0   63 : 0, 53, 32, 5, 6, 22, 9, 45, 56, 63  170
+0   64 : unreachable
+0   65 : unreachable
+0   66 : unreachable
+0   67 : unreachable
+0   68 : unreachable
+0   69 : unreachable
+0   70 : unreachable
+0   71 : unreachable
+0   72 : unreachable
+0   73 : 0, 53, 32, 5, 6, 22, 9, 45, 56, 27, 73  220
+0   74 : unreachable
+0   75 : unreachable
+0   76 : 0, 44, 18, 33, 41, 12, 43, 76  221
+0   77 : unreachable
+0   78 : 0, 53, 32, 5, 6, 22, 9, 45, 56, 63, 78  208
+0   79 : unreachable
+0   80 : unreachable
+1   0  : unreachable
+1   1  : 1  0
+1   2  : unreachable
+1   3  : unreachable
+1   4  : 1, 61, 4  19
+1   5  : 1, 61, 4, 33, 26, 57, 49, 32, 5  114
+1   6  : unreachable
+1   7  : unreachable
+1   8  : unreachable
+1   9  : unreachable
+1   10 : unreachable
+1   11 : unreachable
+1   12 : 1, 61, 4, 33, 41, 12  91
+1   13 : 1, 61, 54, 73, 13  81
+1   14 : unreachable
+1   15 : unreachable
+1   16 : unreachable
+1   17 : unreachable
+1   18 : unreachable
+1   19 : unreachable
+1   20 : unreachable
+1   21 : 1, 61, 4, 21  62
+1   22 : unreachable
+1   23 : unreachable
+1   24 : unreachable
+1   25 : unreachable
+1   26 : 1, 61, 4, 33, 26  54
+1   27 : unreachable
+1   28 : unreachable
+1   29 : unreachable
+1   30 : unreachable
+1   31 : unreachable
+1   32 : 1, 61, 4, 33, 26, 57, 49, 32  84
+1   33 : 1, 61, 4, 33  35
+1   34 : 1, 61, 4, 33, 41, 12, 43, 34  127
+1   35 : unreachable
+1   36 : 1, 61, 54, 36  51
+1   37 : unreachable
+1   38 : unreachable
+1   39 : unreachable
+1   40 : unreachable
+1   41 : 1, 61, 4, 33, 41  48
+1   42 : unreachable
+1   43 : 1, 61, 4, 33, 41, 12, 43  87
+1   44 : unreachable
+1   45 : unreachable
+1   46 : unreachable
+1   47 : unreachable
+1   48 : unreachable
+1   49 : 1, 61, 4, 33, 26, 57, 49  59
+1   50 : unreachable
+1   51 : unreachable
+1   52 : unreachable
+1   53 : unreachable
+1   54 : 1, 61, 54  19
+1   55 : unreachable
+1   56 : unreachable
+1   57 : 1, 61, 4, 33, 26, 57  58
+1   58 : unreachable
+1   59 : 1, 61, 4, 33, 26, 57, 49, 59  89
+1   60 : unreachable
+1   61 : 1, 61  19
+1   62 : unreachable
+1   63 : unreachable
+1   64 : unreachable
+1   65 : unreachable
+1   66 : unreachable
+1   67 : unreachable
+1   68 : unreachable
+1   69 : unreachable
+1   70 : unreachable
+1   71 : unreachable
+1   72 : unreachable
+1   73 : 1, 61, 54, 73  61
+1   74 : unreachable
+1   75 : unreachable
+1   76 : 1, 61, 4, 33, 41, 12, 43, 76  91
+1   77 : unreachable
+1   78 : unreachable
+1   79 : unreachable
+1   80 : unreachable
+2   0  : unreachable
+2   1  : unreachable
+2   2  : 2  0
+2   3  : unreachable
+2   4  : unreachable
+2   5  : unreachable
+2   6  : unreachable
+2   7  : unreachable
+2   8  : unreachable
+2   9  : unreachable
+2   10 : unreachable
+2   11 : unreachable
+2   12 : unreachable
+2   13 : 2, 13  13
+2   14 : unreachable
+2   15 : unreachable
+2   16 : unreachable
+2   17 : unreachable
+2   18 : unreachable
+2   19 : unreachable
+2   20 : unreachable
+2   21 : unreachable
+2   22 : unreachable
+2   23 : 2, 13, 23  38
+2   24 : unreachable
+2   25 : unreachable
+2   26 : unreachable
+2   27 : unreachable
+2   28 : unreachable
+2   29 : unreachable
+2   30 : unreachable
+2   31 : unreachable
+2   32 : unreachable
+2   33 : 2, 33  45
+2   34 : unreachable
+2   35 : unreachable
+2   36 : unreachable
+2   37 : unreachable
+2   38 : unreachable
+2   39 : unreachable
+2   40 : unreachable
+2   41 : unreachable
+2   42 : unreachable
+2   43 : unreachable
+2   44 : unreachable
+2   45 : unreachable
+2   46 : 2, 13, 23, 46  65
+2   47 : unreachable
+2   48 : unreachable
+2   49 : unreachable
+2   50 : unreachable
+2   51 : unreachable
+2   52 : unreachable
+2   53 : unreachable
+2   54 : 2, 13, 23, 54  84
+2   55 : unreachable
+2   56 : unreachable
+2   57 : unreachable
+2   58 : unreachable
+2   59 : unreachable
+2   60 : unreachable
+2   61 : unreachable
+2   62 : unreachable
+2   63 : unreachable
+2   64 : unreachable
+2   65 : unreachable
+2   66 : unreachable
+2   67 : unreachable
+2   68 : unreachable
+2   69 : unreachable
+2   70 : unreachable
+2   71 : 2, 13, 71  40
+2   72 : unreachable
+2   73 : unreachable
+2   74 : unreachable
+2   75 : unreachable
+2   76 : unreachable
+2   77 : unreachable
+2   78 : unreachable
+2   79 : 2, 13, 71, 79  41
+2   80 : unreachable
+3   0  : unreachable
+3   1  : unreachable
+3   2  : unreachable
+3   3  : 3  0
+3   4  : unreachable
+3   5  : unreachable
+3   6  : unreachable
+3   7  : unreachable
+3   8  : unreachable
+3   9  : 3, 9  33
+3   10 : unreachable
+3   11 : unreachable
+3   12 : unreachable
+3   13 : unreachable
+3   14 : unreachable
+3   15 : unreachable
+3   16 : unreachable
+3   17 : unreachable
+3   18 : unreachable
+3   19 : unreachable
+3   20 : unreachable
+3   21 : unreachable
+3   22 : unreachable
+3   23 : unreachable
+3   24 : unreachable
+3   25 : unreachable
+3   26 : unreachable
+3   27 : unreachable
+3   28 : unreachable
+3   29 : unreachable
+3   30 : unreachable
+3   31 : unreachable
+3   32 : unreachable
+3   33 : unreachable
+3   34 : unreachable
+3   35 : unreachable
+3   36 : unreachable
+3   37 : unreachable
+3   38 : unreachable
+3   39 : unreachable
+3   40 : unreachable
+3   41 : unreachable
+3   42 : unreachable
+3   43 : unreachable
+3   44 : unreachable
+3   45 : unreachable
+3   46 : unreachable
+3   47 : unreachable
+3   48 : unreachable
+3   49 : unreachable
+3   50 : unreachable
+3   51 : unreachable
+3   52 : unreachable
+3   53 : unreachable
+3   54 : unreachable
+3   55 : unreachable
+3   56 : unreachable
+3   57 : unreachable
+3   58 : unreachable
+3   59 : unreachable
+3   60 : unreachable
+3   61 : unreachable
+3   62 : unreachable
+3   63 : unreachable
+3   64 : unreachable
+3   65 : unreachable
+3   66 : unreachable
+3   67 : unreachable
+3   68 : unreachable
+3   69 : unreachable
+3   70 : unreachable
+3   71 : unreachable
+3   72 : unreachable
+3   73 : unreachable
+3   74 : unreachable
+3   75 : unreachable
+3   76 : unreachable
+3   77 : unreachable
+3   78 : unreachable
+3   79 : unreachable
+3   80 : unreachable
+4   0  : unreachable
+4   1  : unreachable
+4   2  : unreachable
+4   3  : unreachable
+4   4  : 4  0
+4   5  : unreachable
+4   6  : unreachable
+4   7  : unreachable
+4   8  : unreachable
+4   9  : unreachable
+4   10 : unreachable
+4   11 : unreachable
+4   12 : 4, 33, 41, 12  72
+4   13 : 4, 21, 60, 71, 13  58
+4   14 : unreachable
+4   15 : unreachable
+4   16 : unreachable
+4   17 : unreachable
+4   18 : unreachable
+4   19 : unreachable
+4   20 : unreachable
+4   21 : 4, 21  43
+4   22 : unreachable
+4   23 : 4, 21, 60, 71, 13, 23  83
+4   24 : unreachable
+4   25 : unreachable
+4   26 : 4, 33, 26  35
+4   27 : unreachable
+4   28 : unreachable
+4   29 : unreachable
+4   30 : unreachable
+4   31 : unreachable
+4   32 : 4, 33, 26, 57, 49, 32  65
+4   33 : 4, 33  16
+4   34 : unreachable
+4   35 : unreachable
+4   36 : unreachable
+4   37 : unreachable
+4   38 : unreachable
+4   39 : unreachable
+4   40 : unreachable
+4   41 : 4, 33, 41  29
+4   42 : unreachable
+4   43 : unreachable
+4   44 : unreachable
+4   45 : unreachable
+4   46 : unreachable
+4   47 : unreachable
+4   48 : unreachable
+4   49 : 4, 33, 26, 57, 49  40
+4   50 : unreachable
+4   51 : unreachable
+4   52 : unreachable
+4   53 : unreachable
+4   54 : unreachable
+4   55 : unreachable
+4   56 : unreachable
+4   57 : 4, 33, 26, 57  39
+4   58 : unreachable
+4   59 : 4, 33, 26, 57, 49, 59  70
+4   60 : 4, 21, 60  51
+4   61 : unreachable
+4   62 : unreachable
+4   63 : unreachable
+4   64 : unreachable
+4   65 : unreachable
+4   66 : unreachable
+4   67 : unreachable
+4   68 : unreachable
+4   69 : unreachable
+4   70 : unreachable
+4   71 : 4, 21, 60, 71  63
+4   72 : unreachable
+4   73 : unreachable
+4   74 : unreachable
+4   75 : 4, 21, 75  78
+4   76 : unreachable
+4   77 : unreachable
+4   78 : unreachable
+4   79 : 4, 21, 60, 71, 79  64
+4   80 : unreachable
+5   0  : 5, 0  28
+5   1  : unreachable
+5   2  : unreachable
+5   3  : unreachable
+5   4  : unreachable
+5   5  : 5  0
+5   6  : 5, 6  32
+5   7  : unreachable
+5   8  : unreachable
+5   9  : unreachable
+5   10 : unreachable
+5   11 : unreachable
+5   12 : unreachable
+5   13 : unreachable
+5   14 : unreachable
+5   15 : unreachable
+5   16 : unreachable
+5   17 : unreachable
+5   18 : 5, 0, 44, 18  107
+5   19 : unreachable
+5   20 : unreachable
+5   21 : unreachable
+5   22 : 5, 6, 22  70
+5   23 : unreachable
+5   24 : unreachable
+5   25 : unreachable
+5   26 : unreachable
+5   27 : unreachable
+5   28 : 5, 6, 28  74
+5   29 : unreachable
+5   30 : unreachable
+5   31 : unreachable
+5   32 : 5, 0, 53, 32  51
+5   33 : unreachable
+5   34 : unreachable
+5   35 : unreachable
+5   36 : unreachable
+5   37 : unreachable
+5   38 : unreachable
+5   39 : unreachable
+5   40 : unreachable
+5   41 : unreachable
+5   42 : unreachable
+5   43 : unreachable
+5   44 : 5, 0, 44  62
+5   45 : unreachable
+5   46 : unreachable
+5   47 : unreachable
+5   48 : unreachable
+5   49 : unreachable
+5   50 : unreachable
+5   51 : unreachable
+5   52 : unreachable
+5   53 : 5, 0, 53  49
+5   54 : unreachable
+5   55 : unreachable
+5   56 : unreachable
+5   57 : unreachable
+5   58 : unreachable
+5   59 : unreachable
+5   60 : unreachable
+5   61 : unreachable
+5   62 : unreachable
+5   63 : unreachable
+5   64 : unreachable
+5   65 : unreachable
+5   66 : unreachable
+5   67 : unreachable
+5   68 : unreachable
+5   69 : unreachable
+5   70 : unreachable
+5   71 : unreachable
+5   72 : unreachable
+5   73 : unreachable
+5   74 : unreachable
+5   75 : unreachable
+5   76 : unreachable
+5   77 : unreachable
+5   78 : unreachable
+5   79 : unreachable
+5   80 : unreachable
+6   0  : unreachable
+6   1  : unreachable
+6   2  : unreachable
+6   3  : 6, 22, 9, 45, 3  92
+6   4  : unreachable
+6   5  : unreachable
+6   6  : 6  0
+6   7  : unreachable
+6   8  : unreachable
+6   9  : 6, 22, 9  30
+6   10 : 6, 22, 10  38
+6   11 : unreachable
+6   12 : unreachable
+6   13 : unreachable
+6   14 : unreachable
+6   15 : unreachable
+6   16 : unreachable
+6   17 : unreachable
+6   18 : unreachable
+6   19 : unreachable
+6   20 : unreachable
+6   21 : unreachable
+6   22 : 6, 22  38
+6   23 : unreachable
+6   24 : unreachable
+6   25 : unreachable
+6   26 : unreachable
+6   27 : unreachable
+6   28 : 6, 28  42
+6   29 : unreachable
+6   30 : unreachable
+6   31 : unreachable
+6   32 : unreachable
+6   33 : 6, 22, 10, 33  80
+6   34 : unreachable
+6   35 : unreachable
+6   36 : unreachable
+6   37 : unreachable
+6   38 : unreachable
+6   39 : unreachable
+6   40 : unreachable
+6   41 : unreachable
+6   42 : unreachable
+6   43 : unreachable
+6   44 : unreachable
+6   45 : 6, 22, 9, 45  44
+6   46 : unreachable
+6   47 : unreachable
+6   48 : 6, 28, 48  77
+6   49 : unreachable
+6   50 : unreachable
+6   51 : unreachable
+6   52 : unreachable
+6   53 : unreachable
+6   54 : unreachable
+6   55 : unreachable
+6   56 : 6, 22, 9, 45, 56  78
+6   57 : unreachable
+6   58 : unreachable
+6   59 : unreachable
+6   60 : unreachable
+6   61 : unreachable
+6   62 : unreachable
+6   63 : unreachable
+6   64 : unreachable
+6   65 : unreachable
+6   66 : unreachable
+6   67 : unreachable
+6   68 : unreachable
+6   69 : unreachable
+6   70 : unreachable
+6   71 : unreachable
+6   72 : unreachable
+6   73 : unreachable
+6   74 : unreachable
+6   75 : unreachable
+6   76 : unreachable
+6   77 : unreachable
+6   78 : unreachable
+6   79 : unreachable
+6   80 : 6, 28, 80  77
+7   0  : 7, 16, 5, 0  94
+7   1  : 7, 44, 18, 33, 26, 57, 49, 59, 80, 1  175
+7   2  : unreachable
+7   3  : 7, 16, 47, 45, 3  117
+7   4  : unreachable
+7   5  : 7, 16, 5  66
+7   6  : 7, 16, 5, 6  98
+7   7  : 7  0
+7   8  : unreachable
+7   9  : 7, 44, 18, 21, 75, 14, 66, 9  185
+7   10 : unreachable
+7   11 : unreachable
+7   12 : 7, 44, 18, 33, 41, 12  137
+7   13 : 7, 44, 18, 21, 60, 71, 13  117
+7   14 : 7, 44, 18, 21, 75, 14  139
+7   15 : unreachable
+7   16 : 7, 16  26
+7   17 : unreachable
+7   18 : 7, 44, 18  65
+7   19 : unreachable
+7   20 : unreachable
+7   21 : 7, 44, 18, 21  102
+7   22 : 7, 16, 5, 6, 22  136
+7   23 : 7, 44, 18, 21, 60, 71, 13, 23  142
+7   24 : 7, 16, 47, 74, 38, 25, 39, 24  103
+7   25 : 7, 16, 47, 74, 38, 25  91
+7   26 : 7, 44, 18, 33, 26  100
+7   27 : 7, 16, 47, 45, 56, 27  141
+7   28 : 7, 16, 5, 6, 28  140
+7   29 : 7, 16, 47, 74, 38, 25, 39, 24, 29  145
+7   30 : 7, 16, 47, 74, 38, 25, 39, 24, 30  150
+7   31 : 7, 44, 18, 21, 60, 71, 13, 23, 46, 31  180
+7   32 : 7, 16, 5, 0, 53, 32  117
+7   33 : 7, 44, 18, 33  81
+7   34 : 7, 16, 47, 74, 38, 25, 39, 43, 34  185
+7   35 : unreachable
+7   36 : unreachable
+7   37 : 7, 44, 18, 33, 26, 57, 49, 59, 80, 37  186
+7   38 : 7, 16, 47, 74, 38  94
+7   39 : 7, 16, 47, 74, 38, 25, 39  101
+7   40 : unreachable
+7   41 : 7, 44, 18, 33, 41  94
+7   42 : unreachable
+7   43 : 7, 16, 47, 74, 38, 25, 39, 43  145
+7   44 : 7, 44  20
+7   45 : 7, 16, 47, 45  69
+7   46 : 7, 44, 18, 21, 60, 71, 13, 23, 46  169
+7   47 : 7, 16, 47  49
+7   48 : unreachable
+7   49 : 7, 44, 18, 33, 26, 57, 49  105
+7   50 : unreachable
+7   51 : unreachable
+7   52 : unreachable
+7   53 : 7, 16, 5, 0, 53  115
+7   54 : 7, 44, 18, 21, 60, 71, 13, 23, 54  188
+7   55 : unreachable
+7   56 : 7, 16, 47, 45, 56  103
+7   57 : 7, 44, 18, 33, 26, 57  104
+7   58 : 7, 44, 18, 21, 60, 71, 13, 23, 46, 31, 58  206
+7   59 : 7, 44, 18, 33, 26, 57, 49, 59  135
+7   60 : 7, 44, 18, 21, 60  110
+7   61 : 7, 16, 47, 74, 38, 25, 39, 24, 29, 61  145
+7   62 : 7, 16, 47, 74, 38, 25, 39, 43, 76, 62  161
+7   63 : 7, 16, 47, 45, 56, 63  110
+7   64 : 7, 16, 47, 74, 38, 25, 64  108
+7   65 : unreachable
+7   66 : 7, 44, 18, 21, 75, 14, 66  168
+7   67 : unreachable
+7   68 : unreachable
+7   69 : unreachable
+7   70 : unreachable
+7   71 : 7, 44, 18, 21, 60, 71  122
+7   72 : 7, 44, 18, 21, 75, 72  129
+7   73 : unreachable
+7   74 : 7, 16, 47, 74  91
+7   75 : 7, 44, 18, 21, 75  137
+7   76 : 7, 16, 47, 74, 38, 25, 39, 43, 76  149
+7   77 : unreachable
+7   78 : 7, 44, 18, 21, 60, 71, 13, 23, 46, 31, 78  199
+7   79 : 7, 44, 18, 21, 60, 71, 79  123
+7   80 : 7, 44, 18, 33, 26, 57, 49, 59, 80  166
+8   0  : unreachable
+8   1  : 8, 51, 34, 45, 56, 63, 38, 25, 39, 24, 30, 60, 49, 59, 80, 1  310
+8   2  : unreachable
+8   3  : 8, 51, 34, 45, 3  128
+8   4  : unreachable
+8   5  : unreachable
+8   6  : 8, 51, 35, 6  112
+8   7  : unreachable
+8   8  : 8  0
+8   9  : unreachable
+8   10 : unreachable
+8   11 : unreachable
+8   12 : unreachable
+8   13 : 8, 51, 35, 76, 13  112
+8   14 : unreachable
+8   15 : unreachable
+8   16 : unreachable
+8   17 : unreachable
+8   18 : unreachable
+8   19 : unreachable
+8   20 : 8, 51, 34, 45, 56, 63, 38, 25, 39, 24, 30, 60, 49, 59, 80, 37, 20  354
+8   21 : unreachable
+8   22 : unreachable
+8   23 : 8, 51, 34, 69, 27, 23  137
+8   24 : 8, 51, 34, 45, 56, 63, 38, 25, 39, 24  134
+8   25 : 8, 51, 34, 45, 56, 63, 38, 25  122
+8   26 : unreachable
+8   27 : 8, 51, 34, 69, 27  107
+8   28 : 8, 51, 34, 45, 56, 63, 78, 48, 28  215
+8   29 : 8, 51, 34, 45, 56, 63, 38, 25, 39, 24, 29  176
+8   30 : 8, 51, 34, 45, 56, 63, 38, 25, 39, 24, 30  181
+8   31 : 8, 51, 35, 76, 13, 71, 79, 31  163
+8   32 : 8, 51, 34, 45, 56, 63, 78, 53, 32  195
+8   33 : unreachable
+8   34 : 8, 51, 34  70
+8   35 : 8, 51, 35  62
+8   36 : 8, 51, 34, 69, 27, 23, 54, 36  215
+8   37 : 8, 51, 34, 45, 56, 63, 38, 25, 39, 24, 30, 60, 49, 59, 80, 37  321
+8   38 : 8, 51, 34, 45, 56, 63, 38  125
+8   39 : 8, 51, 34, 45, 56, 63, 38, 25, 39  132
+8   40 : unreachable
+8   41 : unreachable
+8   42 : 8, 51, 35, 76, 62, 42  123
+8   43 : 8, 51, 34, 69, 27, 73, 43  167
+8   44 : unreachable
+8   45 : 8, 51, 34, 45  80
+8   46 : 8, 51, 34, 69, 27, 23, 46  164
+8   47 : unreachable
+8   48 : 8, 51, 34, 45, 56, 63, 78, 48  199
+8   49 : 8, 51, 34, 45, 56, 63, 38, 25, 39, 24, 30, 60, 49  240
+8   50 : unreachable
+8   51 : 8, 51  47
+8   52 : unreachable
+8   53 : 8, 51, 34, 45, 56, 63, 78, 53  193
+8   54 : 8, 51, 34, 69, 27, 23, 54  183
+8   55 : unreachable
+8   56 : 8, 51, 34, 45, 56  114
+8   57 : unreachable
+8   58 : unreachable
+8   59 : 8, 51, 34, 45, 56, 63, 38, 25, 39, 24, 30, 60, 49, 59  270
+8   60 : 8, 51, 34, 45, 56, 63, 38, 25, 39, 24, 30, 60  208
+8   61 : unreachable
+8   62 : 8, 51, 35, 76, 62  89
+8   63 : 8, 51, 34, 45, 56, 63  121
+8   64 : 8, 51, 34, 45, 56, 63, 38, 25, 64  139
+8   65 : unreachable
+8   66 : unreachable
+8   67 : unreachable
+8   68 : unreachable
+8   69 : 8, 51, 34, 69  62
+8   70 : unreachable
+8   71 : 8, 51, 35, 76, 13, 71  139
+8   72 : unreachable
+8   73 : 8, 51, 34, 69, 27, 73  126
+8   74 : unreachable
+8   75 : unreachable
+8   76 : 8, 51, 35, 76  77
+8   77 : unreachable
+8   78 : 8, 51, 34, 45, 56, 63, 78  159
+8   79 : 8, 51, 35, 76, 13, 71, 79  140
+8   80 : 8, 51, 34, 45, 56, 63, 38, 25, 39, 24, 30, 60, 49, 59, 80  301
+9   0  : unreachable
+9   1  : unreachable
+9   2  : unreachable
+9   3  : 9, 45, 3  62
+9   4  : unreachable
+9   5  : unreachable
+9   6  : unreachable
+9   7  : unreachable
+9   8  : unreachable
+9   9  : 9  0
+9   10 : 9, 22, 10  30
+9   11 : unreachable
+9   12 : unreachable
+9   13 : unreachable
+9   14 : unreachable
+9   15 : unreachable
+9   16 : unreachable
+9   17 : unreachable
+9   18 : unreachable
+9   19 : unreachable
+9   20 : unreachable
+9   21 : unreachable
+9   22 : 9, 22  30
+9   23 : unreachable
+9   24 : unreachable
+9   25 : unreachable
+9   26 : unreachable
+9   27 : 9, 45, 56, 27  86
+9   28 : unreachable
+9   29 : unreachable
+9   30 : unreachable
+9   31 : unreachable
+9   32 : unreachable
+9   33 : 9, 22, 10, 33  72
+9   34 : unreachable
+9   35 : unreachable
+9   36 : unreachable
+9   37 : unreachable
+9   38 : unreachable
+9   39 : unreachable
+9   40 : unreachable
+9   41 : unreachable
+9   42 : unreachable
+9   43 : unreachable
+9   44 : unreachable
+9   45 : 9, 45  14
+9   46 : unreachable
+9   47 : unreachable
+9   48 : unreachable
+9   49 : unreachable
+9   50 : unreachable
+9   51 : unreachable
+9   52 : unreachable
+9   53 : unreachable
+9   54 : unreachable
+9   55 : unreachable
+9   56 : 9, 45, 56  48
+9   57 : unreachable
+9   58 : unreachable
+9   59 : unreachable
+9   60 : unreachable
+9   61 : unreachable
+9   62 : unreachable
+9   63 : 9, 45, 56, 63  55
+9   64 : unreachable
+9   65 : unreachable
+9   66 : unreachable
+9   67 : unreachable
+9   68 : unreachable
+9   69 : unreachable
+9   70 : unreachable
+9   71 : unreachable
+9   72 : unreachable
+9   73 : unreachable
+9   74 : unreachable
+9   75 : unreachable
+9   76 : unreachable
+9   77 : unreachable
+9   78 : unreachable
+9   79 : unreachable
+9   80 : unreachable
+10  0  : 10, 33, 26, 57, 49, 32, 5, 0  149
+10  1  : 10, 33, 26, 57, 49, 59, 80, 1  136
+10  2  : unreachable
+10  3  : 10, 33, 41, 12, 43, 34, 45, 3  192
+10  4  : 10, 33, 26, 57, 49, 59, 80, 1, 61, 4  155
+10  5  : 10, 33, 26, 57, 49, 32, 5  121
+10  6  : 10, 33, 26, 57, 49, 32, 5, 6  153
+10  7  : unreachable
+10  8  : unreachable
+10  9  : 10, 33, 26, 57, 49, 32, 5, 6, 22, 9  183
+10  10 : 10  0
+10  11 : unreachable
+10  12 : 10, 33, 41, 12  98
+10  13 : 10, 33, 41, 12, 43, 76, 13  133
+10  14 : unreachable
+10  15 : unreachable
+10  16 : unreachable
+10  17 : unreachable
+10  18 : unreachable
+10  19 : unreachable
+10  20 : 10, 33, 26, 57, 49, 59, 80, 37, 20  180
+10  21 : 10, 33, 26, 57, 49, 59, 80, 1, 61, 4, 21  198
+10  22 : 10, 33, 26, 57, 49, 32, 5, 6, 22  191
+10  23 : 10, 33, 41, 12, 43, 76, 13, 23  158
+10  24 : unreachable
+10  25 : unreachable
+10  26 : 10, 33, 26  61
+10  27 : 10, 33, 41, 12, 43, 34, 69, 27  171
+10  28 : 10, 33, 26, 57, 49, 32, 5, 6, 28  195
+10  29 : unreachable
+10  30 : unreachable
+10  31 : unreachable
+10  32 : 10, 33, 26, 57, 49, 32  91
+10  33 : 10, 33  42
+10  34 : 10, 33, 41, 12, 43, 34  134
+10  35 : unreachable
+10  36 : 10, 33, 26, 57, 49, 59, 80, 1, 61, 54, 36  187
+10  37 : 10, 33, 26, 57, 49, 59, 80, 37  147
+10  38 : unreachable
+10  39 : unreachable
+10  40 : unreachable
+10  41 : 10, 33, 41  55
+10  42 : 10, 33, 41, 12, 43, 76, 62, 42  144
+10  43 : 10, 33, 41, 12, 43  94
+10  44 : 10, 33, 26, 57, 49, 32, 5, 0, 44  183
+10  45 : 10, 33, 41, 12, 43, 34, 45  144
+10  46 : unreachable
+10  47 : unreachable
+10  48 : unreachable
+10  49 : 10, 33, 26, 57, 49  66
+10  50 : unreachable
+10  51 : unreachable
+10  52 : unreachable
+10  53 : 10, 33, 26, 57, 49, 32, 5, 0, 53  170
+10  54 : 10, 33, 26, 57, 49, 59, 80, 1, 61, 54  155
+10  55 : unreachable
+10  56 : 10, 33, 41, 12, 43, 34, 45, 56  178
+10  57 : 10, 33, 26, 57  65
+10  58 : unreachable
+10  59 : 10, 33, 26, 57, 49, 59  96
+10  60 : unreachable
+10  61 : 10, 33, 26, 57, 49, 59, 80, 1, 61  155
+10  62 : 10, 33, 41, 12, 43, 76, 62  110
+10  63 : unreachable
+10  64 : unreachable
+10  65 : unreachable
+10  66 : unreachable
+10  67 : unreachable
+10  68 : unreachable
+10  69 : 10, 33, 41, 12, 43, 34, 69  126
+10  70 : unreachable
+10  71 : 10, 33, 41, 12, 43, 76, 13, 71  160
+10  72 : unreachable
+10  73 : 10, 33, 41, 12, 43, 34, 69, 27, 73  190
+10  74 : unreachable
+10  75 : unreachable
+10  76 : 10, 33, 41, 12, 43, 76  98
+10  77 : unreachable
+10  78 : unreachable
+10  79 : 10, 33, 26, 57, 49, 59, 80, 37, 79  165
+10  80 : 10, 33, 26, 57, 49, 59, 80  127
+11  0  : 11, 49, 32, 5, 0  130
+11  1  : 11, 49, 59, 80, 1  117
+11  2  : unreachable
+11  3  : 11, 64, 14, 66, 9, 45, 3  154
+11  4  : 11, 49, 59, 80, 1, 61, 4  136
+11  5  : 11, 49, 32, 5  102
+11  6  : 11, 49, 32, 5, 6  134
+11  7  : unreachable
+11  8  : unreachable
+11  9  : 11, 64, 14, 66, 9  92
+11  10 : 11, 64, 14, 66, 9, 22, 10  122
+11  11 : 11  0
+11  12 : unreachable
+11  13 : unreachable
+11  14 : 11, 64, 14  46
+11  15 : unreachable
+11  16 : unreachable
+11  17 : unreachable
+11  18 : 11, 49, 32, 5, 0, 44, 18  209
+11  19 : unreachable
+11  20 : 11, 49, 59, 80, 37, 20  161
+11  21 : 11, 49, 59, 80, 1, 61, 4, 21  179
+11  22 : 11, 64, 14, 66, 9, 22  122
+11  23 : unreachable
+11  24 : unreachable
+11  25 : unreachable
+11  26 : unreachable
+11  27 : 11, 64, 14, 66, 9, 45, 56, 27  178
+11  28 : 11, 49, 32, 5, 6, 28  176
+11  29 : unreachable
+11  30 : unreachable
+11  31 : unreachable
+11  32 : 11, 49, 32  72
+11  33 : 11, 49, 59, 80, 1, 61, 4, 33  152
+11  34 : unreachable
+11  35 : unreachable
+11  36 : 11, 49, 59, 80, 1, 61, 54, 36  168
+11  37 : 11, 49, 59, 80, 37  128
+11  38 : unreachable
+11  39 : unreachable
+11  40 : unreachable
+11  41 : unreachable
+11  42 : unreachable
+11  43 : unreachable
+11  44 : 11, 49, 32, 5, 0, 44  164
+11  45 : 11, 64, 14, 66, 9, 45  106
+11  46 : unreachable
+11  47 : unreachable
+11  48 : unreachable
+11  49 : 11, 49  47
+11  50 : unreachable
+11  51 : unreachable
+11  52 : unreachable
+11  53 : 11, 49, 32, 5, 0, 53  151
+11  54 : 11, 49, 59, 80, 1, 61, 54  136
+11  55 : unreachable
+11  56 : 11, 64, 14, 66, 9, 45, 56  140
+11  57 : unreachable
+11  58 : unreachable
+11  59 : 11, 49, 59  77
+11  60 : unreachable
+11  61 : 11, 49, 59, 80, 1, 61  136
+11  62 : unreachable
+11  63 : 11, 64, 14, 66, 9, 45, 56, 63  147
+11  64 : 11, 64  13
+11  65 : unreachable
+11  66 : 11, 64, 14, 66  75
+11  67 : unreachable
+11  68 : unreachable
+11  69 : unreachable
+11  70 : unreachable
+11  71 : unreachable
+11  72 : unreachable
+11  73 : 11, 49, 59, 80, 1, 61, 54, 73  178
+11  74 : unreachable
+11  75 : unreachable
+11  76 : unreachable
+11  77 : unreachable
+11  78 : 11, 64, 14, 66, 78  125
+11  79 : 11, 49, 59, 80, 37, 79  146
+11  80 : 11, 49, 59, 80  108
+12  0  : 12, 49, 32, 5, 0  105
+12  1  : unreachable
+12  2  : unreachable
+12  3  : unreachable
+12  4  : unreachable
+12  5  : 12, 49, 32, 5  77
+12  6  : 12, 49, 32, 5, 6  109
+12  7  : unreachable
+12  8  : unreachable
+12  9  : 12, 49, 32, 5, 6, 22, 9  139
+12  10 : 12, 49, 32, 5, 6, 22, 10  147
+12  11 : unreachable
+12  12 : 12  0
+12  13 : 12, 43, 76, 13  35
+12  14 : unreachable
+12  15 : unreachable
+12  16 : unreachable
+12  17 : unreachable
+12  18 : 12, 49, 32, 5, 0, 44, 18  184
+12  19 : unreachable
+12  20 : unreachable
+12  21 : unreachable
+12  22 : 12, 49, 32, 5, 6, 22  147
+12  23 : 12, 43, 76, 13, 23  60
+12  24 : unreachable
+12  25 : unreachable
+12  26 : 12, 49, 32, 5, 6, 22, 10, 33, 26  208
+12  27 : unreachable
+12  28 : 12, 49, 32, 5, 6, 28  151
+12  29 : unreachable
+12  30 : unreachable
+12  31 : unreachable
+12  32 : 12, 49, 32  47
+12  33 : 12, 49, 32, 5, 6, 22, 10, 33  189
+12  34 : 12, 43, 34  36
+12  35 : unreachable
+12  36 : 12, 43, 76, 13, 23, 54, 36  138
+12  37 : unreachable
+12  38 : unreachable
+12  39 : unreachable
+12  40 : unreachable
+12  41 : 12, 49, 32, 5, 6, 22, 10, 33, 41  202
+12  42 : 12, 43, 76, 62, 42  46
+12  43 : 12, 43  -4
+12  44 : 12, 49, 32, 5, 0, 44  139
+12  45 : 12, 43, 34, 45  46
+12  46 : 12, 43, 76, 13, 23, 46  87
+12  47 : unreachable
+12  48 : unreachable
+12  49 : 12, 49  22
+12  50 : unreachable
+12  51 : unreachable
+12  52 : unreachable
+12  53 : 12, 49, 32, 5, 0, 53  126
+12  54 : 12, 43, 76, 13, 23, 54  106
+12  55 : unreachable
+12  56 : unreachable
+12  57 : unreachable
+12  58 : unreachable
+12  59 : 12, 49, 59  52
+12  60 : unreachable
+12  61 : unreachable
+12  62 : 12, 43, 76, 62  12
+12  63 : unreachable
+12  64 : unreachable
+12  65 : unreachable
+12  66 : unreachable
+12  67 : unreachable
+12  68 : unreachable
+12  69 : 12, 43, 34, 69  28
+12  70 : unreachable
+12  71 : 12, 43, 76, 13, 71  62
+12  72 : unreachable
+12  73 : 12, 43, 76, 13, 23, 54, 73  148
+12  74 : unreachable
+12  75 : unreachable
+12  76 : 12, 43, 76  0
+12  77 : unreachable
+12  78 : unreachable
+12  79 : 12, 43, 76, 13, 71, 79  63
+12  80 : 12, 43, 76, 62, 42, 80  64
+13  0  : unreachable
+13  1  : unreachable
+13  2  : unreachable
+13  3  : unreachable
+13  4  : unreachable
+13  5  : unreachable
+13  6  : unreachable
+13  7  : unreachable
+13  8  : unreachable
+13  9  : unreachable
+13  10 : unreachable
+13  11 : unreachable
+13  12 : unreachable
+13  13 : 13  0
+13  14 : unreachable
+13  15 : unreachable
+13  16 : unreachable
+13  17 : unreachable
+13  18 : unreachable
+13  19 : unreachable
+13  20 : unreachable
+13  21 : unreachable
+13  22 : unreachable
+13  23 : 13, 23  25
+13  24 : unreachable
+13  25 : unreachable
+13  26 : unreachable
+13  27 : unreachable
+13  28 : unreachable
+13  29 : unreachable
+13  30 : unreachable
+13  31 : unreachable
+13  32 : unreachable
+13  33 : unreachable
+13  34 : unreachable
+13  35 : unreachable
+13  36 : unreachable
+13  37 : unreachable
+13  38 : unreachable
+13  39 : unreachable
+13  40 : unreachable
+13  41 : unreachable
+13  42 : unreachable
+13  43 : unreachable
+13  44 : unreachable
+13  45 : unreachable
+13  46 : 13, 23, 46  52
+13  47 : unreachable
+13  48 : unreachable
+13  49 : unreachable
+13  50 : unreachable
+13  51 : unreachable
+13  52 : unreachable
+13  53 : unreachable
+13  54 : 13, 23, 54  71
+13  55 : unreachable
+13  56 : unreachable
+13  57 : unreachable
+13  58 : unreachable
+13  59 : unreachable
+13  60 : unreachable
+13  61 : unreachable
+13  62 : unreachable
+13  63 : unreachable
+13  64 : unreachable
+13  65 : unreachable
+13  66 : unreachable
+13  67 : unreachable
+13  68 : unreachable
+13  69 : unreachable
+13  70 : unreachable
+13  71 : 13, 71  27
+13  72 : unreachable
+13  73 : unreachable
+13  74 : unreachable
+13  75 : unreachable
+13  76 : unreachable
+13  77 : unreachable
+13  78 : unreachable
+13  79 : 13, 71, 79  28
+13  80 : unreachable
+14  0  : unreachable
+14  1  : unreachable
+14  2  : unreachable
+14  3  : 14, 66, 9, 45, 3  108
+14  4  : unreachable
+14  5  : unreachable
+14  6  : unreachable
+14  7  : unreachable
+14  8  : unreachable
+14  9  : 14, 66, 9  46
+14  10 : 14, 66, 9, 22, 10  76
+14  11 : unreachable
+14  12 : unreachable
+14  13 : unreachable
+14  14 : 14  0
+14  15 : unreachable
+14  16 : unreachable
+14  17 : unreachable
+14  18 : unreachable
+14  19 : unreachable
+14  20 : unreachable
+14  21 : unreachable
+14  22 : 14, 66, 9, 22  76
+14  23 : unreachable
+14  24 : unreachable
+14  25 : unreachable
+14  26 : unreachable
+14  27 : 14, 66, 9, 45, 56, 27  132
+14  28 : unreachable
+14  29 : unreachable
+14  30 : unreachable
+14  31 : unreachable
+14  32 : unreachable
+14  33 : 14, 66, 9, 22, 10, 33  118
+14  34 : unreachable
+14  35 : unreachable
+14  36 : unreachable
+14  37 : unreachable
+14  38 : unreachable
+14  39 : unreachable
+14  40 : unreachable
+14  41 : unreachable
+14  42 : unreachable
+14  43 : unreachable
+14  44 : unreachable
+14  45 : 14, 66, 9, 45  60
+14  46 : unreachable
+14  47 : unreachable
+14  48 : unreachable
+14  49 : unreachable
+14  50 : unreachable
+14  51 : unreachable
+14  52 : unreachable
+14  53 : unreachable
+14  54 : unreachable
+14  55 : unreachable
+14  56 : 14, 66, 9, 45, 56  94
+14  57 : unreachable
+14  58 : unreachable
+14  59 : unreachable
+14  60 : unreachable
+14  61 : unreachable
+14  62 : unreachable
+14  63 : 14, 66, 9, 45, 56, 63  101
+14  64 : unreachable
+14  65 : unreachable
+14  66 : 14, 66  29
+14  67 : unreachable
+14  68 : unreachable
+14  69 : unreachable
+14  70 : unreachable
+14  71 : unreachable
+14  72 : unreachable
+14  73 : unreachable
+14  74 : unreachable
+14  75 : unreachable
+14  76 : unreachable
+14  77 : unreachable
+14  78 : 14, 66, 78  79
+14  79 : unreachable
+14  80 : unreachable
+15  0  : unreachable
+15  1  : 15, 62, 42, 80, 1  62
+15  2  : unreachable
+15  3  : unreachable
+15  4  : unreachable
+15  5  : unreachable
+15  6  : unreachable
+15  7  : unreachable
+15  8  : unreachable
+15  9  : unreachable
+15  10 : unreachable
+15  11 : unreachable
+15  12 : unreachable
+15  13 : 15, 62, 42, 76, 13  76
+15  14 : unreachable
+15  15 : 15  0
+15  16 : unreachable
+15  17 : unreachable
+15  18 : unreachable
+15  19 : unreachable
+15  20 : unreachable
+15  21 : unreachable
+15  22 : unreachable
+15  23 : unreachable
+15  24 : unreachable
+15  25 : unreachable
+15  26 : unreachable
+15  27 : unreachable
+15  28 : unreachable
+15  29 : 15, 29  47
+15  30 : unreachable
+15  31 : unreachable
+15  32 : unreachable
+15  33 : unreachable
+15  34 : unreachable
+15  35 : unreachable
+15  36 : unreachable
+15  37 : 15, 62, 42, 80, 37  73
+15  38 : unreachable
+15  39 : unreachable
+15  40 : unreachable
+15  41 : unreachable
+15  42 : 15, 62, 42  35
+15  43 : unreachable
+15  44 : unreachable
+15  45 : unreachable
+15  46 : unreachable
+15  47 : unreachable
+15  48 : unreachable
+15  49 : unreachable
+15  50 : unreachable
+15  51 : unreachable
+15  52 : unreachable
+15  53 : unreachable
+15  54 : unreachable
+15  55 : unreachable
+15  56 : unreachable
+15  57 : unreachable
+15  58 : unreachable
+15  59 : unreachable
+15  60 : unreachable
+15  61 : unreachable
+15  62 : 15, 62  1
+15  63 : unreachable
+15  64 : unreachable
+15  65 : unreachable
+15  66 : unreachable
+15  67 : unreachable
+15  68 : unreachable
+15  69 : unreachable
+15  70 : unreachable
+15  71 : unreachable
+15  72 : unreachable
+15  73 : unreachable
+15  74 : unreachable
+15  75 : unreachable
+15  76 : 15, 62, 42, 76  41
+15  77 : unreachable
+15  78 : unreachable
+15  79 : unreachable
+15  80 : 15, 62, 42, 80  53
+16  0  : 16, 5, 0  68
+16  1  : 16, 5, 6, 28, 80, 1  158
+16  2  : unreachable
+16  3  : 16, 47, 45, 3  91
+16  4  : 16, 47, 74, 38, 25, 39, 24, 29, 61, 4  119
+16  5  : 16, 5  40
+16  6  : 16, 5, 6  72
+16  7  : unreachable
+16  8  : unreachable
+16  9  : 16, 5, 6, 22, 9  102
+16  10 : 16, 5, 6, 22, 10  110
+16  11 : unreachable
+16  12 : unreachable
+16  13 : 16, 47, 74, 38, 25, 39, 43, 76, 13  158
+16  14 : 16, 47, 74, 38, 25, 64, 14  115
+16  15 : unreachable
+16  16 : 16  0
+16  17 : unreachable
+16  18 : 16, 5, 0, 44, 18  147
+16  19 : unreachable
+16  20 : unreachable
+16  21 : 16, 47, 74, 38, 25, 39, 24, 29, 61, 4, 21  162
+16  22 : 16, 5, 6, 22  110
+16  23 : 16, 47, 45, 56, 27, 23  145
+16  24 : 16, 47, 74, 38, 25, 39, 24  77
+16  25 : 16, 47, 74, 38, 25  65
+16  26 : unreachable
+16  27 : 16, 47, 45, 56, 27  115
+16  28 : 16, 5, 6, 28  114
+16  29 : 16, 47, 74, 38, 25, 39, 24, 29  119
+16  30 : 16, 47, 74, 38, 25, 39, 24, 30  124
+16  31 : unreachable
+16  32 : 16, 5, 0, 53, 32  91
+16  33 : 16, 47, 74, 38, 25, 39, 24, 29, 61, 4, 33  135
+16  34 : 16, 47, 74, 38, 25, 39, 43, 34  159
+16  35 : unreachable
+16  36 : 16, 47, 74, 38, 25, 39, 24, 29, 61, 54, 36  151
+16  37 : 16, 5, 6, 28, 80, 37  169
+16  38 : 16, 47, 74, 38  68
+16  39 : 16, 47, 74, 38, 25, 39  75
+16  40 : unreachable
+16  41 : unreachable
+16  42 : unreachable
+16  43 : 16, 47, 74, 38, 25, 39, 43  119
+16  44 : 16, 5, 0, 44  102
+16  45 : 16, 47, 45  43
+16  46 : 16, 47, 74, 38, 25, 39, 24, 30, 46  162
+16  47 : 16, 47  23
+16  48 : 16, 5, 6, 28, 48  149
+16  49 : unreachable
+16  50 : unreachable
+16  51 : unreachable
+16  52 : unreachable
+16  53 : 16, 5, 0, 53  89
+16  54 : 16, 47, 74, 38, 25, 39, 24, 29, 61, 54  119
+16  55 : unreachable
+16  56 : 16, 47, 45, 56  77
+16  57 : unreachable
+16  58 : unreachable
+16  59 : unreachable
+16  60 : 16, 47, 74, 38, 25, 39, 24, 30, 60  153
+16  61 : 16, 47, 74, 38, 25, 39, 24, 29, 61  119
+16  62 : 16, 47, 74, 38, 25, 39, 43, 76, 62  135
+16  63 : 16, 47, 45, 56, 63  84
+16  64 : 16, 47, 74, 38, 25, 64  82
+16  65 : unreachable
+16  66 : 16, 47, 74, 38, 25, 64, 14, 66  144
+16  67 : unreachable
+16  68 : unreachable
+16  69 : unreachable
+16  70 : unreachable
+16  71 : unreachable
+16  72 : unreachable
+16  73 : 16, 47, 45, 56, 27, 73  134
+16  74 : 16, 47, 74  65
+16  75 : unreachable
+16  76 : 16, 47, 74, 38, 25, 39, 43, 76  123
+16  77 : unreachable
+16  78 : 16, 47, 45, 56, 63, 78  122
+16  79 : unreachable
+16  80 : 16, 5, 6, 28, 80  149
+17  0  : unreachable
+17  1  : unreachable
+17  2  : unreachable
+17  3  : unreachable
+17  4  : unreachable
+17  5  : unreachable
+17  6  : unreachable
+17  7  : unreachable
+17  8  : unreachable
+17  9  : unreachable
+17  10 : unreachable
+17  11 : unreachable
+17  12 : unreachable
+17  13 : 17, 13  38
+17  14 : unreachable
+17  15 : unreachable
+17  16 : unreachable
+17  17 : 17  0
+17  18 : unreachable
+17  19 : unreachable
+17  20 : unreachable
+17  21 : unreachable
+17  22 : unreachable
+17  23 : 17, 13, 23  63
+17  24 : unreachable
+17  25 : unreachable
+17  26 : unreachable
+17  27 : unreachable
+17  28 : unreachable
+17  29 : unreachable
+17  30 : unreachable
+17  31 : unreachable
+17  32 : unreachable
+17  33 : unreachable
+17  34 : unreachable
+17  35 : unreachable
+17  36 : unreachable
+17  37 : unreachable
+17  38 : unreachable
+17  39 : unreachable
+17  40 : unreachable
+17  41 : unreachable
+17  42 : unreachable
+17  43 : unreachable
+17  44 : unreachable
+17  45 : unreachable
+17  46 : 17, 13, 23, 46  90
+17  47 : unreachable
+17  48 : unreachable
+17  49 : unreachable
+17  50 : unreachable
+17  51 : unreachable
+17  52 : unreachable
+17  53 : unreachable
+17  54 : 17, 13, 23, 54  109
+17  55 : unreachable
+17  56 : unreachable
+17  57 : unreachable
+17  58 : unreachable
+17  59 : unreachable
+17  60 : unreachable
+17  61 : unreachable
+17  62 : unreachable
+17  63 : unreachable
+17  64 : unreachable
+17  65 : unreachable
+17  66 : unreachable
+17  67 : unreachable
+17  68 : unreachable
+17  69 : unreachable
+17  70 : unreachable
+17  71 : 17, 13, 71  65
+17  72 : unreachable
+17  73 : unreachable
+17  74 : unreachable
+17  75 : unreachable
+17  76 : unreachable
+17  77 : unreachable
+17  78 : unreachable
+17  79 : 17, 13, 71, 79  66
+17  80 : unreachable
+18  0  : unreachable
+18  1  : unreachable
+18  2  : unreachable
+18  3  : unreachable
+18  4  : unreachable
+18  5  : unreachable
+18  6  : unreachable
+18  7  : unreachable
+18  8  : unreachable
+18  9  : unreachable
+18  10 : unreachable
+18  11 : unreachable
+18  12 : 18, 33, 41, 12  72
+18  13 : 18, 21, 60, 71, 13  52
+18  14 : unreachable
+18  15 : unreachable
+18  16 : unreachable
+18  17 : unreachable
+18  18 : 18  0
+18  19 : unreachable
+18  20 : unreachable
+18  21 : 18, 21  37
+18  22 : unreachable
+18  23 : 18, 21, 60, 71, 13, 23  77
+18  24 : unreachable
+18  25 : unreachable
+18  26 : 18, 33, 26  35
+18  27 : unreachable
+18  28 : unreachable
+18  29 : unreachable
+18  30 : unreachable
+18  31 : unreachable
+18  32 : 18, 33, 26, 57, 49, 32  65
+18  33 : 18, 33  16
+18  34 : unreachable
+18  35 : unreachable
+18  36 : unreachable
+18  37 : unreachable
+18  38 : unreachable
+18  39 : unreachable
+18  40 : unreachable
+18  41 : 18, 33, 41  29
+18  42 : unreachable
+18  43 : unreachable
+18  44 : unreachable
+18  45 : unreachable
+18  46 : unreachable
+18  47 : unreachable
+18  48 : unreachable
+18  49 : 18, 33, 26, 57, 49  40
+18  50 : unreachable
+18  51 : unreachable
+18  52 : unreachable
+18  53 : unreachable
+18  54 : unreachable
+18  55 : unreachable
+18  56 : unreachable
+18  57 : 18, 33, 26, 57  39
+18  58 : unreachable
+18  59 : 18, 33, 26, 57, 49, 59  70
+18  60 : 18, 21, 60  45
+18  61 : unreachable
+18  62 : unreachable
+18  63 : unreachable
+18  64 : unreachable
+18  65 : unreachable
+18  66 : unreachable
+18  67 : unreachable
+18  68 : unreachable
+18  69 : unreachable
+18  70 : unreachable
+18  71 : 18, 21, 60, 71  57
+18  72 : unreachable
+18  73 : unreachable
+18  74 : unreachable
+18  75 : 18, 21, 75  72
+18  76 : unreachable
+18  77 : unreachable
+18  78 : unreachable
+18  79 : 18, 21, 60, 71, 79  58
+18  80 : unreachable
+19  0  : unreachable
+19  1  : 19, 59, 80, 1  32
+19  2  : unreachable
+19  3  : 19, 59, 80, 37, 79, 45, 3  137
+19  4  : 19, 59, 80, 1, 61, 4  51
+19  5  : 19, 11, 49, 32, 5  128
+19  6  : unreachable
+19  7  : unreachable
+19  8  : unreachable
+19  9  : unreachable
+19  10 : unreachable
+19  11 : 19, 11  26
+19  12 : unreachable
+19  13 : unreachable
+19  14 : 19, 11, 64, 14  72
+19  15 : unreachable
+19  16 : unreachable
+19  17 : unreachable
+19  18 : unreachable
+19  19 : 19  0
+19  20 : 19, 59, 80, 37, 20  76
+19  21 : 19, 59, 80, 1, 61, 4, 21  94
+19  22 : unreachable
+19  23 : unreachable
+19  24 : unreachable
+19  25 : unreachable
+19  26 : 19, 59, 80, 1, 61, 4, 33, 26  86
+19  27 : unreachable
+19  28 : unreachable
+19  29 : unreachable
+19  30 : unreachable
+19  31 : 19, 59, 80, 37, 79, 31  84
+19  32 : 19, 11, 49, 32  98
+19  33 : 19, 59, 80, 1, 61, 4, 33  67
+19  34 : unreachable
+19  35 : unreachable
+19  36 : 19, 59, 80, 1, 61, 54, 36  83
+19  37 : 19, 59, 80, 37  43
+19  38 : unreachable
+19  39 : unreachable
+19  40 : unreachable
+19  41 : 19, 59, 80, 1, 61, 4, 33, 41  80
+19  42 : unreachable
+19  43 : unreachable
+19  44 : unreachable
+19  45 : 19, 59, 80, 37, 79, 45  89
+19  46 : unreachable
+19  47 : unreachable
+19  48 : unreachable
+19  49 : 19, 11, 49  73
+19  50 : unreachable
+19  51 : unreachable
+19  52 : unreachable
+19  53 : unreachable
+19  54 : 19, 59, 80, 1, 61, 54  51
+19  55 : unreachable
+19  56 : 19, 59, 80, 37, 79, 45, 56  123
+19  57 : unreachable
+19  58 : unreachable
+19  59 : 19, 59  -8
+19  60 : unreachable
+19  61 : 19, 59, 80, 1, 61  51
+19  62 : unreachable
+19  63 : unreachable
+19  64 : 19, 11, 64  39
+19  65 : unreachable
+19  66 : 19, 11, 64, 14, 66  101
+19  67 : unreachable
+19  68 : unreachable
+19  69 : unreachable
+19  70 : unreachable
+19  71 : unreachable
+19  72 : unreachable
+19  73 : 19, 59, 80, 1, 61, 54, 73  93
+19  74 : unreachable
+19  75 : unreachable
+19  76 : unreachable
+19  77 : unreachable
+19  78 : unreachable
+19  79 : 19, 59, 80, 37, 79  61
+19  80 : 19, 59, 80  23
+20  0  : 20, 49, 32, 5, 0  118
+20  1  : 20, 49, 59, 80, 1  105
+20  2  : unreachable
+20  3  : 20, 49, 59, 80, 37, 79, 45, 3  210
+20  4  : 20, 49, 59, 80, 1, 61, 4  124
+20  5  : 20, 49, 32, 5  90
+20  6  : 20, 49, 32, 5, 6  122
+20  7  : unreachable
+20  8  : unreachable
+20  9  : 20, 49, 32, 5, 6, 22, 9  152
+20  10 : 20, 49, 32, 5, 6, 22, 10  160
+20  11 : unreachable
+20  12 : unreachable
+20  13 : unreachable
+20  14 : unreachable
+20  15 : unreachable
+20  16 : unreachable
+20  17 : unreachable
+20  18 : 20, 49, 32, 5, 0, 44, 18  197
+20  19 : unreachable
+20  20 : 20  0
+20  21 : 20, 49, 59, 80, 1, 61, 4, 21  167
+20  22 : 20, 49, 32, 5, 6, 22  160
+20  23 : unreachable
+20  24 : unreachable
+20  25 : unreachable
+20  26 : unreachable
+20  27 : unreachable
+20  28 : 20, 49, 32, 5, 6, 28  164
+20  29 : unreachable
+20  30 : unreachable
+20  31 : 20, 49, 59, 80, 37, 79, 31  157
+20  32 : 20, 49, 32  60
+20  33 : 20, 49, 59, 80, 1, 61, 4, 33  140
+20  34 : unreachable
+20  35 : unreachable
+20  36 : unreachable
+20  37 : 20, 49, 59, 80, 37  116
+20  38 : unreachable
+20  39 : unreachable
+20  40 : unreachable
+20  41 : unreachable
+20  42 : unreachable
+20  43 : unreachable
+20  44 : 20, 49, 32, 5, 0, 44  152
+20  45 : 20, 49, 59, 80, 37, 79, 45  162
+20  46 : unreachable
+20  47 : unreachable
+20  48 : 20, 49, 32, 5, 6, 28, 48  199
+20  49 : 20, 49  35
+20  50 : unreachable
+20  51 : unreachable
+20  52 : unreachable
+20  53 : 20, 49, 32, 5, 0, 53  139
+20  54 : 20, 49, 59, 80, 1, 61, 54  124
+20  55 : unreachable
+20  56 : 20, 49, 59, 80, 37, 79, 45, 56  196
+20  57 : unreachable
+20  58 : unreachable
+20  59 : 20, 49, 59  65
+20  60 : 20, 49, 59, 80, 1, 61, 4, 21, 60  175
+20  61 : 20, 49, 59, 80, 1, 61  124
+20  62 : unreachable
+20  63 : unreachable
+20  64 : unreachable
+20  65 : unreachable
+20  66 : unreachable
+20  67 : unreachable
+20  68 : unreachable
+20  69 : unreachable
+20  70 : unreachable
+20  71 : unreachable
+20  72 : unreachable
+20  73 : unreachable
+20  74 : unreachable
+20  75 : 20, 49, 59, 80, 1, 61, 4, 21, 75  202
+20  76 : unreachable
+20  77 : unreachable
+20  78 : unreachable
+20  79 : 20, 49, 59, 80, 37, 79  134
+20  80 : 20, 49, 59, 80  96
+21  0  : unreachable
+21  1  : unreachable
+21  2  : unreachable
+21  3  : unreachable
+21  4  : unreachable
+21  5  : unreachable
+21  6  : unreachable
+21  7  : unreachable
+21  8  : unreachable
+21  9  : unreachable
+21  10 : unreachable
+21  11 : unreachable
+21  12 : unreachable
+21  13 : 21, 60, 71, 13  15
+21  14 : unreachable
+21  15 : unreachable
+21  16 : unreachable
+21  17 : unreachable
+21  18 : unreachable
+21  19 : unreachable
+21  20 : unreachable
+21  21 : 21  0
+21  22 : unreachable
+21  23 : 21, 60, 71, 13, 23  40
+21  24 : unreachable
+21  25 : unreachable
+21  26 : unreachable
+21  27 : unreachable
+21  28 : unreachable
+21  29 : unreachable
+21  30 : unreachable
+21  31 : unreachable
+21  32 : unreachable
+21  33 : unreachable
+21  34 : unreachable
+21  35 : unreachable
+21  36 : unreachable
+21  37 : unreachable
+21  38 : unreachable
+21  39 : unreachable
+21  40 : unreachable
+21  41 : unreachable
+21  42 : unreachable
+21  43 : unreachable
+21  44 : unreachable
+21  45 : unreachable
+21  46 : unreachable
+21  47 : unreachable
+21  48 : unreachable
+21  49 : 21, 60, 49  40
+21  50 : unreachable
+21  51 : unreachable
+21  52 : unreachable
+21  53 : unreachable
+21  54 : unreachable
+21  55 : unreachable
+21  56 : unreachable
+21  57 : unreachable
+21  58 : unreachable
+21  59 : unreachable
+21  60 : 21, 60  8
+21  61 : unreachable
+21  62 : unreachable
+21  63 : unreachable
+21  64 : unreachable
+21  65 : unreachable
+21  66 : unreachable
+21  67 : unreachable
+21  68 : unreachable
+21  69 : unreachable
+21  70 : unreachable
+21  71 : 21, 60, 71  20
+21  72 : unreachable
+21  73 : unreachable
+21  74 : unreachable
+21  75 : 21, 75  35
+21  76 : unreachable
+21  77 : unreachable
+21  78 : unreachable
+21  79 : 21, 60, 71, 79  21
+21  80 : unreachable
+22  0  : unreachable
+22  1  : unreachable
+22  2  : unreachable
+22  3  : 22, 9, 45, 3  54
+22  4  : unreachable
+22  5  : unreachable
+22  6  : unreachable
+22  7  : unreachable
+22  8  : unreachable
+22  9  : 22, 9  -8
+22  10 : 22, 10  0
+22  11 : unreachable
+22  12 : unreachable
+22  13 : unreachable
+22  14 : unreachable
+22  15 : unreachable
+22  16 : unreachable
+22  17 : unreachable
+22  18 : unreachable
+22  19 : unreachable
+22  20 : unreachable
+22  21 : unreachable
+22  22 : 22  0
+22  23 : unreachable
+22  24 : unreachable
+22  25 : unreachable
+22  26 : unreachable
+22  27 : unreachable
+22  28 : unreachable
+22  29 : unreachable
+22  30 : unreachable
+22  31 : unreachable
+22  32 : unreachable
+22  33 : 22, 10, 33  42
+22  34 : unreachable
+22  35 : unreachable
+22  36 : unreachable
+22  37 : unreachable
+22  38 : unreachable
+22  39 : unreachable
+22  40 : unreachable
+22  41 : unreachable
+22  42 : unreachable
+22  43 : unreachable
+22  44 : unreachable
+22  45 : 22, 9, 45  6
+22  46 : unreachable
+22  47 : unreachable
+22  48 : unreachable
+22  49 : unreachable
+22  50 : unreachable
+22  51 : unreachable
+22  52 : unreachable
+22  53 : unreachable
+22  54 : unreachable
+22  55 : unreachable
+22  56 : 22, 9, 45, 56  40
+22  57 : unreachable
+22  58 : unreachable
+22  59 : unreachable
+22  60 : unreachable
+22  61 : unreachable
+22  62 : unreachable
+22  63 : unreachable
+22  64 : unreachable
+22  65 : unreachable
+22  66 : unreachable
+22  67 : unreachable
+22  68 : unreachable
+22  69 : unreachable
+22  70 : unreachable
+22  71 : unreachable
+22  72 : unreachable
+22  73 : unreachable
+22  74 : unreachable
+22  75 : unreachable
+22  76 : unreachable
+22  77 : unreachable
+22  78 : unreachable
+22  79 : unreachable
+22  80 : unreachable
+23  0  : unreachable
+23  1  : unreachable
+23  2  : unreachable
+23  3  : 23, 46, 31, 58, 22, 9, 45, 3  122
+23  4  : 23, 54, 36, 61, 4  71
+23  5  : unreachable
+23  6  : unreachable
+23  7  : unreachable
+23  8  : unreachable
+23  9  : 23, 46, 31, 58, 22, 9  60
+23  10 : 23, 46, 31, 58, 22, 10  68
+23  11 : unreachable
+23  12 : unreachable
+23  13 : unreachable
+23  14 : unreachable
+23  15 : unreachable
+23  16 : unreachable
+23  17 : unreachable
+23  18 : unreachable
+23  19 : unreachable
+23  20 : unreachable
+23  21 : 23, 54, 36, 61, 4, 21  114
+23  22 : 23, 46, 31, 58, 22  68
+23  23 : 23  0
+23  24 : 23, 46, 31, 58, 25, 39, 24  88
+23  25 : 23, 46, 31, 58, 25  76
+23  26 : unreachable
+23  27 : unreachable
+23  28 : unreachable
+23  29 : 23, 46, 31, 58, 25, 39, 24, 29  130
+23  30 : 23, 46, 30  67
+23  31 : 23, 46, 31  38
+23  32 : 23, 46, 31, 78, 53, 32  93
+23  33 : 23, 54, 36, 61, 4, 33  87
+23  34 : unreachable
+23  35 : unreachable
+23  36 : 23, 54, 36  78
+23  37 : unreachable
+23  38 : unreachable
+23  39 : 23, 46, 31, 58, 25, 39  86
+23  40 : unreachable
+23  41 : unreachable
+23  42 : unreachable
+23  43 : 23, 46, 31, 58, 25, 39, 43  130
+23  44 : unreachable
+23  45 : 23, 46, 31, 58, 22, 9, 45  74
+23  46 : 23, 46  27
+23  47 : unreachable
+23  48 : 23, 46, 31, 78, 48  97
+23  49 : 23, 46, 30, 60, 49  103
+23  50 : unreachable
+23  51 : unreachable
+23  52 : unreachable
+23  53 : 23, 46, 31, 78, 53  91
+23  54 : 23, 54  46
+23  55 : unreachable
+23  56 : 23, 46, 31, 58, 22, 9, 45, 56  108
+23  57 : unreachable
+23  58 : 23, 46, 31, 58  64
+23  59 : unreachable
+23  60 : 23, 46, 30, 60  71
+23  61 : 23, 54, 36, 61  71
+23  62 : unreachable
+23  63 : unreachable
+23  64 : 23, 46, 31, 58, 25, 64  93
+23  65 : unreachable
+23  66 : unreachable
+23  67 : unreachable
+23  68 : unreachable
+23  69 : unreachable
+23  70 : unreachable
+23  71 : 23, 46, 30, 60, 71  83
+23  72 : unreachable
+23  73 : 23, 54, 73  88
+23  74 : unreachable
+23  75 : unreachable
+23  76 : unreachable
+23  77 : unreachable
+23  78 : 23, 46, 31, 78  57
+23  79 : unreachable
+23  80 : unreachable
+24  0  : unreachable
+24  1  : unreachable
+24  2  : unreachable
+24  3  : unreachable
+24  4  : 24, 29, 61, 4  42
+24  5  : unreachable
+24  6  : unreachable
+24  7  : unreachable
+24  8  : unreachable
+24  9  : unreachable
+24  10 : unreachable
+24  11 : unreachable
+24  12 : unreachable
+24  13 : 24, 30, 60, 71, 13  58
+24  14 : unreachable
+24  15 : unreachable
+24  16 : unreachable
+24  17 : unreachable
+24  18 : unreachable
+24  19 : unreachable
+24  20 : unreachable
+24  21 : 24, 29, 61, 4, 21  85
+24  22 : unreachable
+24  23 : unreachable
+24  24 : 24  0
+24  25 : unreachable
+24  26 : 24, 29, 61, 4, 33, 26  77
+24  27 : unreachable
+24  28 : unreachable
+24  29 : 24, 29  42
+24  30 : 24, 30  47
+24  31 : 24, 30, 46, 31  71
+24  32 : 24, 29, 61, 54, 36, 32  113
+24  33 : 24, 29, 61, 4, 33  58
+24  34 : unreachable
+24  35 : unreachable
+24  36 : 24, 29, 61, 54, 36  74
+24  37 : unreachable
+24  38 : unreachable
+24  39 : unreachable
+24  40 : unreachable
+24  41 : 24, 29, 61, 4, 33, 41  71
+24  42 : unreachable
+24  43 : unreachable
+24  44 : unreachable
+24  45 : unreachable
+24  46 : 24, 30, 46  60
+24  47 : unreachable
+24  48 : unreachable
+24  49 : 24, 30, 60, 49  83
+24  50 : unreachable
+24  51 : unreachable
+24  52 : unreachable
+24  53 : unreachable
+24  54 : 24, 29, 61, 54  42
+24  55 : unreachable
+24  56 : unreachable
+24  57 : unreachable
+24  58 : unreachable
+24  59 : unreachable
+24  60 : 24, 30, 60  51
+24  61 : 24, 29, 61  42
+24  62 : unreachable
+24  63 : unreachable
+24  64 : unreachable
+24  65 : unreachable
+24  66 : unreachable
+24  67 : unreachable
+24  68 : unreachable
+24  69 : unreachable
+24  70 : unreachable
+24  71 : 24, 30, 60, 71  63
+24  72 : unreachable
+24  73 : 24, 29, 61, 54, 73  84
+24  74 : unreachable
+24  75 : 24, 29, 61, 4, 21, 75  120
+24  76 : unreachable
+24  77 : unreachable
+24  78 : unreachable
+24  79 : 24, 30, 60, 71, 79  64
+24  80 : unreachable
+25  0  : unreachable
+25  1  : unreachable
+25  2  : unreachable
+25  3  : 25, 39, 43, 34, 45, 3  152
+25  4  : 25, 39, 24, 29, 61, 4  54
+25  5  : unreachable
+25  6  : unreachable
+25  7  : unreachable
+25  8  : unreachable
+25  9  : 25, 64, 14, 66, 9  96
+25  10 : 25, 64, 14, 66, 9, 22, 10  126
+25  11 : unreachable
+25  12 : unreachable
+25  13 : 25, 39, 43, 76, 13  93
+25  14 : 25, 64, 14  50
+25  15 : unreachable
+25  16 : unreachable
+25  17 : unreachable
+25  18 : unreachable
+25  19 : unreachable
+25  20 : unreachable
+25  21 : 25, 39, 24, 29, 61, 4, 21  97
+25  22 : 25, 64, 14, 66, 9, 22  126
+25  23 : unreachable
+25  24 : 25, 39, 24  12
+25  25 : 25  0
+25  26 : unreachable
+25  27 : 25, 39, 43, 34, 69, 27  131
+25  28 : unreachable
+25  29 : 25, 39, 24, 29  54
+25  30 : 25, 39, 24, 30  59
+25  31 : 25, 39, 24, 30, 46, 31  83
+25  32 : 25, 39, 24, 30, 60, 49, 32  120
+25  33 : 25, 39, 24, 29, 61, 4, 33  70
+25  34 : 25, 39, 43, 34  94
+25  35 : unreachable
+25  36 : 25, 39, 24, 29, 61, 54, 36  86
+25  37 : unreachable
+25  38 : unreachable
+25  39 : 25, 39  10
+25  40 : unreachable
+25  41 : unreachable
+25  42 : 25, 39, 43, 76, 62, 42  104
+25  43 : 25, 39, 43  54
+25  44 : unreachable
+25  45 : 25, 39, 43, 34, 45  104
+25  46 : 25, 39, 24, 30, 46  72
+25  47 : unreachable
+25  48 : unreachable
+25  49 : 25, 39, 24, 30, 60, 49  95
+25  50 : unreachable
+25  51 : unreachable
+25  52 : unreachable
+25  53 : unreachable
+25  54 : 25, 39, 24, 29, 61, 54  54
+25  55 : unreachable
+25  56 : 25, 39, 43, 34, 45, 56  138
+25  57 : unreachable
+25  58 : unreachable
+25  59 : 25, 39, 24, 30, 60, 49, 59  125
+25  60 : 25, 39, 24, 30, 60  63
+25  61 : 25, 39, 24, 29, 61  54
+25  62 : 25, 39, 43, 76, 62  70
+25  63 : unreachable
+25  64 : 25, 64  17
+25  65 : unreachable
+25  66 : 25, 64, 14, 66  79
+25  67 : unreachable
+25  68 : unreachable
+25  69 : 25, 39, 43, 34, 69  86
+25  70 : unreachable
+25  71 : 25, 39, 24, 30, 60, 71  75
+25  72 : unreachable
+25  73 : 25, 39, 24, 29, 61, 54, 73  96
+25  74 : unreachable
+25  75 : unreachable
+25  76 : 25, 39, 43, 76  58
+25  77 : unreachable
+25  78 : 25, 64, 14, 66, 78  129
+25  79 : unreachable
+25  80 : unreachable
+26  0  : 26, 57, 49, 32, 5, 0  88
+26  1  : 26, 57, 49, 59, 80, 1  75
+26  2  : unreachable
+26  3  : unreachable
+26  4  : 26, 57, 49, 59, 80, 1, 61, 4  94
+26  5  : 26, 57, 49, 32, 5  60
+26  6  : 26, 57, 49, 32, 5, 6  92
+26  7  : unreachable
+26  8  : unreachable
+26  9  : 26, 57, 49, 32, 5, 6, 22, 9  122
+26  10 : 26, 57, 49, 32, 5, 6, 22, 10  130
+26  11 : unreachable
+26  12 : 26, 57, 49, 59, 80, 1, 61, 4, 33, 41, 12  166
+26  13 : unreachable
+26  14 : unreachable
+26  15 : unreachable
+26  16 : unreachable
+26  17 : unreachable
+26  18 : unreachable
+26  19 : unreachable
+26  20 : 26, 57, 49, 59, 80, 37, 20  119
+26  21 : 26, 57, 49, 59, 80, 1, 61, 4, 21  137
+26  22 : 26, 57, 49, 32, 5, 6, 22  130
+26  23 : unreachable
+26  24 : unreachable
+26  25 : unreachable
+26  26 : 26  0
+26  27 : unreachable
+26  28 : 26, 57, 49, 32, 5, 6, 28  134
+26  29 : unreachable
+26  30 : unreachable
+26  31 : 26, 57, 49, 59, 80, 37, 79, 31  127
+26  32 : 26, 57, 49, 32  30
+26  33 : 26, 57, 49, 59, 80, 1, 61, 4, 33  110
+26  34 : unreachable
+26  35 : unreachable
+26  36 : 26, 57, 49, 59, 80, 1, 61, 54, 36  126
+26  37 : 26, 57, 49, 59, 80, 37  86
+26  38 : unreachable
+26  39 : unreachable
+26  40 : unreachable
+26  41 : 26, 57, 49, 59, 80, 1, 61, 4, 33, 41  123
+26  42 : unreachable
+26  43 : 26, 57, 49, 59, 80, 1, 61, 4, 33, 41, 12, 43  162
+26  44 : 26, 57, 49, 32, 5, 0, 44  122
+26  45 : 26, 57, 49, 59, 80, 37, 79, 45  132
+26  46 : unreachable
+26  47 : unreachable
+26  48 : unreachable
+26  49 : 26, 57, 49  5
+26  50 : unreachable
+26  51 : unreachable
+26  52 : unreachable
+26  53 : 26, 57, 49, 32, 5, 0, 53  109
+26  54 : 26, 57, 49, 59, 80, 1, 61, 54  94
+26  55 : unreachable
+26  56 : unreachable
+26  57 : 26, 57  4
+26  58 : unreachable
+26  59 : 26, 57, 49, 59  35
+26  60 : unreachable
+26  61 : 26, 57, 49, 59, 80, 1, 61  94
+26  62 : unreachable
+26  63 : unreachable
+26  64 : unreachable
+26  65 : unreachable
+26  66 : unreachable
+26  67 : unreachable
+26  68 : unreachable
+26  69 : unreachable
+26  70 : unreachable
+26  71 : unreachable
+26  72 : unreachable
+26  73 : 26, 57, 49, 59, 80, 1, 61, 54, 73  136
+26  74 : unreachable
+26  75 : unreachable
+26  76 : unreachable
+26  77 : unreachable
+26  78 : unreachable
+26  79 : 26, 57, 49, 59, 80, 37, 79  104
+26  80 : 26, 57, 49, 59, 80  66
+27  0  : 27, 23, 46, 30, 60, 49, 32, 5, 0  216
+27  1  : 27, 23, 46, 30, 60, 49, 59, 80, 1  203
+27  2  : unreachable
+27  3  : unreachable
+27  4  : unreachable
+27  5  : 27, 23, 46, 30, 60, 49, 32, 5  188
+27  6  : 27, 23, 46, 30, 60, 49, 32, 5, 6  220
+27  7  : unreachable
+27  8  : unreachable
+27  9  : unreachable
+27  10 : unreachable
+27  11 : unreachable
+27  12 : unreachable
+27  13 : 27, 73, 13  39
+27  14 : unreachable
+27  15 : unreachable
+27  16 : unreachable
+27  17 : unreachable
+27  18 : unreachable
+27  19 : unreachable
+27  20 : unreachable
+27  21 : unreachable
+27  22 : 27, 23, 46, 31, 58, 22  98
+27  23 : 27, 23  30
+27  24 : unreachable
+27  25 : 27, 23, 46, 31, 58, 25  106
+27  26 : unreachable
+27  27 : 27  0
+27  28 : 27, 23, 46, 30, 60, 49, 32, 5, 6, 28  262
+27  29 : unreachable
+27  30 : 27, 23, 46, 30  97
+27  31 : 27, 23, 46, 31  68
+27  32 : 27, 23, 46, 30, 60, 49, 32  158
+27  33 : unreachable
+27  34 : 27, 73, 43, 34  100
+27  35 : unreachable
+27  36 : 27, 23, 54, 36  108
+27  37 : 27, 23, 46, 30, 60, 49, 59, 80, 37  214
+27  38 : unreachable
+27  39 : unreachable
+27  40 : unreachable
+27  41 : unreachable
+27  42 : unreachable
+27  43 : 27, 73, 43  60
+27  44 : 27, 23, 46, 30, 60, 49, 32, 5, 0, 44  250
+27  45 : unreachable
+27  46 : 27, 23, 46  57
+27  47 : unreachable
+27  48 : unreachable
+27  49 : 27, 23, 46, 30, 60, 49  133
+27  50 : unreachable
+27  51 : unreachable
+27  52 : unreachable
+27  53 : 27, 23, 46, 30, 60, 49, 32, 5, 0, 53  237
+27  54 : 27, 23, 54  76
+27  55 : unreachable
+27  56 : unreachable
+27  57 : unreachable
+27  58 : 27, 23, 46, 31, 58  94
+27  59 : 27, 23, 46, 30, 60, 49, 59  163
+27  60 : 27, 23, 46, 30, 60  101
+27  61 : unreachable
+27  62 : 27, 73, 43, 76, 62  76
+27  63 : unreachable
+27  64 : unreachable
+27  65 : unreachable
+27  66 : unreachable
+27  67 : unreachable
+27  68 : unreachable
+27  69 : unreachable
+27  70 : unreachable
+27  71 : 27, 73, 13, 71  66
+27  72 : unreachable
+27  73 : 27, 73  19
+27  74 : unreachable
+27  75 : unreachable
+27  76 : 27, 73, 43, 76  64
+27  77 : unreachable
+27  78 : 27, 23, 46, 31, 78  87
+27  79 : 27, 73, 13, 71, 79  67
+27  80 : 27, 23, 46, 30, 60, 49, 59, 80  194
+28  0  : unreachable
+28  1  : 28, 80, 1  44
+28  2  : unreachable
+28  3  : unreachable
+28  4  : 28, 80, 1, 61, 4  63
+28  5  : unreachable
+28  6  : unreachable
+28  7  : unreachable
+28  8  : unreachable
+28  9  : unreachable
+28  10 : unreachable
+28  11 : unreachable
+28  12 : 28, 80, 1, 61, 4, 33, 41, 12  135
+28  13 : 28, 80, 1, 61, 54, 73, 13  125
+28  14 : unreachable
+28  15 : unreachable
+28  16 : unreachable
+28  17 : unreachable
+28  18 : unreachable
+28  19 : unreachable
+28  20 : 28, 80, 37, 20  88
+28  21 : 28, 80, 1, 61, 4, 21  106
+28  22 : unreachable
+28  23 : unreachable
+28  24 : unreachable
+28  25 : unreachable
+28  26 : 28, 80, 1, 61, 4, 33, 26  98
+28  27 : unreachable
+28  28 : 28  0
+28  29 : unreachable
+28  30 : unreachable
+28  31 : 28, 80, 37, 79, 31  96
+28  32 : 28, 80, 1, 61, 4, 33, 26, 57, 49, 32  128
+28  33 : 28, 80, 1, 61, 4, 33  79
+28  34 : unreachable
+28  35 : unreachable
+28  36 : 28, 80, 1, 61, 54, 36  95
+28  37 : 28, 80, 37  55
+28  38 : unreachable
+28  39 : unreachable
+28  40 : unreachable
+28  41 : 28, 80, 1, 61, 4, 33, 41  92
+28  42 : unreachable
+28  43 : 28, 80, 1, 61, 54, 73, 43  146
+28  44 : unreachable
+28  45 : 28, 80, 37, 79, 45  101
+28  46 : unreachable
+28  47 : unreachable
+28  48 : 28, 48  35
+28  49 : 28, 80, 1, 61, 4, 33, 26, 57, 49  103
+28  50 : unreachable
+28  51 : unreachable
+28  52 : unreachable
+28  53 : unreachable
+28  54 : 28, 80, 1, 61, 54  63
+28  55 : unreachable
+28  56 : unreachable
+28  57 : 28, 80, 1, 61, 4, 33, 26, 57  102
+28  58 : unreachable
+28  59 : 28, 80, 1, 61, 4, 33, 26, 57, 49, 59  133
+28  60 : unreachable
+28  61 : 28, 80, 1, 61  63
+28  62 : unreachable
+28  63 : unreachable
+28  64 : unreachable
+28  65 : unreachable
+28  66 : unreachable
+28  67 : unreachable
+28  68 : unreachable
+28  69 : unreachable
+28  70 : unreachable
+28  71 : unreachable
+28  72 : unreachable
+28  73 : 28, 80, 1, 61, 54, 73  105
+28  74 : unreachable
+28  75 : unreachable
+28  76 : unreachable
+28  77 : unreachable
+28  78 : unreachable
+28  79 : 28, 80, 37, 79  73
+28  80 : 28, 80  35
+29  0  : unreachable
+29  1  : unreachable
+29  2  : unreachable
+29  3  : unreachable
+29  4  : 29, 61, 4  0
+29  5  : 29, 61, 4, 33, 26, 57, 49, 32, 5  95
+29  6  : unreachable
+29  7  : unreachable
+29  8  : unreachable
+29  9  : unreachable
+29  10 : unreachable
+29  11 : unreachable
+29  12 : 29, 61, 4, 33, 41, 12  72
+29  13 : 29, 61, 54, 73, 13  62
+29  14 : unreachable
+29  15 : unreachable
+29  16 : unreachable
+29  17 : unreachable
+29  18 : unreachable
+29  19 : unreachable
+29  20 : unreachable
+29  21 : 29, 61, 4, 21  43
+29  22 : unreachable
+29  23 : unreachable
+29  24 : unreachable
+29  25 : unreachable
+29  26 : 29, 61, 4, 33, 26  35
+29  27 : unreachable
+29  28 : unreachable
+29  29 : 29  0
+29  30 : unreachable
+29  31 : unreachable
+29  32 : 29, 61, 4, 33, 26, 57, 49, 32  65
+29  33 : 29, 61, 4, 33  16
+29  34 : 29, 61, 4, 33, 41, 12, 43, 34  108
+29  35 : unreachable
+29  36 : 29, 61, 54, 36  32
+29  37 : unreachable
+29  38 : unreachable
+29  39 : unreachable
+29  40 : unreachable
+29  41 : 29, 61, 4, 33, 41  29
+29  42 : unreachable
+29  43 : 29, 61, 4, 33, 41, 12, 43  68
+29  44 : unreachable
+29  45 : unreachable
+29  46 : unreachable
+29  47 : unreachable
+29  48 : unreachable
+29  49 : 29, 61, 4, 33, 26, 57, 49  40
+29  50 : unreachable
+29  51 : unreachable
+29  52 : unreachable
+29  53 : unreachable
+29  54 : 29, 61, 54  0
+29  55 : unreachable
+29  56 : unreachable
+29  57 : 29, 61, 4, 33, 26, 57  39
+29  58 : unreachable
+29  59 : 29, 61, 4, 33, 26, 57, 49, 59  70
+29  60 : unreachable
+29  61 : 29, 61  0
+29  62 : unreachable
+29  63 : unreachable
+29  64 : unreachable
+29  65 : unreachable
+29  66 : unreachable
+29  67 : unreachable
+29  68 : unreachable
+29  69 : unreachable
+29  70 : unreachable
+29  71 : unreachable
+29  72 : unreachable
+29  73 : 29, 61, 54, 73  42
+29  74 : unreachable
+29  75 : unreachable
+29  76 : 29, 61, 4, 33, 41, 12, 43, 76  72
+29  77 : unreachable
+29  78 : unreachable
+29  79 : unreachable
+29  80 : unreachable
+30  0  : unreachable
+30  1  : unreachable
+30  2  : unreachable
+30  3  : unreachable
+30  4  : unreachable
+30  5  : unreachable
+30  6  : unreachable
+30  7  : unreachable
+30  8  : unreachable
+30  9  : unreachable
+30  10 : unreachable
+30  11 : unreachable
+30  12 : unreachable
+30  13 : unreachable
+30  14 : unreachable
+30  15 : unreachable
+30  16 : unreachable
+30  17 : unreachable
+30  18 : unreachable
+30  19 : unreachable
+30  20 : unreachable
+30  21 : unreachable
+30  22 : unreachable
+30  23 : unreachable
+30  24 : unreachable
+30  25 : unreachable
+30  26 : unreachable
+30  27 : unreachable
+30  28 : unreachable
+30  29 : unreachable
+30  30 : 30  0
+30  31 : 30, 46, 31  24
+30  32 : unreachable
+30  33 : unreachable
+30  34 : unreachable
+30  35 : unreachable
+30  36 : unreachable
+30  37 : unreachable
+30  38 : unreachable
+30  39 : unreachable
+30  40 : unreachable
+30  41 : unreachable
+30  42 : unreachable
+30  43 : unreachable
+30  44 : unreachable
+30  45 : unreachable
+30  46 : 30, 46  13
+30  47 : unreachable
+30  48 : unreachable
+30  49 : 30, 60, 49  36
+30  50 : unreachable
+30  51 : unreachable
+30  52 : unreachable
+30  53 : unreachable
+30  54 : unreachable
+30  55 : unreachable
+30  56 : unreachable
+30  57 : unreachable
+30  58 : unreachable
+30  59 : unreachable
+30  60 : 30, 60  4
+30  61 : unreachable
+30  62 : unreachable
+30  63 : unreachable
+30  64 : unreachable
+30  65 : unreachable
+30  66 : unreachable
+30  67 : unreachable
+30  68 : unreachable
+30  69 : unreachable
+30  70 : unreachable
+30  71 : 30, 60, 71  16
+30  72 : unreachable
+30  73 : unreachable
+30  74 : unreachable
+30  75 : unreachable
+30  76 : unreachable
+30  77 : unreachable
+30  78 : unreachable
+30  79 : unreachable
+30  80 : unreachable
+31  0  : unreachable
+31  1  : unreachable
+31  2  : unreachable
+31  3  : 31, 58, 22, 9, 45, 3  84
+31  4  : 31, 58, 25, 39, 24, 29, 61, 4  92
+31  5  : unreachable
+31  6  : unreachable
+31  7  : unreachable
+31  8  : unreachable
+31  9  : 31, 58, 22, 9  22
+31  10 : 31, 58, 22, 10  30
+31  11 : unreachable
+31  12 : unreachable
+31  13 : unreachable
+31  14 : unreachable
+31  15 : unreachable
+31  16 : unreachable
+31  17 : unreachable
+31  18 : unreachable
+31  19 : unreachable
+31  20 : unreachable
+31  21 : 31, 58, 25, 39, 24, 29, 61, 4, 21  135
+31  22 : 31, 58, 22  30
+31  23 : unreachable
+31  24 : 31, 58, 25, 39, 24  50
+31  25 : 31, 58, 25  38
+31  26 : unreachable
+31  27 : unreachable
+31  28 : 31, 78, 48, 28  75
+31  29 : 31, 58, 25, 39, 24, 29  92
+31  30 : 31, 58, 25, 39, 24, 30  97
+31  31 : 31  0
+31  32 : 31, 78, 53, 32  55
+31  33 : 31, 58, 22, 10, 33  72
+31  34 : unreachable
+31  35 : unreachable
+31  36 : 31, 58, 25, 39, 24, 29, 61, 54, 36  124
+31  37 : unreachable
+31  38 : unreachable
+31  39 : 31, 58, 25, 39  48
+31  40 : unreachable
+31  41 : unreachable
+31  42 : unreachable
+31  43 : 31, 58, 25, 39, 43  92
+31  44 : unreachable
+31  45 : 31, 58, 22, 9, 45  36
+31  46 : 31, 58, 25, 39, 24, 30, 46  110
+31  47 : unreachable
+31  48 : 31, 78, 48  59
+31  49 : 31, 58, 25, 39, 24, 30, 60, 49  133
+31  50 : unreachable
+31  51 : unreachable
+31  52 : unreachable
+31  53 : 31, 78, 53  53
+31  54 : 31, 58, 25, 39, 24, 29, 61, 54  92
+31  55 : unreachable
+31  56 : 31, 58, 22, 9, 45, 56  70
+31  57 : unreachable
+31  58 : 31, 58  26
+31  59 : unreachable
+31  60 : 31, 58, 25, 39, 24, 30, 60  101
+31  61 : 31, 58, 25, 39, 24, 29, 61  92
+31  62 : unreachable
+31  63 : unreachable
+31  64 : 31, 58, 25, 64  55
+31  65 : unreachable
+31  66 : unreachable
+31  67 : unreachable
+31  68 : unreachable
+31  69 : unreachable
+31  70 : unreachable
+31  71 : 31, 58, 25, 39, 24, 30, 60, 71  113
+31  72 : unreachable
+31  73 : 31, 58, 25, 39, 24, 29, 61, 54, 73  134
+31  74 : unreachable
+31  75 : unreachable
+31  76 : unreachable
+31  77 : unreachable
+31  78 : 31, 78  19
+31  79 : unreachable
+31  80 : 31, 78, 48, 28, 80  110
+32  0  : 32, 5, 0  58
+32  1  : unreachable
+32  2  : unreachable
+32  3  : unreachable
+32  4  : unreachable
+32  5  : 32, 5  30
+32  6  : 32, 5, 6  62
+32  7  : unreachable
+32  8  : unreachable
+32  9  : 32, 5, 6, 22, 9  92
+32  10 : 32, 5, 6, 22, 10  100
+32  11 : unreachable
+32  12 : unreachable
+32  13 : unreachable
+32  14 : unreachable
+32  15 : unreachable
+32  16 : unreachable
+32  17 : unreachable
+32  18 : 32, 5, 0, 44, 18  137
+32  19 : unreachable
+32  20 : unreachable
+32  21 : unreachable
+32  22 : 32, 5, 6, 22  100
+32  23 : unreachable
+32  24 : unreachable
+32  25 : unreachable
+32  26 : unreachable
+32  27 : unreachable
+32  28 : 32, 5, 6, 28  104
+32  29 : unreachable
+32  30 : unreachable
+32  31 : unreachable
+32  32 : 32  0
+32  33 : unreachable
+32  34 : unreachable
+32  35 : unreachable
+32  36 : unreachable
+32  37 : unreachable
+32  38 : unreachable
+32  39 : unreachable
+32  40 : unreachable
+32  41 : unreachable
+32  42 : unreachable
+32  43 : unreachable
+32  44 : 32, 5, 0, 44  92
+32  45 : 32, 5, 6, 22, 9, 45  106
+32  46 : unreachable
+32  47 : unreachable
+32  48 : unreachable
+32  49 : unreachable
+32  50 : unreachable
+32  51 : unreachable
+32  52 : unreachable
+32  53 : 32, 5, 0, 53  79
+32  54 : unreachable
+32  55 : unreachable
+32  56 : unreachable
+32  57 : unreachable
+32  58 : unreachable
+32  59 : unreachable
+32  60 : unreachable
+32  61 : unreachable
+32  62 : unreachable
+32  63 : unreachable
+32  64 : unreachable
+32  65 : unreachable
+32  66 : unreachable
+32  67 : unreachable
+32  68 : unreachable
+32  69 : unreachable
+32  70 : unreachable
+32  71 : unreachable
+32  72 : unreachable
+32  73 : unreachable
+32  74 : unreachable
+32  75 : unreachable
+32  76 : unreachable
+32  77 : unreachable
+32  78 : unreachable
+32  79 : unreachable
+32  80 : unreachable
+33  0  : 33, 26, 57, 49, 32, 5, 0  107
+33  1  : 33, 26, 57, 49, 59, 80, 1  94
+33  2  : unreachable
+33  3  : unreachable
+33  4  : 33, 26, 57, 49, 59, 80, 1, 61, 4  113
+33  5  : 33, 26, 57, 49, 32, 5  79
+33  6  : 33, 26, 57, 49, 32, 5, 6  111
+33  7  : unreachable
+33  8  : unreachable
+33  9  : unreachable
+33  10 : unreachable
+33  11 : unreachable
+33  12 : 33, 41, 12  56
+33  13 : 33, 41, 12, 43, 76, 13  91
+33  14 : unreachable
+33  15 : unreachable
+33  16 : unreachable
+33  17 : unreachable
+33  18 : unreachable
+33  19 : unreachable
+33  20 : unreachable
+33  21 : 33, 26, 57, 49, 59, 80, 1, 61, 4, 21  156
+33  22 : 33, 26, 57, 49, 32, 5, 6, 22  149
+33  23 : 33, 41, 12, 43, 76, 13, 23  116
+33  24 : unreachable
+33  25 : unreachable
+33  26 : 33, 26  19
+33  27 : 33, 41, 12, 43, 34, 69, 27  129
+33  28 : 33, 26, 57, 49, 32, 5, 6, 28  153
+33  29 : unreachable
+33  30 : 33, 41, 12, 43, 76, 13, 23, 46, 30  183
+33  31 : 33, 41, 12, 43, 76, 13, 23, 46, 31  154
+33  32 : 33, 26, 57, 49, 32  49
+33  33 : 33  0
+33  34 : 33, 41, 12, 43, 34  92
+33  35 : unreachable
+33  36 : 33, 26, 57, 49, 59, 80, 1, 61, 54, 36  145
+33  37 : 33, 26, 57, 49, 59, 80, 37  105
+33  38 : unreachable
+33  39 : unreachable
+33  40 : unreachable
+33  41 : 33, 41  13
+33  42 : 33, 41, 12, 43, 76, 62, 42  102
+33  43 : 33, 41, 12, 43  52
+33  44 : 33, 26, 57, 49, 32, 5, 0, 44  141
+33  45 : 33, 41, 12, 43, 34, 45  102
+33  46 : 33, 41, 12, 43, 76, 13, 23, 46  143
+33  47 : unreachable
+33  48 : unreachable
+33  49 : 33, 26, 57, 49  24
+33  50 : unreachable
+33  51 : unreachable
+33  52 : unreachable
+33  53 : 33, 26, 57, 49, 32, 5, 0, 53  128
+33  54 : 33, 26, 57, 49, 59, 80, 1, 61, 54  113
+33  55 : unreachable
+33  56 : unreachable
+33  57 : 33, 26, 57  23
+33  58 : unreachable
+33  59 : 33, 26, 57, 49, 59  54
+33  60 : 33, 26, 57, 49, 59, 80, 1, 61, 4, 21, 60  164
+33  61 : 33, 26, 57, 49, 59, 80, 1, 61  113
+33  62 : 33, 41, 12, 43, 76, 62  68
+33  63 : unreachable
+33  64 : unreachable
+33  65 : unreachable
+33  66 : unreachable
+33  67 : unreachable
+33  68 : unreachable
+33  69 : 33, 41, 12, 43, 34, 69  84
+33  70 : unreachable
+33  71 : 33, 41, 12, 43, 76, 13, 71  118
+33  72 : unreachable
+33  73 : 33, 41, 12, 43, 34, 69, 27, 73  148
+33  74 : unreachable
+33  75 : 33, 26, 57, 49, 59, 80, 1, 61, 4, 21, 75  191
+33  76 : 33, 41, 12, 43, 76  56
+33  77 : unreachable
+33  78 : unreachable
+33  79 : unreachable
+33  80 : 33, 26, 57, 49, 59, 80  85
+34  0  : unreachable
+34  1  : unreachable
+34  2  : unreachable
+34  3  : 34, 45, 3  58
+34  4  : unreachable
+34  5  : unreachable
+34  6  : unreachable
+34  7  : unreachable
+34  8  : unreachable
+34  9  : 34, 45, 3, 9  91
+34  10 : unreachable
+34  11 : unreachable
+34  12 : unreachable
+34  13 : 34, 69, 27, 73, 13  76
+34  14 : unreachable
+34  15 : unreachable
+34  16 : unreachable
+34  17 : unreachable
+34  18 : unreachable
+34  19 : unreachable
+34  20 : unreachable
+34  21 : unreachable
+34  22 : 34, 45, 3, 9, 22  121
+34  23 : 34, 69, 27, 23  67
+34  24 : 34, 45, 56, 63, 38, 25, 39, 24  64
+34  25 : 34, 45, 56, 63, 38, 25  52
+34  26 : unreachable
+34  27 : 34, 69, 27  37
+34  28 : unreachable
+34  29 : 34, 45, 56, 63, 38, 25, 39, 24, 29  106
+34  30 : 34, 45, 56, 63, 38, 25, 39, 24, 30  111
+34  31 : 34, 69, 27, 23, 46, 31  105
+34  32 : unreachable
+34  33 : unreachable
+34  34 : 34  0
+34  35 : unreachable
+34  36 : 34, 69, 27, 23, 54, 36  145
+34  37 : unreachable
+34  38 : 34, 45, 56, 63, 38  55
+34  39 : 34, 45, 56, 63, 38, 25, 39  62
+34  40 : unreachable
+34  41 : unreachable
+34  42 : unreachable
+34  43 : 34, 69, 27, 73, 43  97
+34  44 : unreachable
+34  45 : 34, 45  10
+34  46 : 34, 69, 27, 23, 46  94
+34  47 : unreachable
+34  48 : 34, 45, 56, 63, 78, 48  129
+34  49 : unreachable
+34  50 : unreachable
+34  51 : unreachable
+34  52 : unreachable
+34  53 : 34, 45, 56, 63, 78, 53  123
+34  54 : 34, 69, 27, 23, 54  113
+34  55 : unreachable
+34  56 : 34, 45, 56  44
+34  57 : unreachable
+34  58 : 34, 69, 27, 23, 46, 31, 58  131
+34  59 : unreachable
+34  60 : unreachable
+34  61 : unreachable
+34  62 : 34, 69, 27, 73, 43, 76, 62  113
+34  63 : 34, 45, 56, 63  51
+34  64 : 34, 45, 56, 63, 38, 25, 64  69
+34  65 : unreachable
+34  66 : unreachable
+34  67 : unreachable
+34  68 : unreachable
+34  69 : 34, 69  -8
+34  70 : unreachable
+34  71 : 34, 69, 27, 73, 13, 71  103
+34  72 : unreachable
+34  73 : 34, 69, 27, 73  56
+34  74 : unreachable
+34  75 : unreachable
+34  76 : 34, 69, 27, 73, 43, 76  101
+34  77 : unreachable
+34  78 : 34, 45, 56, 63, 78  89
+34  79 : 34, 69, 27, 73, 13, 71, 79  104
+34  80 : unreachable
+35  0  : unreachable
+35  1  : unreachable
+35  2  : unreachable
+35  3  : unreachable
+35  4  : unreachable
+35  5  : unreachable
+35  6  : 35, 6  50
+35  7  : unreachable
+35  8  : unreachable
+35  9  : unreachable
+35  10 : unreachable
+35  11 : unreachable
+35  12 : unreachable
+35  13 : 35, 76, 13  50
+35  14 : unreachable
+35  15 : unreachable
+35  16 : unreachable
+35  17 : unreachable
+35  18 : unreachable
+35  19 : unreachable
+35  20 : unreachable
+35  21 : unreachable
+35  22 : 35, 6, 22  88
+35  23 : 35, 76, 13, 23  75
+35  24 : unreachable
+35  25 : unreachable
+35  26 : unreachable
+35  27 : unreachable
+35  28 : 35, 6, 28  92
+35  29 : unreachable
+35  30 : unreachable
+35  31 : 35, 76, 13, 71, 79, 31  101
+35  32 : unreachable
+35  33 : unreachable
+35  34 : unreachable
+35  35 : 35  0
+35  36 : unreachable
+35  37 : unreachable
+35  38 : unreachable
+35  39 : unreachable
+35  40 : unreachable
+35  41 : unreachable
+35  42 : 35, 76, 62, 42  61
+35  43 : unreachable
+35  44 : unreachable
+35  45 : 35, 76, 13, 71, 79, 45  106
+35  46 : 35, 76, 13, 23, 46  102
+35  47 : unreachable
+35  48 : unreachable
+35  49 : unreachable
+35  50 : unreachable
+35  51 : unreachable
+35  52 : unreachable
+35  53 : unreachable
+35  54 : 35, 76, 13, 23, 54  121
+35  55 : unreachable
+35  56 : unreachable
+35  57 : unreachable
+35  58 : unreachable
+35  59 : unreachable
+35  60 : unreachable
+35  61 : unreachable
+35  62 : 35, 76, 62  27
+35  63 : unreachable
+35  64 : unreachable
+35  65 : unreachable
+35  66 : unreachable
+35  67 : unreachable
+35  68 : unreachable
+35  69 : unreachable
+35  70 : unreachable
+35  71 : 35, 76, 13, 71  77
+35  72 : unreachable
+35  73 : unreachable
+35  74 : unreachable
+35  75 : unreachable
+35  76 : 35, 76  15
+35  77 : unreachable
+35  78 : unreachable
+35  79 : 35, 76, 13, 71, 79  78
+35  80 : 35, 76, 62, 42, 80  79
+36  0  : unreachable
+36  1  : unreachable
+36  2  : unreachable
+36  3  : unreachable
+36  4  : 36, 61, 4  -7
+36  5  : unreachable
+36  6  : unreachable
+36  7  : unreachable
+36  8  : unreachable
+36  9  : unreachable
+36  10 : unreachable
+36  11 : unreachable
+36  12 : 36, 61, 4, 33, 41, 12  65
+36  13 : unreachable
+36  14 : unreachable
+36  15 : unreachable
+36  16 : unreachable
+36  17 : unreachable
+36  18 : unreachable
+36  19 : unreachable
+36  20 : unreachable
+36  21 : 36, 61, 4, 21  36
+36  22 : unreachable
+36  23 : unreachable
+36  24 : unreachable
+36  25 : unreachable
+36  26 : 36, 61, 4, 33, 26  28
+36  27 : unreachable
+36  28 : unreachable
+36  29 : unreachable
+36  30 : unreachable
+36  31 : unreachable
+36  32 : 36, 32  39
+36  33 : 36, 61, 4, 33  9
+36  34 : unreachable
+36  35 : unreachable
+36  36 : 36  0
+36  37 : unreachable
+36  38 : unreachable
+36  39 : unreachable
+36  40 : unreachable
+36  41 : 36, 61, 4, 33, 41  22
+36  42 : unreachable
+36  43 : unreachable
+36  44 : unreachable
+36  45 : unreachable
+36  46 : unreachable
+36  47 : unreachable
+36  48 : unreachable
+36  49 : unreachable
+36  50 : unreachable
+36  51 : unreachable
+36  52 : unreachable
+36  53 : unreachable
+36  54 : 36, 61, 54  -7
+36  55 : unreachable
+36  56 : unreachable
+36  57 : 36, 61, 4, 33, 26, 57  32
+36  58 : unreachable
+36  59 : unreachable
+36  60 : unreachable
+36  61 : 36, 61  -7
+36  62 : unreachable
+36  63 : unreachable
+36  64 : unreachable
+36  65 : unreachable
+36  66 : unreachable
+36  67 : unreachable
+36  68 : unreachable
+36  69 : unreachable
+36  70 : unreachable
+36  71 : unreachable
+36  72 : unreachable
+36  73 : 36, 61, 54, 73  35
+36  74 : unreachable
+36  75 : unreachable
+36  76 : unreachable
+36  77 : unreachable
+36  78 : unreachable
+36  79 : unreachable
+36  80 : unreachable
+37  0  : unreachable
+37  1  : unreachable
+37  2  : unreachable
+37  3  : 37, 79, 45, 3  94
+37  4  : unreachable
+37  5  : 37, 20, 49, 32, 5  123
+37  6  : unreachable
+37  7  : unreachable
+37  8  : unreachable
+37  9  : 37, 79, 31, 58, 22, 9  63
+37  10 : 37, 79, 31, 58, 22, 10  71
+37  11 : unreachable
+37  12 : unreachable
+37  13 : unreachable
+37  14 : unreachable
+37  15 : unreachable
+37  16 : unreachable
+37  17 : unreachable
+37  18 : unreachable
+37  19 : unreachable
+37  20 : 37, 20  33
+37  21 : unreachable
+37  22 : 37, 79, 31, 58, 22  71
+37  23 : 37, 79, 45, 56, 27, 23  148
+37  24 : unreachable
+37  25 : 37, 79, 31, 58, 25  79
+37  26 : unreachable
+37  27 : 37, 79, 45, 56, 27  118
+37  28 : 37, 79, 31, 78, 48, 28  116
+37  29 : unreachable
+37  30 : unreachable
+37  31 : 37, 79, 31  41
+37  32 : 37, 20, 49, 32  93
+37  33 : 37, 79, 31, 58, 22, 10, 33  113
+37  34 : unreachable
+37  35 : unreachable
+37  36 : unreachable
+37  37 : 37  0
+37  38 : unreachable
+37  39 : 37, 79, 31, 58, 25, 39  89
+37  40 : unreachable
+37  41 : unreachable
+37  42 : unreachable
+37  43 : unreachable
+37  44 : unreachable
+37  45 : 37, 79, 45  46
+37  46 : unreachable
+37  47 : unreachable
+37  48 : 37, 79, 31, 78, 48  100
+37  49 : 37, 20, 49  68
+37  50 : unreachable
+37  51 : unreachable
+37  52 : unreachable
+37  53 : 37, 79, 31, 78, 53  94
+37  54 : unreachable
+37  55 : unreachable
+37  56 : 37, 79, 45, 56  80
+37  57 : unreachable
+37  58 : 37, 79, 31, 58  67
+37  59 : 37, 20, 49, 59  98
+37  60 : unreachable
+37  61 : unreachable
+37  62 : unreachable
+37  63 : 37, 79, 45, 56, 63  87
+37  64 : 37, 79, 31, 58, 25, 64  96
+37  65 : unreachable
+37  66 : unreachable
+37  67 : unreachable
+37  68 : unreachable
+37  69 : unreachable
+37  70 : unreachable
+37  71 : unreachable
+37  72 : unreachable
+37  73 : 37, 79, 45, 56, 27, 73  137
+37  74 : unreachable
+37  75 : unreachable
+37  76 : unreachable
+37  77 : unreachable
+37  78 : 37, 79, 31, 78  60
+37  79 : 37, 79  18
+37  80 : 37, 20, 49, 59, 80  129
+38  0  : unreachable
+38  1  : unreachable
+38  2  : unreachable
+38  3  : unreachable
+38  4  : 38, 25, 39, 24, 29, 61, 4  51
+38  5  : unreachable
+38  6  : unreachable
+38  7  : unreachable
+38  8  : unreachable
+38  9  : unreachable
+38  10 : unreachable
+38  11 : unreachable
+38  12 : unreachable
+38  13 : 38, 25, 39, 24, 30, 60, 71, 13  67
+38  14 : 38, 25, 64, 14  47
+38  15 : unreachable
+38  16 : unreachable
+38  17 : unreachable
+38  18 : unreachable
+38  19 : unreachable
+38  20 : unreachable
+38  21 : 38, 25, 39, 24, 29, 61, 4, 21  94
+38  22 : unreachable
+38  23 : unreachable
+38  24 : 38, 25, 39, 24  9
+38  25 : 38, 25  -3
+38  26 : 38, 25, 39, 24, 29, 61, 4, 33, 26  86
+38  27 : unreachable
+38  28 : unreachable
+38  29 : 38, 25, 39, 24, 29  51
+38  30 : 38, 25, 39, 24, 30  56
+38  31 : 38, 25, 39, 24, 30, 46, 31  80
+38  32 : 38, 25, 39, 24, 29, 61, 54, 36, 32  122
+38  33 : 38, 25, 39, 24, 29, 61, 4, 33  67
+38  34 : 38, 25, 39, 43, 34  91
+38  35 : unreachable
+38  36 : 38, 25, 39, 24, 29, 61, 54, 36  83
+38  37 : unreachable
+38  38 : 38  0
+38  39 : 38, 25, 39  7
+38  40 : unreachable
+38  41 : 38, 25, 39, 24, 29, 61, 4, 33, 41  80
+38  42 : 38, 25, 39, 43, 76, 62, 42  101
+38  43 : 38, 25, 39, 43  51
+38  44 : unreachable
+38  45 : unreachable
+38  46 : 38, 25, 39, 24, 30, 46  69
+38  47 : unreachable
+38  48 : unreachable
+38  49 : 38, 25, 39, 24, 30, 60, 49  92
+38  50 : unreachable
+38  51 : unreachable
+38  52 : unreachable
+38  53 : unreachable
+38  54 : 38, 25, 39, 24, 29, 61, 54  51
+38  55 : unreachable
+38  56 : unreachable
+38  57 : unreachable
+38  58 : unreachable
+38  59 : unreachable
+38  60 : 38, 25, 39, 24, 30, 60  60
+38  61 : 38, 25, 39, 24, 29, 61  51
+38  62 : 38, 25, 39, 43, 76, 62  67
+38  63 : unreachable
+38  64 : 38, 25, 64  14
+38  65 : unreachable
+38  66 : 38, 25, 64, 14, 66  76
+38  67 : unreachable
+38  68 : unreachable
+38  69 : unreachable
+38  70 : unreachable
+38  71 : 38, 25, 39, 24, 30, 60, 71  72
+38  72 : unreachable
+38  73 : 38, 25, 39, 24, 29, 61, 54, 73  93
+38  74 : unreachable
+38  75 : 38, 25, 39, 24, 29, 61, 4, 21, 75  129
+38  76 : 38, 25, 39, 43, 76  55
+38  77 : unreachable
+38  78 : unreachable
+38  79 : 38, 25, 39, 24, 30, 60, 71, 79  73
+38  80 : unreachable
+39  0  : unreachable
+39  1  : unreachable
+39  2  : unreachable
+39  3  : unreachable
+39  4  : 39, 24, 29, 61, 4  44
+39  5  : unreachable
+39  6  : unreachable
+39  7  : unreachable
+39  8  : unreachable
+39  9  : unreachable
+39  10 : unreachable
+39  11 : unreachable
+39  12 : 39, 24, 29, 61, 4, 33, 41, 12  116
+39  13 : 39, 43, 76, 13  83
+39  14 : unreachable
+39  15 : unreachable
+39  16 : unreachable
+39  17 : unreachable
+39  18 : unreachable
+39  19 : unreachable
+39  20 : unreachable
+39  21 : 39, 24, 29, 61, 4, 21  87
+39  22 : unreachable
+39  23 : 39, 43, 76, 13, 23  108
+39  24 : 39, 24  2
+39  25 : unreachable
+39  26 : 39, 24, 29, 61, 4, 33, 26  79
+39  27 : 39, 43, 34, 69, 27  121
+39  28 : unreachable
+39  29 : 39, 24, 29  44
+39  30 : 39, 24, 30  49
+39  31 : 39, 24, 30, 46, 31  73
+39  32 : 39, 24, 29, 61, 54, 36, 32  115
+39  33 : 39, 24, 29, 61, 4, 33  60
+39  34 : 39, 43, 34  84
+39  35 : unreachable
+39  36 : 39, 24, 29, 61, 54, 36  76
+39  37 : unreachable
+39  38 : unreachable
+39  39 : 39  0
+39  40 : unreachable
+39  41 : 39, 24, 29, 61, 4, 33, 41  73
+39  42 : unreachable
+39  43 : 39, 43  44
+39  44 : unreachable
+39  45 : 39, 43, 34, 45  94
+39  46 : 39, 24, 30, 46  62
+39  47 : unreachable
+39  48 : unreachable
+39  49 : 39, 24, 30, 60, 49  85
+39  50 : unreachable
+39  51 : unreachable
+39  52 : unreachable
+39  53 : unreachable
+39  54 : 39, 24, 29, 61, 54  44
+39  55 : unreachable
+39  56 : unreachable
+39  57 : unreachable
+39  58 : unreachable
+39  59 : unreachable
+39  60 : 39, 24, 30, 60  53
+39  61 : 39, 24, 29, 61  44
+39  62 : 39, 43, 76, 62  60
+39  63 : unreachable
+39  64 : unreachable
+39  65 : unreachable
+39  66 : unreachable
+39  67 : unreachable
+39  68 : unreachable
+39  69 : 39, 43, 34, 69  76
+39  70 : unreachable
+39  71 : 39, 24, 30, 60, 71  65
+39  72 : unreachable
+39  73 : 39, 24, 29, 61, 54, 73  86
+39  74 : unreachable
+39  75 : 39, 24, 29, 61, 4, 21, 75  122
+39  76 : 39, 43, 76  48
+39  77 : unreachable
+39  78 : unreachable
+39  79 : unreachable
+39  80 : unreachable
+40  0  : 40, 4, 33, 26, 57, 49, 32, 5, 0  155
+40  1  : 40, 4, 33, 26, 57, 49, 59, 80, 1  142
+40  2  : unreachable
+40  3  : 40, 69, 27, 73, 13, 71, 79, 45, 3  181
+40  4  : 40, 4  32
+40  5  : 40, 4, 33, 26, 57, 49, 32, 5  127
+40  6  : 40, 4, 33, 26, 57, 49, 32, 5, 6  159
+40  7  : unreachable
+40  8  : unreachable
+40  9  : unreachable
+40  10 : unreachable
+40  11 : unreachable
+40  12 : 40, 4, 33, 41, 12  104
+40  13 : 40, 69, 27, 73, 13  77
+40  14 : unreachable
+40  15 : unreachable
+40  16 : unreachable
+40  17 : unreachable
+40  18 : unreachable
+40  19 : unreachable
+40  20 : unreachable
+40  21 : 40, 4, 21  75
+40  22 : 40, 4, 33, 26, 57, 49, 32, 5, 6, 22  197
+40  23 : 40, 69, 27, 23  68
+40  24 : unreachable
+40  25 : unreachable
+40  26 : 40, 4, 33, 26  67
+40  27 : 40, 69, 27  38
+40  28 : 40, 69, 27, 23, 46, 31, 78, 48, 28  181
+40  29 : unreachable
+40  30 : 40, 69, 27, 23, 46, 30  135
+40  31 : 40, 69, 27, 23, 46, 31  106
+40  32 : 40, 4, 33, 26, 57, 49, 32  97
+40  33 : 40, 4, 33  48
+40  34 : 40, 69, 27, 73, 43, 34  138
+40  35 : unreachable
+40  36 : 40, 69, 27, 23, 54, 36  146
+40  37 : 40, 4, 33, 26, 57, 49, 59, 80, 37  153
+40  38 : unreachable
+40  39 : unreachable
+40  40 : 40  0
+40  41 : 40, 4, 33, 41  61
+40  42 : 40, 69, 27, 73, 43, 76, 62, 42  148
+40  43 : 40, 69, 27, 73, 43  98
+40  44 : unreachable
+40  45 : 40, 69, 27, 73, 13, 71, 79, 45  133
+40  46 : 40, 69, 27, 23, 46  95
+40  47 : unreachable
+40  48 : 40, 69, 27, 23, 46, 31, 78, 48  165
+40  49 : 40, 4, 33, 26, 57, 49  72
+40  50 : unreachable
+40  51 : unreachable
+40  52 : unreachable
+40  53 : 40, 69, 27, 23, 46, 31, 78, 53  159
+40  54 : 40, 69, 27, 23, 54  114
+40  55 : unreachable
+40  56 : 40, 69, 27, 73, 13, 71, 79, 45, 56  167
+40  57 : 40, 4, 33, 26, 57  71
+40  58 : 40, 69, 27, 23, 46, 31, 58  132
+40  59 : 40, 4, 33, 26, 57, 49, 59  102
+40  60 : 40, 69, 27, 23, 46, 30, 60  139
+40  61 : 40, 69, 27, 23, 54, 36, 61  139
+40  62 : 40, 69, 27, 73, 43, 76, 62  114
+40  63 : unreachable
+40  64 : unreachable
+40  65 : unreachable
+40  66 : unreachable
+40  67 : unreachable
+40  68 : unreachable
+40  69 : 40, 69  -7
+40  70 : unreachable
+40  71 : 40, 69, 27, 73, 13, 71  104
+40  72 : unreachable
+40  73 : 40, 69, 27, 73  57
+40  74 : unreachable
+40  75 : unreachable
+40  76 : 40, 69, 27, 73, 43, 76  102
+40  77 : unreachable
+40  78 : 40, 69, 27, 23, 46, 31, 78  125
+40  79 : 40, 69, 27, 73, 13, 71, 79  105
+40  80 : 40, 4, 33, 26, 57, 49, 59, 80  133
+41  0  : 41, 12, 49, 32, 5, 0  148
+41  1  : 41, 12, 43, 76, 62, 42, 80, 1  116
+41  2  : unreachable
+41  3  : unreachable
+41  4  : 41, 12, 43, 76, 62, 42, 80, 1, 61, 4  135
+41  5  : 41, 12, 49, 32, 5  120
+41  6  : 41, 12, 49, 32, 5, 6  152
+41  7  : unreachable
+41  8  : unreachable
+41  9  : unreachable
+41  10 : unreachable
+41  11 : unreachable
+41  12 : 41, 12  43
+41  13 : 41, 12, 43, 76, 13  78
+41  14 : 41, 12, 43, 76, 62, 42, 80, 1, 61, 4, 21, 75, 14  215
+41  15 : unreachable
+41  16 : unreachable
+41  17 : unreachable
+41  18 : 41, 12, 49, 32, 5, 0, 44, 18  227
+41  19 : unreachable
+41  20 : 41, 12, 43, 76, 62, 42, 80, 37, 20  160
+41  21 : 41, 12, 43, 76, 62, 42, 80, 1, 61, 4, 21  178
+41  22 : 41, 12, 49, 32, 5, 6, 22  190
+41  23 : 41, 12, 43, 76, 13, 23  103
+41  24 : unreachable
+41  25 : unreachable
+41  26 : unreachable
+41  27 : 41, 12, 43, 34, 69, 27  116
+41  28 : 41, 12, 49, 32, 5, 6, 28  194
+41  29 : unreachable
+41  30 : unreachable
+41  31 : unreachable
+41  32 : 41, 12, 49, 32  90
+41  33 : 41, 12, 43, 76, 62, 42, 80, 1, 61, 4, 33  151
+41  34 : 41, 12, 43, 34  79
+41  35 : unreachable
+41  36 : 41, 12, 43, 76, 62, 42, 80, 1, 61, 54, 36  167
+41  37 : 41, 12, 43, 76, 62, 42, 80, 37  127
+41  38 : unreachable
+41  39 : unreachable
+41  40 : unreachable
+41  41 : 41  0
+41  42 : 41, 12, 43, 76, 62, 42  89
+41  43 : 41, 12, 43  39
+41  44 : 41, 12, 49, 32, 5, 0, 44  182
+41  45 : 41, 12, 43, 34, 45  89
+41  46 : unreachable
+41  47 : unreachable
+41  48 : unreachable
+41  49 : 41, 12, 49  65
+41  50 : unreachable
+41  51 : unreachable
+41  52 : unreachable
+41  53 : 41, 12, 49, 32, 5, 0, 53  169
+41  54 : 41, 12, 43, 76, 62, 42, 80, 1, 61, 54  135
+41  55 : unreachable
+41  56 : unreachable
+41  57 : unreachable
+41  58 : unreachable
+41  59 : 41, 12, 49, 59  95
+41  60 : 41, 12, 43, 76, 62, 42, 80, 1, 61, 4, 21, 60  186
+41  61 : 41, 12, 43, 76, 62, 42, 80, 1, 61  135
+41  62 : 41, 12, 43, 76, 62  55
+41  63 : unreachable
+41  64 : unreachable
+41  65 : unreachable
+41  66 : unreachable
+41  67 : unreachable
+41  68 : unreachable
+41  69 : 41, 12, 43, 34, 69  71
+41  70 : unreachable
+41  71 : 41, 12, 43, 76, 13, 71  105
+41  72 : 41, 12, 43, 76, 62, 42, 80, 1, 61, 4, 21, 75, 72  205
+41  73 : 41, 12, 43, 76, 62, 42, 80, 1, 61, 54, 73  177
+41  74 : unreachable
+41  75 : 41, 12, 43, 76, 62, 42, 80, 1, 61, 4, 21, 75  213
+41  76 : 41, 12, 43, 76  43
+41  77 : unreachable
+41  78 : unreachable
+41  79 : 41, 12, 43, 76, 13, 71, 79  106
+41  80 : 41, 12, 43, 76, 62, 42, 80  107
+42  0  : unreachable
+42  1  : 42, 80, 1  27
+42  2  : unreachable
+42  3  : unreachable
+42  4  : unreachable
+42  5  : unreachable
+42  6  : unreachable
+42  7  : unreachable
+42  8  : unreachable
+42  9  : unreachable
+42  10 : unreachable
+42  11 : unreachable
+42  12 : unreachable
+42  13 : 42, 76, 13  41
+42  14 : unreachable
+42  15 : unreachable
+42  16 : unreachable
+42  17 : unreachable
+42  18 : unreachable
+42  19 : unreachable
+42  20 : 42, 80, 37, 20  71
+42  21 : unreachable
+42  22 : unreachable
+42  23 : unreachable
+42  24 : unreachable
+42  25 : unreachable
+42  26 : unreachable
+42  27 : unreachable
+42  28 : unreachable
+42  29 : unreachable
+42  30 : unreachable
+42  31 : unreachable
+42  32 : unreachable
+42  33 : unreachable
+42  34 : unreachable
+42  35 : unreachable
+42  36 : unreachable
+42  37 : 42, 80, 37  38
+42  38 : unreachable
+42  39 : unreachable
+42  40 : unreachable
+42  41 : unreachable
+42  42 : 42  0
+42  43 : unreachable
+42  44 : unreachable
+42  45 : unreachable
+42  46 : unreachable
+42  47 : unreachable
+42  48 : unreachable
+42  49 : unreachable
+42  50 : unreachable
+42  51 : unreachable
+42  52 : unreachable
+42  53 : unreachable
+42  54 : unreachable
+42  55 : unreachable
+42  56 : unreachable
+42  57 : unreachable
+42  58 : unreachable
+42  59 : unreachable
+42  60 : unreachable
+42  61 : unreachable
+42  62 : 42, 76, 62  18
+42  63 : unreachable
+42  64 : unreachable
+42  65 : unreachable
+42  66 : unreachable
+42  67 : unreachable
+42  68 : unreachable
+42  69 : unreachable
+42  70 : unreachable
+42  71 : unreachable
+42  72 : unreachable
+42  73 : unreachable
+42  74 : unreachable
+42  75 : unreachable
+42  76 : 42, 76  6
+42  77 : unreachable
+42  78 : unreachable
+42  79 : 42, 80, 37, 79  56
+42  80 : 42, 80  18
+43  0  : unreachable
+43  1  : unreachable
+43  2  : unreachable
+43  3  : 43, 34, 45, 3  98
+43  4  : unreachable
+43  5  : unreachable
+43  6  : unreachable
+43  7  : unreachable
+43  8  : unreachable
+43  9  : unreachable
+43  10 : unreachable
+43  11 : unreachable
+43  12 : unreachable
+43  13 : 43, 76, 13  39
+43  14 : unreachable
+43  15 : unreachable
+43  16 : unreachable
+43  17 : unreachable
+43  18 : unreachable
+43  19 : unreachable
+43  20 : unreachable
+43  21 : unreachable
+43  22 : unreachable
+43  23 : 43, 76, 13, 23  64
+43  24 : unreachable
+43  25 : unreachable
+43  26 : unreachable
+43  27 : 43, 34, 69, 27  77
+43  28 : unreachable
+43  29 : unreachable
+43  30 : 43, 76, 13, 23, 46, 30  131
+43  31 : 43, 76, 13, 23, 46, 31  102
+43  32 : unreachable
+43  33 : unreachable
+43  34 : 43, 34  40
+43  35 : unreachable
+43  36 : unreachable
+43  37 : unreachable
+43  38 : unreachable
+43  39 : unreachable
+43  40 : unreachable
+43  41 : unreachable
+43  42 : 43, 76, 62, 42  50
+43  43 : 43  0
+43  44 : unreachable
+43  45 : 43, 34, 45  50
+43  46 : 43, 76, 13, 23, 46  91
+43  47 : unreachable
+43  48 : unreachable
+43  49 : unreachable
+43  50 : unreachable
+43  51 : unreachable
+43  52 : unreachable
+43  53 : unreachable
+43  54 : 43, 76, 13, 23, 54  110
+43  55 : unreachable
+43  56 : 43, 34, 45, 56  84
+43  57 : unreachable
+43  58 : unreachable
+43  59 : unreachable
+43  60 : unreachable
+43  61 : unreachable
+43  62 : 43, 76, 62  16
+43  63 : unreachable
+43  64 : unreachable
+43  65 : unreachable
+43  66 : unreachable
+43  67 : unreachable
+43  68 : unreachable
+43  69 : 43, 34, 69  32
+43  70 : unreachable
+43  71 : 43, 76, 13, 71  66
+43  72 : unreachable
+43  73 : 43, 34, 69, 27, 73  96
+43  74 : unreachable
+43  75 : unreachable
+43  76 : 43, 76  4
+43  77 : unreachable
+43  78 : unreachable
+43  79 : unreachable
+43  80 : 43, 76, 62, 42, 80  68
+44  0  : unreachable
+44  1  : unreachable
+44  2  : unreachable
+44  3  : unreachable
+44  4  : unreachable
+44  5  : unreachable
+44  6  : unreachable
+44  7  : unreachable
+44  8  : unreachable
+44  9  : unreachable
+44  10 : unreachable
+44  11 : unreachable
+44  12 : 44, 18, 33, 41, 12  117
+44  13 : 44, 18, 21, 60, 71, 13  97
+44  14 : unreachable
+44  15 : unreachable
+44  16 : unreachable
+44  17 : unreachable
+44  18 : 44, 18  45
+44  19 : unreachable
+44  20 : unreachable
+44  21 : 44, 18, 21  82
+44  22 : unreachable
+44  23 : 44, 18, 21, 60, 71, 13, 23  122
+44  24 : unreachable
+44  25 : unreachable
+44  26 : 44, 18, 33, 26  80
+44  27 : unreachable
+44  28 : unreachable
+44  29 : unreachable
+44  30 : unreachable
+44  31 : unreachable
+44  32 : 44, 18, 33, 26, 57, 49, 32  110
+44  33 : 44, 18, 33  61
+44  34 : unreachable
+44  35 : unreachable
+44  36 : unreachable
+44  37 : unreachable
+44  38 : unreachable
+44  39 : unreachable
+44  40 : unreachable
+44  41 : 44, 18, 33, 41  74
+44  42 : unreachable
+44  43 : unreachable
+44  44 : 44  0
+44  45 : unreachable
+44  46 : unreachable
+44  47 : unreachable
+44  48 : unreachable
+44  49 : 44, 18, 33, 26, 57, 49  85
+44  50 : unreachable
+44  51 : unreachable
+44  52 : unreachable
+44  53 : unreachable
+44  54 : unreachable
+44  55 : unreachable
+44  56 : unreachable
+44  57 : 44, 18, 33, 26, 57  84
+44  58 : unreachable
+44  59 : 44, 18, 33, 26, 57, 49, 59  115
+44  60 : 44, 18, 21, 60  90
+44  61 : unreachable
+44  62 : unreachable
+44  63 : unreachable
+44  64 : unreachable
+44  65 : unreachable
+44  66 : unreachable
+44  67 : unreachable
+44  68 : unreachable
+44  69 : unreachable
+44  70 : unreachable
+44  71 : 44, 18, 21, 60, 71  102
+44  72 : unreachable
+44  73 : unreachable
+44  74 : unreachable
+44  75 : 44, 18, 21, 75  117
+44  76 : unreachable
+44  77 : unreachable
+44  78 : unreachable
+44  79 : 44, 18, 21, 60, 71, 79  103
+44  80 : unreachable
+45  0  : unreachable
+45  1  : unreachable
+45  2  : unreachable
+45  3  : 45, 3  48
+45  4  : unreachable
+45  5  : unreachable
+45  6  : unreachable
+45  7  : unreachable
+45  8  : unreachable
+45  9  : 45, 3, 9  81
+45  10 : unreachable
+45  11 : unreachable
+45  12 : unreachable
+45  13 : unreachable
+45  14 : unreachable
+45  15 : unreachable
+45  16 : unreachable
+45  17 : unreachable
+45  18 : unreachable
+45  19 : unreachable
+45  20 : unreachable
+45  21 : unreachable
+45  22 : unreachable
+45  23 : unreachable
+45  24 : unreachable
+45  25 : 45, 56, 63, 38, 25  42
+45  26 : unreachable
+45  27 : 45, 56, 27  72
+45  28 : unreachable
+45  29 : unreachable
+45  30 : unreachable
+45  31 : unreachable
+45  32 : unreachable
+45  33 : unreachable
+45  34 : unreachable
+45  35 : unreachable
+45  36 : unreachable
+45  37 : unreachable
+45  38 : 45, 56, 63, 38  45
+45  39 : 45, 56, 63, 38, 25, 39  52
+45  40 : unreachable
+45  41 : unreachable
+45  42 : unreachable
+45  43 : unreachable
+45  44 : unreachable
+45  45 : 45  0
+45  46 : unreachable
+45  47 : unreachable
+45  48 : unreachable
+45  49 : unreachable
+45  50 : unreachable
+45  51 : unreachable
+45  52 : unreachable
+45  53 : unreachable
+45  54 : unreachable
+45  55 : unreachable
+45  56 : 45, 56  34
+45  57 : unreachable
+45  58 : unreachable
+45  59 : unreachable
+45  60 : unreachable
+45  61 : unreachable
+45  62 : unreachable
+45  63 : 45, 56, 63  41
+45  64 : 45, 56, 63, 38, 25, 64  59
+45  65 : unreachable
+45  66 : unreachable
+45  67 : unreachable
+45  68 : unreachable
+45  69 : unreachable
+45  70 : unreachable
+45  71 : unreachable
+45  72 : unreachable
+45  73 : unreachable
+45  74 : unreachable
+45  75 : unreachable
+45  76 : unreachable
+45  77 : unreachable
+45  78 : 45, 56, 63, 78  79
+45  79 : unreachable
+45  80 : unreachable
+46  0  : unreachable
+46  1  : unreachable
+46  2  : unreachable
+46  3  : 46, 31, 58, 22, 9, 45, 3  95
+46  4  : unreachable
+46  5  : unreachable
+46  6  : unreachable
+46  7  : unreachable
+46  8  : unreachable
+46  9  : 46, 31, 58, 22, 9  33
+46  10 : 46, 31, 58, 22, 10  41
+46  11 : unreachable
+46  12 : unreachable
+46  13 : 46, 30, 60, 71, 13  51
+46  14 : 46, 31, 58, 25, 64, 14  99
+46  15 : unreachable
+46  16 : unreachable
+46  17 : unreachable
+46  18 : unreachable
+46  19 : unreachable
+46  20 : unreachable
+46  21 : unreachable
+46  22 : 46, 31, 58, 22  41
+46  23 : 46, 30, 60, 71, 13, 23  76
+46  24 : 46, 31, 58, 25, 39, 24  61
+46  25 : 46, 31, 58, 25  49
+46  26 : unreachable
+46  27 : unreachable
+46  28 : 46, 31, 78, 48, 28  86
+46  29 : unreachable
+46  30 : 46, 30  40
+46  31 : 46, 31  11
+46  32 : 46, 30, 60, 49, 32  101
+46  33 : 46, 31, 58, 22, 10, 33  83
+46  34 : 46, 31, 58, 25, 39, 43, 34  143
+46  35 : unreachable
+46  36 : unreachable
+46  37 : unreachable
+46  38 : unreachable
+46  39 : 46, 31, 58, 25, 39  59
+46  40 : unreachable
+46  41 : unreachable
+46  42 : unreachable
+46  43 : 46, 31, 58, 25, 39, 43  103
+46  44 : unreachable
+46  45 : 46, 31, 58, 22, 9, 45  47
+46  46 : 46  0
+46  47 : unreachable
+46  48 : 46, 31, 78, 48  70
+46  49 : 46, 30, 60, 49  76
+46  50 : unreachable
+46  51 : unreachable
+46  52 : unreachable
+46  53 : 46, 31, 78, 53  64
+46  54 : 46, 30, 60, 71, 13, 23, 54  122
+46  55 : unreachable
+46  56 : 46, 31, 58, 22, 9, 45, 56  81
+46  57 : unreachable
+46  58 : 46, 31, 58  37
+46  59 : 46, 30, 60, 49, 59  106
+46  60 : 46, 30, 60  44
+46  61 : unreachable
+46  62 : unreachable
+46  63 : unreachable
+46  64 : 46, 31, 58, 25, 64  66
+46  65 : unreachable
+46  66 : 46, 31, 58, 25, 64, 14, 66  128
+46  67 : unreachable
+46  68 : unreachable
+46  69 : unreachable
+46  70 : unreachable
+46  71 : 46, 30, 60, 71  56
+46  72 : unreachable
+46  73 : unreachable
+46  74 : unreachable
+46  75 : unreachable
+46  76 : 46, 31, 58, 25, 39, 43, 76  107
+46  77 : unreachable
+46  78 : 46, 31, 78  30
+46  79 : 46, 30, 60, 71, 79  57
+46  80 : unreachable
+47  0  : 47, 74, 38, 25, 39, 24, 30, 60, 49, 32, 5, 0  220
+47  1  : unreachable
+47  2  : unreachable
+47  3  : 47, 45, 3  68
+47  4  : unreachable
+47  5  : 47, 74, 38, 25, 39, 24, 30, 60, 49, 32, 5  192
+47  6  : 47, 74, 38, 25, 39, 24, 30, 60, 49, 32, 5, 6  224
+47  7  : unreachable
+47  8  : unreachable
+47  9  : 47, 45, 3, 9  101
+47  10 : unreachable
+47  11 : unreachable
+47  12 : unreachable
+47  13 : 47, 74, 38, 25, 39, 24, 30, 60, 71, 13  112
+47  14 : 47, 74, 38, 25, 64, 14  92
+47  15 : unreachable
+47  16 : unreachable
+47  17 : unreachable
+47  18 : unreachable
+47  19 : unreachable
+47  20 : unreachable
+47  21 : unreachable
+47  22 : 47, 74, 38, 25, 39, 24, 30, 46, 31, 58, 22  155
+47  23 : 47, 45, 56, 27, 23  122
+47  24 : 47, 74, 38, 25, 39, 24  54
+47  25 : 47, 74, 38, 25  42
+47  26 : unreachable
+47  27 : 47, 45, 56, 27  92
+47  28 : unreachable
+47  29 : 47, 74, 38, 25, 39, 24, 29  96
+47  30 : 47, 74, 38, 25, 39, 24, 30  101
+47  31 : 47, 74, 38, 25, 39, 24, 30, 46, 31  125
+47  32 : 47, 74, 38, 25, 39, 24, 30, 60, 49, 32  162
+47  33 : unreachable
+47  34 : unreachable
+47  35 : unreachable
+47  36 : unreachable
+47  37 : unreachable
+47  38 : 47, 74, 38  45
+47  39 : 47, 74, 38, 25, 39  52
+47  40 : unreachable
+47  41 : unreachable
+47  42 : unreachable
+47  43 : 47, 74, 38, 25, 39, 43  96
+47  44 : unreachable
+47  45 : 47, 45  20
+47  46 : 47, 74, 38, 25, 39, 24, 30, 46  114
+47  47 : 47  0
+47  48 : unreachable
+47  49 : 47, 74, 38, 25, 39, 24, 30, 60, 49  137
+47  50 : unreachable
+47  51 : unreachable
+47  52 : unreachable
+47  53 : unreachable
+47  54 : 47, 45, 56, 27, 23, 54  168
+47  55 : unreachable
+47  56 : 47, 45, 56  54
+47  57 : unreachable
+47  58 : 47, 74, 38, 25, 39, 24, 30, 46, 31, 58  151
+47  59 : 47, 74, 38, 25, 39, 24, 30, 60, 49, 59  167
+47  60 : 47, 74, 38, 25, 39, 24, 30, 60  105
+47  61 : unreachable
+47  62 : unreachable
+47  63 : 47, 45, 56, 63  61
+47  64 : 47, 74, 38, 25, 64  59
+47  65 : unreachable
+47  66 : 47, 74, 38, 25, 64, 14, 66  121
+47  67 : unreachable
+47  68 : unreachable
+47  69 : unreachable
+47  70 : unreachable
+47  71 : 47, 74, 38, 25, 39, 24, 30, 60, 71  117
+47  72 : unreachable
+47  73 : 47, 45, 56, 27, 73  111
+47  74 : 47, 74  42
+47  75 : unreachable
+47  76 : unreachable
+47  77 : unreachable
+47  78 : 47, 45, 56, 63, 78  99
+47  79 : 47, 74, 38, 25, 39, 24, 30, 60, 71, 79  118
+47  80 : unreachable
+48  0  : unreachable
+48  1  : unreachable
+48  2  : unreachable
+48  3  : unreachable
+48  4  : unreachable
+48  5  : unreachable
+48  6  : unreachable
+48  7  : unreachable
+48  8  : unreachable
+48  9  : unreachable
+48  10 : unreachable
+48  11 : unreachable
+48  12 : unreachable
+48  13 : unreachable
+48  14 : unreachable
+48  15 : unreachable
+48  16 : unreachable
+48  17 : unreachable
+48  18 : unreachable
+48  19 : unreachable
+48  20 : unreachable
+48  21 : unreachable
+48  22 : unreachable
+48  23 : unreachable
+48  24 : unreachable
+48  25 : unreachable
+48  26 : unreachable
+48  27 : unreachable
+48  28 : 48, 28  16
+48  29 : unreachable
+48  30 : unreachable
+48  31 : unreachable
+48  32 : unreachable
+48  33 : unreachable
+48  34 : unreachable
+48  35 : unreachable
+48  36 : unreachable
+48  37 : unreachable
+48  38 : unreachable
+48  39 : unreachable
+48  40 : unreachable
+48  41 : unreachable
+48  42 : unreachable
+48  43 : unreachable
+48  44 : unreachable
+48  45 : unreachable
+48  46 : unreachable
+48  47 : unreachable
+48  48 : 48  0
+48  49 : unreachable
+48  50 : unreachable
+48  51 : unreachable
+48  52 : unreachable
+48  53 : unreachable
+48  54 : unreachable
+48  55 : unreachable
+48  56 : unreachable
+48  57 : unreachable
+48  58 : unreachable
+48  59 : unreachable
+48  60 : unreachable
+48  61 : unreachable
+48  62 : unreachable
+48  63 : unreachable
+48  64 : unreachable
+48  65 : unreachable
+48  66 : unreachable
+48  67 : unreachable
+48  68 : unreachable
+48  69 : unreachable
+48  70 : unreachable
+48  71 : unreachable
+48  72 : unreachable
+48  73 : unreachable
+48  74 : unreachable
+48  75 : unreachable
+48  76 : unreachable
+48  77 : unreachable
+48  78 : unreachable
+48  79 : unreachable
+48  80 : 48, 28, 80  51
+49  0  : 49, 32, 5, 0  83
+49  1  : 49, 59, 80, 1  70
+49  2  : unreachable
+49  3  : 49, 59, 80, 37, 79, 45, 3  175
+49  4  : 49, 59, 80, 1, 61, 4  89
+49  5  : 49, 32, 5  55
+49  6  : 49, 32, 5, 6  87
+49  7  : unreachable
+49  8  : unreachable
+49  9  : 49, 32, 5, 6, 22, 9  117
+49  10 : 49, 32, 5, 6, 22, 10  125
+49  11 : unreachable
+49  12 : 49, 59, 80, 1, 61, 4, 33, 41, 12  161
+49  13 : unreachable
+49  14 : unreachable
+49  15 : unreachable
+49  16 : unreachable
+49  17 : unreachable
+49  18 : 49, 32, 5, 0, 44, 18  162
+49  19 : unreachable
+49  20 : 49, 59, 80, 37, 20  114
+49  21 : 49, 59, 80, 1, 61, 4, 21  132
+49  22 : 49, 32, 5, 6, 22  125
+49  23 : unreachable
+49  24 : unreachable
+49  25 : unreachable
+49  26 : 49, 59, 80, 1, 61, 4, 33, 26  124
+49  27 : 49, 59, 80, 37, 79, 45, 56, 27  199
+49  28 : 49, 32, 5, 6, 28  129
+49  29 : unreachable
+49  30 : unreachable
+49  31 : 49, 59, 80, 37, 79, 31  122
+49  32 : 49, 32  25
+49  33 : 49, 59, 80, 1, 61, 4, 33  105
+49  34 : unreachable
+49  35 : unreachable
+49  36 : 49, 59, 80, 1, 61, 54, 36  121
+49  37 : 49, 59, 80, 37  81
+49  38 : unreachable
+49  39 : unreachable
+49  40 : unreachable
+49  41 : 49, 59, 80, 1, 61, 4, 33, 41  118
+49  42 : unreachable
+49  43 : unreachable
+49  44 : 49, 32, 5, 0, 44  117
+49  45 : 49, 59, 80, 37, 79, 45  127
+49  46 : unreachable
+49  47 : unreachable
+49  48 : unreachable
+49  49 : 49  0
+49  50 : unreachable
+49  51 : unreachable
+49  52 : unreachable
+49  53 : 49, 32, 5, 0, 53  104
+49  54 : 49, 59, 80, 1, 61, 54  89
+49  55 : unreachable
+49  56 : 49, 59, 80, 37, 79, 45, 56  161
+49  57 : 49, 59, 80, 1, 61, 4, 33, 26, 57  128
+49  58 : unreachable
+49  59 : 49, 59  30
+49  60 : unreachable
+49  61 : 49, 59, 80, 1, 61  89
+49  62 : unreachable
+49  63 : 49, 59, 80, 37, 79, 45, 56, 63  168
+49  64 : unreachable
+49  65 : unreachable
+49  66 : unreachable
+49  67 : unreachable
+49  68 : unreachable
+49  69 : unreachable
+49  70 : unreachable
+49  71 : unreachable
+49  72 : unreachable
+49  73 : 49, 59, 80, 1, 61, 54, 73  131
+49  74 : unreachable
+49  75 : unreachable
+49  76 : unreachable
+49  77 : unreachable
+49  78 : unreachable
+49  79 : 49, 59, 80, 37, 79  99
+49  80 : 49, 59, 80  61
+50  0  : unreachable
+50  1  : unreachable
+50  2  : unreachable
+50  3  : 50, 36, 61, 4, 21, 60, 71, 79, 45, 3  161
+50  4  : 50, 36, 61, 4  21
+50  5  : unreachable
+50  6  : unreachable
+50  7  : unreachable
+50  8  : unreachable
+50  9  : unreachable
+50  10 : unreachable
+50  11 : unreachable
+50  12 : 50, 36, 61, 4, 33, 41, 12  93
+50  13 : 50, 36, 61, 4, 21, 60, 71, 13  79
+50  14 : unreachable
+50  15 : unreachable
+50  16 : unreachable
+50  17 : unreachable
+50  18 : unreachable
+50  19 : unreachable
+50  20 : unreachable
+50  21 : 50, 36, 61, 4, 21  64
+50  22 : unreachable
+50  23 : 50, 36, 61, 4, 21, 60, 71, 13, 23  104
+50  24 : unreachable
+50  25 : unreachable
+50  26 : 50, 36, 61, 4, 33, 26  56
+50  27 : unreachable
+50  28 : unreachable
+50  29 : unreachable
+50  30 : 50, 36, 61, 4, 21, 60, 71, 13, 23, 46, 30  171
+50  31 : 50, 36, 61, 4, 21, 60, 71, 79, 31  108
+50  32 : 50, 36, 32  67
+50  33 : 50, 36, 61, 4, 33  37
+50  34 : unreachable
+50  35 : unreachable
+50  36 : 50, 36  28
+50  37 : unreachable
+50  38 : unreachable
+50  39 : unreachable
+50  40 : unreachable
+50  41 : 50, 36, 61, 4, 33, 41  50
+50  42 : unreachable
+50  43 : 50, 36, 61, 54, 73, 43  104
+50  44 : unreachable
+50  45 : 50, 36, 61, 4, 21, 60, 71, 79, 45  113
+50  46 : 50, 36, 61, 4, 21, 60, 71, 13, 23, 46  131
+50  47 : unreachable
+50  48 : unreachable
+50  49 : 50, 36, 61, 4, 21, 60, 49  104
+50  50 : 50  0
+50  51 : unreachable
+50  52 : unreachable
+50  53 : unreachable
+50  54 : 50, 36, 61, 54  21
+50  55 : unreachable
+50  56 : 50, 36, 61, 4, 21, 60, 71, 79, 45, 56  147
+50  57 : 50, 36, 61, 4, 33, 26, 57  60
+50  58 : unreachable
+50  59 : 50, 36, 61, 4, 21, 60, 49, 59  134
+50  60 : 50, 36, 61, 4, 21, 60  72
+50  61 : 50, 36, 61  21
+50  62 : unreachable
+50  63 : unreachable
+50  64 : unreachable
+50  65 : 50, 65  30
+50  66 : unreachable
+50  67 : unreachable
+50  68 : unreachable
+50  69 : unreachable
+50  70 : unreachable
+50  71 : 50, 36, 61, 4, 21, 60, 71  84
+50  72 : unreachable
+50  73 : 50, 36, 61, 54, 73  63
+50  74 : unreachable
+50  75 : 50, 36, 61, 4, 21, 75  99
+50  76 : unreachable
+50  77 : unreachable
+50  78 : unreachable
+50  79 : 50, 36, 61, 4, 21, 60, 71, 79  85
+50  80 : 50, 36, 61, 4, 21, 60, 49, 59, 80  165
+51  0  : unreachable
+51  1  : 51, 35, 76, 62, 42, 80, 1  103
+51  2  : unreachable
+51  3  : 51, 34, 45, 3  81
+51  4  : unreachable
+51  5  : unreachable
+51  6  : 51, 35, 6  65
+51  7  : unreachable
+51  8  : unreachable
+51  9  : 51, 35, 6, 22, 9  95
+51  10 : 51, 35, 6, 22, 10  103
+51  11 : unreachable
+51  12 : unreachable
+51  13 : 51, 35, 76, 13  65
+51  14 : 51, 34, 45, 56, 63, 38, 25, 64, 14  125
+51  15 : unreachable
+51  16 : unreachable
+51  17 : unreachable
+51  18 : unreachable
+51  19 : unreachable
+51  20 : unreachable
+51  21 : unreachable
+51  22 : 51, 35, 6, 22  103
+51  23 : 51, 34, 69, 27, 23  90
+51  24 : 51, 34, 45, 56, 63, 38, 25, 39, 24  87
+51  25 : 51, 34, 45, 56, 63, 38, 25  75
+51  26 : unreachable
+51  27 : 51, 34, 69, 27  60
+51  28 : 51, 35, 6, 28  107
+51  29 : unreachable
+51  30 : unreachable
+51  31 : 51, 35, 76, 13, 71, 79, 31  116
+51  32 : unreachable
+51  33 : unreachable
+51  34 : 51, 34  23
+51  35 : 51, 35  15
+51  36 : unreachable
+51  37 : 51, 35, 76, 62, 42, 80, 37  114
+51  38 : 51, 34, 45, 56, 63, 38  78
+51  39 : 51, 34, 45, 56, 63, 38, 25, 39  85
+51  40 : unreachable
+51  41 : unreachable
+51  42 : 51, 35, 76, 62, 42  76
+51  43 : 51, 34, 69, 27, 73, 43  120
+51  44 : unreachable
+51  45 : 51, 34, 45  33
+51  46 : 51, 34, 69, 27, 23, 46  117
+51  47 : unreachable
+51  48 : unreachable
+51  49 : unreachable
+51  50 : unreachable
+51  51 : 51  0
+51  52 : unreachable
+51  53 : unreachable
+51  54 : 51, 34, 69, 27, 23, 54  136
+51  55 : unreachable
+51  56 : 51, 34, 45, 56  67
+51  57 : unreachable
+51  58 : unreachable
+51  59 : unreachable
+51  60 : unreachable
+51  61 : unreachable
+51  62 : 51, 35, 76, 62  42
+51  63 : 51, 34, 45, 56, 63  74
+51  64 : 51, 34, 45, 56, 63, 38, 25, 64  92
+51  65 : unreachable
+51  66 : unreachable
+51  67 : unreachable
+51  68 : unreachable
+51  69 : 51, 34, 69  15
+51  70 : unreachable
+51  71 : 51, 35, 76, 13, 71  92
+51  72 : unreachable
+51  73 : 51, 34, 69, 27, 73  79
+51  74 : unreachable
+51  75 : unreachable
+51  76 : 51, 35, 76  30
+51  77 : unreachable
+51  78 : 51, 34, 45, 56, 63, 78  112
+51  79 : 51, 35, 76, 13, 71, 79  93
+51  80 : 51, 35, 76, 62, 42, 80  94
+52  0  : 52, 7, 16, 5, 0  84
+52  1  : unreachable
+52  2  : unreachable
+52  3  : 52, 7, 16, 47, 45, 3  107
+52  4  : unreachable
+52  5  : 52, 7, 16, 5  56
+52  6  : 52, 7, 16, 5, 6  88
+52  7  : 52, 7  -10
+52  8  : unreachable
+52  9  : 52, 7, 16, 5, 6, 22, 9  118
+52  10 : 52, 7, 16, 5, 6, 22, 10  126
+52  11 : unreachable
+52  12 : 52, 7, 44, 18, 33, 41, 12  127
+52  13 : unreachable
+52  14 : 52, 7, 16, 47, 74, 38, 25, 64, 14  131
+52  15 : unreachable
+52  16 : 52, 7, 16  16
+52  17 : unreachable
+52  18 : 52, 7, 44, 18  55
+52  19 : unreachable
+52  20 : unreachable
+52  21 : 52, 7, 44, 18, 21  92
+52  22 : 52, 7, 16, 5, 6, 22  126
+52  23 : 52, 7, 16, 47, 45, 56, 27, 23  161
+52  24 : 52, 7, 16, 47, 74, 38, 25, 39, 24  93
+52  25 : 52, 7, 16, 47, 74, 38, 25  81
+52  26 : 52, 7, 44, 18, 33, 26  90
+52  27 : 52, 7, 16, 47, 45, 56, 27  131
+52  28 : 52, 7, 16, 5, 6, 28  130
+52  29 : 52, 7, 16, 47, 74, 38, 25, 39, 24, 29  135
+52  30 : 52, 7, 16, 47, 74, 38, 25, 39, 24, 30  140
+52  31 : unreachable
+52  32 : 52, 7, 16, 5, 0, 53, 32  107
+52  33 : 52, 7, 44, 18, 33  71
+52  34 : 52, 7, 44, 18, 33, 41, 12, 43, 34  163
+52  35 : unreachable
+52  36 : unreachable
+52  37 : unreachable
+52  38 : 52, 7, 16, 47, 74, 38  84
+52  39 : 52, 7, 16, 47, 74, 38, 25, 39  91
+52  40 : unreachable
+52  41 : 52, 7, 44, 18, 33, 41  84
+52  42 : unreachable
+52  43 : 52, 7, 44, 18, 33, 41, 12, 43  123
+52  44 : 52, 7, 44  10
+52  45 : 52, 7, 16, 47, 45  59
+52  46 : unreachable
+52  47 : 52, 7, 16, 47  39
+52  48 : 52, 7, 16, 5, 6, 28, 48  165
+52  49 : 52, 7, 44, 18, 33, 26, 57, 49  95
+52  50 : unreachable
+52  51 : unreachable
+52  52 : 52  0
+52  53 : 52, 7, 16, 5, 0, 53  105
+52  54 : unreachable
+52  55 : unreachable
+52  56 : 52, 7, 16, 47, 45, 56  93
+52  57 : 52, 7, 44, 18, 33, 26, 57  94
+52  58 : unreachable
+52  59 : 52, 7, 44, 18, 33, 26, 57, 49, 59  125
+52  60 : 52, 7, 44, 18, 21, 60  100
+52  61 : unreachable
+52  62 : unreachable
+52  63 : 52, 7, 16, 47, 45, 56, 63  100
+52  64 : 52, 7, 16, 47, 74, 38, 25, 64  98
+52  65 : unreachable
+52  66 : 52, 7, 16, 47, 74, 38, 25, 64, 14, 66  160
+52  67 : unreachable
+52  68 : unreachable
+52  69 : unreachable
+52  70 : unreachable
+52  71 : unreachable
+52  72 : unreachable
+52  73 : 52, 7, 16, 47, 45, 56, 27, 73  150
+52  74 : 52, 7, 16, 47, 74  81
+52  75 : 52, 7, 44, 18, 21, 75  127
+52  76 : 52, 7, 44, 18, 33, 41, 12, 43, 76  127
+52  77 : unreachable
+52  78 : 52, 7, 16, 47, 45, 56, 63, 78  138
+52  79 : unreachable
+52  80 : 52, 7, 16, 5, 6, 28, 80  165
+53  0  : 53, 32, 5, 0  60
+53  1  : unreachable
+53  2  : unreachable
+53  3  : unreachable
+53  4  : unreachable
+53  5  : 53, 32, 5  32
+53  6  : 53, 32, 5, 6  64
+53  7  : unreachable
+53  8  : unreachable
+53  9  : unreachable
+53  10 : unreachable
+53  11 : unreachable
+53  12 : unreachable
+53  13 : unreachable
+53  14 : unreachable
+53  15 : unreachable
+53  16 : unreachable
+53  17 : unreachable
+53  18 : unreachable
+53  19 : unreachable
+53  20 : unreachable
+53  21 : unreachable
+53  22 : 53, 32, 5, 6, 22  102
+53  23 : unreachable
+53  24 : unreachable
+53  25 : unreachable
+53  26 : unreachable
+53  27 : unreachable
+53  28 : 53, 32, 5, 6, 28  106
+53  29 : unreachable
+53  30 : unreachable
+53  31 : unreachable
+53  32 : 53, 32  2
+53  33 : unreachable
+53  34 : unreachable
+53  35 : unreachable
+53  36 : unreachable
+53  37 : unreachable
+53  38 : unreachable
+53  39 : unreachable
+53  40 : unreachable
+53  41 : unreachable
+53  42 : unreachable
+53  43 : unreachable
+53  44 : 53, 32, 5, 0, 44  94
+53  45 : unreachable
+53  46 : unreachable
+53  47 : unreachable
+53  48 : unreachable
+53  49 : unreachable
+53  50 : unreachable
+53  51 : unreachable
+53  52 : unreachable
+53  53 : 53  0
+53  54 : unreachable
+53  55 : unreachable
+53  56 : unreachable
+53  57 : unreachable
+53  58 : unreachable
+53  59 : unreachable
+53  60 : unreachable
+53  61 : unreachable
+53  62 : unreachable
+53  63 : unreachable
+53  64 : unreachable
+53  65 : unreachable
+53  66 : unreachable
+53  67 : unreachable
+53  68 : unreachable
+53  69 : unreachable
+53  70 : unreachable
+53  71 : unreachable
+53  72 : unreachable
+53  73 : unreachable
+53  74 : unreachable
+53  75 : unreachable
+53  76 : unreachable
+53  77 : unreachable
+53  78 : unreachable
+53  79 : unreachable
+53  80 : unreachable
+54  0  : unreachable
+54  1  : unreachable
+54  2  : unreachable
+54  3  : unreachable
+54  4  : 54, 36, 61, 4  25
+54  5  : 54, 36, 32, 5  101
+54  6  : unreachable
+54  7  : unreachable
+54  8  : unreachable
+54  9  : unreachable
+54  10 : unreachable
+54  11 : unreachable
+54  12 : unreachable
+54  13 : 54, 73, 13  62
+54  14 : unreachable
+54  15 : unreachable
+54  16 : unreachable
+54  17 : unreachable
+54  18 : unreachable
+54  19 : unreachable
+54  20 : unreachable
+54  21 : 54, 36, 61, 4, 21  68
+54  22 : unreachable
+54  23 : 54, 73, 13, 23  108
+54  24 : unreachable
+54  25 : unreachable
+54  26 : 54, 36, 61, 4, 33, 26  60
+54  27 : unreachable
+54  28 : unreachable
+54  29 : unreachable
+54  30 : unreachable
+54  31 : 54, 36, 61, 4, 21, 60, 71, 79, 31  112
+54  32 : 54, 36, 32  71
+54  33 : 54, 36, 61, 4, 33  41
+54  34 : unreachable
+54  35 : unreachable
+54  36 : 54, 36  32
+54  37 : unreachable
+54  38 : unreachable
+54  39 : unreachable
+54  40 : unreachable
+54  41 : 54, 36, 61, 4, 33, 41  54
+54  42 : unreachable
+54  43 : 54, 73, 43  83
+54  44 : unreachable
+54  45 : 54, 36, 61, 4, 21, 60, 71, 79, 45  117
+54  46 : 54, 73, 13, 23, 46  135
+54  47 : unreachable
+54  48 : unreachable
+54  49 : 54, 36, 61, 4, 21, 60, 49  108
+54  50 : unreachable
+54  51 : unreachable
+54  52 : unreachable
+54  53 : unreachable
+54  54 : 54  0
+54  55 : unreachable
+54  56 : unreachable
+54  57 : unreachable
+54  58 : unreachable
+54  59 : 54, 36, 61, 4, 21, 60, 49, 59  138
+54  60 : 54, 36, 61, 4, 21, 60  76
+54  61 : 54, 36, 61  25
+54  62 : unreachable
+54  63 : unreachable
+54  64 : unreachable
+54  65 : unreachable
+54  66 : unreachable
+54  67 : unreachable
+54  68 : unreachable
+54  69 : unreachable
+54  70 : unreachable
+54  71 : 54, 36, 61, 4, 21, 60, 71  88
+54  72 : unreachable
+54  73 : 54, 73  42
+54  74 : unreachable
+54  75 : 54, 36, 61, 4, 21, 75  103
+54  76 : unreachable
+54  77 : unreachable
+54  78 : unreachable
+54  79 : 54, 36, 61, 4, 21, 60, 71, 79  89
+54  80 : unreachable
+55  0  : unreachable
+55  1  : unreachable
+55  2  : unreachable
+55  3  : 55, 51, 34, 45, 3  117
+55  4  : unreachable
+55  5  : unreachable
+55  6  : 55, 51, 35, 6  101
+55  7  : unreachable
+55  8  : 55, 8  -9
+55  9  : 55, 51, 34, 45, 3, 9  150
+55  10 : unreachable
+55  11 : unreachable
+55  12 : unreachable
+55  13 : 55, 51, 35, 76, 13  101
+55  14 : unreachable
+55  15 : unreachable
+55  16 : unreachable
+55  17 : unreachable
+55  18 : unreachable
+55  19 : unreachable
+55  20 : unreachable
+55  21 : unreachable
+55  22 : 55, 51, 35, 6, 22  139
+55  23 : 55, 51, 34, 69, 27, 23  126
+55  24 : 55, 51, 34, 45, 56, 63, 38, 25, 39, 24  123
+55  25 : 55, 51, 34, 45, 56, 63, 38, 25  111
+55  26 : unreachable
+55  27 : 55, 51, 34, 69, 27  96
+55  28 : 55, 51, 35, 6, 28  143
+55  29 : 55, 51, 34, 45, 56, 63, 38, 25, 39, 24, 29  165
+55  30 : 55, 51, 34, 45, 56, 63, 38, 25, 39, 24, 30  170
+55  31 : 55, 51, 35, 76, 13, 71, 79, 31  152
+55  32 : unreachable
+55  33 : unreachable
+55  34 : 55, 51, 34  59
+55  35 : 55, 51, 35  51
+55  36 : unreachable
+55  37 : unreachable
+55  38 : 55, 51, 34, 45, 56, 63, 38  114
+55  39 : 55, 51, 34, 45, 56, 63, 38, 25, 39  121
+55  40 : unreachable
+55  41 : unreachable
+55  42 : 55, 51, 35, 76, 62, 42  112
+55  43 : 55, 51, 34, 69, 27, 73, 43  156
+55  44 : unreachable
+55  45 : 55, 51, 34, 45  69
+55  46 : 55, 51, 34, 69, 27, 23, 46  153
+55  47 : unreachable
+55  48 : unreachable
+55  49 : unreachable
+55  50 : unreachable
+55  51 : 55, 51  36
+55  52 : unreachable
+55  53 : unreachable
+55  54 : 55, 51, 34, 69, 27, 23, 54  172
+55  55 : 55  0
+55  56 : 55, 51, 34, 45, 56  103
+55  57 : unreachable
+55  58 : unreachable
+55  59 : unreachable
+55  60 : 55, 51, 34, 45, 56, 63, 38, 25, 39, 24, 30, 60  174
+55  61 : unreachable
+55  62 : 55, 51, 35, 76, 62  78
+55  63 : 55, 51, 34, 45, 56, 63  110
+55  64 : 55, 51, 34, 45, 56, 63, 38, 25, 64  128
+55  65 : unreachable
+55  66 : unreachable
+55  67 : unreachable
+55  68 : unreachable
+55  69 : 55, 51, 34, 69  51
+55  70 : unreachable
+55  71 : 55, 51, 35, 76, 13, 71  128
+55  72 : unreachable
+55  73 : 55, 51, 34, 69, 27, 73  115
+55  74 : unreachable
+55  75 : unreachable
+55  76 : 55, 51, 35, 76  66
+55  77 : unreachable
+55  78 : 55, 51, 34, 45, 56, 63, 78  148
+55  79 : 55, 51, 35, 76, 13, 71, 79  129
+55  80 : unreachable
+56  0  : 56, 63, 78, 53, 32, 5, 0  139
+56  1  : unreachable
+56  2  : unreachable
+56  3  : unreachable
+56  4  : 56, 63, 38, 25, 39, 24, 29, 61, 4  62
+56  5  : 56, 63, 78, 53, 32, 5  111
+56  6  : 56, 63, 78, 53, 32, 5, 6  143
+56  7  : unreachable
+56  8  : unreachable
+56  9  : 56, 63, 38, 25, 64, 14, 66, 9  104
+56  10 : unreachable
+56  11 : unreachable
+56  12 : unreachable
+56  13 : 56, 27, 73, 13  77
+56  14 : 56, 63, 38, 25, 64, 14  58
+56  15 : unreachable
+56  16 : unreachable
+56  17 : unreachable
+56  18 : unreachable
+56  19 : unreachable
+56  20 : unreachable
+56  21 : 56, 63, 38, 25, 39, 24, 29, 61, 4, 21  105
+56  22 : unreachable
+56  23 : 56, 27, 23  68
+56  24 : 56, 63, 38, 25, 39, 24  20
+56  25 : 56, 63, 38, 25  8
+56  26 : 56, 63, 38, 25, 39, 24, 29, 61, 4, 33, 26  97
+56  27 : 56, 27  38
+56  28 : 56, 63, 78, 48, 28  101
+56  29 : 56, 63, 38, 25, 39, 24, 29  62
+56  30 : 56, 63, 38, 25, 39, 24, 30  67
+56  31 : 56, 63, 38, 25, 39, 24, 30, 46, 31  91
+56  32 : 56, 63, 78, 53, 32  81
+56  33 : 56, 63, 38, 25, 39, 24, 29, 61, 4, 33  78
+56  34 : 56, 63, 38, 25, 39, 43, 34  102
+56  35 : unreachable
+56  36 : 56, 63, 38, 25, 39, 24, 29, 61, 54, 36  94
+56  37 : unreachable
+56  38 : 56, 63, 38  11
+56  39 : 56, 63, 38, 25, 39  18
+56  40 : unreachable
+56  41 : 56, 63, 38, 25, 39, 24, 29, 61, 4, 33, 41  91
+56  42 : 56, 63, 38, 25, 39, 43, 76, 62, 42  112
+56  43 : 56, 63, 38, 25, 39, 43  62
+56  44 : unreachable
+56  45 : 56, 63, 38, 25, 39, 43, 34, 45  112
+56  46 : 56, 63, 38, 25, 39, 24, 30, 46  80
+56  47 : unreachable
+56  48 : 56, 63, 78, 48  85
+56  49 : 56, 63, 38, 25, 39, 24, 30, 60, 49  103
+56  50 : unreachable
+56  51 : unreachable
+56  52 : unreachable
+56  53 : 56, 63, 78, 53  79
+56  54 : 56, 63, 38, 25, 39, 24, 29, 61, 54  62
+56  55 : unreachable
+56  56 : 56  0
+56  57 : unreachable
+56  58 : 56, 63, 38, 25, 39, 24, 30, 46, 31, 58  132
+56  59 : 56, 63, 38, 25, 39, 24, 30, 60, 49, 59  133
+56  60 : 56, 63, 38, 25, 39, 24, 30, 60  71
+56  61 : 56, 63, 38, 25, 39, 24, 29, 61  62
+56  62 : 56, 63, 38, 25, 39, 43, 76, 62  78
+56  63 : 56, 63  7
+56  64 : 56, 63, 38, 25, 64  25
+56  65 : unreachable
+56  66 : 56, 63, 38, 25, 64, 14, 66  87
+56  67 : unreachable
+56  68 : unreachable
+56  69 : 56, 63, 38, 25, 39, 43, 34, 69  94
+56  70 : unreachable
+56  71 : 56, 63, 38, 25, 39, 24, 30, 60, 71  83
+56  72 : unreachable
+56  73 : 56, 27, 73  57
+56  74 : unreachable
+56  75 : unreachable
+56  76 : 56, 63, 38, 25, 39, 43, 76  66
+56  77 : unreachable
+56  78 : 56, 63, 78  45
+56  79 : 56, 63, 38, 25, 39, 24, 30, 60, 71, 79  84
+56  80 : unreachable
+57  0  : 57, 49, 32, 5, 0  84
+57  1  : 57, 49, 59, 80, 1  71
+57  2  : unreachable
+57  3  : 57, 49, 59, 80, 37, 79, 45, 3  176
+57  4  : 57, 49, 59, 80, 1, 61, 4  90
+57  5  : 57, 49, 32, 5  56
+57  6  : 57, 49, 32, 5, 6  88
+57  7  : unreachable
+57  8  : unreachable
+57  9  : 57, 49, 32, 5, 6, 22, 9  118
+57  10 : 57, 49, 32, 5, 6, 22, 10  126
+57  11 : unreachable
+57  12 : 57, 49, 59, 80, 1, 61, 4, 33, 41, 12  162
+57  13 : 57, 49, 59, 80, 1, 61, 54, 73, 13  152
+57  14 : unreachable
+57  15 : unreachable
+57  16 : unreachable
+57  17 : unreachable
+57  18 : 57, 49, 32, 5, 0, 44, 18  163
+57  19 : unreachable
+57  20 : 57, 49, 59, 80, 37, 20  115
+57  21 : 57, 49, 59, 80, 1, 61, 4, 21  133
+57  22 : 57, 49, 32, 5, 6, 22  126
+57  23 : unreachable
+57  24 : unreachable
+57  25 : unreachable
+57  26 : 57, 49, 59, 80, 1, 61, 4, 33, 26  125
+57  27 : 57, 49, 59, 80, 37, 79, 45, 56, 27  200
+57  28 : 57, 49, 32, 5, 6, 28  130
+57  29 : unreachable
+57  30 : unreachable
+57  31 : 57, 49, 59, 80, 37, 79, 31  123
+57  32 : 57, 49, 32  26
+57  33 : 57, 49, 59, 80, 1, 61, 4, 33  106
+57  34 : 57, 49, 59, 80, 1, 61, 54, 73, 43, 34  213
+57  35 : unreachable
+57  36 : 57, 49, 59, 80, 1, 61, 54, 36  122
+57  37 : 57, 49, 59, 80, 37  82
+57  38 : unreachable
+57  39 : unreachable
+57  40 : unreachable
+57  41 : 57, 49, 59, 80, 1, 61, 4, 33, 41  119
+57  42 : unreachable
+57  43 : 57, 49, 59, 80, 1, 61, 54, 73, 43  173
+57  44 : 57, 49, 32, 5, 0, 44  118
+57  45 : 57, 49, 59, 80, 37, 79, 45  128
+57  46 : unreachable
+57  47 : unreachable
+57  48 : 57, 49, 32, 5, 6, 28, 48  165
+57  49 : 57, 49  1
+57  50 : unreachable
+57  51 : unreachable
+57  52 : unreachable
+57  53 : 57, 49, 32, 5, 0, 53  105
+57  54 : 57, 49, 59, 80, 1, 61, 54  90
+57  55 : unreachable
+57  56 : 57, 49, 59, 80, 37, 79, 45, 56  162
+57  57 : 57  0
+57  58 : unreachable
+57  59 : 57, 49, 59  31
+57  60 : 57, 49, 59, 80, 1, 61, 4, 21, 60  141
+57  61 : 57, 49, 59, 80, 1, 61  90
+57  62 : unreachable
+57  63 : 57, 49, 59, 80, 37, 79, 45, 56, 63  169
+57  64 : unreachable
+57  65 : unreachable
+57  66 : unreachable
+57  67 : unreachable
+57  68 : unreachable
+57  69 : unreachable
+57  70 : unreachable
+57  71 : unreachable
+57  72 : unreachable
+57  73 : 57, 49, 59, 80, 1, 61, 54, 73  132
+57  74 : unreachable
+57  75 : 57, 49, 59, 80, 1, 61, 4, 21, 75  168
+57  76 : 57, 49, 59, 80, 1, 61, 54, 73, 43, 76  177
+57  77 : unreachable
+57  78 : unreachable
+57  79 : 57, 49, 59, 80, 37, 79  100
+57  80 : 57, 49, 59, 80  62
+58  0  : unreachable
+58  1  : unreachable
+58  2  : unreachable
+58  3  : 58, 22, 9, 45, 3  58
+58  4  : unreachable
+58  5  : unreachable
+58  6  : unreachable
+58  7  : unreachable
+58  8  : unreachable
+58  9  : 58, 22, 9  -4
+58  10 : 58, 22, 10  4
+58  11 : unreachable
+58  12 : unreachable
+58  13 : unreachable
+58  14 : unreachable
+58  15 : unreachable
+58  16 : unreachable
+58  17 : unreachable
+58  18 : unreachable
+58  19 : unreachable
+58  20 : unreachable
+58  21 : unreachable
+58  22 : 58, 22  4
+58  23 : unreachable
+58  24 : 58, 25, 39, 24  24
+58  25 : 58, 25  12
+58  26 : unreachable
+58  27 : 58, 22, 9, 45, 56, 27  82
+58  28 : unreachable
+58  29 : unreachable
+58  30 : unreachable
+58  31 : unreachable
+58  32 : unreachable
+58  33 : 58, 22, 10, 33  46
+58  34 : 58, 25, 39, 43, 34  106
+58  35 : unreachable
+58  36 : unreachable
+58  37 : unreachable
+58  38 : unreachable
+58  39 : 58, 25, 39  22
+58  40 : unreachable
+58  41 : unreachable
+58  42 : unreachable
+58  43 : 58, 25, 39, 43  66
+58  44 : unreachable
+58  45 : 58, 22, 9, 45  10
+58  46 : unreachable
+58  47 : unreachable
+58  48 : unreachable
+58  49 : unreachable
+58  50 : unreachable
+58  51 : unreachable
+58  52 : unreachable
+58  53 : unreachable
+58  54 : unreachable
+58  55 : unreachable
+58  56 : 58, 22, 9, 45, 56  44
+58  57 : unreachable
+58  58 : 58  0
+58  59 : unreachable
+58  60 : unreachable
+58  61 : unreachable
+58  62 : unreachable
+58  63 : 58, 22, 9, 45, 56, 63  51
+58  64 : 58, 25, 64  29
+58  65 : unreachable
+58  66 : unreachable
+58  67 : unreachable
+58  68 : unreachable
+58  69 : unreachable
+58  70 : unreachable
+58  71 : unreachable
+58  72 : unreachable
+58  73 : unreachable
+58  74 : unreachable
+58  75 : unreachable
+58  76 : 58, 25, 39, 43, 76  70
+58  77 : unreachable
+58  78 : unreachable
+58  79 : unreachable
+58  80 : unreachable
+59  0  : unreachable
+59  1  : 59, 80, 1  40
+59  2  : unreachable
+59  3  : 59, 80, 37, 79, 45, 3  145
+59  4  : 59, 80, 1, 61, 4  59
+59  5  : unreachable
+59  6  : unreachable
+59  7  : unreachable
+59  8  : unreachable
+59  9  : unreachable
+59  10 : unreachable
+59  11 : unreachable
+59  12 : 59, 80, 1, 61, 4, 33, 41, 12  131
+59  13 : unreachable
+59  14 : unreachable
+59  15 : unreachable
+59  16 : unreachable
+59  17 : unreachable
+59  18 : unreachable
+59  19 : unreachable
+59  20 : 59, 80, 37, 20  84
+59  21 : 59, 80, 1, 61, 4, 21  102
+59  22 : unreachable
+59  23 : unreachable
+59  24 : unreachable
+59  25 : unreachable
+59  26 : 59, 80, 1, 61, 4, 33, 26  94
+59  27 : unreachable
+59  28 : unreachable
+59  29 : unreachable
+59  30 : unreachable
+59  31 : 59, 80, 37, 79, 31  92
+59  32 : 59, 80, 1, 61, 4, 33, 26, 57, 49, 32  124
+59  33 : 59, 80, 1, 61, 4, 33  75
+59  34 : unreachable
+59  35 : unreachable
+59  36 : 59, 80, 1, 61, 54, 36  91
+59  37 : 59, 80, 37  51
+59  38 : unreachable
+59  39 : unreachable
+59  40 : unreachable
+59  41 : 59, 80, 1, 61, 4, 33, 41  88
+59  42 : unreachable
+59  43 : unreachable
+59  44 : unreachable
+59  45 : 59, 80, 37, 79, 45  97
+59  46 : unreachable
+59  47 : unreachable
+59  48 : unreachable
+59  49 : 59, 80, 1, 61, 4, 33, 26, 57, 49  99
+59  50 : unreachable
+59  51 : unreachable
+59  52 : unreachable
+59  53 : unreachable
+59  54 : 59, 80, 1, 61, 54  59
+59  55 : unreachable
+59  56 : 59, 80, 37, 79, 45, 56  131
+59  57 : 59, 80, 1, 61, 4, 33, 26, 57  98
+59  58 : unreachable
+59  59 : 59  0
+59  60 : 59, 80, 1, 61, 4, 21, 60  110
+59  61 : 59, 80, 1, 61  59
+59  62 : unreachable
+59  63 : unreachable
+59  64 : unreachable
+59  65 : unreachable
+59  66 : unreachable
+59  67 : unreachable
+59  68 : unreachable
+59  69 : unreachable
+59  70 : unreachable
+59  71 : 59, 80, 1, 61, 4, 21, 60, 71  122
+59  72 : unreachable
+59  73 : 59, 80, 1, 61, 54, 73  101
+59  74 : unreachable
+59  75 : 59, 80, 1, 61, 4, 21, 75  137
+59  76 : unreachable
+59  77 : unreachable
+59  78 : unreachable
+59  79 : 59, 80, 37, 79  69
+59  80 : 59, 80  31
+60  0  : unreachable
+60  1  : unreachable
+60  2  : unreachable
+60  3  : unreachable
+60  4  : unreachable
+60  5  : unreachable
+60  6  : unreachable
+60  7  : unreachable
+60  8  : unreachable
+60  9  : unreachable
+60  10 : unreachable
+60  11 : unreachable
+60  12 : unreachable
+60  13 : 60, 71, 13  7
+60  14 : unreachable
+60  15 : unreachable
+60  16 : unreachable
+60  17 : unreachable
+60  18 : unreachable
+60  19 : unreachable
+60  20 : unreachable
+60  21 : unreachable
+60  22 : unreachable
+60  23 : 60, 71, 13, 23  32
+60  24 : unreachable
+60  25 : unreachable
+60  26 : unreachable
+60  27 : unreachable
+60  28 : unreachable
+60  29 : unreachable
+60  30 : unreachable
+60  31 : unreachable
+60  32 : unreachable
+60  33 : unreachable
+60  34 : unreachable
+60  35 : unreachable
+60  36 : unreachable
+60  37 : unreachable
+60  38 : unreachable
+60  39 : unreachable
+60  40 : unreachable
+60  41 : unreachable
+60  42 : unreachable
+60  43 : unreachable
+60  44 : unreachable
+60  45 : unreachable
+60  46 : unreachable
+60  47 : unreachable
+60  48 : unreachable
+60  49 : 60, 49  32
+60  50 : unreachable
+60  51 : unreachable
+60  52 : unreachable
+60  53 : unreachable
+60  54 : unreachable
+60  55 : unreachable
+60  56 : unreachable
+60  57 : unreachable
+60  58 : unreachable
+60  59 : unreachable
+60  60 : 60  0
+60  61 : unreachable
+60  62 : unreachable
+60  63 : unreachable
+60  64 : unreachable
+60  65 : unreachable
+60  66 : unreachable
+60  67 : unreachable
+60  68 : unreachable
+60  69 : unreachable
+60  70 : unreachable
+60  71 : 60, 71  12
+60  72 : unreachable
+60  73 : unreachable
+60  74 : unreachable
+60  75 : unreachable
+60  76 : unreachable
+60  77 : unreachable
+60  78 : unreachable
+60  79 : 60, 71, 79  13
+60  80 : unreachable
+61  0  : unreachable
+61  1  : 61, 4, 33, 26, 57, 49, 59, 80, 1  110
+61  2  : unreachable
+61  3  : unreachable
+61  4  : 61, 4  0
+61  5  : unreachable
+61  6  : unreachable
+61  7  : unreachable
+61  8  : unreachable
+61  9  : unreachable
+61  10 : unreachable
+61  11 : unreachable
+61  12 : 61, 4, 33, 41, 12  72
+61  13 : 61, 4, 21, 60, 71, 13  58
+61  14 : unreachable
+61  15 : unreachable
+61  16 : unreachable
+61  17 : unreachable
+61  18 : unreachable
+61  19 : unreachable
+61  20 : unreachable
+61  21 : 61, 4, 21  43
+61  22 : unreachable
+61  23 : 61, 4, 21, 60, 71, 13, 23  83
+61  24 : unreachable
+61  25 : unreachable
+61  26 : 61, 4, 33, 26  35
+61  27 : unreachable
+61  28 : unreachable
+61  29 : unreachable
+61  30 : unreachable
+61  31 : unreachable
+61  32 : 61, 4, 33, 26, 57, 49, 32  65
+61  33 : 61, 4, 33  16
+61  34 : unreachable
+61  35 : unreachable
+61  36 : 61, 54, 36  32
+61  37 : 61, 4, 33, 26, 57, 49, 59, 80, 37  121
+61  38 : unreachable
+61  39 : unreachable
+61  40 : unreachable
+61  41 : 61, 4, 33, 41  29
+61  42 : unreachable
+61  43 : 61, 4, 33, 41, 12, 43  68
+61  44 : unreachable
+61  45 : unreachable
+61  46 : unreachable
+61  47 : unreachable
+61  48 : unreachable
+61  49 : 61, 4, 33, 26, 57, 49  40
+61  50 : unreachable
+61  51 : unreachable
+61  52 : unreachable
+61  53 : unreachable
+61  54 : 61, 54  0
+61  55 : unreachable
+61  56 : unreachable
+61  57 : 61, 4, 33, 26, 57  39
+61  58 : unreachable
+61  59 : 61, 4, 33, 26, 57, 49, 59  70
+61  60 : 61, 4, 21, 60  51
+61  61 : 61  0
+61  62 : unreachable
+61  63 : unreachable
+61  64 : unreachable
+61  65 : unreachable
+61  66 : unreachable
+61  67 : unreachable
+61  68 : unreachable
+61  69 : unreachable
+61  70 : unreachable
+61  71 : 61, 4, 21, 60, 71  63
+61  72 : unreachable
+61  73 : 61, 54, 73  42
+61  74 : unreachable
+61  75 : 61, 4, 21, 75  78
+61  76 : unreachable
+61  77 : unreachable
+61  78 : unreachable
+61  79 : 61, 4, 21, 60, 71, 79  64
+61  80 : 61, 4, 33, 26, 57, 49, 59, 80  101
+62  0  : unreachable
+62  1  : 62, 42, 80, 1  61
+62  2  : unreachable
+62  3  : unreachable
+62  4  : unreachable
+62  5  : unreachable
+62  6  : unreachable
+62  7  : unreachable
+62  8  : unreachable
+62  9  : unreachable
+62  10 : unreachable
+62  11 : unreachable
+62  12 : unreachable
+62  13 : 62, 42, 76, 13  75
+62  14 : unreachable
+62  15 : unreachable
+62  16 : unreachable
+62  17 : unreachable
+62  18 : unreachable
+62  19 : unreachable
+62  20 : unreachable
+62  21 : unreachable
+62  22 : unreachable
+62  23 : unreachable
+62  24 : unreachable
+62  25 : unreachable
+62  26 : unreachable
+62  27 : unreachable
+62  28 : unreachable
+62  29 : unreachable
+62  30 : unreachable
+62  31 : unreachable
+62  32 : unreachable
+62  33 : unreachable
+62  34 : unreachable
+62  35 : unreachable
+62  36 : unreachable
+62  37 : 62, 42, 80, 37  72
+62  38 : unreachable
+62  39 : unreachable
+62  40 : unreachable
+62  41 : unreachable
+62  42 : 62, 42  34
+62  43 : unreachable
+62  44 : unreachable
+62  45 : unreachable
+62  46 : unreachable
+62  47 : unreachable
+62  48 : unreachable
+62  49 : unreachable
+62  50 : unreachable
+62  51 : unreachable
+62  52 : unreachable
+62  53 : unreachable
+62  54 : unreachable
+62  55 : unreachable
+62  56 : unreachable
+62  57 : unreachable
+62  58 : unreachable
+62  59 : unreachable
+62  60 : unreachable
+62  61 : unreachable
+62  62 : 62  0
+62  63 : unreachable
+62  64 : unreachable
+62  65 : unreachable
+62  66 : unreachable
+62  67 : unreachable
+62  68 : unreachable
+62  69 : unreachable
+62  70 : unreachable
+62  71 : unreachable
+62  72 : unreachable
+62  73 : unreachable
+62  74 : unreachable
+62  75 : unreachable
+62  76 : 62, 42, 76  40
+62  77 : unreachable
+62  78 : unreachable
+62  79 : unreachable
+62  80 : 62, 42, 80  52
+63  0  : unreachable
+63  1  : unreachable
+63  2  : unreachable
+63  3  : 63, 38, 25, 39, 24, 30, 60, 71, 79, 45, 3  159
+63  4  : 63, 38, 25, 39, 24, 29, 61, 4  55
+63  5  : 63, 78, 53, 32, 5  104
+63  6  : unreachable
+63  7  : unreachable
+63  8  : unreachable
+63  9  : 63, 38, 25, 64, 14, 66, 9  97
+63  10 : 63, 38, 25, 64, 14, 66, 9, 22, 10  127
+63  11 : unreachable
+63  12 : unreachable
+63  13 : 63, 38, 25, 39, 24, 30, 60, 71, 13  71
+63  14 : 63, 38, 25, 64, 14  51
+63  15 : unreachable
+63  16 : unreachable
+63  17 : unreachable
+63  18 : unreachable
+63  19 : unreachable
+63  20 : unreachable
+63  21 : 63, 38, 25, 39, 24, 29, 61, 4, 21  98
+63  22 : 63, 38, 25, 64, 14, 66, 9, 22  127
+63  23 : 63, 38, 25, 39, 24, 30, 60, 71, 13, 23  96
+63  24 : 63, 38, 25, 39, 24  13
+63  25 : 63, 38, 25  1
+63  26 : 63, 38, 25, 39, 24, 29, 61, 4, 33, 26  90
+63  27 : unreachable
+63  28 : 63, 78, 48, 28  94
+63  29 : 63, 38, 25, 39, 24, 29  55
+63  30 : 63, 38, 25, 39, 24, 30  60
+63  31 : 63, 38, 25, 39, 24, 30, 46, 31  84
+63  32 : 63, 78, 53, 32  74
+63  33 : 63, 38, 25, 39, 24, 29, 61, 4, 33  71
+63  34 : 63, 38, 25, 39, 43, 34  95
+63  35 : unreachable
+63  36 : 63, 38, 25, 39, 24, 29, 61, 54, 36  87
+63  37 : unreachable
+63  38 : 63, 38  4
+63  39 : 63, 38, 25, 39  11
+63  40 : unreachable
+63  41 : 63, 38, 25, 39, 24, 29, 61, 4, 33, 41  84
+63  42 : 63, 38, 25, 39, 43, 76, 62, 42  105
+63  43 : 63, 38, 25, 39, 43  55
+63  44 : unreachable
+63  45 : 63, 38, 25, 39, 24, 30, 60, 71, 79, 45  105
+63  46 : 63, 38, 25, 39, 24, 30, 46  73
+63  47 : unreachable
+63  48 : 63, 78, 48  78
+63  49 : 63, 38, 25, 39, 24, 30, 60, 49  96
+63  50 : unreachable
+63  51 : unreachable
+63  52 : unreachable
+63  53 : 63, 78, 53  72
+63  54 : 63, 38, 25, 39, 24, 29, 61, 54  55
+63  55 : unreachable
+63  56 : 63, 38, 25, 39, 24, 30, 60, 71, 79, 45, 56  145
+63  57 : 63, 38, 25, 39, 24, 29, 61, 4, 33, 26, 57  94
+63  58 : unreachable
+63  59 : 63, 38, 25, 39, 24, 30, 60, 49, 59  126
+63  60 : 63, 38, 25, 39, 24, 30, 60  64
+63  61 : 63, 38, 25, 39, 24, 29, 61  55
+63  62 : 63, 38, 25, 39, 43, 76, 62  71
+63  63 : 63  0
+63  64 : 63, 38, 25, 64  18
+63  65 : unreachable
+63  66 : 63, 38, 25, 64, 14, 66  80
+63  67 : unreachable
+63  68 : unreachable
+63  69 : unreachable
+63  70 : unreachable
+63  71 : 63, 38, 25, 39, 24, 30, 60, 71  76
+63  72 : unreachable
+63  73 : 63, 38, 25, 39, 24, 29, 61, 54, 73  97
+63  74 : unreachable
+63  75 : 63, 38, 25, 39, 24, 29, 61, 4, 21, 75  133
+63  76 : 63, 38, 25, 39, 43, 76  59
+63  77 : unreachable
+63  78 : 63, 78  38
+63  79 : 63, 38, 25, 39, 24, 30, 60, 71, 79  77
+63  80 : unreachable
+64  0  : unreachable
+64  1  : unreachable
+64  2  : unreachable
+64  3  : 64, 14, 66, 9, 45, 3  141
+64  4  : unreachable
+64  5  : unreachable
+64  6  : unreachable
+64  7  : unreachable
+64  8  : unreachable
+64  9  : 64, 14, 66, 9  79
+64  10 : 64, 14, 66, 9, 22, 10  109
+64  11 : unreachable
+64  12 : unreachable
+64  13 : unreachable
+64  14 : 64, 14  33
+64  15 : unreachable
+64  16 : unreachable
+64  17 : unreachable
+64  18 : unreachable
+64  19 : unreachable
+64  20 : unreachable
+64  21 : unreachable
+64  22 : 64, 14, 66, 9, 22  109
+64  23 : unreachable
+64  24 : unreachable
+64  25 : unreachable
+64  26 : unreachable
+64  27 : 64, 14, 66, 9, 45, 56, 27  165
+64  28 : unreachable
+64  29 : unreachable
+64  30 : unreachable
+64  31 : unreachable
+64  32 : unreachable
+64  33 : 64, 14, 66, 9, 22, 10, 33  151
+64  34 : unreachable
+64  35 : unreachable
+64  36 : unreachable
+64  37 : unreachable
+64  38 : unreachable
+64  39 : unreachable
+64  40 : unreachable
+64  41 : unreachable
+64  42 : unreachable
+64  43 : unreachable
+64  44 : unreachable
+64  45 : 64, 14, 66, 9, 45  93
+64  46 : unreachable
+64  47 : unreachable
+64  48 : unreachable
+64  49 : unreachable
+64  50 : unreachable
+64  51 : unreachable
+64  52 : unreachable
+64  53 : unreachable
+64  54 : unreachable
+64  55 : unreachable
+64  56 : 64, 14, 66, 9, 45, 56  127
+64  57 : unreachable
+64  58 : unreachable
+64  59 : unreachable
+64  60 : unreachable
+64  61 : unreachable
+64  62 : unreachable
+64  63 : 64, 14, 66, 9, 45, 56, 63  134
+64  64 : 64  0
+64  65 : unreachable
+64  66 : 64, 14, 66  62
+64  67 : unreachable
+64  68 : unreachable
+64  69 : unreachable
+64  70 : unreachable
+64  71 : unreachable
+64  72 : unreachable
+64  73 : unreachable
+64  74 : unreachable
+64  75 : unreachable
+64  76 : unreachable
+64  77 : unreachable
+64  78 : 64, 14, 66, 78  112
+64  79 : unreachable
+64  80 : unreachable
+65  0  : unreachable
+65  1  : unreachable
+65  2  : unreachable
+65  3  : unreachable
+65  4  : unreachable
+65  5  : unreachable
+65  6  : unreachable
+65  7  : unreachable
+65  8  : unreachable
+65  9  : unreachable
+65  10 : unreachable
+65  11 : unreachable
+65  12 : unreachable
+65  13 : 65, 60, 71, 13  22
+65  14 : unreachable
+65  15 : unreachable
+65  16 : unreachable
+65  17 : unreachable
+65  18 : unreachable
+65  19 : 65, 19  39
+65  20 : unreachable
+65  21 : unreachable
+65  22 : unreachable
+65  23 : 65, 60, 71, 13, 23  47
+65  24 : unreachable
+65  25 : unreachable
+65  26 : unreachable
+65  27 : unreachable
+65  28 : unreachable
+65  29 : unreachable
+65  30 : unreachable
+65  31 : unreachable
+65  32 : unreachable
+65  33 : unreachable
+65  34 : unreachable
+65  35 : unreachable
+65  36 : unreachable
+65  37 : unreachable
+65  38 : unreachable
+65  39 : unreachable
+65  40 : unreachable
+65  41 : unreachable
+65  42 : unreachable
+65  43 : unreachable
+65  44 : unreachable
+65  45 : unreachable
+65  46 : unreachable
+65  47 : unreachable
+65  48 : unreachable
+65  49 : 65, 60, 49  47
+65  50 : unreachable
+65  51 : unreachable
+65  52 : unreachable
+65  53 : unreachable
+65  54 : unreachable
+65  55 : unreachable
+65  56 : unreachable
+65  57 : unreachable
+65  58 : unreachable
+65  59 : unreachable
+65  60 : 65, 60  15
+65  61 : unreachable
+65  62 : unreachable
+65  63 : unreachable
+65  64 : unreachable
+65  65 : 65  0
+65  66 : unreachable
+65  67 : unreachable
+65  68 : unreachable
+65  69 : unreachable
+65  70 : unreachable
+65  71 : 65, 60, 71  27
+65  72 : unreachable
+65  73 : unreachable
+65  74 : unreachable
+65  75 : unreachable
+65  76 : unreachable
+65  77 : unreachable
+65  78 : unreachable
+65  79 : 65, 60, 71, 79  28
+65  80 : unreachable
+66  0  : unreachable
+66  1  : unreachable
+66  2  : unreachable
+66  3  : 66, 9, 45, 3  79
+66  4  : unreachable
+66  5  : unreachable
+66  6  : unreachable
+66  7  : unreachable
+66  8  : unreachable
+66  9  : 66, 9  17
+66  10 : 66, 9, 22, 10  47
+66  11 : unreachable
+66  12 : unreachable
+66  13 : unreachable
+66  14 : unreachable
+66  15 : unreachable
+66  16 : unreachable
+66  17 : unreachable
+66  18 : unreachable
+66  19 : unreachable
+66  20 : unreachable
+66  21 : unreachable
+66  22 : 66, 9, 22  47
+66  23 : 66, 9, 45, 56, 27, 23  133
+66  24 : unreachable
+66  25 : unreachable
+66  26 : unreachable
+66  27 : 66, 9, 45, 56, 27  103
+66  28 : unreachable
+66  29 : unreachable
+66  30 : unreachable
+66  31 : unreachable
+66  32 : unreachable
+66  33 : 66, 9, 22, 10, 33  89
+66  34 : unreachable
+66  35 : unreachable
+66  36 : unreachable
+66  37 : unreachable
+66  38 : unreachable
+66  39 : unreachable
+66  40 : unreachable
+66  41 : unreachable
+66  42 : unreachable
+66  43 : unreachable
+66  44 : unreachable
+66  45 : 66, 9, 45  31
+66  46 : unreachable
+66  47 : unreachable
+66  48 : unreachable
+66  49 : unreachable
+66  50 : unreachable
+66  51 : unreachable
+66  52 : unreachable
+66  53 : unreachable
+66  54 : unreachable
+66  55 : unreachable
+66  56 : 66, 9, 45, 56  65
+66  57 : unreachable
+66  58 : unreachable
+66  59 : unreachable
+66  60 : unreachable
+66  61 : unreachable
+66  62 : unreachable
+66  63 : 66, 9, 45, 56, 63  72
+66  64 : unreachable
+66  65 : unreachable
+66  66 : 66  0
+66  67 : unreachable
+66  68 : unreachable
+66  69 : unreachable
+66  70 : unreachable
+66  71 : unreachable
+66  72 : unreachable
+66  73 : 66, 9, 45, 56, 27, 73  122
+66  74 : unreachable
+66  75 : unreachable
+66  76 : unreachable
+66  77 : unreachable
+66  78 : 66, 78  50
+66  79 : unreachable
+66  80 : unreachable
+67  0  : unreachable
+67  1  : 67, 35, 76, 62, 42, 80, 1  102
+67  2  : unreachable
+67  3  : 67, 35, 76, 13, 71, 79, 45, 3  168
+67  4  : 67, 40, 4  22
+67  5  : unreachable
+67  6  : 67, 35, 6  64
+67  7  : unreachable
+67  8  : unreachable
+67  9  : 67, 35, 6, 22, 9  94
+67  10 : 67, 35, 6, 22, 10  102
+67  11 : unreachable
+67  12 : 67, 40, 4, 33, 41, 12  94
+67  13 : 67, 35, 76, 13  64
+67  14 : unreachable
+67  15 : unreachable
+67  16 : unreachable
+67  17 : unreachable
+67  18 : unreachable
+67  19 : unreachable
+67  20 : 67, 35, 76, 62, 42, 80, 37, 20  146
+67  21 : 67, 40, 4, 21  65
+67  22 : 67, 35, 6, 22  102
+67  23 : 67, 40, 69, 27, 23  58
+67  24 : unreachable
+67  25 : unreachable
+67  26 : 67, 40, 4, 33, 26  57
+67  27 : 67, 40, 69, 27  28
+67  28 : 67, 35, 6, 28  106
+67  29 : unreachable
+67  30 : 67, 40, 69, 27, 23, 46, 30  125
+67  31 : 67, 40, 69, 27, 23, 46, 31  96
+67  32 : 67, 40, 4, 33, 26, 57, 49, 32  87
+67  33 : 67, 40, 4, 33  38
+67  34 : unreachable
+67  35 : 67, 35  14
+67  36 : unreachable
+67  37 : 67, 35, 76, 62, 42, 80, 37  113
+67  38 : unreachable
+67  39 : unreachable
+67  40 : 67, 40  -10
+67  41 : 67, 40, 4, 33, 41  51
+67  42 : 67, 35, 76, 62, 42  75
+67  43 : 67, 40, 69, 27, 73, 43  88
+67  44 : unreachable
+67  45 : 67, 35, 76, 13, 71, 79, 45  120
+67  46 : 67, 40, 69, 27, 23, 46  85
+67  47 : unreachable
+67  48 : unreachable
+67  49 : 67, 40, 4, 33, 26, 57, 49  62
+67  50 : unreachable
+67  51 : unreachable
+67  52 : unreachable
+67  53 : unreachable
+67  54 : 67, 40, 69, 27, 23, 54  104
+67  55 : unreachable
+67  56 : 67, 35, 76, 13, 71, 79, 45, 56  154
+67  57 : 67, 40, 4, 33, 26, 57  61
+67  58 : 67, 40, 69, 27, 23, 46, 31, 58  122
+67  59 : 67, 40, 4, 33, 26, 57, 49, 59  92
+67  60 : 67, 40, 4, 21, 60  73
+67  61 : unreachable
+67  62 : 67, 35, 76, 62  41
+67  63 : 67, 35, 76, 13, 71, 79, 45, 56, 63  161
+67  64 : unreachable
+67  65 : unreachable
+67  66 : unreachable
+67  67 : 67  0
+67  68 : unreachable
+67  69 : 67, 40, 69  -17
+67  70 : unreachable
+67  71 : 67, 35, 76, 13, 71  91
+67  72 : unreachable
+67  73 : 67, 40, 69, 27, 73  47
+67  74 : unreachable
+67  75 : 67, 40, 4, 21, 75  100
+67  76 : 67, 35, 76  29
+67  77 : unreachable
+67  78 : 67, 40, 69, 27, 23, 46, 31, 78  115
+67  79 : 67, 35, 76, 13, 71, 79  92
+67  80 : 67, 35, 76, 62, 42, 80  93
+68  0  : 68, 52, 7, 16, 5, 0  134
+68  1  : 68, 41, 12, 43, 76, 62, 42, 80, 1  110
+68  2  : unreachable
+68  3  : 68, 41, 12, 43, 34, 45, 3  131
+68  4  : unreachable
+68  5  : 68, 52, 7, 16, 5  106
+68  6  : 68, 52, 7, 16, 5, 6  138
+68  7  : 68, 52, 7  40
+68  8  : unreachable
+68  9  : 68, 41, 12, 43, 34, 45, 3, 9  164
+68  10 : unreachable
+68  11 : unreachable
+68  12 : 68, 41, 12  37
+68  13 : 68, 41, 12, 43, 76, 13  72
+68  14 : unreachable
+68  15 : unreachable
+68  16 : 68, 52, 7, 16  66
+68  17 : unreachable
+68  18 : 68, 52, 7, 44, 18  105
+68  19 : unreachable
+68  20 : 68, 41, 12, 43, 76, 62, 42, 80, 37, 20  154
+68  21 : unreachable
+68  22 : unreachable
+68  23 : 68, 41, 12, 43, 76, 13, 23  97
+68  24 : 68, 52, 7, 16, 47, 74, 24  168
+68  25 : unreachable
+68  26 : unreachable
+68  27 : 68, 41, 12, 43, 34, 45, 56, 27  155
+68  28 : unreachable
+68  29 : unreachable
+68  30 : unreachable
+68  31 : 68, 41, 12, 43, 76, 13, 71, 79, 31  123
+68  32 : 68, 41, 12, 49, 32  84
+68  33 : unreachable
+68  34 : 68, 41, 12, 43, 34  73
+68  35 : unreachable
+68  36 : unreachable
+68  37 : 68, 41, 12, 43, 76, 62, 42, 80, 37  121
+68  38 : 68, 52, 7, 16, 47, 74, 38  134
+68  39 : unreachable
+68  40 : unreachable
+68  41 : 68, 41  -6
+68  42 : 68, 41, 12, 43, 76, 62, 42  83
+68  43 : 68, 41, 12, 43  33
+68  44 : 68, 52, 7, 44  60
+68  45 : 68, 41, 12, 43, 34, 45  83
+68  46 : 68, 41, 12, 43, 76, 13, 23, 46  124
+68  47 : 68, 52, 7, 16, 47  89
+68  48 : unreachable
+68  49 : 68, 41, 12, 49  59
+68  50 : unreachable
+68  51 : unreachable
+68  52 : 68, 52  50
+68  53 : unreachable
+68  54 : 68, 41, 12, 43, 76, 13, 23, 54  143
+68  55 : unreachable
+68  56 : 68, 41, 12, 43, 34, 45, 56  117
+68  57 : unreachable
+68  58 : unreachable
+68  59 : 68, 41, 12, 49, 59  89
+68  60 : unreachable
+68  61 : 68, 41, 12, 43, 76, 62, 42, 80, 1, 61  129
+68  62 : 68, 41, 12, 43, 76, 62  49
+68  63 : 68, 41, 12, 43, 34, 45, 56, 63  124
+68  64 : unreachable
+68  65 : unreachable
+68  66 : unreachable
+68  67 : unreachable
+68  68 : 68  0
+68  69 : 68, 41, 12, 43, 34, 69  65
+68  70 : unreachable
+68  71 : 68, 41, 12, 43, 76, 13, 71  99
+68  72 : unreachable
+68  73 : unreachable
+68  74 : 68, 52, 7, 16, 47, 74  131
+68  75 : unreachable
+68  76 : 68, 41, 12, 43, 76  37
+68  77 : unreachable
+68  78 : unreachable
+68  79 : 68, 41, 12, 43, 76, 13, 71, 79  100
+68  80 : 68, 41, 12, 43, 76, 62, 42, 80  101
+69  0  : unreachable
+69  1  : unreachable
+69  2  : unreachable
+69  3  : unreachable
+69  4  : unreachable
+69  5  : unreachable
+69  6  : unreachable
+69  7  : unreachable
+69  8  : unreachable
+69  9  : unreachable
+69  10 : unreachable
+69  11 : unreachable
+69  12 : unreachable
+69  13 : 69, 27, 73, 13  84
+69  14 : unreachable
+69  15 : unreachable
+69  16 : unreachable
+69  17 : unreachable
+69  18 : unreachable
+69  19 : unreachable
+69  20 : unreachable
+69  21 : unreachable
+69  22 : 69, 27, 23, 46, 31, 58, 22  143
+69  23 : 69, 27, 23  75
+69  24 : unreachable
+69  25 : 69, 27, 23, 46, 31, 58, 25  151
+69  26 : unreachable
+69  27 : 69, 27  45
+69  28 : unreachable
+69  29 : unreachable
+69  30 : 69, 27, 23, 46, 30  142
+69  31 : 69, 27, 23, 46, 31  113
+69  32 : unreachable
+69  33 : unreachable
+69  34 : 69, 27, 73, 43, 34  145
+69  35 : unreachable
+69  36 : 69, 27, 23, 54, 36  153
+69  37 : unreachable
+69  38 : unreachable
+69  39 : unreachable
+69  40 : unreachable
+69  41 : unreachable
+69  42 : 69, 27, 73, 43, 76, 62, 42  155
+69  43 : 69, 27, 73, 43  105
+69  44 : unreachable
+69  45 : unreachable
+69  46 : 69, 27, 23, 46  102
+69  47 : unreachable
+69  48 : unreachable
+69  49 : 69, 27, 23, 46, 30, 60, 49  178
+69  50 : unreachable
+69  51 : unreachable
+69  52 : unreachable
+69  53 : unreachable
+69  54 : 69, 27, 23, 54  121
+69  55 : unreachable
+69  56 : unreachable
+69  57 : unreachable
+69  58 : 69, 27, 23, 46, 31, 58  139
+69  59 : unreachable
+69  60 : 69, 27, 23, 46, 30, 60  146
+69  61 : unreachable
+69  62 : 69, 27, 73, 43, 76, 62  121
+69  63 : unreachable
+69  64 : unreachable
+69  65 : unreachable
+69  66 : unreachable
+69  67 : unreachable
+69  68 : unreachable
+69  69 : 69  0
+69  70 : unreachable
+69  71 : 69, 27, 73, 13, 71  111
+69  72 : unreachable
+69  73 : 69, 27, 73  64
+69  74 : unreachable
+69  75 : unreachable
+69  76 : 69, 27, 73, 43, 76  109
+69  77 : unreachable
+69  78 : 69, 27, 23, 46, 31, 78  132
+69  79 : unreachable
+69  80 : unreachable
+70  0  : unreachable
+70  1  : unreachable
+70  2  : unreachable
+70  3  : unreachable
+70  4  : 70, 4  7
+70  5  : unreachable
+70  6  : unreachable
+70  7  : unreachable
+70  8  : unreachable
+70  9  : unreachable
+70  10 : unreachable
+70  11 : unreachable
+70  12 : unreachable
+70  13 : 70, 71, 13  12
+70  14 : unreachable
+70  15 : unreachable
+70  16 : unreachable
+70  17 : unreachable
+70  18 : unreachable
+70  19 : unreachable
+70  20 : unreachable
+70  21 : 70, 4, 21  50
+70  22 : unreachable
+70  23 : 70, 71, 13, 23  37
+70  24 : unreachable
+70  25 : unreachable
+70  26 : unreachable
+70  27 : unreachable
+70  28 : unreachable
+70  29 : unreachable
+70  30 : unreachable
+70  31 : unreachable
+70  32 : unreachable
+70  33 : 70, 4, 33  23
+70  34 : unreachable
+70  35 : unreachable
+70  36 : unreachable
+70  37 : unreachable
+70  38 : unreachable
+70  39 : unreachable
+70  40 : unreachable
+70  41 : unreachable
+70  42 : unreachable
+70  43 : unreachable
+70  44 : unreachable
+70  45 : unreachable
+70  46 : unreachable
+70  47 : unreachable
+70  48 : unreachable
+70  49 : unreachable
+70  50 : unreachable
+70  51 : unreachable
+70  52 : unreachable
+70  53 : unreachable
+70  54 : unreachable
+70  55 : unreachable
+70  56 : unreachable
+70  57 : unreachable
+70  58 : unreachable
+70  59 : unreachable
+70  60 : unreachable
+70  61 : unreachable
+70  62 : unreachable
+70  63 : unreachable
+70  64 : unreachable
+70  65 : unreachable
+70  66 : unreachable
+70  67 : unreachable
+70  68 : unreachable
+70  69 : unreachable
+70  70 : 70  0
+70  71 : 70, 71  17
+70  72 : unreachable
+70  73 : unreachable
+70  74 : unreachable
+70  75 : unreachable
+70  76 : unreachable
+70  77 : unreachable
+70  78 : unreachable
+70  79 : 70, 71, 79  18
+70  80 : unreachable
+71  0  : unreachable
+71  1  : unreachable
+71  2  : unreachable
+71  3  : unreachable
+71  4  : unreachable
+71  5  : unreachable
+71  6  : unreachable
+71  7  : unreachable
+71  8  : unreachable
+71  9  : unreachable
+71  10 : unreachable
+71  11 : unreachable
+71  12 : unreachable
+71  13 : 71, 13  -5
+71  14 : unreachable
+71  15 : unreachable
+71  16 : unreachable
+71  17 : unreachable
+71  18 : unreachable
+71  19 : unreachable
+71  20 : unreachable
+71  21 : unreachable
+71  22 : unreachable
+71  23 : 71, 13, 23  20
+71  24 : unreachable
+71  25 : unreachable
+71  26 : unreachable
+71  27 : unreachable
+71  28 : unreachable
+71  29 : unreachable
+71  30 : unreachable
+71  31 : unreachable
+71  32 : unreachable
+71  33 : unreachable
+71  34 : unreachable
+71  35 : unreachable
+71  36 : unreachable
+71  37 : unreachable
+71  38 : unreachable
+71  39 : unreachable
+71  40 : unreachable
+71  41 : unreachable
+71  42 : unreachable
+71  43 : unreachable
+71  44 : unreachable
+71  45 : unreachable
+71  46 : unreachable
+71  47 : unreachable
+71  48 : unreachable
+71  49 : unreachable
+71  50 : unreachable
+71  51 : unreachable
+71  52 : unreachable
+71  53 : unreachable
+71  54 : unreachable
+71  55 : unreachable
+71  56 : unreachable
+71  57 : unreachable
+71  58 : unreachable
+71  59 : unreachable
+71  60 : unreachable
+71  61 : unreachable
+71  62 : unreachable
+71  63 : unreachable
+71  64 : unreachable
+71  65 : unreachable
+71  66 : unreachable
+71  67 : unreachable
+71  68 : unreachable
+71  69 : unreachable
+71  70 : unreachable
+71  71 : 71  0
+71  72 : unreachable
+71  73 : unreachable
+71  74 : unreachable
+71  75 : unreachable
+71  76 : unreachable
+71  77 : unreachable
+71  78 : unreachable
+71  79 : 71, 79  1
+71  80 : unreachable
+72  0  : unreachable
+72  1  : unreachable
+72  2  : unreachable
+72  3  : unreachable
+72  4  : unreachable
+72  5  : unreachable
+72  6  : unreachable
+72  7  : unreachable
+72  8  : unreachable
+72  9  : unreachable
+72  10 : unreachable
+72  11 : unreachable
+72  12 : unreachable
+72  13 : unreachable
+72  14 : unreachable
+72  15 : unreachable
+72  16 : unreachable
+72  17 : unreachable
+72  18 : unreachable
+72  19 : unreachable
+72  20 : unreachable
+72  21 : unreachable
+72  22 : unreachable
+72  23 : unreachable
+72  24 : unreachable
+72  25 : unreachable
+72  26 : 72, 26  35
+72  27 : unreachable
+72  28 : unreachable
+72  29 : unreachable
+72  30 : 72, 30  36
+72  31 : 72, 30, 46, 31  60
+72  32 : 72, 26, 57, 49, 32  65
+72  33 : unreachable
+72  34 : unreachable
+72  35 : unreachable
+72  36 : unreachable
+72  37 : unreachable
+72  38 : unreachable
+72  39 : unreachable
+72  40 : unreachable
+72  41 : unreachable
+72  42 : unreachable
+72  43 : unreachable
+72  44 : unreachable
+72  45 : unreachable
+72  46 : 72, 30, 46  49
+72  47 : unreachable
+72  48 : unreachable
+72  49 : 72, 26, 57, 49  40
+72  50 : unreachable
+72  51 : unreachable
+72  52 : unreachable
+72  53 : unreachable
+72  54 : unreachable
+72  55 : unreachable
+72  56 : unreachable
+72  57 : 72, 26, 57  39
+72  58 : unreachable
+72  59 : 72, 26, 57, 49, 59  70
+72  60 : 72, 30, 60  40
+72  61 : unreachable
+72  62 : unreachable
+72  63 : unreachable
+72  64 : unreachable
+72  65 : unreachable
+72  66 : unreachable
+72  67 : unreachable
+72  68 : unreachable
+72  69 : unreachable
+72  70 : unreachable
+72  71 : 72, 30, 60, 71  52
+72  72 : 72  0
+72  73 : unreachable
+72  74 : unreachable
+72  75 : unreachable
+72  76 : unreachable
+72  77 : unreachable
+72  78 : unreachable
+72  79 : unreachable
+72  80 : unreachable
+73  0  : unreachable
+73  1  : unreachable
+73  2  : unreachable
+73  3  : unreachable
+73  4  : unreachable
+73  5  : unreachable
+73  6  : unreachable
+73  7  : unreachable
+73  8  : unreachable
+73  9  : unreachable
+73  10 : unreachable
+73  11 : unreachable
+73  12 : unreachable
+73  13 : 73, 13  20
+73  14 : unreachable
+73  15 : unreachable
+73  16 : unreachable
+73  17 : unreachable
+73  18 : unreachable
+73  19 : unreachable
+73  20 : unreachable
+73  21 : unreachable
+73  22 : unreachable
+73  23 : 73, 13, 23  45
+73  24 : unreachable
+73  25 : unreachable
+73  26 : unreachable
+73  27 : unreachable
+73  28 : unreachable
+73  29 : unreachable
+73  30 : unreachable
+73  31 : unreachable
+73  32 : unreachable
+73  33 : unreachable
+73  34 : 73, 43, 34  81
+73  35 : unreachable
+73  36 : unreachable
+73  37 : unreachable
+73  38 : unreachable
+73  39 : unreachable
+73  40 : unreachable
+73  41 : unreachable
+73  42 : unreachable
+73  43 : 73, 43  41
+73  44 : unreachable
+73  45 : unreachable
+73  46 : 73, 13, 23, 46  72
+73  47 : unreachable
+73  48 : unreachable
+73  49 : unreachable
+73  50 : unreachable
+73  51 : unreachable
+73  52 : unreachable
+73  53 : unreachable
+73  54 : 73, 13, 23, 54  91
+73  55 : unreachable
+73  56 : unreachable
+73  57 : unreachable
+73  58 : unreachable
+73  59 : unreachable
+73  60 : unreachable
+73  61 : unreachable
+73  62 : 73, 43, 76, 62  57
+73  63 : unreachable
+73  64 : unreachable
+73  65 : unreachable
+73  66 : unreachable
+73  67 : unreachable
+73  68 : unreachable
+73  69 : unreachable
+73  70 : unreachable
+73  71 : 73, 13, 71  47
+73  72 : unreachable
+73  73 : 73  0
+73  74 : unreachable
+73  75 : unreachable
+73  76 : 73, 43, 76  45
+73  77 : unreachable
+73  78 : unreachable
+73  79 : 73, 13, 71, 79  48
+73  80 : unreachable
+74  0  : unreachable
+74  1  : unreachable
+74  2  : unreachable
+74  3  : 74, 38, 25, 39, 43, 34, 45, 3  152
+74  4  : 74, 38, 25, 39, 24, 29, 61, 4  54
+74  5  : unreachable
+74  6  : unreachable
+74  7  : unreachable
+74  8  : unreachable
+74  9  : 74, 38, 25, 64, 14, 66, 9  96
+74  10 : unreachable
+74  11 : unreachable
+74  12 : unreachable
+74  13 : 74, 38, 25, 39, 24, 30, 60, 71, 13  70
+74  14 : 74, 38, 25, 64, 14  50
+74  15 : unreachable
+74  16 : unreachable
+74  17 : unreachable
+74  18 : unreachable
+74  19 : unreachable
+74  20 : unreachable
+74  21 : 74, 38, 25, 39, 24, 29, 61, 4, 21  97
+74  22 : unreachable
+74  23 : 74, 38, 25, 39, 24, 30, 60, 71, 13, 23  95
+74  24 : 74, 38, 25, 39, 24  12
+74  25 : 74, 38, 25  0
+74  26 : 74, 38, 25, 39, 24, 29, 61, 4, 33, 26  89
+74  27 : 74, 38, 25, 39, 43, 34, 69, 27  131
+74  28 : unreachable
+74  29 : 74, 38, 25, 39, 24, 29  54
+74  30 : 74, 38, 25, 39, 24, 30  59
+74  31 : unreachable
+74  32 : 74, 38, 25, 39, 24, 29, 61, 54, 36, 32  125
+74  33 : 74, 38, 25, 39, 24, 29, 61, 4, 33  70
+74  34 : 74, 38, 25, 39, 43, 34  94
+74  35 : unreachable
+74  36 : 74, 38, 25, 39, 24, 29, 61, 54, 36  86
+74  37 : unreachable
+74  38 : 74, 38  3
+74  39 : 74, 38, 25, 39  10
+74  40 : unreachable
+74  41 : 74, 38, 25, 39, 24, 29, 61, 4, 33, 41  83
+74  42 : 74, 38, 25, 39, 43, 76, 62, 42  104
+74  43 : 74, 38, 25, 39, 43  54
+74  44 : unreachable
+74  45 : 74, 38, 25, 39, 43, 34, 45  104
+74  46 : 74, 38, 25, 39, 24, 30, 46  72
+74  47 : unreachable
+74  48 : unreachable
+74  49 : 74, 38, 25, 39, 24, 30, 60, 49  95
+74  50 : unreachable
+74  51 : unreachable
+74  52 : unreachable
+74  53 : unreachable
+74  54 : 74, 38, 25, 39, 24, 29, 61, 54  54
+74  55 : unreachable
+74  56 : 74, 38, 25, 39, 43, 34, 45, 56  138
+74  57 : unreachable
+74  58 : unreachable
+74  59 : unreachable
+74  60 : 74, 38, 25, 39, 24, 30, 60  63
+74  61 : 74, 38, 25, 39, 24, 29, 61  54
+74  62 : 74, 38, 25, 39, 43, 76, 62  70
+74  63 : unreachable
+74  64 : 74, 38, 25, 64  17
+74  65 : unreachable
+74  66 : 74, 38, 25, 64, 14, 66  79
+74  67 : unreachable
+74  68 : unreachable
+74  69 : 74, 38, 25, 39, 43, 34, 69  86
+74  70 : unreachable
+74  71 : 74, 38, 25, 39, 24, 30, 60, 71  75
+74  72 : unreachable
+74  73 : 74, 38, 25, 39, 24, 29, 61, 54, 73  96
+74  74 : 74  0
+74  75 : unreachable
+74  76 : 74, 38, 25, 39, 43, 76  58
+74  77 : unreachable
+74  78 : 74, 38, 25, 64, 14, 66, 78  129
+74  79 : 74, 38, 25, 39, 24, 30, 60, 71, 79  76
+74  80 : unreachable
+75  0  : unreachable
+75  1  : unreachable
+75  2  : unreachable
+75  3  : unreachable
+75  4  : unreachable
+75  5  : unreachable
+75  6  : unreachable
+75  7  : unreachable
+75  8  : unreachable
+75  9  : 75, 14, 66, 9  48
+75  10 : unreachable
+75  11 : unreachable
+75  12 : unreachable
+75  13 : unreachable
+75  14 : 75, 14  2
+75  15 : unreachable
+75  16 : unreachable
+75  17 : unreachable
+75  18 : unreachable
+75  19 : unreachable
+75  20 : unreachable
+75  21 : unreachable
+75  22 : unreachable
+75  23 : unreachable
+75  24 : unreachable
+75  25 : unreachable
+75  26 : 75, 72, 26  27
+75  27 : unreachable
+75  28 : unreachable
+75  29 : unreachable
+75  30 : 75, 72, 30  28
+75  31 : 75, 72, 30, 46, 31  52
+75  32 : 75, 72, 26, 57, 49, 32  57
+75  33 : unreachable
+75  34 : unreachable
+75  35 : unreachable
+75  36 : unreachable
+75  37 : unreachable
+75  38 : unreachable
+75  39 : unreachable
+75  40 : unreachable
+75  41 : unreachable
+75  42 : unreachable
+75  43 : unreachable
+75  44 : unreachable
+75  45 : unreachable
+75  46 : 75, 72, 30, 46  41
+75  47 : unreachable
+75  48 : unreachable
+75  49 : 75, 72, 26, 57, 49  32
+75  50 : unreachable
+75  51 : unreachable
+75  52 : unreachable
+75  53 : unreachable
+75  54 : unreachable
+75  55 : unreachable
+75  56 : unreachable
+75  57 : 75, 72, 26, 57  31
+75  58 : unreachable
+75  59 : 75, 72, 26, 57, 49, 59  62
+75  60 : 75, 72, 30, 60  32
+75  61 : unreachable
+75  62 : unreachable
+75  63 : unreachable
+75  64 : unreachable
+75  65 : unreachable
+75  66 : 75, 14, 66  31
+75  67 : unreachable
+75  68 : unreachable
+75  69 : unreachable
+75  70 : unreachable
+75  71 : 75, 72, 30, 60, 71  44
+75  72 : 75, 72  -8
+75  73 : unreachable
+75  74 : unreachable
+75  75 : 75  0
+75  76 : unreachable
+75  77 : unreachable
+75  78 : 75, 14, 66, 78  81
+75  79 : unreachable
+75  80 : unreachable
+76  0  : unreachable
+76  1  : 76, 62, 42, 80, 1  73
+76  2  : unreachable
+76  3  : unreachable
+76  4  : 76, 62, 42, 80, 1, 61, 4  92
+76  5  : unreachable
+76  6  : unreachable
+76  7  : unreachable
+76  8  : unreachable
+76  9  : unreachable
+76  10 : unreachable
+76  11 : unreachable
+76  12 : unreachable
+76  13 : 76, 13  35
+76  14 : unreachable
+76  15 : unreachable
+76  16 : unreachable
+76  17 : unreachable
+76  18 : unreachable
+76  19 : unreachable
+76  20 : 76, 62, 42, 80, 37, 20  117
+76  21 : unreachable
+76  22 : unreachable
+76  23 : 76, 13, 23  60
+76  24 : unreachable
+76  25 : unreachable
+76  26 : unreachable
+76  27 : unreachable
+76  28 : unreachable
+76  29 : unreachable
+76  30 : unreachable
+76  31 : unreachable
+76  32 : unreachable
+76  33 : unreachable
+76  34 : unreachable
+76  35 : unreachable
+76  36 : unreachable
+76  37 : 76, 62, 42, 80, 37  84
+76  38 : unreachable
+76  39 : unreachable
+76  40 : unreachable
+76  41 : unreachable
+76  42 : 76, 62, 42  46
+76  43 : unreachable
+76  44 : unreachable
+76  45 : unreachable
+76  46 : 76, 13, 23, 46  87
+76  47 : unreachable
+76  48 : unreachable
+76  49 : unreachable
+76  50 : unreachable
+76  51 : unreachable
+76  52 : unreachable
+76  53 : unreachable
+76  54 : 76, 62, 42, 80, 1, 61, 54  92
+76  55 : unreachable
+76  56 : unreachable
+76  57 : unreachable
+76  58 : unreachable
+76  59 : unreachable
+76  60 : unreachable
+76  61 : 76, 62, 42, 80, 1, 61  92
+76  62 : 76, 62  12
+76  63 : unreachable
+76  64 : unreachable
+76  65 : unreachable
+76  66 : unreachable
+76  67 : unreachable
+76  68 : unreachable
+76  69 : unreachable
+76  70 : unreachable
+76  71 : 76, 13, 71  62
+76  72 : unreachable
+76  73 : unreachable
+76  74 : unreachable
+76  75 : unreachable
+76  76 : 76  0
+76  77 : unreachable
+76  78 : unreachable
+76  79 : 76, 62, 42, 80, 37, 79  102
+76  80 : 76, 62, 42, 80  64
+77  0  : unreachable
+77  1  : unreachable
+77  2  : unreachable
+77  3  : unreachable
+77  4  : unreachable
+77  5  : unreachable
+77  6  : unreachable
+77  7  : unreachable
+77  8  : unreachable
+77  9  : unreachable
+77  10 : 77, 10  14
+77  11 : unreachable
+77  12 : unreachable
+77  13 : 77, 76, 13  47
+77  14 : unreachable
+77  15 : unreachable
+77  16 : unreachable
+77  17 : unreachable
+77  18 : unreachable
+77  19 : unreachable
+77  20 : unreachable
+77  21 : unreachable
+77  22 : unreachable
+77  23 : 77, 76, 13, 23  72
+77  24 : unreachable
+77  25 : unreachable
+77  26 : 77, 10, 33, 26  75
+77  27 : unreachable
+77  28 : unreachable
+77  29 : unreachable
+77  30 : unreachable
+77  31 : unreachable
+77  32 : unreachable
+77  33 : 77, 10, 33  56
+77  34 : unreachable
+77  35 : unreachable
+77  36 : unreachable
+77  37 : unreachable
+77  38 : unreachable
+77  39 : unreachable
+77  40 : unreachable
+77  41 : 77, 10, 33, 41  69
+77  42 : 77, 76, 62, 42  58
+77  43 : unreachable
+77  44 : unreachable
+77  45 : unreachable
+77  46 : unreachable
+77  47 : unreachable
+77  48 : unreachable
+77  49 : unreachable
+77  50 : unreachable
+77  51 : unreachable
+77  52 : unreachable
+77  53 : unreachable
+77  54 : unreachable
+77  55 : unreachable
+77  56 : unreachable
+77  57 : unreachable
+77  58 : unreachable
+77  59 : unreachable
+77  60 : unreachable
+77  61 : unreachable
+77  62 : 77, 76, 62  24
+77  63 : unreachable
+77  64 : unreachable
+77  65 : unreachable
+77  66 : unreachable
+77  67 : unreachable
+77  68 : unreachable
+77  69 : unreachable
+77  70 : unreachable
+77  71 : 77, 76, 13, 71  74
+77  72 : unreachable
+77  73 : unreachable
+77  74 : unreachable
+77  75 : unreachable
+77  76 : 77, 76  12
+77  77 : 77  0
+77  78 : unreachable
+77  79 : unreachable
+77  80 : 77, 76, 62, 42, 80  76
+78  0  : unreachable
+78  1  : unreachable
+78  2  : unreachable
+78  3  : unreachable
+78  4  : unreachable
+78  5  : 78, 53, 32, 5  66
+78  6  : unreachable
+78  7  : unreachable
+78  8  : unreachable
+78  9  : unreachable
+78  10 : unreachable
+78  11 : unreachable
+78  12 : unreachable
+78  13 : unreachable
+78  14 : unreachable
+78  15 : unreachable
+78  16 : unreachable
+78  17 : unreachable
+78  18 : unreachable
+78  19 : unreachable
+78  20 : unreachable
+78  21 : unreachable
+78  22 : unreachable
+78  23 : unreachable
+78  24 : unreachable
+78  25 : unreachable
+78  26 : unreachable
+78  27 : unreachable
+78  28 : 78, 48, 28  56
+78  29 : unreachable
+78  30 : unreachable
+78  31 : unreachable
+78  32 : 78, 53, 32  36
+78  33 : unreachable
+78  34 : unreachable
+78  35 : unreachable
+78  36 : unreachable
+78  37 : unreachable
+78  38 : unreachable
+78  39 : unreachable
+78  40 : unreachable
+78  41 : unreachable
+78  42 : unreachable
+78  43 : unreachable
+78  44 : unreachable
+78  45 : unreachable
+78  46 : unreachable
+78  47 : unreachable
+78  48 : 78, 48  40
+78  49 : unreachable
+78  50 : unreachable
+78  51 : unreachable
+78  52 : unreachable
+78  53 : 78, 53  34
+78  54 : unreachable
+78  55 : unreachable
+78  56 : unreachable
+78  57 : unreachable
+78  58 : unreachable
+78  59 : unreachable
+78  60 : unreachable
+78  61 : unreachable
+78  62 : unreachable
+78  63 : unreachable
+78  64 : unreachable
+78  65 : unreachable
+78  66 : unreachable
+78  67 : unreachable
+78  68 : unreachable
+78  69 : unreachable
+78  70 : unreachable
+78  71 : unreachable
+78  72 : unreachable
+78  73 : unreachable
+78  74 : unreachable
+78  75 : unreachable
+78  76 : unreachable
+78  77 : unreachable
+78  78 : 78  0
+78  79 : unreachable
+78  80 : 78, 48, 28, 80  91
+79  0  : unreachable
+79  1  : unreachable
+79  2  : unreachable
+79  3  : 79, 45, 3  76
+79  4  : unreachable
+79  5  : unreachable
+79  6  : unreachable
+79  7  : unreachable
+79  8  : unreachable
+79  9  : 79, 31, 58, 22, 9  45
+79  10 : 79, 31, 58, 22, 10  53
+79  11 : unreachable
+79  12 : unreachable
+79  13 : unreachable
+79  14 : unreachable
+79  15 : unreachable
+79  16 : unreachable
+79  17 : unreachable
+79  18 : unreachable
+79  19 : unreachable
+79  20 : unreachable
+79  21 : unreachable
+79  22 : 79, 31, 58, 22  53
+79  23 : 79, 45, 56, 27, 23  130
+79  24 : 79, 31, 58, 25, 39, 24  73
+79  25 : 79, 31, 58, 25  61
+79  26 : unreachable
+79  27 : 79, 45, 56, 27  100
+79  28 : 79, 31, 78, 48, 28  98
+79  29 : 79, 31, 58, 25, 39, 24, 29  115
+79  30 : 79, 31, 58, 25, 39, 24, 30  120
+79  31 : 79, 31  23
+79  32 : 79, 31, 78, 53, 32  78
+79  33 : 79, 31, 58, 22, 10, 33  95
+79  34 : unreachable
+79  35 : unreachable
+79  36 : unreachable
+79  37 : unreachable
+79  38 : 79, 45, 56, 63, 38  73
+79  39 : 79, 31, 58, 25, 39  71
+79  40 : unreachable
+79  41 : unreachable
+79  42 : unreachable
+79  43 : 79, 31, 58, 25, 39, 43  115
+79  44 : unreachable
+79  45 : 79, 45  28
+79  46 : 79, 45, 56, 27, 23, 46  157
+79  47 : unreachable
+79  48 : 79, 31, 78, 48  82
+79  49 : unreachable
+79  50 : unreachable
+79  51 : unreachable
+79  52 : unreachable
+79  53 : 79, 31, 78, 53  76
+79  54 : 79, 45, 56, 27, 23, 54  176
+79  55 : unreachable
+79  56 : 79, 45, 56  62
+79  57 : unreachable
+79  58 : 79, 31, 58  49
+79  59 : unreachable
+79  60 : unreachable
+79  61 : unreachable
+79  62 : unreachable
+79  63 : 79, 45, 56, 63  69
+79  64 : 79, 31, 58, 25, 64  78
+79  65 : unreachable
+79  66 : unreachable
+79  67 : unreachable
+79  68 : unreachable
+79  69 : unreachable
+79  70 : unreachable
+79  71 : unreachable
+79  72 : unreachable
+79  73 : 79, 45, 56, 27, 73  119
+79  74 : unreachable
+79  75 : unreachable
+79  76 : unreachable
+79  77 : unreachable
+79  78 : 79, 31, 78  42
+79  79 : 79  0
+79  80 : unreachable
+80  0  : unreachable
+80  1  : 80, 1  9
+80  2  : unreachable
+80  3  : unreachable
+80  4  : 80, 1, 61, 4  28
+80  5  : unreachable
+80  6  : unreachable
+80  7  : unreachable
+80  8  : unreachable
+80  9  : unreachable
+80  10 : unreachable
+80  11 : unreachable
+80  12 : 80, 1, 61, 4, 33, 41, 12  100
+80  13 : unreachable
+80  14 : unreachable
+80  15 : unreachable
+80  16 : unreachable
+80  17 : unreachable
+80  18 : unreachable
+80  19 : unreachable
+80  20 : 80, 37, 20  53
+80  21 : 80, 1, 61, 4, 21  71
+80  22 : unreachable
+80  23 : unreachable
+80  24 : unreachable
+80  25 : unreachable
+80  26 : 80, 1, 61, 4, 33, 26  63
+80  27 : unreachable
+80  28 : unreachable
+80  29 : unreachable
+80  30 : unreachable
+80  31 : 80, 37, 79, 31  61
+80  32 : 80, 1, 61, 4, 33, 26, 57, 49, 32  93
+80  33 : 80, 1, 61, 4, 33  44
+80  34 : unreachable
+80  35 : unreachable
+80  36 : 80, 1, 61, 54, 36  60
+80  37 : 80, 37  20
+80  38 : unreachable
+80  39 : unreachable
+80  40 : unreachable
+80  41 : 80, 1, 61, 4, 33, 41  57
+80  42 : unreachable
+80  43 : unreachable
+80  44 : unreachable
+80  45 : 80, 37, 79, 45  66
+80  46 : unreachable
+80  47 : unreachable
+80  48 : 80, 37, 79, 31, 78, 48  120
+80  49 : 80, 1, 61, 4, 33, 26, 57, 49  68
+80  50 : unreachable
+80  51 : unreachable
+80  52 : unreachable
+80  53 : 80, 37, 79, 31, 78, 53  114
+80  54 : 80, 1, 61, 54  28
+80  55 : unreachable
+80  56 : unreachable
+80  57 : 80, 1, 61, 4, 33, 26, 57  67
+80  58 : 80, 37, 79, 31, 58  87
+80  59 : 80, 1, 61, 4, 33, 26, 57, 49, 59  98
+80  60 : 80, 1, 61, 4, 21, 60  79
+80  61 : 80, 1, 61  28
+80  62 : unreachable
+80  63 : unreachable
+80  64 : unreachable
+80  65 : unreachable
+80  66 : unreachable
+80  67 : unreachable
+80  68 : unreachable
+80  69 : unreachable
+80  70 : unreachable
+80  71 : unreachable
+80  72 : unreachable
+80  73 : 80, 1, 61, 54, 73  70
+80  74 : unreachable
+80  75 : 80, 1, 61, 4, 21, 75  106
+80  76 : unreachable
+80  77 : unreachable
+80  78 : 80, 37, 79, 31, 78  80
+80  79 : 80, 37, 79  38
+80  80 : 80  0

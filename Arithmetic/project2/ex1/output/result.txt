@@ -1,0 +1,36 @@
+Scale = 5
+The multiply time of scale 5 is:
+	1				2				3				4				5				
+5	154865959097238	128049683226820	74062781976714	15903764653528	0	
+4	138766801119366	105723424955724	43981152513978	0			
+3	183439291324068	119490227350806	0					
+2	120958281818244	0							
+1	0									
+
+The solution of scale 5 is:
+	1	2	3	4	5	
+5	1	1	1	1	0	
+4	4	3	2	0			
+3	4	3	0					
+2	4	0							
+1	0									
+
+Least multiply time:	154865959097238
+Divide method:	(A1(((A2A3)A4)A5))
+
+Scale = 10
+Least multiply time:	42524697503391
+Divide method:	((A1A2)(((((((A3A4)A5)A6)A7)A8)A9)A10))
+
+Scale = 15
+Least multiply time:	5400945319618
+Divide method:	((((((((((((((A1A2)A3)A4)A5)A6)A7)A8)A9)A10)A11)A12)A13)A14)A15)
+
+Scale = 20
+Least multiply time:	319329979644400
+Divide method:	((A1(A2(A3(A4(A5(A6(A7(A8(A9(A10(A11(A12(A13(A14A15))))))))))))))((((A16A17)A18)A19)A20))
+
+Scale = 25
+Least multiply time:	574911761218280
+Divide method:	((A1(A2(A3(A4(A5(A6(A7(A8(A9(A10A11))))))))))(((((((((((((A12A13)A14)A15)A16)A17)A18)A19)A20)A21)A22)A23)A24)A25))
+

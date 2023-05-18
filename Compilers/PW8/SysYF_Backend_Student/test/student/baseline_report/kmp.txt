@@ -1,0 +1,73 @@
+@get_next: 
+total time on stack: 0
+#-1	#0	
+r6	r7	
+    Ldr r6, =-1
+    Ldr r7, =0
+
+r6	
+r9	
+    Mov r9, r6
+
+r7	
+r9	
+    Mov r9, r7
+
+r8	r9	
+r6	r7	
+    Mov r6, r8
+    Mov r7, r9
+
+@KMP: 
+total time on stack: 0
+#0	#0	
+r6	r7	
+    Ldr r6, =0
+    Ldr r7, =0
+
+r6	r7	#-1	
+r8	r9	r10	
+    Mov r8, r6
+    Mov r9, r7
+    Ldr r10, =-1
+
+r6	r8	
+r9	r10	
+    Mov r9, r6
+    Mov r10, r8
+
+r9	r10	
+r6	r7	
+    Mov r6, r9
+    Mov r7, r10
+
+r7	r8	r7	
+r8	r9	r10	
+    str r8, [sp, #-8]
+    Mov r8, r7
+    ldr r9, [sp, #-8]
+    Mov r10, r7
+
+r7	r8	
+r9	r10	
+    Mov r9, r7
+    Mov r10, r8
+
+r8	r9	
+r9	r10	
+    str r9, [sp, #-8]
+    Mov r9, r8
+    ldr r10, [sp, #-8]
+
+@read_str: 
+total time on stack: 0
+#0	
+r5	
+    Ldr r5, =0
+
+r6	
+r5	
+    Mov r5, r6
+
+@main: 
+total time on stack: 0
