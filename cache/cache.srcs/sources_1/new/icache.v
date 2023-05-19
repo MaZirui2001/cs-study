@@ -42,36 +42,38 @@ module icache #(
     output [7:0]        i_rlen
 );
     localparam 
-        BYTE_OFFSET_WIDTH   = WORD_OFFSET_WIDTH + 2,
-        TAG_WIDTH           = 32 - BYTE_OFFSET_WIDTH - INDEX_WIDTH,
-        SET_NUM             = 1 << INDEX_WIDTH,
-        WORD_NUM            = 1 << WORD_OFFSET_WIDTH,
-        BYTE_NUM            = 1 << BYTE_OFFSET_WIDTH,
-        BIT_NUM             = BYTE_NUM << 3;
+        BYTE_OFFSET_WIDTH   = WORD_OFFSET_WIDTH + 2,                // total offset bits
+        TAG_WIDTH           = 32 - BYTE_OFFSET_WIDTH - INDEX_WIDTH, // tag bits
+        SET_NUM             = 1 << INDEX_WIDTH,                     // block(set) number of one Road
+        WORD_NUM            = 1 << WORD_OFFSET_WIDTH,               // words per block(set)
+        BYTE_NUM            = 1 << BYTE_OFFSET_WIDTH,               // bytes per block(set)
+        BIT_NUM             = BYTE_NUM << 3;                        // bits per block(set)
+    
+    // request buffer
     reg     [31:0]              req_buf;
     reg                         req_buf_we;
-
+    // return buffer
     reg     [BIT_NUM-1:0]       ret_buf;
-
+    // data memory
     wire    [INDEX_WIDTH-1:0]   r_index, w_index;
     reg     [1:0]               mem_we;                
     wire    [BIT_NUM-1:0]       mem_rdata [0:1];     
-
+    // tagv memory
     reg     [1:0]               tagv_we;          
     wire    [TAG_WIDTH-1:0]     w_tag;
     wire    [TAG_WIDTH:0]       tag_rdata [0:1]; 
-
+    // hit
     wire    [1:0]               hit;
     wire                        cache_hit;
     wire    [TAG_WIDTH-1:0]     tag;
-
+    // LRU
     reg     [SET_NUM-1:0]       LRU;
     reg                         lru_update;
-
+    // data from mem or return buffer
     reg     [BIT_NUM-1:0]       rdata_512;
     reg                         data_from_mem;
 
-    /* request buffer : lock the read request addr */
+    /* request buffer: lock the read request addr */
     always @(posedge clk) begin
         if(!rstn) begin
             req_buf <= 0;
@@ -81,7 +83,7 @@ module icache #(
         end
     end
 
-    /* return buffer : cat the return data */
+    /* return buffer: cat the return 32-bit data */
     always @(posedge clk) begin
         if(!rstn) begin
             ret_buf <= 0;
@@ -92,7 +94,9 @@ module icache #(
     end
 
     /* 2-way data memory */
+    // read index
     assign r_index = raddr[BYTE_OFFSET_WIDTH+INDEX_WIDTH-1:BYTE_OFFSET_WIDTH];
+    // write index 
     assign w_index = req_buf[BYTE_OFFSET_WIDTH+INDEX_WIDTH-1:BYTE_OFFSET_WIDTH];
 
     BRAM_common #(
@@ -118,7 +122,8 @@ module icache #(
       .dout     (mem_rdata[1])
     );
 
-    /* 2-way tagv memory */
+    /* 2-way tagv memory: the highest bit is the valid bit */
+    // the tag ready to be written to tagv table
     assign w_tag = req_buf[31:32-TAG_WIDTH];
     BRAM_common #(
       .DATA_WIDTH(TAG_WIDTH+1),
@@ -144,18 +149,19 @@ module icache #(
     );
     
     /* settings of miss request */
-    assign i_rlen   = WORD_NUM-1;
-    assign i_rsize  = 3'h2;
-    assign i_raddr  = {req_buf[31:BYTE_OFFSET_WIDTH], {BYTE_OFFSET_WIDTH{1'b0}}};
+    assign i_rlen   = WORD_NUM-1;                                                   // WORD_NUM words per visit
+    assign i_rsize  = 3'h2;                                                         // 2 ^ 2 = 4 bytes per beat
+    assign i_raddr  = {req_buf[31:BYTE_OFFSET_WIDTH], {BYTE_OFFSET_WIDTH{1'b0}}};   // align to the block address
 
     /* hit */
-    assign tag = req_buf[31:32-TAG_WIDTH];
-    assign hit[0] = tag_rdata[0][TAG_WIDTH-1:0] == tag && tag_rdata[0][TAG_WIDTH];
-    assign hit[1] = tag_rdata[1][TAG_WIDTH-1:0] == tag && tag_rdata[1][TAG_WIDTH];
-    assign cache_hit = |hit;
+    assign tag          = req_buf[31:32-TAG_WIDTH];                                     // the tag of the request
+    assign hit[0]       = tag_rdata[0][TAG_WIDTH-1:0] == tag && tag_rdata[0][TAG_WIDTH];
+    assign hit[1]       = tag_rdata[1][TAG_WIDTH-1:0] == tag && tag_rdata[1][TAG_WIDTH];
+    assign cache_hit    = |hit;
     
 
     /* read control */
+    // choose data from mem or return buffer 
     assign rdata = rdata_512[31:0];
     always @(*) begin
         if(data_from_mem) begin
@@ -167,6 +173,7 @@ module icache #(
     end
     
     /* LRU */
+    // save one bit for per set(line), 0 means recently visit Road 0, 1 means Road 1
     always @(posedge clk) begin
         if(!rstn) begin
             LRU <= 0;
@@ -175,6 +182,7 @@ module icache #(
             LRU[w_index] <= cache_hit ? (hit[0] ? 0 : 1) : ~LRU[w_index];
         end
     end
+
     /* state machine */
     localparam [2:0] 
         IDLE    = 3'b000, 
@@ -182,6 +190,7 @@ module icache #(
         MISS    = 3'b010, 
         REFILL  = 3'b011;
     reg [2:0] state, next_state;
+    // stage 1
     always @(posedge clk) begin
         if(!rstn) begin
             state <= IDLE;
@@ -190,44 +199,27 @@ module icache #(
             state <= next_state;
         end
     end
+    // stage 2
     always @(*) begin
         case(state)
             IDLE: begin
-                if(rvalid) begin
-                    next_state = LOOKUP;
-                end
-                else begin
-                    next_state = IDLE;
-                end
+                if(rvalid)              next_state = LOOKUP;
+                else                    next_state = IDLE;
             end
             LOOKUP: begin
-                // hit 
-                if(cache_hit) begin
-                    next_state = rvalid ? LOOKUP : IDLE;
-                end
-                // miss
-                else begin
-                    next_state = MISS;
-                end
+                if(cache_hit)           next_state = rvalid ? LOOKUP : IDLE;
+                else                    next_state = MISS;
             end
             MISS: begin
-                if(i_rvalid && i_rready && i_rlast) begin
-                    next_state = REFILL;
-                end
-                else begin
-                    next_state = MISS;
-                end
+                if(i_rready && i_rlast) next_state = REFILL;
+                else                    next_state = MISS;
             end
-            REFILL: begin
-                next_state = rvalid ? LOOKUP : IDLE;
-            end
-            default: begin
-                next_state = IDLE;
-            end
+            REFILL:                     next_state = rvalid ? LOOKUP : IDLE;
+            default:                    next_state = IDLE;
         endcase
     end
+    // stage 2: output
     always @(*) begin
-        
         req_buf_we      = 0;
         i_rvalid        = 0;
         rready          = 0;
@@ -235,19 +227,20 @@ module icache #(
         mem_we          = 0;
         lru_update      = 0;
         data_from_mem   = 1;
+
         case(state)
         IDLE: begin
-            req_buf_we  = 1;
+            req_buf_we      = 1;
         end
         LOOKUP: begin
             if(cache_hit) begin
-                rready = 1;
-                req_buf_we = rvalid;
-                lru_update = 1;
+                rready      = 1;
+                req_buf_we  = rvalid;
+                lru_update  = 1;
             end
         end
         MISS: begin
-            i_rvalid    = 1;
+            i_rvalid        = 1;
         end
         REFILL: begin
             tagv_we         = LRU[w_index] ? 1 : 2;

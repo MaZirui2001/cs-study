@@ -31,7 +31,7 @@ module dcache #(
     // read
     input                   rvalid,
     output reg              rready,
-    output reg [31:0]       rdata,
+    output [31:0]           rdata,
     //write
     input                   wvalid,
     output reg              wready,
@@ -196,7 +196,6 @@ module dcache #(
     );
 
     /* hit */
-
     assign tag          = address[31:32-TAG_WIDTH];
     assign hit[0]       = tag_rdata[0][TAG_WIDTH] && (tag_rdata[0][TAG_WIDTH-1:0] == tag);
     assign hit[1]       = tag_rdata[1][TAG_WIDTH] && (tag_rdata[1][TAG_WIDTH-1:0] == tag);
@@ -218,8 +217,8 @@ module dcache #(
     end
 
     /* read control */
+    assign rdata = rdata_512[31:0];
     always @(*) begin
-        rdata = rdata_512[31:0];
         if(data_from_mem) begin
             rdata_512 = (mem_rdata[0] & {BIT_NUM{hit[0]}} | mem_rdata[1] & {BIT_NUM{hit[1]}}) >> {address[BYTE_OFFSET_WIDTH-1:2], 5'b0};
         end
@@ -267,7 +266,6 @@ module dcache #(
     end
 
     /* miss buffer */
-
     always @(posedge clk) begin
         if(!rstn) begin
             m_buf <= 0;
@@ -281,10 +279,10 @@ module dcache #(
     
     /* memory visit settings*/
     assign d_raddr  = {address[31:BYTE_OFFSET_WIDTH], {BYTE_OFFSET_WIDTH{1'b0}}};
-    assign d_rsize  = 3'h4;
+    assign d_rsize  = 3'h2;
     assign d_rlen   = WORD_NUM - 1;
     assign d_waddr  = m_buf;
-    assign d_wsize  = 3'h4;
+    assign d_wsize  = 3'h2;
     assign d_wlen   = WORD_NUM - 1;
     assign d_wdata  = wbuf[31:0];
     assign d_wstrb  = 4'b1111;
@@ -400,6 +398,7 @@ module dcache #(
             rready          = wrt_finish & !(|wstrb_pipe);
             wready          = wrt_finish & |wstrb_pipe;
             data_from_mem   = 0;
+            req_buf_we      = wrt_finish & (rvalid || wvalid);
         end
         endcase
     end
@@ -434,8 +433,8 @@ module dcache #(
     always @(*) begin
         case(wfsm_state)
         INIT: begin
-            if(wfsm_en && dirty_info) begin
-                wfsm_next_state = WRITE;
+            if(wfsm_en) begin
+                wfsm_next_state = dirty_info ? WRITE : FINISH;
             end
             else begin
                 wfsm_next_state = INIT;

@@ -6,10 +6,11 @@ localparam INDEX_WIDTH          = %d;
 localparam WORD_OFFSET_WIDTH    = %d;
 localparam TOTAL_WORD_NUM       = 4 * (1 << INDEX_WIDTH) * (1 << (WORD_OFFSET_WIDTH));
 
-// icache test
+// cache test
 reg [31:0] addr_rom [TOTAL_WORD_NUM];
 reg [31:0] data_ram [TOTAL_WORD_NUM];
-reg [31:0] test_index = 0;
+reg [31:0] i_test_index = 0;
+reg [31:0] d_test_index = 0;
 reg clk = 1'b1, rstn = 1'b0;
 
 initial #5 rstn = 1'b1; 
@@ -18,14 +19,10 @@ always #1 clk = ~clk;
 // generate addr_rom
 initial begin
 '''
-verilog_mid = '''
-end
-initial begin
-'''
 verilog_tail = '''
 end
 // for icache 
-reg             i_rvalid = 1;
+wire            i_rvalid;
 wire            i_rready;
 wire    [31:0]  i_raddr;
 wire    [31:0]  i_rdata;
@@ -40,7 +37,7 @@ wire    [7:0]   i_rlen_axi;
 // icache_debug
 reg             i_rvalid_ff;
 reg     [31:0]  i_raddr_ff;
-reg             error_reg;
+reg             i_error_reg;
 reg             i_pass_reg;
 wire    [31:0]  i_correct_data;
 
@@ -71,6 +68,12 @@ wire    [2:0]   d_wsize_axi;
 wire    [7:0]   d_wlen_axi;
 wire            d_bvalid_axi;
 wire            d_bready_axi;
+// dcache_debug
+reg             d_rvalid_ff;
+reg     [31:0]  d_addr_ff;
+reg             d_error_reg;
+reg             d_pass_reg;
+wire    [31:0]  d_correct_data;
 
 // arbiter with main mem
 wire    [31:0]  araddr;
@@ -99,44 +102,88 @@ wire    [1:0]   bresp;
 wire            bvalid;
 wire            bready;
 
-assign i_raddr = addr_rom[test_index];
+assign i_raddr = addr_rom[i_test_index];
 assign i_correct_data = data_ram[i_raddr_ff >> 2];
+assign i_rvalid = 1'b1;
 // simulate IF1-IF2 register i_rvalid_ff && i_raddr_ff
 always @(posedge clk) begin
     if(!rstn) begin
         i_rvalid_ff <= 0;
         i_raddr_ff <= 0;
     end
-    else if(!(i_rvalid && !i_rready))begin
+    else if(!(i_rvalid_ff && !i_rready))begin
         i_rvalid_ff <= i_rvalid;
         i_raddr_ff <= i_raddr;
     end
 end
-
-// update test_index
+// update i_test_index
 always @(posedge clk) begin
     if(!rstn) begin
-        test_index <= 0;
+        i_test_index <= 0;
         i_pass_reg <= 0;
     end
-    else if (test_index >= (TOTAL_WORD_NUM-1)) begin
-        test_index <= (TOTAL_WORD_NUM-1);
+    else if (i_test_index >= (TOTAL_WORD_NUM / 2)) begin
+        i_test_index <= (TOTAL_WORD_NUM / 2);
         i_pass_reg <= 1;
     end
-    else if(!(i_rvalid_ff && !i_rready) && !error_reg) begin
-        test_index <= test_index + 1;
+    else if(!(i_rvalid_ff && !i_rready) && !i_error_reg) begin
+        i_test_index <= i_test_index + 1;
     end
 end
-// update error 
+// update i_error 
 always @(posedge clk) begin
     if(!rstn) begin
-        error_reg <= 0;
+        i_error_reg <= 0;
     end
-    else if(error_reg) begin
-        error_reg <= 1;
+    else if(i_error_reg) begin
+        i_error_reg <= 1;
     end
     else if(i_rvalid_ff && i_rready) begin
-        error_reg <= !(i_rdata  == i_correct_data);
+        i_error_reg <= !(i_rdata  == i_correct_data);
+    end
+end
+
+assign d_addr = addr_rom[d_test_index];
+assign d_correct_data = data_ram[d_addr_ff >> 2];
+assign d_rvalid = 1'b1;
+assign d_wvalid = 1'b0;
+assign d_wdata = 0;
+assign d_wstrb = 0;
+// simulate EX-MEM register
+always @(posedge clk) begin
+    if(!rstn) begin
+        d_rvalid_ff <= 0;
+        d_addr_ff <= 0;
+    end
+    else if(!(d_rvalid_ff && !d_rready))begin
+        d_rvalid_ff <= d_rvalid;
+        d_addr_ff <= d_addr;
+    end
+end
+// update d_test_index
+always @(posedge clk) begin
+    if(!rstn) begin
+        d_test_index <= TOTAL_WORD_NUM / 2;
+        d_pass_reg <= 0;
+    end
+    else if (d_test_index >= (TOTAL_WORD_NUM-1)) begin
+        d_test_index <= (TOTAL_WORD_NUM-1);
+        d_pass_reg <= 1;
+    end
+    else if(!(d_rvalid_ff && !d_rready) && !d_error_reg) begin
+        d_test_index <= d_test_index + 1;
+    end
+end
+// update d_error 
+always @(posedge clk) begin
+    if(!rstn) begin
+        d_error_reg <= 0;
+    end
+    else if(d_error_reg) begin
+        d_error_reg <= 1;
+    end
+    else if(d_rvalid_ff && d_rready) begin
+        d_error_reg <= !(d_rdata  == d_correct_data);
     end
 end
 
@@ -306,14 +353,12 @@ else:
     
     verilog = verilog_head % (INDEX,WOFFSET,)
     addr_rom = [i << 2 for i in range(4 * (1 << INDEX) * (1 << WOFFSET))]
+    data_ram = [i for i in range(4096)]
     shuffle(addr_rom)
     for i in range(4 * (1 << INDEX) * (1 << WOFFSET)):
-        verilog += "    addr_rom[%5d] = 'h%08x; \n" % (i, addr_rom[i])
-    verilog += verilog_mid
-    
-    data_ram = [i for i in range(4096)]
-    for i in range(4 * (1 << INDEX) * (1 << WOFFSET)):
+        verilog += "    addr_rom[%5d] = 'h%08x; \t" % (i, addr_rom[i])
         verilog += "    data_ram[%5d] = 'h%08x; \n" % (i, data_ram[i])
+    
     verilog += verilog_tail
     # make coe file
     coe = 'memory_initialization_radix=16;\nmemory_initialization_vector=\n'
