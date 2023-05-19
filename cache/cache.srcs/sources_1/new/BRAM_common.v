@@ -11,7 +11,12 @@ module BRAM_common #(
 ); 
     reg [ADDR_WIDTH-1:0] addr_r;  // Address Register
     reg [DATA_WIDTH-1:0] ram [0:(1 << ADDR_WIDTH)-1];
-
+    integer i;
+    initial begin
+        for (i = 0; i < (1 << ADDR_WIDTH); i = i + 1) begin
+            ram[i] = 0;
+        end
+    end
     always @(posedge clk) begin
         addr_r <= raddr == waddr ? waddr : raddr;
         if(we) ram[waddr] <= din;

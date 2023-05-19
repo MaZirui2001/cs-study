@@ -11,7 +11,12 @@ module BRAM_bytewrite #(
 ); 
     reg [ADDR_WIDTH-1:0] addr_r;  // Address Register
     reg [DATA_WIDTH-1:0] ram [0:(1 << ADDR_WIDTH)-1];
-
+    integer j;
+    initial begin
+        for (j = 0; j < (1 << ADDR_WIDTH); j = j + 1) begin
+            ram[j] = 0;
+        end
+    end
     always @(posedge clk) begin
         addr_r <= raddr == waddr ? waddr : raddr;
     end
