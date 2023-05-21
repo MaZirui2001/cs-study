@@ -525,4 +525,14 @@ module dcache #(
         end
         endcase
     end
+    always @(posedge clk) begin
+        if(!rstn) begin
+            total_time <= 0;
+            total_hit <= 0;
+        end
+        else if(state == LOOKUP) begin
+            total_hit <= total_hit + {63'b0, cache_hit};
+            total_time <= total_time + 1;
+        end
+    end
 endmodule

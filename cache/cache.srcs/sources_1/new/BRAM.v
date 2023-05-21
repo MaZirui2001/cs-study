@@ -30,8 +30,4 @@ module BRAM_bytewrite #(
             end
         end
     endgenerate
-
-
-    
-
 endmodule
