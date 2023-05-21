@@ -62,60 +62,80 @@ module dcache #(
     output reg              d_bready
 );
     localparam 
-        BYTE_OFFSET_WIDTH   = WORD_OFFSET_WIDTH + 2,
-        TAG_WIDTH           = 32 - BYTE_OFFSET_WIDTH - INDEX_WIDTH,
-        SET_NUM             = 1 << INDEX_WIDTH,
-        WORD_NUM            = 1 << WORD_OFFSET_WIDTH,
-        BYTE_NUM            = 1 << BYTE_OFFSET_WIDTH,
-        BIT_NUM             = BYTE_NUM << 3;
+        BYTE_OFFSET_WIDTH   = WORD_OFFSET_WIDTH + 2,                // total offset bits
+        TAG_WIDTH           = 32 - BYTE_OFFSET_WIDTH - INDEX_WIDTH, // tag bits
+        SET_NUM             = 1 << INDEX_WIDTH,                     // block(set) number of one Road
+        WORD_NUM            = 1 << WORD_OFFSET_WIDTH,               // words per block(set)
+        BYTE_NUM            = 1 << BYTE_OFFSET_WIDTH,               // bytes per block(set)
+        BIT_NUM             = BYTE_NUM << 3;                        // bits per block(set)                     
 
+    // request buffer
     reg     [67:0]              req_buf;
     reg                         req_buf_we;
     wire    [31:0]              wdata_pipe, address;
     wire    [3:0]               wstrb_pipe;
+    wire                        we_pipe;
 
+    // return buffer
     reg     [BIT_NUM-1:0]       ret_buf;
 
+    // data memory
     wire    [INDEX_WIDTH-1:0]   r_index, w_index;
     reg     [BYTE_NUM-1:0]      mem_we [0:1];
-
     wire    [BIT_NUM-1:0]       mem_rdata [0:1];
     reg     [BIT_NUM-1:0]       mem_wdata;
 
+    // tagv memory
     reg     [1:0]               tagv_we;           
     wire    [TAG_WIDTH-1:0]     w_tag;
     wire    [TAG_WIDTH:0]       tag_rdata [0:1]; 
 
+    // hit
     wire    [1:0]               hit;
     wire                        cache_hit;
     wire    [TAG_WIDTH-1:0]     tag;
     wire                        hit_way;
 
+    // wdata control
     wire    [BIT_NUM-1:0]       wdata_pipe_512;
     wire    [BIT_NUM-1:0]       wstrb_pipe_512;
     reg                         wdata_from_pipe;
 
+    // rdata control
     reg     [BIT_NUM-1:0]       rdata_512;
     reg                         data_from_mem;
 
+    // LRU replace
     reg     [SET_NUM-1:0]       LRU;
-    reg                         lru_update;
+    reg                         lru_update_by_hit;
+    reg                         lru_update_by_refill;
     wire                        lru_sel;
 
-    reg     [SET_NUM-1:0]       dirty;
-    reg                         dirty_clear, dirty_write;
+    // dirty table
+    reg     [SET_NUM-1:0]       dirty [0:1];
+    reg                         dirty_clear [0:1];
+    reg                         dirty_write [0:1];
     wire                        dirty_info;
 
+    // write back buffer
     reg     [BIT_NUM-1:0]       wbuf;
     reg                         wbuf_we;
 
+    // miss buffer
     reg     [31:0]              m_buf;
     reg                         mbuf_we;
 
+    // communication between write fsm and main fsm
     reg                         wfsm_en, wfsm_reset, wrt_finish;
 
+    // a counter for write back
     reg     [3:0]               write_counter;
     reg                         write_counter_reset, write_counter_en;
+
+    // statistics
+    reg     [63:0]              total_time;
+    reg     [63:0]              total_hit;
+
     /* request buffer : lock the read request addr */
     // [31:0] addr, [63:32] wdata [67:64] wstrb
     always @(posedge clk) begin
@@ -129,6 +149,7 @@ module dcache #(
     assign address      = req_buf[31:0];
     assign wdata_pipe   = req_buf[63:32];
     assign wstrb_pipe   = req_buf[67:64];
+    assign we_pipe      = |wstrb_pipe;
 
     /* return buffer : cat the return data */
     always @(posedge clk) begin
@@ -141,13 +162,12 @@ module dcache #(
     end
 
     /* 2-way data memory */
-
     assign r_index = addr[BYTE_OFFSET_WIDTH+INDEX_WIDTH-1:BYTE_OFFSET_WIDTH];
     assign w_index = address[BYTE_OFFSET_WIDTH+INDEX_WIDTH-1:BYTE_OFFSET_WIDTH];
 
     BRAM_bytewrite #(
-      .DATA_WIDTH   (BIT_NUM),
-      .ADDR_WIDTH   (INDEX_WIDTH)
+        .DATA_WIDTH   (BIT_NUM),
+        .ADDR_WIDTH   (INDEX_WIDTH)
     )
     data_mem0 (
         .clk      (clk ),
@@ -160,7 +180,7 @@ module dcache #(
     BRAM_bytewrite #(
         .DATA_WIDTH   (BIT_NUM),
         .ADDR_WIDTH   (INDEX_WIDTH)
-      )
+    )
     data_mem1 (
         .clk      (clk ),
         .raddr    (r_index),
@@ -173,40 +193,40 @@ module dcache #(
     /* 2-way tagv memory */
     assign w_tag = address[31:32-TAG_WIDTH];
     BRAM_common #(
-      .DATA_WIDTH(TAG_WIDTH+1),
-      .ADDR_WIDTH (INDEX_WIDTH)
+        .DATA_WIDTH(TAG_WIDTH+1),
+        .ADDR_WIDTH (INDEX_WIDTH)
     ) tagv_mem0 (
-      .clk      (clk ),
-      .raddr    (r_index),
-      .waddr    (w_index),
-      .din      ({1'b1, w_tag}),
-      .we       (tagv_we[0]),
-      .dout     (tag_rdata[0])
+        .clk      (clk ),
+        .raddr    (r_index),
+        .waddr    (w_index),
+        .din      ({1'b1, w_tag}),
+        .we       (tagv_we[0]),
+        .dout     (tag_rdata[0])
     );
     BRAM_common #(
-      .DATA_WIDTH(TAG_WIDTH+1),
-      .ADDR_WIDTH (INDEX_WIDTH)
+        .DATA_WIDTH(TAG_WIDTH+1),
+        .ADDR_WIDTH (INDEX_WIDTH)
     ) tagv_mem1 (
-      .clk      (clk ),
-      .raddr    (r_index),
-      .waddr    (w_index),
-      .din      ({1'b1, w_tag}),
-      .we       (tagv_we[1]),
-      .dout     (tag_rdata[1])
+        .clk      (clk ),
+        .raddr    (r_index),
+        .waddr    (w_index),
+        .din      ({1'b1, w_tag}),
+        .we       (tagv_we[1]),
+        .dout     (tag_rdata[1])
     );
 
     /* hit */
     assign tag          = address[31:32-TAG_WIDTH];
     assign hit[0]       = tag_rdata[0][TAG_WIDTH] && (tag_rdata[0][TAG_WIDTH-1:0] == tag);
     assign hit[1]       = tag_rdata[1][TAG_WIDTH] && (tag_rdata[1][TAG_WIDTH-1:0] == tag);
-    assign cache_hit    = |hit[0];
+    assign cache_hit    = |hit;
     assign hit_way      = hit[0] ? 0 : 1;
 
     /* write control */
-    assign wdata_pipe_512 = ({{(BIT_NUM-32){1'b0}}, wdata_pipe} << addr[1:0]) << {addr[BYTE_OFFSET_WIDTH-1:2], 5'b0};
-    assign wstrb_pipe_512 = {{(BIT_NUM-32){1'b0}}, 
-                            ({{8{wstrb_pipe[3]}}, {8{wstrb_pipe[2]}}, 
-                              {8{wstrb_pipe[1]}}, {8{wstrb_pipe[0]}}})} << {addr[BYTE_OFFSET_WIDTH-1:2], 5'b0};
+    assign wdata_pipe_512 = ({{(BIT_NUM-32){1'b0}}, wdata_pipe} << address[1:0]) << {address[BYTE_OFFSET_WIDTH-1:2], 5'b0};
+    assign wstrb_pipe_512 = {
+            {(BIT_NUM-32){1'b0}}, ({{8{wstrb_pipe[3]}}, {8{wstrb_pipe[2]}}, {8{wstrb_pipe[1]}}, {8{wstrb_pipe[0]}}})
+        } << {address[BYTE_OFFSET_WIDTH-1:2], 5'b0};
     always @(*) begin
         if(wdata_from_pipe) begin
             mem_wdata = wdata_pipe_512;
@@ -232,23 +252,37 @@ module dcache #(
         if(!rstn) begin
             LRU <= 0;
         end
-        else if(lru_update) begin
-            LRU[w_index] <= cache_hit ? hit_way : ~LRU[w_index];
+        else if(lru_update_by_hit) begin
+            LRU[w_index] <= hit_way;
+        end
+        else if(lru_update_by_refill) begin
+            LRU[w_index] <= ~LRU[w_index];
         end
     end
     assign lru_sel = LRU[w_index];
 
     /* dirty table */
-    assign dirty_info = dirty[w_index];
+    assign dirty_info = dirty[lru_sel][w_index];
     always @(posedge clk) begin
         if(!rstn) begin
-            dirty <= 0;
+            dirty[0] <= 0;
         end
-        else if(dirty_clear) begin
-            dirty[w_index] <= 0;
+        else if(dirty_clear[0]) begin
+            dirty[0][w_index] <= 0;
         end
-        else if(dirty_write) begin
-            dirty[w_index] <= 1;
+        else if(dirty_write[0]) begin
+            dirty[0][w_index] <= 1;
+        end
+    end
+    always @(posedge clk) begin
+        if(!rstn) begin
+            dirty[1] <= 0;
+        end
+        else if(dirty_clear[1]) begin
+            dirty[1][w_index] <= 0;
+        end
+        else if(dirty_write[1]) begin
+            dirty[1][w_index] <= 1;
         end
     end
 
@@ -258,7 +292,7 @@ module dcache #(
             wbuf <= 0;
         end
         else if(wbuf_we) begin
-            wbuf <= lru_sel ? mem_rdata[0] : mem_rdata[1];
+            wbuf <= lru_sel ? mem_rdata[1] : mem_rdata[0];
         end
         else if(d_wvalid && d_wready) begin
             wbuf <= {32'b0, wbuf[BIT_NUM-1:32]};
@@ -271,9 +305,11 @@ module dcache #(
             m_buf <= 0;
         end
         else if(mbuf_we) begin
-            m_buf <= {(lru_sel ? tag_rdata[0][TAG_WIDTH-1:0] : tag_rdata[1][TAG_WIDTH-1:0]), 
-                        address[BYTE_OFFSET_WIDTH+INDEX_WIDTH-1:BYTE_OFFSET_WIDTH], 
-                        {BYTE_OFFSET_WIDTH{1'b0}}};
+            m_buf <= {
+                (lru_sel ? tag_rdata[1][TAG_WIDTH-1:0] : tag_rdata[0][TAG_WIDTH-1:0]),  // writeback tag
+                address[BYTE_OFFSET_WIDTH+INDEX_WIDTH-1:BYTE_OFFSET_WIDTH],             // writeback index
+                {BYTE_OFFSET_WIDTH{1'b0}}
+            };
         end
     end
     
@@ -346,35 +382,39 @@ module dcache #(
         endcase
     end
     always @(*) begin
-        req_buf_we      = 0;
-        wbuf_we         = 0;
-        mbuf_we         = 0;
-        d_rvalid        = 0;
-        wfsm_en         = 0;
-        wfsm_reset      = 0;
-        mem_we[0]       = 0;
-        mem_we[1]       = 0;
-        tagv_we[0]      = 0;
-        tagv_we[1]      = 0;
-        dirty_clear     = 0;
-        dirty_write     = 0;
-        lru_update      = 0;
-        rready          = 0;
-        wready          = 0;
-        data_from_mem   = 1;
-        wdata_from_pipe = 1;
+        // default assignments
+        req_buf_we           = 0;
+        wbuf_we              = 0;
+        mbuf_we              = 0;
+        d_rvalid             = 0;
+        wfsm_en              = 0;
+        wfsm_reset           = 0;
+        mem_we[0]            = 0;
+        mem_we[1]            = 0;
+        tagv_we[0]           = 0;
+        tagv_we[1]           = 0;
+        dirty_clear[0]       = 0;
+        dirty_clear[1]       = 0;
+        dirty_write[0]       = 0;
+        dirty_write[1]       = 0;
+        lru_update_by_hit    = 0;
+        lru_update_by_refill = 0;
+        rready               = 0;
+        wready               = 0;
+        data_from_mem        = 1;
+        wdata_from_pipe      = 1;
         case(state)
         IDLE: begin
             req_buf_we = 1;
         end
         LOOKUP: begin
             if(cache_hit) begin
-                mem_we[hit_way]     = {{(BYTE_NUM-4){1'b0}}, wstrb_pipe} << {addr[BYTE_OFFSET_WIDTH-1:2], 2'b0};
-                req_buf_we          = (rvalid || wvalid);
-                dirty_write         = |wstrb_pipe;
-                lru_update          = 1;
-                rready              = !(|wstrb_pipe);
-                wready              = |wstrb_pipe;
+                mem_we[hit_way]         = {{(BYTE_NUM-4){1'b0}}, wstrb_pipe} << {address[BYTE_OFFSET_WIDTH-1:2], 2'b0};
+                req_buf_we              = (rvalid || wvalid);
+                dirty_write[hit_way]    = we_pipe;
+                lru_update_by_hit       = 1;
+                rready                  = !we_pipe;
+                wready                  = we_pipe;
             end
             else begin
                 wbuf_we = 1;
@@ -386,22 +426,23 @@ module dcache #(
             d_rvalid = 1;
         end
         REFILL: begin
-            tagv_we[lru_sel]    = 1;
-            mem_we[lru_sel]     = -1;
-            dirty_write         = |wstrb_pipe;
-            dirty_clear         = !(|wstrb_pipe);
-            lru_update          = 1;
-            wdata_from_pipe     = 0;
+            tagv_we[lru_sel]        = 1;
+            mem_we[lru_sel]         = -1;
+            dirty_write[lru_sel]    = we_pipe;
+            dirty_clear[lru_sel]    = !we_pipe;
+            lru_update_by_refill    = 1;
+            wdata_from_pipe         = 0;
         end
         WAIT_WRITE: begin
             wfsm_reset      = 1;
-            rready          = wrt_finish & !(|wstrb_pipe);
-            wready          = wrt_finish & |wstrb_pipe;
+            rready          = wrt_finish & !we_pipe;
+            wready          = wrt_finish & we_pipe;
             data_from_mem   = 0;
             req_buf_we      = wrt_finish & (rvalid || wvalid);
         end
         endcase
     end
+
     /* write fsm */
     localparam 
         INIT    = 3'd0,

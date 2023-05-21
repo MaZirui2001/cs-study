@@ -64,14 +64,19 @@ module icache #(
     wire    [TAG_WIDTH:0]       tag_rdata [0:1]; 
     // hit
     wire    [1:0]               hit;
+    wire                        hit_way;
     wire                        cache_hit;
     wire    [TAG_WIDTH-1:0]     tag;
     // LRU
     reg     [SET_NUM-1:0]       LRU;
-    reg                         lru_update;
+    reg                         lru_update_by_hit;
+    reg                         lru_update_by_refill;
     // data from mem or return buffer
     reg     [BIT_NUM-1:0]       rdata_512;
     reg                         data_from_mem;
+    // statistics
+    reg     [63:0]              total_time;
+    reg     [63:0]              total_hit;
 
     /* request buffer: lock the read request addr */
     always @(posedge clk) begin
@@ -157,6 +162,7 @@ module icache #(
     assign tag          = req_buf[31:32-TAG_WIDTH];                                     // the tag of the request
     assign hit[0]       = tag_rdata[0][TAG_WIDTH-1:0] == tag && tag_rdata[0][TAG_WIDTH];
     assign hit[1]       = tag_rdata[1][TAG_WIDTH-1:0] == tag && tag_rdata[1][TAG_WIDTH];
+    assign hit_way      = hit[0] ? 0 : 1;
     assign cache_hit    = |hit;
     
 
@@ -178,8 +184,11 @@ module icache #(
         if(!rstn) begin
             LRU <= 0;
         end
-        else if(lru_update) begin
-            LRU[w_index] <= cache_hit ? (hit[0] ? 0 : 1) : ~LRU[w_index];
+        else if(lru_update_by_hit) begin
+            LRU[w_index] <= hit_way;
+        end
+        else if(lru_update_by_refill) begin
+            LRU[w_index] <= ~LRU[w_index];
         end
     end
 
@@ -220,13 +229,14 @@ module icache #(
     end
     // stage 2: output
     always @(*) begin
-        req_buf_we      = 0;
-        i_rvalid        = 0;
-        rready          = 0;
-        tagv_we         = 0;
-        mem_we          = 0;
-        lru_update      = 0;
-        data_from_mem   = 1;
+        req_buf_we              = 0;
+        i_rvalid                = 0;
+        rready                  = 0;
+        tagv_we                 = 0;
+        mem_we                  = 0;
+        lru_update_by_hit       = 0;
+        lru_update_by_refill    = 0;
+        data_from_mem           = 1;
 
         case(state)
         IDLE: begin
@@ -234,21 +244,21 @@ module icache #(
         end
         LOOKUP: begin
             if(cache_hit) begin
-                rready      = 1;
-                req_buf_we  = rvalid;
-                lru_update  = 1;
+                rready              = 1;
+                req_buf_we          = rvalid;
+                lru_update_by_hit   = 1;
             end
         end
         MISS: begin
             i_rvalid        = 1;
         end
         REFILL: begin
-            tagv_we         = LRU[w_index] ? 1 : 2;
-            mem_we          = LRU[w_index] ? 1 : 2;
-            rready          = 1;
-            lru_update      = 1;
-            req_buf_we      = rvalid;
-            data_from_mem   = 0;
+            tagv_we                 = LRU[w_index] ? 1 : 2;
+            mem_we                  = LRU[w_index] ? 1 : 2;
+            rready                  = 1;
+            lru_update_by_refill    = 1;
+            req_buf_we              = rvalid;
+            data_from_mem           = 0;
         end
         default:;
         endcase

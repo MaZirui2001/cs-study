@@ -179,7 +179,7 @@ module axi_arbiter(
             else                    w_nxt = D_W;
         end
         D_B: begin
-            if(bready)              w_nxt = W_IDLE;
+            if(bvalid)              w_nxt = W_IDLE;
             else                    w_nxt = D_B;
         end
         default :                   w_nxt = W_IDLE;    

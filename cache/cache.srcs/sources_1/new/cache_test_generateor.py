@@ -4,36 +4,43 @@ module cache_tb();
 
 localparam INDEX_WIDTH          = %d;
 localparam WORD_OFFSET_WIDTH    = %d;
-localparam TOTAL_WORD_NUM       = 4 * (1 << INDEX_WIDTH) * (1 << (WORD_OFFSET_WIDTH));
+localparam TOTAL_WORD_NUM       = %d;
 
 // cache test
-reg [31:0] addr_rom [TOTAL_WORD_NUM];
-reg [31:0] data_ram [TOTAL_WORD_NUM];
-reg [31:0] i_test_index = 0;
-reg [31:0] d_test_index = 0;
+reg [31:0]  i_addr_rom [TOTAL_WORD_NUM];
+reg [31:0]  d_addr_rom [TOTAL_WORD_NUM];
+reg [31:0]  data_ram [TOTAL_WORD_NUM];
+reg         wvalid_rom [TOTAL_WORD_NUM];
+reg [31:0]  wdata_rom [TOTAL_WORD_NUM];
+reg [31:0]  i_test_index = 0;
+reg [31:0]  d_test_index = 0;
 reg clk = 1'b1, rstn = 1'b0;
 
 initial #5 rstn = 1'b1; 
 always #1 clk = ~clk;
 
-// generate addr_rom
+// generate data_ram
+initial begin
+'''
+verilog_mid = '''
+end
 initial begin
 '''
 verilog_tail = '''
 end
 // for icache 
+wire            i_rvalid_pipe;
+wire            i_rready_pipe;
+wire    [31:0]  i_raddr_pipe;
+wire    [31:0]  i_rdata_pipe;
 wire            i_rvalid;
 wire            i_rready;
+// icache && arbiter 
 wire    [31:0]  i_raddr;
 wire    [31:0]  i_rdata;
-wire            i_rvalid_axi;
-wire            i_rready_axi;
-// icache && arbiter 
-wire    [31:0]  i_raddr_axi;
-wire    [31:0]  i_rdata_axi;
-wire            i_rlast_axi;
-wire    [2:0]   i_rsize_axi;
-wire    [7:0]   i_rlen_axi;
+wire            i_rlast;
+wire    [2:0]   i_rsize;
+wire    [7:0]   i_rlen;
 // icache_debug
 reg             i_rvalid_ff;
 reg     [31:0]  i_raddr_ff;
@@ -42,34 +49,36 @@ reg             i_pass_reg;
 wire    [31:0]  i_correct_data;
 
 // for dcache
-wire    [31:0]  d_addr;
+wire    [31:0]  d_addr_pipe;
+wire            d_rvalid_pipe;
+wire            d_rready_pipe;
+wire    [31:0]  d_rdata_pipe;
+wire            d_wvalid_pipe;
+wire            d_wready_pipe;
+wire    [31:0]  d_wdata_pipe;
+wire    [3:0]   d_wstrb_pipe;
+// dcache && arbiter
 wire            d_rvalid;
 wire            d_rready;
+wire    [31:0]  d_raddr;
 wire    [31:0]  d_rdata;
+wire            d_rlast;
+wire    [2:0]   d_rsize;
+wire    [7:0]   d_rlen;
 wire            d_wvalid;
 wire            d_wready;
+wire    [31:0]  d_waddr;
 wire    [31:0]  d_wdata;
 wire    [3:0]   d_wstrb;
-// dcache && arbiter
-wire            d_rvalid_axi;
-wire            d_rready_axi;
-wire    [31:0]  d_raddr_axi;
-wire    [31:0]  d_rdata_axi;
-wire            d_rlast_axi;
-wire    [2:0]   d_rsize_axi;
-wire    [7:0]   d_rlen_axi;
-wire            d_wvalid_axi;
-wire            d_wready_axi;
-wire    [31:0]  d_waddr_axi;
-wire    [31:0]  d_wdata_axi;
-wire    [3:0]   d_wstrb_axi;
-wire            d_wlast_axi;
-wire    [2:0]   d_wsize_axi;
-wire    [7:0]   d_wlen_axi;
-wire            d_bvalid_axi;
-wire            d_bready_axi;
+wire            d_wlast;
+wire    [2:0]   d_wsize;
+wire    [7:0]   d_wlen;
+wire            d_bvalid;
+wire            d_bready;
 // dcache_debug
 reg             d_rvalid_ff;
+reg             d_wvalid_ff;
+reg     [31:0]  d_wdata_ff;
 reg     [31:0]  d_addr_ff;
 reg             d_error_reg;
 reg             d_pass_reg;
@@ -102,18 +111,18 @@ wire    [1:0]   bresp;
 wire            bvalid;
 wire            bready;
 
-assign i_raddr = addr_rom[i_test_index];
+assign i_raddr_pipe = i_addr_rom[i_test_index];
 assign i_correct_data = data_ram[i_raddr_ff >> 2];
-assign i_rvalid = 1'b1;
+assign i_rvalid_pipe = 1'b1;
 // simulate IF1-IF2 register i_rvalid_ff && i_raddr_ff
 always @(posedge clk) begin
     if(!rstn) begin
         i_rvalid_ff <= 0;
         i_raddr_ff <= 0;
     end
-    else if(!(i_rvalid_ff && !i_rready))begin
-        i_rvalid_ff <= i_rvalid;
-        i_raddr_ff <= i_raddr;
+    else if(!(i_rvalid_ff && !i_rready_pipe))begin
+        i_rvalid_ff <= i_rvalid_pipe;
+        i_raddr_ff <= i_raddr_pipe;
     end
 end
 // update i_test_index
@@ -122,11 +131,11 @@ always @(posedge clk) begin
         i_test_index <= 0;
         i_pass_reg <= 0;
     end
-    else if (i_test_index >= (TOTAL_WORD_NUM / 2)) begin
-        i_test_index <= (TOTAL_WORD_NUM / 2);
+    else if (i_test_index >= (TOTAL_WORD_NUM / 2-1)) begin
+        i_test_index <= (TOTAL_WORD_NUM / 2-1);
         i_pass_reg <= 1;
     end
-    else if(!(i_rvalid_ff && !i_rready) && !i_error_reg) begin
+    else if(!(i_rvalid_ff && !i_rready_pipe) && !i_error_reg) begin
         i_test_index <= i_test_index + 1;
     end
 end
@@ -138,40 +147,50 @@ always @(posedge clk) begin
     else if(i_error_reg) begin
         i_error_reg <= 1;
     end
-    else if(i_rvalid_ff && i_rready) begin
-        i_error_reg <= !(i_rdata  == i_correct_data);
+    else if(i_rvalid_ff && i_rready_pipe) begin
+        i_error_reg <= !(i_rdata_pipe  == i_correct_data);
     end
 end
 
-assign d_addr = addr_rom[d_test_index];
-assign d_correct_data = data_ram[d_addr_ff >> 2];
-assign d_rvalid = 1'b1;
-assign d_wvalid = 1'b0;
-assign d_wdata = 0;
-assign d_wstrb = 0;
+assign d_addr_pipe           = d_addr_rom[d_test_index];
+assign d_correct_data   = data_ram[d_addr_ff >> 2];
+assign d_rvalid_pipe         = !wvalid_rom[d_test_index];
+assign d_wvalid_pipe         = wvalid_rom[d_test_index];
+assign d_wdata_pipe          = wdata_rom[d_test_index];
+assign d_wstrb_pipe          = d_wvalid_pipe ? 4'b1111 : 4'b0000;
 // simulate EX-MEM register
 always @(posedge clk) begin
     if(!rstn) begin
         d_rvalid_ff <= 0;
-        d_addr_ff <= 0;
+        d_addr_ff   <= 0;
+        d_wvalid_ff <= 0;
+        d_wdata_ff  <= 0;
     end
-    else if(!(d_rvalid_ff && !d_rready))begin
-        d_rvalid_ff <= d_rvalid;
-        d_addr_ff <= d_addr;
+    else if(!(d_rvalid_ff && !d_rready_pipe) && !(d_wvalid_ff && !d_wready_pipe))begin
+        d_rvalid_ff <= d_rvalid_pipe;
+        d_addr_ff   <= d_addr_pipe;
+        d_wvalid_ff <= d_wvalid_pipe;
+        d_wdata_ff  <= d_wdata_pipe;
     end
 end
 // update d_test_index
 always @(posedge clk) begin
     if(!rstn) begin
-        d_test_index <= TOTAL_WORD_NUM / 2;
-        d_pass_reg <= 0;
+        d_test_index    <= TOTAL_WORD_NUM / 2;
+        d_pass_reg      <= 0;
     end
     else if (d_test_index >= (TOTAL_WORD_NUM-1)) begin
-        d_test_index <= (TOTAL_WORD_NUM-1);
-        d_pass_reg <= 1;
+        d_test_index    <= (TOTAL_WORD_NUM-1);
+        d_pass_reg      <= 1;
     end
-    else if(!(d_rvalid_ff && !d_rready) && !d_error_reg) begin
-        d_test_index <= d_test_index + 1;
+    else if(!(d_rvalid_ff && !d_rready_pipe)  && !(d_wvalid_ff && !d_wready_pipe) && !d_error_reg) begin
+        d_test_index    <= d_test_index + 1;
+    end
+end
+// update data_ram
+always @(posedge clk) begin
+    if(d_wvalid_ff && d_wready_pipe) begin
+        data_ram[d_addr_ff >> 2] <= d_wdata_ff;
     end
 end
 // update d_error 
@@ -182,8 +201,8 @@ always @(posedge clk) begin
     else if(d_error_reg) begin
         d_error_reg <= 1;
     end
-    else if(d_rvalid_ff && d_rready) begin
-        d_error_reg <= !(d_rdata  == d_correct_data);
+    else if(d_rvalid_ff && d_rready_pipe) begin
+        d_error_reg <= !(d_rdata_pipe  == d_correct_data);
     end
 end
 
@@ -194,18 +213,18 @@ icache #(
 icache_dut (
     .clk      (clk ),
     .rstn     (rstn ),
-    .rvalid   (i_rvalid ),
-    .rready   (i_rready ),
-    .raddr    (i_raddr ),
-    .rdata    (i_rdata ),
+    .rvalid   (i_rvalid_pipe ),
+    .rready   (i_rready_pipe ),
+    .raddr    (i_raddr_pipe ),
+    .rdata    (i_rdata_pipe ),
 
-    .i_rvalid (i_rvalid_axi ),
-    .i_rready (i_rready_axi ),
-    .i_raddr  (i_raddr_axi ),
-    .i_rdata  (i_rdata_axi ),
-    .i_rlast  (i_rlast_axi ),
-    .i_rsize  (i_rsize_axi ),
-    .i_rlen   (i_rlen_axi)
+    .i_rvalid (i_rvalid ),
+    .i_rready (i_rready ),
+    .i_raddr  (i_raddr ),
+    .i_rdata  (i_rdata ),
+    .i_rlast  (i_rlast ),
+    .i_rsize  (i_rsize ),
+    .i_rlen   (i_rlen)
 );
 dcache #(
     .INDEX_WIDTH        (INDEX_WIDTH ),
@@ -214,60 +233,60 @@ dcache #(
 dcache_dut (
     .clk      (clk ),
     .rstn     (rstn ),
-    .addr     (d_addr ),
-    .rvalid   (d_rvalid ),
-    .rready   (d_rready ),
-    .rdata    (d_rdata ),
-    .wvalid   (d_wvalid ),
-    .wready   (d_wready ),
-    .wdata    (d_wdata ),
-    .wstrb    (d_wstrb ),
-    .d_rvalid (d_rvalid_axi ),
-    .d_rready (d_rready_axi ),
-    .d_raddr  (d_raddr_axi ),
-    .d_rdata  (d_rdata_axi ),
-    .d_rlast  (d_rlast_axi ),
-    .d_rsize  (d_rsize_axi ),
-    .d_rlen   (d_rlen_axi ),
-    .d_wvalid (d_wvalid_axi ),
-    .d_wready (d_wready_axi ),
-    .d_waddr  (d_waddr_axi ),
-    .d_wdata  (d_wdata_axi ),
-    .d_wstrb  (d_wstrb_axi ),
-    .d_wlast  (d_wlast_axi ),
-    .d_wsize  (d_wsize_axi ),
-    .d_wlen   (d_wlen_axi ),
-    .d_bvalid (d_bvalid_axi ),
-    .d_bready (d_bready_axi )
+    .addr     (d_addr_pipe ),
+    .rvalid   (d_rvalid_pipe ),
+    .rready   (d_rready_pipe ),
+    .rdata    (d_rdata_pipe ),
+    .wvalid   (d_wvalid_pipe ),
+    .wready   (d_wready_pipe ),
+    .wdata    (d_wdata_pipe ),
+    .wstrb    (d_wstrb_pipe ),
+    .d_rvalid (d_rvalid ),
+    .d_rready (d_rready ),
+    .d_raddr  (d_raddr ),
+    .d_rdata  (d_rdata ),
+    .d_rlast  (d_rlast ),
+    .d_rsize  (d_rsize ),
+    .d_rlen   (d_rlen ),
+    .d_wvalid (d_wvalid ),
+    .d_wready (d_wready ),
+    .d_waddr  (d_waddr ),
+    .d_wdata  (d_wdata ),
+    .d_wstrb  (d_wstrb ),
+    .d_wlast  (d_wlast ),
+    .d_wsize  (d_wsize ),
+    .d_wlen   (d_wlen ),
+    .d_bvalid (d_bvalid ),
+    .d_bready (d_bready )
 );
 
 axi_arbiter axi_arbiter_dut (
     .clk      (clk ),
     .rstn     (rstn ),
-    .i_rvalid (i_rvalid_axi ),
-    .i_rready (i_rready_axi ),
-    .i_raddr  (i_raddr_axi ),
-    .i_rdata  (i_rdata_axi ),
-    .i_rlast  (i_rlast_axi ),
-    .i_rsize  (i_rsize_axi ),
-    .i_rlen   (i_rlen_axi ),
-    .d_rvalid (d_rvalid_axi ),
-    .d_rready (d_rready_axi ),
-    .d_raddr  (d_raddr_axi ),
-    .d_rdata  (d_rdata_axi ),
-    .d_rlast  (d_rlast_axi ),
-    .d_rsize  (d_rsize_axi ),
-    .d_rlen   (d_rlen_axi ),
-    .d_wvalid (d_wvalid_axi ),
-    .d_wready (d_wready_axi ),
-    .d_waddr  (d_waddr_axi ),
-    .d_wdata  (d_wdata_axi ),
-    .d_wstrb  (d_wstrb_axi ),
-    .d_wlast  (d_wlast_axi ),
-    .d_wsize  (d_wsize_axi ),
-    .d_wlen   (d_wlen_axi ),
-    .d_bvalid (d_bvalid_axi ),
-    .d_bready (d_bready_axi ),
+    .i_rvalid (i_rvalid ),
+    .i_rready (i_rready ),
+    .i_raddr  (i_raddr ),
+    .i_rdata  (i_rdata ),
+    .i_rlast  (i_rlast ),
+    .i_rsize  (i_rsize ),
+    .i_rlen   (i_rlen ),
+    .d_rvalid (d_rvalid ),
+    .d_rready (d_rready ),
+    .d_raddr  (d_raddr ),
+    .d_rdata  (d_rdata ),
+    .d_rlast  (d_rlast ),
+    .d_rsize  (d_rsize ),
+    .d_rlen   (d_rlen ),
+    .d_wvalid (d_wvalid ),
+    .d_wready (d_wready ),
+    .d_waddr  (d_waddr ),
+    .d_wdata  (d_wdata ),
+    .d_wstrb  (d_wstrb ),
+    .d_wlast  (d_wlast ),
+    .d_wsize  (d_wsize ),
+    .d_wlen   (d_wlen ),
+    .d_bvalid (d_bvalid ),
+    .d_bready (d_bready ),
     .araddr   (araddr ),
     .arvalid  (arvalid ),
     .arready  (arready ),
@@ -332,12 +351,12 @@ endmodule
 
 import sys
 from random import randint
-from random import shuffle
-
-if len(sys.argv) != 3:
-    print('    Usage:\n        python generate_cache_tb.py [write words]')
-    print('    Example:\n        python generate_cache_tb.py 6 4')
-    print('    Tip: use this command to write to file:\n        python generate_cache_tb.py 6 4 > cache_tb.v')
+#define 
+len = len(sys.argv)
+if len != 3 and len != 4:
+    print('    Usage:\n        python generate_cache_tb.py [INDEX_WIDTH] [WORD_ADDR_WIDTH] [TOTAL_WORD_NUM]')
+    print('    Example:\n        python generate_cache_tb.py 3 2 4096')
+    print('    Tip: use this command to write to file:\n        python generate_cache_tb.py 2 2 1024 > cache_tb.v')
 else:
     try:
         INDEX = int( sys.argv[1] )
@@ -349,27 +368,42 @@ else:
     except:
         print('    *** Error: parameter must be integer, not %s' % (sys.argv[2], ) )
         sys.exit(-1)
+    # given main memory size
+    if(len == 4):
+        try:
+            TOTAL_WORD_NUM = int( sys.argv[3] )
+        except:
+            print('    *** Error: parameter must be integer, not %s' % (sys.argv[3], ) )
+            sys.exit(-1)
+    # not given main memory size
+    else:
+        TOTAL_WORD_NUM = 4096
     
-    verilog = verilog_head % (INDEX,WOFFSET,)
-    addr_rom = [i << 2 for i in range(4 * (1 << INDEX) * (1 << WOFFSET))]
-    data_ram = [i for i in range(4096)]
-    shuffle(addr_rom)
-    for i in range(4 * (1 << INDEX) * (1 << WOFFSET)):
-        verilog += "    addr_rom[%5d] = 'h%08x; \t" % (i, addr_rom[i])
-        verilog += "    data_ram[%5d] = 'h%08x; \n" % (i, data_ram[i])
+    verilog = verilog_head % (INDEX,WOFFSET,TOTAL_WORD_NUM,)
+    # generate data_ram
+    data_ram = [i for i in range(TOTAL_WORD_NUM)]
+    for i in range(TOTAL_WORD_NUM):
+        verilog += "    data_ram[%5d] = 'h%08x; \t" % (i, data_ram[i])
+        if i % 8 == 7:
+            verilog += '\n'
     
+    verilog += verilog_mid
+    # generate i_addr_rom and d_addr_rom
+    i_addr_rom = [(randint(0, 511))  << 2 for i in range(TOTAL_WORD_NUM)]
+    d_addr_rom = [(randint(512, 1023)) << 2 for i in range(TOTAL_WORD_NUM)]
+    wdata_rom = [randint(0, 2**32-1) for i in range(TOTAL_WORD_NUM)]
+    wvalid_rom = [randint(0, 1) for i in range(TOTAL_WORD_NUM)]
+    for i in range(TOTAL_WORD_NUM):
+        verilog += "    i_addr_rom[%5d] = 'h%08x; \t" % (i, i_addr_rom[i])
+        verilog += "    d_addr_rom[%5d] = 'h%08x; \t" % (i, d_addr_rom[i])
+        verilog += "    wdata_rom[%5d] = 'h%08x; \t" % (i, wdata_rom[i])
+        verilog += "    wvalid_rom[%5d] = %d; \n" % (i, wvalid_rom[i])
     verilog += verilog_tail
     # make coe file
     coe = 'memory_initialization_radix=16;\nmemory_initialization_vector=\n'
-    for i in range(4096):
+    for i in range(TOTAL_WORD_NUM):
         coe += '%08x\n' % (data_ram[i],)
     with open('memory.coe', 'w') as f:
         f.write(coe)
     
     print(verilog)
-
-
-
-    
-    
-    
