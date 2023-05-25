@@ -9,3 +9,5 @@ for:
     addi t0, t0, 1
     bne  t0, t2, for
     addi t1, t1, 1
+finish:
+    j finish

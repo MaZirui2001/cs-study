@@ -2,7 +2,25 @@
 
 //#define DIJKSTRA
 #define DEBUG
+#define H_CNT
+//#define H_CNT_FIX
 
+// input and output file
+#define INPUT_FILE "../input/input2.txt"
+#define OUTPUT_FILE "../output/output2.txt"
+#define MAX_LENGTH 100000
+#define STRIP_LENGTH 1000
+// 10000 100
+// input0: 301 5
+// input1: 11 4
+// input2: 182 5
+// input3: 576 7
+// input4: 805 7
+// input5: 1072 7
+// input6: 2979 11
+// input7: 8884 22, 100000 1000: 20
+// input8: 8145 16
+// input9: 25008 37, 100000 1000: 27
 enum Direction {
     UP_RIGHT = 1, UP_LEFT, DOWN_LEFT, DOWN_RIGHT
 };
@@ -18,7 +36,9 @@ struct node {
     bool mat[12][12]{};
     std::vector<path_node> path;
 };
-auto compare = [](node *a, node *b) { return a->f < b->f; };
+auto compare = [](node *a, node *b) {
+    return a->f < b->f;
+};
 
 // update location
 struct update_location {
@@ -38,14 +58,20 @@ int count_1(const node *n) {
     }
     return cnt;
 }
+
 /* h_function of a star */
 int h_func(const node *n) {
 #ifdef DIJKSTRA
     return 0;
 #endif
-//    if(n->cnt == 1) return 3;
-//    return (n->cnt + 2) / 3 + (n->cnt % 3 == 2);
+#ifdef H_CNT
     return (n->cnt + 2) / 3;
+#endif
+#ifdef H_CNT_FIX
+    if(n->cnt == 1) return 3;
+    return (n->cnt + 2) / 3 + (n->cnt % 3 == 2);
+#endif
+
 }
 
 // check finish
@@ -79,11 +105,17 @@ update_location get_loc(int i, int j, Direction s) {
 // data structure for a star search
 std::multiset<node *, decltype(compare)> node_list(compare);
 
-// input and output file
-#define INPUT_FILE "../input/input7.txt"
-#define OUTPUT_FILE "../output/output7.txt"
-#define MAX_LENGTH 1000
-#define STRIP_LENGTH 100
+// delete same node in the list
+#define INSERT_DELETE_SAME_NODE(new_node)                               \
+    auto iter = node_list.insert(new_node);                             \
+    for(auto it = *iter; it->f != (*iter)->f;it++){                     \
+        if(memcmp(it->mat, (*iter)->mat, sizeof((*iter)->mat)) == 0){   \
+            delete *iter;                                               \
+            node_list.erase(iter);                                      \
+            iter = node_list.begin();                                   \
+            break;                                                      \
+        }                                                               \
+    }                                                                   \
 
 int main() {
     std::ifstream fin(INPUT_FILE);
@@ -130,7 +162,7 @@ int main() {
                     new_node->f = new_node->g + new_node->h;
                     new_node->path = n->path;
                     new_node->path.push_back({loc.x0, loc.y0, (Direction) k});
-                    node_list.insert(new_node);
+                    INSERT_DELETE_SAME_NODE(new_node);
                 }
                 if (node_list.size() > MAX_LENGTH) {
                     auto it = node_list.end();
@@ -144,8 +176,6 @@ int main() {
         delete n;
     }
     std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
-    std::cout << "Time cost = " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count()
-              << std::endl;
     // output
     if (node_list.empty()) {
         fout << "No valid solution" << std::endl;
@@ -156,9 +186,7 @@ int main() {
     for (auto &i: n->path) {
         fout << i.x << " " << i.y << " " << i.direction << std::endl;
     }
-    for(auto &i : node_list){
-        delete i;
-    }
+
     fin.close();
     fout.close();
 #ifdef DEBUG
@@ -196,5 +224,11 @@ int main() {
             std::cout << root->mat[i][j] << " \n"[j == size - 1];
     fin.close();
 #endif
+    std::cout << "Time cost = " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count()
+              << std::endl;
+    std::cout << "Total step = " << n->path.size() << std::endl;
+    for(auto &i : node_list){
+        delete i;
+    }
     return 0;
 }

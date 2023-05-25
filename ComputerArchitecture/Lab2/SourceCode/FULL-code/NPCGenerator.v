@@ -26,7 +26,7 @@ module NPC_Generator(
     );
     localparam  BTB_SET = 64;
     localparam  BTB_SET_WIDTH = $clog2(BTB_SET);
-    localparam  BTB_TAG_WIDTH = 32 - BTB_SET_WIDTH;
+    localparam  BTB_TAG_WIDTH = 30 - BTB_SET_WIDTH;
     // BTB data table
     reg [31:0]              btb_predict_pc [0:BTB_SET-1];
     // BTB tag table
@@ -66,12 +66,12 @@ module NPC_Generator(
     end
 
     // read table
-    assign btb_rindex = PC_IF[BTB_SET_WIDTH-1:0];
-    assign btb_rtag = PC_IF[31:BTB_SET_WIDTH];
+    assign btb_rindex = PC_IF[BTB_SET_WIDTH+1:2];
+    assign btb_rtag = PC_IF[31:BTB_SET_WIDTH+2];
     assign btb_rhit = btb_valid[btb_rindex] && (btb_branch_tag[btb_rindex] == btb_rtag);
     // write table
-    assign btb_windex = PC_EX[BTB_SET_WIDTH-1:0];
-    assign btb_wtag = PC_EX[31:BTB_SET_WIDTH];
+    assign btb_windex = PC_EX[BTB_SET_WIDTH+1:2];
+    assign btb_wtag = PC_EX[31:BTB_SET_WIDTH+2];
     integer i;
     always @(posedge clk) begin
         if(flushF) begin
@@ -87,18 +87,19 @@ module NPC_Generator(
             btb_predict_pc[btb_windex]     <= br_target;
             btb_valid[btb_windex]          <= 1'b1;
             btb_history[btb_windex]        <= br;
+
         end
     end
     // BHT
     localparam BHT_SET = 4096;
     localparam  BHT_SET_WIDTH = $clog2(BHT_SET);
-    localparam  BHT_TAG_WIDTH = 32 - BHT_SET_WIDTH;
+    localparam  BHT_TAG_WIDTH = 30 - BHT_SET_WIDTH;
     // state machine
     reg [1:0] bht_state [0:BHT_SET-1];
     wire [BHT_SET_WIDTH-1:0] bht_rindex, bht_windex;
     wire bht_rhit;
-    assign bht_rindex = PC_IF[BHT_SET_WIDTH-1:0];
-    assign bht_windex = PC_EX[BHT_SET_WIDTH-1:0];
+    assign bht_rindex = PC_IF[BHT_SET_WIDTH+1:2];
+    assign bht_windex = PC_EX[BHT_SET_WIDTH+1:2];
     assign bht_rhit = bht_state[bht_rindex][1];
     always @(*) begin
         if(pre_fail) begin
@@ -111,7 +112,7 @@ module NPC_Generator(
         else if(jal) begin
             NPC = jal_target;
         end
-        else if(btb_rhit && btb_history[btb_rindex] && bht_rhit) begin
+        else if(btb_rhit && bht_rhit) begin
             NPC = btb_predict_pc[btb_rindex];
         end
         else begin
@@ -125,8 +126,12 @@ module NPC_Generator(
             end
         end
         else if(is_br_EX) begin
-            if(br) bht_state[bht_windex] <= bht_state[bht_windex] == 2'b11 ? 2'b11 : bht_state[bht_windex] + 1'b1;
-            else bht_state[bht_windex] <= bht_state[bht_windex] == 2'b00 ? 2'b00 : bht_state[bht_windex] - 1'b1; 
+            if(br) begin 
+                bht_state[bht_windex] <= bht_state[bht_windex] == 2'b11 ? 2'b11 : bht_state[bht_windex] + 1'b1;
+            end
+            else begin 
+                bht_state[bht_windex] <= bht_state[bht_windex] == 2'b00 ? 2'b00 : bht_state[bht_windex] - 1'b1; 
+            end
         end
     end
     // TODO: Complete this module

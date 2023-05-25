@@ -14,3 +14,5 @@ for_in:
     addi t0, zero, 0
     bne  t2, t3, for_out
     addi t1, t1, 1
+finish:
+    j finish
