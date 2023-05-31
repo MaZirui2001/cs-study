@@ -1,7 +1,7 @@
 #include "bits/stdc++.h"
 using namespace std;
-#define INPUT_FILE "../input/input7.txt"
-#define OUTPUT_FILE "../output/output7.txt"
+#define INPUT_FILE "../input/input9.txt"
+#define OUTPUT_FILE "../output/output9.txt"
 // record fit:
 // input0: 20/21
 // input1: 60/60

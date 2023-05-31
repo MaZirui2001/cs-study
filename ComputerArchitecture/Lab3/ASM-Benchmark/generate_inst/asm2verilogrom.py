@@ -67,7 +67,6 @@ else:
     def byte_wise_reverse(b):
         return b[6:8] + b[4:6] + b[2:4] + b[0:2]
         return b[6:8] + b[4:6] + b[2:4] + b[0:2]
-
     with open(OUTPUT, 'w') as f:
         f.write(verilog_head % (INPUT,))
         for i in range(0, len(s), 8):
@@ -76,5 +75,6 @@ else:
                 instr_string = instr_string[2:]
             instr_string = instr_string.strip("'")
             f.write('        inst_cache[%8d] = 32\'h%s;\n' % (i//8, instr_string, ))
+            print('        inst_cache[%8d] = 32\'h%s;' % (i//8, instr_string, ))
         f.write(verilog_tail)
     

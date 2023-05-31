@@ -2,58 +2,53 @@
 pout = imread('../image/pout.bmp');
 girl = imread('../image/Girl.bmp');
 
-
 % 理想低通滤波器
-D0 = 30; % 截止频率
+D0 = 50; % 截止频率
 H = lpfilter('ideal', size(pout,1), size(pout,2), D0);
-lp_pout = freqfilter(double(pout), H);
+lp_pout = freqfilter(pout, H);
 H = lpfilter('ideal', size(girl,1), size(girl,2), D0);
-lp_girl = freqfilter(double(girl), H);
+lp_girl = freqfilter(girl, H);
 
 % 巴特沃斯低通滤波器
-D0 = 30; % 截止频率
+D0 = 50; % 截止频率
 n = 5; % 阶数
 H = lpfilter('btw', size(pout,1), size(pout,2), D0, n);
-lp_pout_btw = freqfilter(double(pout), H);
+lp_pout_btw = freqfilter(pout, H);
 H = lpfilter('btw', size(girl,1), size(girl,2), D0, n);
-lp_girl_btw = freqfilter(double(girl), H);
+lp_girl_btw = freqfilter(girl, H);
 
 % 高斯低通滤波器
-D0 = 30; % 截止频率
+D0 = 50; % 截止频率
 H = lpfilter('gaussian', size(pout,1), size(pout,2), D0);
-lp_pout_gauss = freqfilter(double(pout), H);
+lp_pout_gauss = freqfilter(pout, H);
 H = lpfilter('gaussian', size(girl,1), size(girl,2), D0);
-lp_girl_gauss = freqfilter(double(girl), H);
+lp_girl_gauss = freqfilter(girl, H);
 
 % 显示不同低通滤波器处理后的图像
 figure;
-subplot(2,3,1), imshow(pout), title();
-subplot
-imshow(uint8(lp_pout)), title('Ideal LPF pout');
-figure, imshow(uint8(lp_pout_btw)), title('Butterworth LPF pout');
-figure, imshow(uint8(lp_pout_gauss)), title('Gaussian LPF pout');
-figure, imshow(uint8(lp_girl)), title('Ideal LPF girl');
-figure, imshow(uint8(lp_girl_btw)), title('Butterworth LPF girl');
-figure, imshow(uint8(lp_girl_gauss)), title('Gaussian LPF girl');
+subplot(3,3,1), imshow(uint8(pout)), title('pout原图');
+subplot(3,3,2), imshow(uint8(girl)), title('girl原图');
+subplot(3,3,4), imshow(uint8(lp_pout)), title('理想低通滤波器');
+subplot(3,3,5), imshow(uint8(lp_pout_btw)), title('巴特沃斯低通滤波器');
+subplot(3,3,6), imshow(uint8(lp_pout_gauss)), title('高斯低通滤波器');
+subplot(3,3,7), imshow(uint8(lp_girl)), title('理想低通滤波器');
+subplot(3,3,8), imshow(uint8(lp_girl_btw)), title('巴特沃斯低通滤波器');
+subplot(3,3,9), imshow(uint8(lp_girl_gauss)), title('高斯低通滤波器');
 
 % 加椒盐噪声和高斯噪声
 noisy_girl_sp = imnoise(girl, 'salt & pepper', 0.05);
 noisy_girl_gauss = imnoise(girl, 'gaussian', 0, 0.01);
 
-% 显示加噪声后的图像
-figure, imshow(noisy_girl_sp), title('Salt & pepper noisy girl');
-figure, imshow(noisy_girl_gauss), title('Gaussian noisy girl');
-
 % 对加噪声后的图像进行去噪
 % 理想低通滤波器去噪
-D0 = 30; % 截止频率
+D0 = 50; % 截止频率
 H = lpfilter('ideal', size(noisy_girl_sp,1), size(noisy_girl_sp,2), D0);
 lp_noisy_girl_sp = freqfilter(double(noisy_girl_sp), H);
 H = lpfilter('ideal', size(noisy_girl_gauss,1), size(noisy_girl_gauss,2), D0);
 lp_noisy_girl_gauss = freqfilter(double(noisy_girl_gauss), H);
 
 % 巴特沃斯低通滤波器去噪
-D0 = 30; % 截止频率
+D0 = 50; % 截止频率
 n = 5; % 阶数
 H = lpfilter('btw', size(noisy_girl_sp,1), size(noisy_girl_sp,2), D0, n);
 lp_noisy_girl_sp_btw = freqfilter(double(noisy_girl_sp), H);
@@ -61,33 +56,26 @@ H = lpfilter('btw', size(noisy_girl_gauss,1), size(noisy_girl_gauss,2), D0, n);
 lp_noisy_girl_gauss_btw = freqfilter(double(noisy_girl_gauss), H);
 
 % 高斯低通滤波器去噪
-D0 = 30; % 截止频率
+D0 = 50; % 截止频率
 H = lpfilter('gaussian', size(noisy_girl_sp,1), size(noisy_girl_sp,2), D0);
 lp_noisy_girl_sp_gauss = freqfilter(double(noisy_girl_sp), H);
 H = lpfilter('gaussian', size(noisy_girl_gauss,1), size(noisy_girl_gauss,2), D0);
 lp_noisy_girl_gauss_gauss = freqfilter(double(noisy_girl_gauss), H);
 
 % 显示去噪后的图像
-figure, imshow(uint8(lp_noisy_girl_sp)), title('Ideal LPF denoised girl (salt & pepper)');
-figure, imshow(uint8(lp_noisy_girl_sp_btw)), title('Butterworth LPF denoised girl (salt & pepper)');
-figure, imshow(uint8(lp_noisy_girl_sp_gauss)), title('Gaussian LPF denoised girl (salt & pepper)');
-figure, imshow(uint8(lp_noisy_girl_gauss)), title('Ideal LPF denoised girl (gaussian)');
-figure, imshow(uint8(lp_noisy_girl_gauss_btw)), title('Butterworth LPF denoised girl (gaussian)');
-figure, imshow(uint8(lp_noisy_girl_gauss_gauss)), title('Gaussian LPF denoised girl (gaussian)');
+figure, 
+subplot(3,3,1), imshow(noisy_girl_sp), title('椒盐噪声');
+subplot(3,3,2), imshow(noisy_girl_gauss), title('高斯噪声');
+subplot(3,3,4); imshow(lp_noisy_girl_sp); title('椒盐噪声理想低通滤波器');
+subplot(3,3,5); imshow(lp_noisy_girl_sp_btw); title('椒盐噪声巴特沃斯低通滤波器');
+subplot(3,3,6); imshow(lp_noisy_girl_sp_gauss); title('椒盐噪声高斯低通滤波器');
+subplot(3,3,7); imshow(lp_noisy_girl_gauss); title('高斯噪声理想低通滤波器');
+subplot(3,3,8); imshow(lp_noisy_girl_gauss_btw); title('高斯噪声巴特沃斯低通滤波器');
+subplot(3,3,9); imshow(lp_noisy_girl_gauss_gauss); title('高斯噪声高斯低通滤波器');
 
 function H = lpfilter(type, M, N, D0, n)
-    % LPFILTER Create a lowpass butterworth filter
-    %   H = LPFILTER(TYPE, M, N, D0, N) creates a frequency domain lowpass
-    %   filter H of the specified TYPE and size (M-by-N). D0 is the cutoff
-    %   frequency and n is the order of the filter.
-    %
-    %   Supported filter types:
-    %       - 'ideal': Ideal lowpass filter
-    %       - 'btw': Butterworth lowpass filter
-    %       - 'gaussian': Gaussian lowpass filter
     
     % Initialize filter
-    
     % Compute distance from center for each pixel
     D = zeros(M, N);
     for i = 1:M

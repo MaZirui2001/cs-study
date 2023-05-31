@@ -18,7 +18,7 @@ module BranchDecision(
     );
 
     // TODO: Complete this module
-
+    
 //@HIDE-BEGIN
     wire signed [31:0] reg1_s, reg2_s;
     assign reg1_s = reg1;

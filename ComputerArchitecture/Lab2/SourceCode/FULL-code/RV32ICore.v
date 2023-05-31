@@ -130,7 +130,12 @@ module RV32ICore(
 
     // Adder to compute PC + 4
     assign PC_4 = PC_IF + 4;
-
+    // statistic
+    reg [63:0] program_cnt;
+    always@(posedge CPU_CLK) begin
+        if(CPU_RST) program_cnt <= 0;
+        else program_cnt <= program_cnt + 1;
+    end
 
     // Adder to compute PC_ID + Imm - 4
     assign jal_target = PC_ID + imm - 4;

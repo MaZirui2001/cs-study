@@ -15,6 +15,9 @@
 // 实验要求  
     // 实现NPC_Generator
 
+`define BHT
+// `define BTB
+
 module NPC_Generator(
     input clk, //new
     input is_br_EX, flushF, bubbleE,// new
@@ -112,9 +115,16 @@ module NPC_Generator(
         else if(jal) begin
             NPC = jal_target;
         end
+    `ifdef BTB
+        else if(btb_rhit && btb_history[btb_rindex]) begin
+            NPC = btb_predict_pc[btb_rindex];
+        end
+    `endif
+    `ifdef BHT
         else if(btb_rhit && bht_rhit) begin
             NPC = btb_predict_pc[btb_rindex];
         end
+    `endif
         else begin
             NPC = PC;
         end
