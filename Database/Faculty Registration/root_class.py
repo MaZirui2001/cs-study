@@ -1,5 +1,8 @@
 import tkinter as tk
-import paper
+import paper_check
+import paper_add
+import paper_delete
+import paper_modify
 
 class Root:
     def __init__(self):
@@ -24,35 +27,32 @@ class Root:
                                   command=lambda: self.switch_to_frame("frame_paper_modify"))
         button_modify.grid(row=0, column=3, ipadx=10, ipady=10)
         button_check = tk.Button(frame_button, text="查询",
-                                 command=lambda: self.switch_to_frame("frame_paper_search"))
+                                 command=lambda: self.switch_to_frame("frame_paper_check"))
         button_check.grid(row=0, column=4, ipadx=10, ipady=10)
         frame_button.pack(side='bottom', anchor='center')
 
     def create_frame_paper_add(self):
-        paper.create_frame_paper_add(self)
+        paper_add.create_frame_paper_add(self)
         self.__create_paper_choose_button("frame_paper_add")
 
     def create_frame_paper_delete(self):
-        frame_paper_delete = tk.Frame(self.root, width=800, height=600, bg='black')
-        self.frame_list["frame_paper_delete"] = frame_paper_delete
+        paper_delete.create_frame_paper_delete(self)
         self.__create_paper_choose_button("frame_paper_delete")
 
     def create_frame_paper_modify(self):
-        frame_paper_modify = tk.Frame(self.root, width=800, height=600, bg='yellow')
-        self.frame_list["frame_paper_modify"] = frame_paper_modify
+        paper_modify.create_frame_paper_modify(self)
         self.__create_paper_choose_button("frame_paper_modify")
 
-    def create_frame_paper_search(self):
-        frame_paper_search = tk.Frame(self.root, width=800, height=600, bg='blue')
-        self.frame_list["frame_paper_search"] = frame_paper_search
-        self.__create_paper_choose_button("frame_paper_search")
+    def create_frame_paper_check(self):
+        paper_check.create_frame_paper_check(self)
+        self.__create_paper_choose_button("frame_paper_check")
 
     def create_frame_main(self):
         frame_main = tk.Frame(self.root, height=600, width=800, bg='pink')
-        frame_button = tk.Frame(frame_main, height=10, width=800, bg='gray')
+        frame_button = tk.Frame(frame_main, height=10, width=800, bg='white')
         self.frame_list["frame_main"] = frame_main
         button_paper = tk.Button(frame_button, text="登记论文发表情况",
-                                 command=lambda: self.switch_to_frame("frame_paper_search"), height=5, width=20)
+                                 command=lambda: self.switch_to_frame("frame_paper_check"), height=5, width=20)
         button_paper.pack(side='left', anchor='center')
         button_proj = tk.Button(frame_button, text="登记项目情况", command=show, height=5, width=20)
         button_proj.pack(side='left', anchor='center')

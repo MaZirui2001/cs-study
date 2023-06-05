@@ -8,6 +8,6 @@ if __name__ == '__main__':
     r.create_frame_paper_add()
     r.create_frame_paper_delete()
     r.create_frame_paper_modify()
-    r.create_frame_paper_search()
+    r.create_frame_paper_check()
     r.switch_to_frame("frame_main")
     r.root.mainloop()
