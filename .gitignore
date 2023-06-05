@@ -1,4 +1,7 @@
-!*.*
+!Makefile
+! *.*
+*.jou
+*.log
 .idea/
 cmake-build-debug/
 .vscode/
