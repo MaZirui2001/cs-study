@@ -9,6 +9,7 @@ id2id_name = ['none', '博士后', '助教', '讲师', '副教授', '特任教�
               '特任研究员', '研究员']
 id2gender = ['none', '男', '女']
 
+
 def create_label_and_entry(frame_base, label_text, entry_default_text):
     frame = tk.Frame(frame_base, height=50, width=800, bg='white')
     label = tk.Label(frame, text=label_text, font=("宋体", 10))
@@ -34,6 +35,7 @@ def create_label_and_entry2(frame_base, label1_text, entry1_default_text, label2
     entry2.pack(side='left', anchor='center')
     frame.pack(side='top', anchor='w')
     return entry1, entry2
+
 
 def create_label_with_button2(frame_base, label_text, button_text1, command1, button_text2, command2):
     frame = tk.Frame(frame_base, width=800, height=50)
@@ -79,3 +81,11 @@ def create_scrollbar(canvas_base):
     sb = tk.Scrollbar(canvas_base, orient='vertical', command=canvas_base.yview)
     sb.pack(side='right', fill='y')
     canvas_base.configure(yscrollcommand=sb.set)
+
+
+def create_text(frame_base, text, disable, column):
+    text_frame = tk.Text(frame_base, width=20, height=2)
+    text_frame.grid(row=0, column=column)
+    text_frame.insert(1.0, str(text))
+    if disable:
+        text_frame.config(state='disabled')

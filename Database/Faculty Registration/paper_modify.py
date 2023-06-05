@@ -250,11 +250,11 @@ def create_modify_window(self, index):
     paper_add_items["paper_date"] = common.create_label_and_entry(frame_paper_info, "发表日期", paper_date)
 
     # 论文类型，下拉菜单
-    types = ["full-paper", "short-paper", "poster-paper", "demo-paper"]
+    types = ["none", "full-paper", "short-paper", "poster-paper", "demo-paper"]
     paper_add_items["paper_type"] = common.create_option_menu(frame_paper_info, "论文类型", types[paper_type], types)
 
     # 论文级别， 下拉菜单
-    levels = ["CCF-A", "CCF-B", "CCF-C", "中文 CCF-A", "中文 CCF-B", "无级别"]
+    levels = ["none", "CCF-A", "CCF-B", "CCF-C", "中文 CCF-A", "中文 CCF-B", "无级别"]
     paper_add_items["paper_level"] = common.create_option_menu(frame_paper_info, "论文级别", levels[paper_level],
                                                                levels)
 
@@ -405,32 +405,32 @@ def create_modify_result_frame(self, frame_paper_check):
         mod_result_frame.append(frame_paper_check_result)
         # 显示四栏：论文名称、最高作者、发表时间、论文来源, 用Text组件, 每一个后面跟一个详情按钮和一个修改按钮
         # 论文名称
-        text_paper_name = tk.Text(frame_paper_check_result, width=20, height=2)
+        text_paper_name = tk.Text(frame_paper_check_result, width=18, height=2)
         text_paper_name.grid(row=0, column=0)
         text_paper_name.insert(1.0, str(check_result_simple[i][0]))
         text_paper_name.config(state='disabled')
         # 最高作者
-        text_author = tk.Text(frame_paper_check_result, width=20, height=2)
+        text_author = tk.Text(frame_paper_check_result, width=18, height=2)
         text_author.grid(row=0, column=1)
         text_author.insert(1.0, str(check_result_simple[i][1]))
         text_author.config(state='disabled')
         # 发表时间
-        text_publish_time = tk.Text(frame_paper_check_result, width=20, height=2)
+        text_publish_time = tk.Text(frame_paper_check_result, width=18, height=2)
         text_publish_time.grid(row=0, column=2)
         text_publish_time.insert(1.0, str(check_result_simple[i][2]))
         text_publish_time.config(state='disabled')
         # 论文来源
-        text_paper_source = tk.Text(frame_paper_check_result, width=20, height=2)
+        text_paper_source = tk.Text(frame_paper_check_result, width=18, height=2)
         text_paper_source.grid(row=0, column=3)
         text_paper_source.insert(1.0, str(check_result_simple[i][3]))
         text_paper_source.config(state='disabled')
         # 详情按钮
-        button_paper_detail = tk.Button(frame_paper_check_result, text="详情", width=10, height=1,
+        button_paper_detail = tk.Button(frame_paper_check_result, text="详情", width=8, height=1,
                                         command=lambda arg1=self, arg2=i: create_detail_check_top(arg1, arg2))
         button_paper_detail.grid(row=0, column=4, padx=2)
         detail_button_list.append((button_paper_detail, i))
         # 修改按钮
-        button_paper_modify = tk.Button(frame_paper_check_result, text="修改", width=10, height=1,
+        button_paper_modify = tk.Button(frame_paper_check_result, text="修改", width=8, height=1,
                                         command=lambda arg1=self, arg2=i: create_modify_window(arg1, arg2))
         button_paper_modify.grid(row=0, column=5, padx=2)
         modify_button_list.append((button_paper_modify, i))

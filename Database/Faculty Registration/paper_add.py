@@ -216,11 +216,11 @@ def create_frame_paper_add(self):
     paper_add_items["paper_date"] = common.create_label_and_entry(frame_paper_info, "发表日期", "")
 
     # 论文类型，下拉菜单
-    types = ["full-paper", "short-paper", "poster-paper", "demo-paper"]
-    paper_add_items["paper_type"] = common.create_option_menu(frame_paper_info, "论文类型", types[0], types)
+    types = ["none", "full-paper", "short-paper", "poster-paper", "demo-paper"]
+    paper_add_items["paper_type"] = common.create_option_menu(frame_paper_info, "论文类型", types[1], types)
 
     # 论文级别， 下拉菜单
-    levels = ["CCF-A", "CCF-B", "CCF-C", "中文 CCF-A", "中文 CCF-B", "无级别"]
+    levels = ["none", "CCF-A", "CCF-B", "CCF-C", "中文 CCF-A", "中文 CCF-B", "无级别"]
     paper_add_items["paper_level"] = common.create_option_menu(frame_paper_info, "论文级别", levels[0], levels)
 
     # 论文作者信息：作者编号、作者姓名、作者排名、是否为通讯作者
