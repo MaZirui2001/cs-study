@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int N = (1 << 10);
+int N = (1 << 11);
 
 void gemm_baseline(const float *A, const float *B, float *C); // you can use inline function
 

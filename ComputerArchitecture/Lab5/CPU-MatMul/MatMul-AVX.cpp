@@ -1,11 +1,13 @@
 #include <bits/stdc++.h>
 #include <immintrin.h>
+#include <iostream>
+#include <random>
 
 using namespace std;
-#define VEC_VEC
-// #define NUM_VEC
-#define CHECK
-int N = (1 << 10);
+//#define VEC_VEC
+#define NUM_VEC
+//#define CHECK
+int N = (1 << 3);
 
 void gemm_verify(float *A, float *B, float *C); // you can use inline function
 void gemm_avx(float *A, float *B, float *C); // you can use inline function
@@ -39,7 +41,7 @@ int main() {
     free(C);
     return 0;
 }
-
+# ifdef CHECK
 void gemm_baseline(const float *A, const float *B, float *C) {
     for (int i = 0; i < N; i++) {
         for (int k = 0; k < N; k++) {
@@ -49,7 +51,8 @@ void gemm_baseline(const float *A, const float *B, float *C) {
         }
     }
 }
-
+#endif
+# ifdef CHECK
 void gemm_verify(float *A, float *B, float *C) {
     auto *D = (float *) malloc(N * N * sizeof(float));
     memset(D, 0, N * N * sizeof(float));
@@ -72,7 +75,7 @@ void gemm_verify(float *A, float *B, float *C) {
     cout << "Correct!" << endl;
     free(D);
 }
-
+#endif
 // AVX version
 void gemm_avx(float *A, float *B, float *C) {
 #ifdef VEC_VEC
@@ -100,16 +103,48 @@ void gemm_avx(float *A, float *B, float *C) {
     free(B_copy);
 #endif
 #ifdef NUM_VEC
-    __m256 sum, a, b, c;
-    for(int i = 0; i < N; i++){
-        for(int k = 0; k < N; k += 8){
-            sum = _mm256_setzero_ps();
+    __m256 sum, a, b;
+    __m256 sum0, sum1, sum2, sum3, sum4, sum5, sum6, sum7;
+    __m256 a0, a1, a2, a3, a4, a5, a6, a7;
+    for(int k = 0; k < N; k += 8){
+        for(int i = 0; i < N; i += 8){
+            sum0 = _mm256_setzero_ps();
+            sum1 = _mm256_setzero_ps();
+            sum2 = _mm256_setzero_ps();
+            sum3 = _mm256_setzero_ps();
+            sum4 = _mm256_setzero_ps();
+            sum5 = _mm256_setzero_ps();
+            sum6 = _mm256_setzero_ps();
+            sum7 = _mm256_setzero_ps();
             for(int j = 0; j < N; j++){
-                a = _mm256_set1_ps(A[i * N + j]);
+                a0 = _mm256_set1_ps(A[(i + 0) * N + j]);
+                a1 = _mm256_set1_ps(A[(i + 1) * N + j]);
+                a2 = _mm256_set1_ps(A[(i + 2) * N + j]);
+                a3 = _mm256_set1_ps(A[(i + 3) * N + j]);
+                a4 = _mm256_set1_ps(A[(i + 4) * N + j]);
+                a5 = _mm256_set1_ps(A[(i + 5) * N + j]);
+                a6 = _mm256_set1_ps(A[(i + 6) * N + j]);
+                a7 = _mm256_set1_ps(A[(i + 7) * N + j]);
+
                 b = _mm256_loadu_ps(&B[j * N + k]);
-                sum = _mm256_fmadd_ps(a, b, sum);
+
+                sum0 = _mm256_fmadd_ps(a0, b, sum0);
+                sum1 = _mm256_fmadd_ps(a1, b, sum1);
+                sum2 = _mm256_fmadd_ps(a2, b, sum2);
+                sum3 = _mm256_fmadd_ps(a3, b, sum3);
+                sum4 = _mm256_fmadd_ps(a4, b, sum4);
+                sum5 = _mm256_fmadd_ps(a5, b, sum5);
+                sum6 = _mm256_fmadd_ps(a6, b, sum6);
+                sum7 = _mm256_fmadd_ps(a7, b, sum7);
             }
-            _mm256_storeu_ps(&C[i * N + k], sum);
+            _mm256_storeu_ps(&C[(i + 0) * N + k], sum0);
+            _mm256_storeu_ps(&C[(i + 1) * N + k], sum1);
+            _mm256_storeu_ps(&C[(i + 2) * N + k], sum2);
+            _mm256_storeu_ps(&C[(i + 3) * N + k], sum3);
+            _mm256_storeu_ps(&C[(i + 4) * N + k], sum4);
+            _mm256_storeu_ps(&C[(i + 5) * N + k], sum5);
+            _mm256_storeu_ps(&C[(i + 6) * N + k], sum6);
+            _mm256_storeu_ps(&C[(i + 7) * N + k], sum7);
         }
     }
 #endif

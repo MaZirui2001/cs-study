@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CPU",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "AVX::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AVX-Release-4a83f4a9b33dc08d8c32.json",
+					"name" : "AVX",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Baseline::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Baseline-Release-0a076aa7a1a9d4960e20.json",
+					"name" : "Baseline",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Block::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Block-Release-636f3ba8257ced9ecd94.json",
+					"name" : "Block",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/45443/Documents/cs-study/ComputerArchitecture/Lab5/CPU-MatMul/cmake-build-release",
+		"source" : "C:/Users/45443/Documents/cs-study/ComputerArchitecture/Lab5/CPU-MatMul"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

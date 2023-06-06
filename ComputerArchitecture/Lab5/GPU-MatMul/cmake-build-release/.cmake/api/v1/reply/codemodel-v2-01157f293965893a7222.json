@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "GPU",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Baseline::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Baseline-Release-36b6860fe77f23f37e47.json",
+					"name" : "Baseline",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "GPU::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GPU-Release-7ad39e4ec59db8f017b7.json",
+					"name" : "GPU",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Shared::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Shared-Release-29f254fd8e654c26c73e.json",
+					"name" : "Shared",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/45443/Documents/cs-study/ComputerArchitecture/Lab5/GPU-MatMul/cmake-build-release",
+		"source" : "C:/Users/45443/Documents/cs-study/ComputerArchitecture/Lab5/GPU-MatMul"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

@@ -1,0 +1,12 @@
+# ninja log v5
+1	4754	7077270690508485	CMakeFiles/Baseline.dir/MatMul-Baseline.cu.obj	d732afab3faf7ed2
+4756	4895	7077270692025899	Baseline.exe	2603dfd24e25fe0b
+2	4922	7077278237029710	CMakeFiles/Baseline.dir/MatMul-Baseline.cu.obj	d5648d1698abbf62
+4932	5054	7077278238489287	Baseline.exe	2603dfd24e25fe0b
+0	4602	7077278346894069	CMakeFiles/Shared.dir/MatMul-Block.cu.obj	ff97dfb388398e6c
+4602	4725	7077278348260384	Shared.exe	577d6d4ece0182f6
+2	4489	7077278483090726	CMakeFiles/Shared.dir/MatMul-Block.cu.obj	ff97dfb388398e6c
+4490	4621	7077278484545757	Shared.exe	577d6d4ece0182f6
+1	4795	7077281127578992	CMakeFiles/GPU.dir/main.cu.obj	d820d9ac448a4160
+4796	6995	7077281149607399	CMakeFiles/GPU.dir/cmake_device_link.obj	91b0718f245a47ee
+6995	7115	7077281150887391	GPU.exe	6afc214922a6b365

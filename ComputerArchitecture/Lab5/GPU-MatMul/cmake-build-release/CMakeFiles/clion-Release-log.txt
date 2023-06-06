@@ -1,0 +1,11 @@
+C:\Users\45443\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9011.31\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Release -DCMAKE_MAKE_PROGRAM=C:/Users/45443/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.9011.31/bin/ninja/win/x64/ninja.exe -G Ninja -S C:\Users\45443\Documents\cs-study\ComputerArchitecture\Lab5\GPU-MatMul -B C:\Users\45443\Documents\cs-study\ComputerArchitecture\Lab5\GPU-MatMul\cmake-build-release
+-- The CUDA compiler identification is NVIDIA 12.0.140
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.0/bin/nvcc.exe - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Found CUDA: C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.0 (found version "12.0") 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/45443/Documents/cs-study/ComputerArchitecture/Lab5/GPU-MatMul/cmake-build-release

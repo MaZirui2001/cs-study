@@ -11,8 +11,7 @@ check_result_simple = [(1, 2, 3, 4), (5, 6, 7, 8)]
 check_result_frame = []
 detail_button_list = []
 
-
-def check_paper(self, frame_paper_check):
+def generate_check_sql():
     # 获取输入的论文信息
     paper_name = paper_check_items["paper_name"].get()
     paper_id = paper_check_items["paper_id"].get()
@@ -23,8 +22,8 @@ def check_paper(self, frame_paper_check):
     # 使用sql语句，先将paper表、public_paper表、teacher表连接起来
     # 一旦有一个条件不为空，就将其加入sql语句中
     sql_sentence = "select distinct paper.id  from paper \
-    join public_paper pp on paper.id = pp.paper_id \
-    join teacher on pp.teacher_id = teacher.id "
+        join public_paper pp on paper.id = pp.paper_id \
+        join teacher on pp.teacher_id = teacher.id "
     t = ()
     if paper_name != "" or paper_id != "" or author_name != "" or author_id != "":
         sql_sentence += "where "
@@ -72,7 +71,9 @@ def check_paper(self, frame_paper_check):
         sql_sentence += "paper.public_date = %s"
         t = t + (paper_date,)
     sql_sentence += " order by paper.id;"
-    print(sql_sentence)
+    return sql_sentence, t
+def check_paper(self, frame_paper_check):
+    sql_sentence, t = generate_check_sql()
     # 链接数据库
     try:
         db = sql.connect(
@@ -225,8 +226,6 @@ def create_frame_paper_check(self):
     # 创建label
     tk.Label(frame_paper_check, text="论文信息查找", font=("宋体", 15)).pack(side='top', anchor='n')
 
-
-
     # 创建输入框, 获取输入的论文信息
     frame_paper_info = tk.Frame(frame_paper_check, width=200, height=600)
     frame_paper_info.pack(side='top', anchor='n')
@@ -263,6 +262,7 @@ def create_frame_paper_check(self):
 
     frame_paper_check_label = tk.Frame(frame_paper_check_result, width=800, height=50)
     frame_paper_check_label.pack(side='top', anchor='n')
+
     tk.Label(frame_paper_check_label, text="论文名称", font=("宋体", 10), width=20, height=2).grid(row=0, column=0)
     tk.Label(frame_paper_check_label, text="作者之一", font=("宋体", 10), width=20, height=2).grid(row=0, column=1)
     tk.Label(frame_paper_check_label, text="发表时间", font=("宋体", 10), width=20, height=2).grid(row=0, column=2)
