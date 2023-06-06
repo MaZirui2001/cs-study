@@ -83,8 +83,15 @@ def create_scrollbar(canvas_base):
     canvas_base.configure(yscrollcommand=sb.set)
 
 
-def create_text(frame_base, text, disable, column):
-    text_frame = tk.Text(frame_base, width=20, height=2)
+def create_text(frame_base, text, disable, column, width=20):
+    text_frame = tk.Text(frame_base, width=width, height=2)
+    text_frame.grid(row=0, column=column)
+    text_frame.insert(1.0, str(text))
+    if disable:
+        text_frame.config(state='disabled')
+
+def create_four_text(frame_base, text, disable, column, width=20):
+    text_frame = tk.Text(frame_base, width=width, height=4)
     text_frame.grid(row=0, column=column)
     text_frame.insert(1.0, str(text))
     if disable:

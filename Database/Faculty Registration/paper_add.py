@@ -10,60 +10,60 @@ author_num_view = 0
 paper_add_items = {}
 author_info = []
 
-def insert_paper_info():
-    global frame_paper_author_list, author_num_view, paper_add_items, author_info
-    paper_id = paper_add_items["paper_id"].get()
-    paper_name = paper_add_items["paper_name"].get()
-    paper_source = paper_add_items["paper_source"].get()
-    paper_date = paper_add_items["paper_date"].get()
-    paper_type = type_map[paper_add_items["paper_type"].get()]
-    paper_level = level_map[paper_add_items["paper_level"].get()]
+
+def insert_info_get_and_check(paper_add_items_local, author_num, author_info_local, message_parent):
+    paper_id = paper_add_items_local["paper_id"].get()
+    paper_name = paper_add_items_local["paper_name"].get()
+    paper_source = paper_add_items_local["paper_source"].get()
+    paper_date = paper_add_items_local["paper_date"].get()
+    paper_type = type_map[paper_add_items_local["paper_type"].get()]
+    paper_level = level_map[paper_add_items_local["paper_level"].get()]
     author_id_list = []
     author_name_list = []
     author_rank_list = []
     author_is_communicate_list = []
-    for i in range(author_num_view):
-        author_id_list.append(author_info[i]['id'].get())
-        author_name_list.append(author_info[i]['name'].get())
-        author_rank_list.append(author_info[i]['rank'].get())
-        author_is_communicate_list.append(author_info[i]['comm'].get())
+    for i in range(author_num):
+        author_id_list.append(author_info_local[i]['id'].get())
+        author_name_list.append(author_info_local[i]['name'].get())
+        author_rank_list.append(author_info_local[i]['rank'].get())
+        author_is_communicate_list.append(author_info_local[i]['comm'].get())
 
     # 论文编号不能为空
     if paper_id == '':
-        tk.messagebox.showerror(title='错误', message='论文编号不能为空！')
-        return
+        tk.messagebox.showerror(title='错误', message='论文编号不能为空！', parent=message_parent)
+        return None
     # 转换为int类型，转换失败则报错
     else:
         try:
             paper_id = int(paper_id)
         except ValueError:
-            tk.messagebox.showerror(title='错误', message='论文编号必须为整数！')
-            return
+            tk.messagebox.showerror(title='错误', message='论文编号必须为整数！', parent=message_parent)
+            return None
     # 论文名称不能为空
     if paper_name == '':
-        tk.messagebox.showerror(title='错误', message='论文名称不能为空！')
-        return
+        tk.messagebox.showerror(title='错误', message='论文名称不能为空！', parent=message_parent)
+        return None
     # 论文来源不能为空
     if paper_source == '':
-        tk.messagebox.showerror(title='错误', message='发表来源不能为空！')
-        return
+        tk.messagebox.showerror(title='错误', message='发表来源不能为空！', parent=message_parent)
+        return None
     # 论文发表日期需要合法，且需要可以转换为datetime类型
     if paper_date == '':
-        tk.messagebox.showerror(title='错误', message='发表日期不能为空！')
-        return
+        tk.messagebox.showerror(title='错误', message='发表日期不能为空！', parent=message_parent)
+        return None
     else:
         try:
             paper_date = pd.to_datetime(paper_date).date()
         except ValueError:
-            tk.messagebox.showerror(title='错误', message='发表日期不合法！')
-            return
+            tk.messagebox.showerror(title='错误', message='发表日期不合法！', parent=message_parent)
+            return None
     # 检查作者列表是否有空值
-    listnum = author_num_view
+    listnum = author_num
     temp_id_list = []
     temp_name_list = []
     temp_rank_list = []
     temp_is_communicate_list = []
-    for i in range(author_num_view):
+    for i in range(author_num):
         if author_id_list[i] == '' or author_name_list[i] == '' or author_rank_list[i] == '':
             listnum -= 1
         else:
@@ -72,8 +72,8 @@ def insert_paper_info():
             temp_rank_list.append(author_rank_list[i])
             temp_is_communicate_list.append(author_is_communicate_list[i])
     if listnum == 0:
-        tk.messagebox.showerror(title='错误', message='作者列表不能全为不完整的信息！')
-        return
+        tk.messagebox.showerror(title='错误', message='作者列表不能全为不完整的信息！', parent=message_parent)
+        return None
     author_id_list = temp_id_list
     author_name_list = temp_name_list
     author_rank_list = temp_rank_list
@@ -85,8 +85,8 @@ def insert_paper_info():
             if author_id_list[i] <= 0:
                 raise ValueError
         except ValueError:
-            tk.messagebox.showerror(title='错误', message='作者编号必须为正整数！')
-            return
+            tk.messagebox.showerror(title='错误', message='作者编号必须为正整数！', parent=message_parent)
+            return None
     # 检查作者排名是否合法
     # 检查是否有相同的作者编号
     for i in range(listnum):
@@ -96,27 +96,40 @@ def insert_paper_info():
                 if author_id_list[i] <= 0:
                     raise ValueError
             except ValueError:
-                tk.messagebox.showerror(title='错误', message='作者编号必须为正整数！')
-                return
+                tk.messagebox.showerror(title='错误', message='作者编号必须为正整数！', parent=message_parent)
+                return None
             if author_id_list[i] == author_id_list[j]:
-                tk.messagebox.showerror(title='错误', message='作者编号不能相同！')
-                return
+                tk.messagebox.showerror(title='错误', message='作者编号不能相同！', parent=message_parent)
+                return None
     # 检查是否有相同的排名
     for i in range(listnum):
         for j in range(i + 1, listnum):
             if author_rank_list[i] == author_rank_list[j]:
-                tk.messagebox.showerror(title='错误', message='作者排名不能相同！')
-                return
+                tk.messagebox.showerror(title='错误', message='作者排名不能相同！', parent=message_parent)
+                return None
     # 检查是否有超过一个的通讯作者
     communicate_num = 0
     for i in range(listnum):
         if author_is_communicate_list[i] == 1:
             communicate_num += 1
     if communicate_num > 1:
-        tk.messagebox.showerror(title='错误', message='通讯作者只能有一个！')
+        tk.messagebox.showerror(title='错误', message='通讯作者只能有一个！', parent=message_parent)
+        return None
+    return listnum, paper_id, paper_name, paper_source, paper_date, paper_type, paper_level, author_id_list, \
+        author_name_list, author_rank_list, author_is_communicate_list
+
+
+def insert_paper_info(message_parent):
+    global frame_paper_author_list, author_num_view, paper_add_items, author_info
+    temp = insert_info_get_and_check(paper_add_items, author_num_view, author_info, message_parent)
+    if temp is None:
         return
-    # 通过基本检查，开始插入数据
-    # 打开数据库连接
+    listnum, paper_id, paper_name, paper_source, paper_date, paper_type, paper_level, \
+        author_id_list, author_name_list, author_rank_list, author_is_communicate_list = temp
+    if paper_id is None:
+        return
+        # 通过基本检查，开始插入数据
+        # 打开数据库连接
     try:
         db = sql.connect(
             host='localhost',
@@ -145,6 +158,8 @@ def insert_paper_info():
         tk.messagebox.showerror(title='错误', message=e.args[1])
         return
     db.close()
+    # 提示插入成功， 需要点击确认
+    tk.messagebox.showinfo(title='成功', message='插入成功！')
 
 
 def create_frame_paper_author(frame_paper_info):
@@ -159,8 +174,8 @@ def create_frame_paper_author(frame_paper_info):
     author_num_view += 1
 
     # 输入作者编号和排名
-    entry_paper_author_id, entry_paper_author_rank = common.create_label_and_entry2(frame_paper_author, "作者" + str(
-        author_num_view) + "编号", "", "作者" + str(author_num_view) + "排名", "")
+    entry_paper_author_id, entry_paper_author_rank = common.create_label_and_entry2(
+        frame_paper_author, "作者" + str(author_num_view) + "编号", "", "作者" + str(author_num_view) + "排名", "")
 
     # 输入作者姓名和是否为通讯作者
     entry_paper_author_name, var_paper_author_is_communicate = common.create_label_and_entry_with_checkbutton(
@@ -169,8 +184,9 @@ def create_frame_paper_author(frame_paper_info):
     frame_paper_author.pack(side='top', anchor='n')
     frame_paper_author_list.append(frame_paper_author)
 
-    author_info.append({'id': entry_paper_author_id, 'name': entry_paper_author_name, 'rank': entry_paper_author_rank,
-                        'comm': var_paper_author_is_communicate})
+    author_info.append(
+        {'id': entry_paper_author_id, 'name': entry_paper_author_name, 'rank': entry_paper_author_rank,
+         'comm': var_paper_author_is_communicate})
 
 
 def delete_frame_paper_author():
@@ -200,7 +216,8 @@ def create_frame_paper_add(self):
     frame_paper_info.pack(side='top', anchor='n')
 
     # 创建提交按钮
-    button_paper_submit = tk.Button(frame_paper_info, text="提交", font=("宋体", 10), command=insert_paper_info)
+    button_paper_submit = tk.Button(frame_paper_info, text="提交", font=("宋体", 10),
+                                    command=lambda: insert_paper_info(self.root))
     button_paper_submit.pack(side='top', anchor='e')
 
     # 论文编号
@@ -216,11 +233,11 @@ def create_frame_paper_add(self):
     paper_add_items["paper_date"] = common.create_label_and_entry(frame_paper_info, "发表日期", "")
 
     # 论文类型，下拉菜单
-    types = ["none", "full-paper", "short-paper", "poster-paper", "demo-paper"]
-    paper_add_items["paper_type"] = common.create_option_menu(frame_paper_info, "论文类型", types[1], types)
+    types = ["full-paper", "short-paper", "poster-paper", "demo-paper"]
+    paper_add_items["paper_type"] = common.create_option_menu(frame_paper_info, "论文类型", types[0], types)
 
     # 论文级别， 下拉菜单
-    levels = ["none", "CCF-A", "CCF-B", "CCF-C", "中文 CCF-A", "中文 CCF-B", "无级别"]
+    levels = ["CCF-A", "CCF-B", "CCF-C", "中文 CCF-A", "中文 CCF-B", "无级别"]
     paper_add_items["paper_level"] = common.create_option_menu(frame_paper_info, "论文级别", levels[0], levels)
 
     # 论文作者信息：作者编号、作者姓名、作者排名、是否为通讯作者

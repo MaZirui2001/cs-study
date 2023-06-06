@@ -87,3 +87,4 @@ create table teach_course
     constraint teach_course_teacher_id_fk foreign key (teacher_id) references teacher (id),
     constraint teach_course_course_id_fk foreign key (course_id) references course (id)
 );
+

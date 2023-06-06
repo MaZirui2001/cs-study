@@ -6,19 +6,18 @@ import paper_common as common
 from paper_common import id2type, id2level
 
 paper_check_items = {}
-check_result = [("你爱我我爱你", 114514, "新华网", "2020-12-31", "detail", "CCF-A", ["张三", "李四"])]
-check_result_simple = [(1, 2, 3, 4), (5, 6, 7, 8)]
 check_result_frame = []
 detail_button_list = []
 
-def generate_check_sql():
+
+def generate_check_sql(check_items):
     # 获取输入的论文信息
-    paper_name = paper_check_items["paper_name"].get()
-    paper_id = paper_check_items["paper_id"].get()
-    author_name = paper_check_items["author_name"].get()
-    author_id = paper_check_items["author_id"].get()
-    paper_source = paper_check_items["paper_source"].get()
-    paper_date = paper_check_items["publish_time"].get()
+    paper_name = check_items["paper_name"].get()
+    paper_id = check_items["paper_id"].get()
+    author_name = check_items["author_name"].get()
+    author_id = check_items["author_id"].get()
+    paper_source = check_items["paper_source"].get()
+    paper_date = check_items["publish_time"].get()
     # 使用sql语句，先将paper表、public_paper表、teacher表连接起来
     # 一旦有一个条件不为空，就将其加入sql语句中
     sql_sentence = "select distinct paper.id  from paper \
@@ -72,8 +71,10 @@ def generate_check_sql():
         t = t + (paper_date,)
     sql_sentence += " order by paper.id;"
     return sql_sentence, t
-def check_paper(self, frame_paper_check):
-    sql_sentence, t = generate_check_sql()
+
+
+def check_paper():
+    sql_sentence, t = generate_check_sql(paper_check_items)
     # 链接数据库
     try:
         db = sql.connect(
@@ -113,13 +114,12 @@ def check_paper(self, frame_paper_check):
             exit(-1)
         # 使用fetchall()方法获取所有数据
         data_detail.append(cursor.fetchall())
-
     # 关闭数据库连接
     db.close()
+
     # 将查询结果存入全局变量中
     result = data_detail
     # 处理数据
-    global check_result
     check_result = []
     for i in range(len(result)):
         check_result.append([])
@@ -128,58 +128,64 @@ def check_paper(self, frame_paper_check):
         check_result[i].append([])
         for j in range(len(result[i])):
             check_result[i][6].append([result[i][j][6], result[i][j][7], result[i][j][8], result[i][j][9]])
+
     # 按照排名对每一篇文章的作者进行排序
     for i in range(len(check_result)):
         check_result[i][6].sort(key=lambda x: x[2])
-    print(check_result)
 
-    # 显示剪短信息
-    global check_result_simple
+    # 显示简短信息
     check_result_simple = []
     for i in range(len(check_result)):
         check_result_simple.append(
             (check_result[i][0], check_result[i][6][0][0], check_result[i][3], check_result[i][2]))
-    create_check_result_frame(self, frame_paper_check)
+    # create_check_result_frame(self, frame_paper_check)
+    return check_result, check_result_simple
 
 
-def create_detail_check_top(self, index):
+def create_check_result(self, frame_paper_check):
+    check_result, check_result_simple = check_paper()
+    create_check_result_frame(self, frame_paper_check, check_result_simple, check_result)
+
+
+def create_detail_check_top(self, check_item):
+    print("ok")
     top = tk.Toplevel(self.root, width=400, height=400)
     top.title("论文详情")
     top.geometry("400x400")
     top.resizable(False, False)
     # 30号字体靠左显示论文名称
-    label_paper_name = tk.Label(top, text=check_result[index][0], font=("宋体", 20), anchor='w')
+    label_paper_name = tk.Label(top, text=check_item[0], font=("宋体", 20), anchor='w')
     label_paper_name.pack(side='top', anchor='w')
 
     # 15号字体靠左显示论文编号
-    label_paper_id = tk.Label(top, text="论文编号：" + str(check_result[index][1]), font=("宋体", 10), anchor='w')
+    label_paper_id = tk.Label(top, text="论文编号：" + str(check_item[1]), font=("宋体", 10), anchor='w')
     label_paper_id.pack(side='top', anchor='w')
 
     # 15号字体靠左显示论文来源
-    label_paper_source = tk.Label(top, text="论文来源：" + str(check_result[index][2]), font=("宋体", 10), anchor='w')
+    label_paper_source = tk.Label(top, text="论文来源：" + str(check_item[2]), font=("宋体", 10), anchor='w')
     label_paper_source.pack(side='top', anchor='w')
 
     # 15号字体靠左显示论文发表时间
-    label_paper_publish_time = tk.Label(top, text="发表时间：" + str(check_result[index][3]), font=("宋体", 10),
+    label_paper_publish_time = tk.Label(top, text="发表时间：" + str(check_item[3]), font=("宋体", 10),
                                         anchor='w')
     label_paper_publish_time.pack(side='top', anchor='w')
 
     # 10号字体靠左显示论文类型
-    label_paper_type = tk.Label(top, text="论文类型：" + id2type[int(check_result[index][4])], font=("宋体", 10),
+    label_paper_type = tk.Label(top, text="论文类型：" + id2type[int(check_item[4])], font=("宋体", 10),
                                 anchor='w')
     label_paper_type.pack(side='top', anchor='w')
 
     # 10号字体靠左显示论文等级
-    label_paper_level = tk.Label(top, text="论文等级：" + id2level[int(check_result[index][5])], font=("宋体", 10),
+    label_paper_level = tk.Label(top, text="论文等级：" + id2level[int(check_item[5])], font=("宋体", 10),
                                  anchor='w')
     label_paper_level.pack(side='top', anchor='w')
 
     # 10号字体靠左显示所有论文作者
-    for i in range(len(check_result[index][6])):
-        string_info = "论文作者" + str(i + 1) + ": " + str(check_result[index][6][i][0])
+    for i in range(len(check_item[6])):
+        string_info = "论文作者" + str(i + 1) + ": " + str(check_item[6][i][0])
         string_info += "（"
-        string_info += "工号：" + str(check_result[index][6][i][1])
-        if check_result[index][6][i][3] == 1:
+        string_info += "工号：" + str(check_item[6][i][1])
+        if check_item[6][i][3] == 1:
             string_info += ", "
             string_info += "通讯作者"
         string_info += "）"
@@ -188,7 +194,7 @@ def create_detail_check_top(self, index):
         label_paper_author.pack(side='top', anchor='w')
 
 
-def create_check_result_frame(self, frame_paper_check):
+def create_check_result_frame(self, frame_paper_check, check_result_simple, check_result):
     for frame in check_result_frame:
         frame.destroy()
     check_result_frame.clear()
@@ -205,10 +211,10 @@ def create_check_result_frame(self, frame_paper_check):
         common.create_text(frame_paper_check_result, str(check_result_simple[i][2]), 1, 2)
         # 论文来源
         common.create_text(frame_paper_check_result, str(check_result_simple[i][3]), 1, 3)
-
         # 详情按钮
         button_paper_detail = tk.Button(frame_paper_check_result, text="详情", width=10, height=1,
-                                        command=lambda arg1=self, arg2=i: create_detail_check_top(arg1, arg2))
+                                        command=lambda arg1=self, arg2=check_result[i]: create_detail_check_top(arg1,
+                                                                                                                arg2))
         button_paper_detail.grid(row=0, column=4, padx=2)
         detail_button_list.append((button_paper_detail, i))
 
@@ -225,6 +231,9 @@ def create_frame_paper_check(self):
 
     # 创建label
     tk.Label(frame_paper_check, text="论文信息查找", font=("宋体", 15)).pack(side='top', anchor='n')
+
+    button_paper_check = tk.Button(frame_paper_check, text="查询", width=10, height=1)
+    button_paper_check.pack(side='top', anchor='n')
 
     # 创建输入框, 获取输入的论文信息
     frame_paper_info = tk.Frame(frame_paper_check, width=200, height=600)
@@ -252,9 +261,8 @@ def create_frame_paper_check(self):
     frame_paper_check_result = tk.Frame(frame_paper_check, width=800, height=600)
     frame_paper_check_result.pack(side='top', anchor='n')
 
-    button_paper_check = tk.Button(frame_paper_check, text="查询", width=10, height=1)
-    button_paper_check.pack(side='top', anchor='n')
-    button_paper_check.config(command=lambda arg1=self, arg2=frame_paper_check_result: check_paper(arg1, arg2))
+    button_paper_check.config(
+        command=lambda: create_check_result(self, frame_paper_check_result))
 
     # 创建查询结果显示框label
     label_paper_check_result = tk.Label(frame_paper_check_result, text="查询结果", font=("宋体", 10))
@@ -267,6 +275,4 @@ def create_frame_paper_check(self):
     tk.Label(frame_paper_check_label, text="作者之一", font=("宋体", 10), width=20, height=2).grid(row=0, column=1)
     tk.Label(frame_paper_check_label, text="发表时间", font=("宋体", 10), width=20, height=2).grid(row=0, column=2)
     tk.Label(frame_paper_check_label, text="论文来源", font=("宋体", 10), width=20, height=2).grid(row=0, column=3)
-    tk.Label(frame_paper_check_label, text="", font=("宋体", 10), width=10, height=2).grid(row=0, column=4)
-
-
+    tk.Label(frame_paper_check_label, text="", font=("宋体", 10), width=12, height=2).grid(row=0, column=4)
