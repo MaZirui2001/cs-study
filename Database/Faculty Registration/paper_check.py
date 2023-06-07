@@ -143,7 +143,6 @@ def check_paper():
     for i in range(len(check_result)):
         check_result_simple.append(
             (check_result[i][0], check_result[i][6][0][0], check_result[i][3], check_result[i][2]))
-    # create_check_result_frame(self, frame_paper_check)
     return check_result, check_result_simple
 
 

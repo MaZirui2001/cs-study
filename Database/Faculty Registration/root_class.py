@@ -6,6 +6,7 @@ import paper_modify
 import proj_check
 import proj_add
 import proj_delete
+import proj_modify
 
 
 class Root:
@@ -68,6 +69,11 @@ class Root:
         proj_delete.create_frame_proj_delete(self)
         self.frame_fresh_list["frame_proj_delete"] = proj_delete.fresh
         self.__create_paper_choose_button("frame_proj_delete", "proj")
+
+    def create_frame_proj_modify(self):
+        proj_modify.create_frame_proj_modify(self)
+        self.frame_fresh_list["frame_proj_modify"] = proj_modify.fresh
+        self.__create_paper_choose_button("frame_proj_modify", "proj")
 
     def create_frame_proj_check(self):
         proj_check.create_frame_proj_check(self)
