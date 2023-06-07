@@ -89,10 +89,10 @@ def check_proj():
     # 使用fetchall()方法获取所有数据
     data = cursor.fetchall()
     data_detail = []
-    sql_sentence = "select project.name, project.id, project.source, project.type, project.expenditure, project.start_year, project.end_year,\
-    teacher.name, teacher.id, up.ranking, up.expenditure from project \
-    join undertake_project up on project.id = up.project_id \
-    join teacher on up.teacher_id = teacher.id where project.id = %s order by project.id;"
+    sql_sentence = "select project.name, project.id, project.source, project.type, project.expenditure, " \
+                   "project.start_year, project.end_year, teacher.name, teacher.id, up.ranking, up.expenditure " \
+                   "from project join undertake_project up on project.id = up.project_id " \
+                   "join teacher on up.teacher_id = teacher.id where project.id = %s order by project.id;"
     for i in range(len(data)):
         # 对每一个项目编号，查询其详细信息
         try:
@@ -141,7 +141,7 @@ def create_detail_check_top(self, check_item):
     top = tk.Toplevel(self.root, width=400, height=400)
     top.title("项目详情")
     top.geometry("400x400")
-    top.resizable(False, False)
+    # top.resizable(False, False)
     # 30号字体靠左显示项目名称
     label_proj_name = tk.Label(top, text=check_item[0], font=("宋体", 20), anchor='w')
     label_proj_name.pack(side='top', anchor='w')

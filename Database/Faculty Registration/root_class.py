@@ -4,6 +4,7 @@ import paper_add
 import paper_delete
 import paper_modify
 import proj_check
+import proj_add
 
 class Root:
     def __init__(self):
@@ -47,6 +48,10 @@ class Root:
     def create_frame_paper_check(self):
         paper_check.create_frame_paper_check(self)
         self.__create_paper_choose_button("frame_paper_check")
+
+    def create_frame_proj_add(self):
+        proj_add.create_frame_proj_add(self)
+        self.__create_paper_choose_button("frame_proj_add", "proj")
 
     def create_frame_proj_check(self):
         proj_check.create_frame_proj_check(self)

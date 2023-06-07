@@ -148,11 +148,11 @@ def create_check_result(self, frame_paper_check):
 
 
 def create_detail_check_top(self, check_item):
-    print("ok")
+    # print("ok")
     top = tk.Toplevel(self.root, width=400, height=400)
     top.title("论文详情")
     top.geometry("400x400")
-    top.resizable(False, False)
+    # top.resizable(False, False)
     # 30号字体靠左显示论文名称
     label_paper_name = tk.Label(top, text=check_item[0], font=("宋体", 20), anchor='w')
     label_paper_name.pack(side='top', anchor='w')
@@ -182,7 +182,7 @@ def create_detail_check_top(self, check_item):
 
     # 10号字体靠左显示所有论文作者
     for i in range(len(check_item[6])):
-        string_info = "论文作者" + str(i + 1) + ": " + str(check_item[6][i][0])
+        string_info = "论文作者" + str(check_item[6][i][2]) + ": " + str(check_item[6][i][0])
         string_info += "（"
         string_info += "工号：" + str(check_item[6][i][1])
         if check_item[6][i][3] == 1:
