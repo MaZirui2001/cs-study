@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 import pymysql as sql
-import paper_common as common
+import common as common
 import paper_check
 import paper_add
 

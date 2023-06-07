@@ -2,8 +2,8 @@ import tkinter as tk
 from tkinter import messagebox
 import pymysql as sql
 import pandas as pd
-import paper_common as common
-from paper_common import type_map, level_map
+import common
+from common import paper_type_map, paper_level_map
 
 frame_paper_author_list = []
 author_num_view = 0
@@ -16,8 +16,8 @@ def insert_info_get_and_check(paper_add_items_local, author_num, author_info_loc
     paper_name = paper_add_items_local["paper_name"].get()
     paper_source = paper_add_items_local["paper_source"].get()
     paper_date = paper_add_items_local["paper_date"].get()
-    paper_type = type_map[paper_add_items_local["paper_type"].get()]
-    paper_level = level_map[paper_add_items_local["paper_level"].get()]
+    paper_type = paper_type_map[paper_add_items_local["paper_type"].get()]
+    paper_level = paper_level_map[paper_add_items_local["paper_level"].get()]
     author_id_list = []
     author_name_list = []
     author_rank_list = []

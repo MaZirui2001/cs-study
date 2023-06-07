@@ -2,8 +2,8 @@ import tkinter as tk
 from tkinter import messagebox
 import pymysql as sql
 import pandas as pd
-import paper_common as common
-from paper_common import id2type, id2level
+import common as common
+from common import paper_id2type, paper_id2level
 
 paper_check_items = {}
 check_result_frame = []
@@ -171,12 +171,12 @@ def create_detail_check_top(self, check_item):
     label_paper_publish_time.pack(side='top', anchor='w')
 
     # 10号字体靠左显示论文类型
-    label_paper_type = tk.Label(top, text="论文类型：" + id2type[int(check_item[4])], font=("宋体", 10),
+    label_paper_type = tk.Label(top, text="论文类型：" + paper_id2type[int(check_item[4])], font=("宋体", 10),
                                 anchor='w')
     label_paper_type.pack(side='top', anchor='w')
 
     # 10号字体靠左显示论文等级
-    label_paper_level = tk.Label(top, text="论文等级：" + id2level[int(check_item[5])], font=("宋体", 10),
+    label_paper_level = tk.Label(top, text="论文等级：" + paper_id2level[int(check_item[5])], font=("宋体", 10),
                                  anchor='w')
     label_paper_level.pack(side='top', anchor='w')
 
