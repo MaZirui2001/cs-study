@@ -11,6 +11,7 @@ if __name__ == '__main__':
     r.create_frame_paper_check()
 
     r.create_frame_proj_add()
+    r.create_frame_proj_delete()
     r.create_frame_proj_check()
     r.switch_to_frame("frame_main")
     r.root.mainloop()

@@ -11,6 +11,10 @@ paper_add_items = {}
 author_info = []
 
 
+def fresh(self):
+    pass
+
+
 def insert_info_get_and_check(paper_add_items_local, author_num, author_info_local, message_parent):
     paper_id = paper_add_items_local["paper_id"].get()
     paper_name = paper_add_items_local["paper_name"].get()

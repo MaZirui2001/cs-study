@@ -11,6 +11,9 @@ proj_add_items = {}
 teacher_info = []
 
 
+def fresh(self):
+    pass
+
 def insert_info_get_and_check(paper_add_items_local, teacher_num, teacher_info_local, message_parent):
     project_id = paper_add_items_local["proj_id"].get()
     proj_name = paper_add_items_local["proj_name"].get()
@@ -134,6 +137,7 @@ def insert_paper_info(message_parent):
         teacher_id_list, teacher_name_list, teacher_rank_list, teacher_expend_list = temp
     # 通过基本检查，开始插入数据
     # 打开数据库连接
+    print('ok')
     try:
         db = sql.connect(
             host='localhost',

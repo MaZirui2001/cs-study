@@ -9,9 +9,14 @@ paper_check_items = {}
 del_result_frame = []
 detail_button_list = []
 delete_button_list = []
+frame_paper_check = None
 
 
-def delete_paper(self, frame_paper_check, paper_id):
+def fresh(self):
+    check_del_paper(self)
+
+
+def delete_paper(self, paper_id):
     # 弹窗并确认是否删除
     if not messagebox.askyesno("确认", "确认删除这篇论文？"):
         return
@@ -43,15 +48,15 @@ def delete_paper(self, frame_paper_check, paper_id):
     db.close()
     messagebox.showinfo("成功", "删除成功")
     # 刷新页面
-    check_del_paper(self, frame_paper_check)
+    check_del_paper(self)
 
 
-def check_del_paper(self, frame_paper_delete):
+def check_del_paper(self):
     check_result, check_result_simple = paper_check.check_paper()
-    create_del_result_frame(self, frame_paper_delete, check_result_simple, check_result)
+    create_del_result_frame(self, check_result_simple, check_result)
 
 
-def create_del_result_frame(self, frame_paper_check, check_result_simple, check_result):
+def create_del_result_frame(self, check_result_simple, check_result):
     for frame in del_result_frame:
         frame.destroy()
     del_result_frame.clear()
@@ -76,7 +81,7 @@ def create_del_result_frame(self, frame_paper_check, check_result_simple, check_
         detail_button_list.append((button_paper_detail, i))
         # 删除按钮
         button_paper_delete = tk.Button(frame_paper_check_result, text="删除", width=8, height=1,
-                                        command=lambda arg3=check_result[i][1]: delete_paper(self, frame_paper_check,
+                                        command=lambda arg3=check_result[i][1]: delete_paper(self,
                                                                                              arg3))
         button_paper_delete.grid(row=0, column=5, padx=2)
         delete_button_list.append((button_paper_delete, i))
@@ -84,6 +89,7 @@ def create_del_result_frame(self, frame_paper_check, check_result_simple, check_
 
 def create_frame_paper_delete(self):
     canvas_paper_del = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 800, 1200))
+    global frame_paper_check
     frame_paper_check = tk.Frame(canvas_paper_del, width=800, height=1200)
     self.frame_list["frame_paper_delete"] = canvas_paper_del
     frame_paper_check.pack(side='top', anchor='n')
@@ -126,7 +132,7 @@ def create_frame_paper_delete(self):
     frame_paper_check_result = tk.Frame(frame_paper_check, width=800, height=600)
     frame_paper_check_result.pack(side='top', anchor='n')
     button_paper_check.config(
-        command=lambda: check_del_paper(self, frame_paper_check_result))
+        command=lambda: check_del_paper(self))
 
     # 创建查询结果显示框label
     label_paper_check_result = tk.Label(frame_paper_check_result, text="查询结果", font=("宋体", 15))

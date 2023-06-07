@@ -2,11 +2,16 @@ import tkinter as tk
 from tkinter import messagebox
 import pymysql as sql
 import common as common
-from common import proj_type_map, proj_id2type
+from common import proj_id2type
 
 proj_check_items = {}
 check_result_frame = []
 detail_button_list = []
+frame_proj_check = None
+
+
+def fresh(self):
+    create_check_result(self)
 
 
 def generate_check_sql(check_items):
@@ -131,10 +136,10 @@ def check_proj():
     return check_result, check_result_simple
 
 
-def create_check_result(self, frame_proj_check):
+def create_check_result(self):
     check_result, check_result_simple = check_proj()
-    print(check_result)
-    create_check_result_frame(self, frame_proj_check, check_result_simple, check_result)
+    # print(check_result)
+    create_check_result_frame(self, check_result_simple, check_result)
 
 
 def create_detail_check_top(self, check_item):
@@ -186,7 +191,7 @@ def create_detail_check_top(self, check_item):
         label_proj_author.pack(side='top', anchor='w')
 
 
-def create_check_result_frame(self, frame_proj_check, check_result_simple, check_result):
+def create_check_result_frame(self, check_result_simple, check_result):
     for frame in check_result_frame:
         frame.destroy()
     check_result_frame.clear()
@@ -194,15 +199,15 @@ def create_check_result_frame(self, frame_proj_check, check_result_simple, check
         frame_proj_check_result = tk.Frame(frame_proj_check, width=800, height=50)
         frame_proj_check_result.pack(side='top', anchor='w')
         check_result_frame.append(frame_proj_check_result)
-        # 显示四栏：项目名称、最高员工、开始时间、项目来源, 用Text组件, 每一个后面跟一个详情按钮
+        # 显示四栏：项目名称、最高员工、项目级别、项目来源, 用Text组件, 每一个后面跟一个详情按钮
         # 项目名称
         common.create_text(frame_proj_check_result, str(check_result_simple[i][0]), 1, 0)
         # 最高员工
         common.create_text(frame_proj_check_result, str(check_result_simple[i][1]), 1, 1)
-        # 项目类型
-        common.create_text(frame_proj_check_result, str(check_result_simple[i][2]), 1, 2)
         # 项目来源
-        common.create_text(frame_proj_check_result, str(check_result_simple[i][3]), 1, 3)
+        common.create_text(frame_proj_check_result, str(check_result_simple[i][2]), 1, 2)
+        # 项目类型
+        common.create_text(frame_proj_check_result, proj_id2type[check_result_simple[i][3]], 1, 3)
         # 详情按钮
         button_proj_detail = tk.Button(frame_proj_check_result, text="详情", width=10, height=1,
                                        command=lambda arg1=self, arg2=check_result[i]: create_detail_check_top(arg1,
@@ -212,6 +217,7 @@ def create_check_result_frame(self, frame_proj_check, check_result_simple, check
 
 
 def create_frame_proj_check(self):
+    global frame_proj_check
     canvas_proj_check = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
     frame_proj_check = tk.Frame(canvas_proj_check, width=800, height=1200)
     self.frame_list["frame_proj_check"] = canvas_proj_check
@@ -251,7 +257,7 @@ def create_frame_proj_check(self):
     frame_proj_check_result.pack(side='top', anchor='n')
 
     button_proj_check.config(
-        command=lambda: create_check_result(self, frame_proj_check_result))
+        command=lambda: create_check_result(self))
 
     # 创建查询结果显示框label
     label_proj_check_result = tk.Label(frame_proj_check_result, text="查询结果", font=("宋体", 10))
@@ -262,6 +268,6 @@ def create_frame_proj_check(self):
 
     tk.Label(frame_proj_check_label, text="项目名称", font=("宋体", 10), width=20, height=2).grid(row=0, column=0)
     tk.Label(frame_proj_check_label, text="最高员工", font=("宋体", 10), width=20, height=2).grid(row=0, column=1)
-    tk.Label(frame_proj_check_label, text="开始年份", font=("宋体", 10), width=20, height=2).grid(row=0, column=2)
-    tk.Label(frame_proj_check_label, text="项目来源", font=("宋体", 10), width=20, height=2).grid(row=0, column=3)
+    tk.Label(frame_proj_check_label, text="项目来源", font=("宋体", 10), width=20, height=2).grid(row=0, column=2)
+    tk.Label(frame_proj_check_label, text="项目类型", font=("宋体", 10), width=20, height=2).grid(row=0, column=3)
     tk.Label(frame_proj_check_label, text="", font=("宋体", 10), width=12, height=2).grid(row=0, column=4)

@@ -16,8 +16,14 @@ author_num_view = 0
 paper_add_items = {}
 author_info = []
 
+frame_paper_check = None
 
-def modify_paper_info(self, frame_paper_check, origin_paper_id, message_parent):
+
+def fresh(self):
+    check_modify_paper(self)
+
+
+def modify_paper_info(self, origin_paper_id, message_parent):
     # 总体思路：先删除原来的数据，再插入新的数据
     # 获取输入的论文信息
     global paper_add_items, author_info, author_num_view
@@ -68,7 +74,7 @@ def modify_paper_info(self, frame_paper_check, origin_paper_id, message_parent):
     db.close()
     # 提示修改成功
     tk.messagebox.showinfo(title='提示', message='修改成功！', parent=message_parent)
-    check_modify_paper(self, frame_paper_check)
+    check_modify_paper(self)
 
 
 def create_frame_paper_author(frame_paper_info, paper_author):
@@ -106,7 +112,7 @@ def delete_frame_paper_author():
     author_num_view -= 1
 
 
-def create_modify_window(self, check_item, frame_paper_check):
+def create_modify_window(self, check_item):
     # 创建新窗口
     window_modify = tk.Toplevel(self.root)
     window_modify.geometry("800x600")
@@ -141,7 +147,7 @@ def create_modify_window(self, check_item, frame_paper_check):
     # 创建提交按钮
     button_paper_submit = tk.Button(frame_paper_info, text="提交", font=("宋体", 10),
                                     command=lambda arg1=paper_id, arg2=window_modify:
-                                    modify_paper_info(self, frame_paper_check, arg1, arg2))
+                                    modify_paper_info(self, arg1, arg2))
     button_paper_submit.pack(side='top', anchor='e')
 
     # 论文编号
@@ -181,12 +187,12 @@ def create_modify_window(self, check_item, frame_paper_check):
         create_frame_paper_author(frame_paper_info, author)
 
 
-def check_modify_paper(self, frame_paper_modify):
+def check_modify_paper(self):
     check_result, check_result_simple = paper_check.check_paper()
-    create_modify_result_frame(self, frame_paper_modify, check_result_simple, check_result)
+    create_modify_result_frame(self, check_result_simple, check_result)
 
 
-def create_modify_result_frame(self, frame_paper_check, check_result_simple, check_result):
+def create_modify_result_frame(self, check_result_simple, check_result):
     for frame in mod_result_frame:
         frame.destroy()
     mod_result_frame.clear()
@@ -212,13 +218,14 @@ def create_modify_result_frame(self, frame_paper_check, check_result_simple, che
         # 修改按钮
         button_paper_modify = tk.Button(frame_paper_check_result, text="修改", width=8, height=1,
                                         command=lambda arg1=self, arg2=check_result[i]:
-                                        create_modify_window(arg1, arg2, frame_paper_check))
+                                        create_modify_window(arg1, arg2))
         button_paper_modify.grid(row=0, column=5, padx=2)
         modify_button_list.append((button_paper_modify, i))
 
 
 def create_frame_paper_modify(self):
     canvas_paper_mod = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 800, 1200))
+    global frame_paper_check
     frame_paper_check = tk.Frame(canvas_paper_mod, width=800, height=1200)
     self.frame_list["frame_paper_modify"] = canvas_paper_mod
     frame_paper_check.pack(side='top', anchor='n')
@@ -261,7 +268,7 @@ def create_frame_paper_modify(self):
     frame_paper_check_result = tk.Frame(frame_paper_check, width=800, height=600)
     frame_paper_check_result.pack(side='top', anchor='n')
     button_paper_check.config(
-        command=lambda: check_modify_paper(self, frame_paper_check_result))
+        command=lambda: check_modify_paper(self))
 
     # 创建查询结果显示框label
     label_paper_check_result = tk.Label(frame_paper_check_result, text="查询结果", font=("宋体", 15))

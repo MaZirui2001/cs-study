@@ -8,6 +8,11 @@ from common import paper_id2type, paper_id2level
 paper_check_items = {}
 check_result_frame = []
 detail_button_list = []
+frame_paper_check = None
+
+
+def fresh(self):
+    create_check_result(self)
 
 
 def generate_check_sql(check_items):
@@ -142,9 +147,9 @@ def check_paper():
     return check_result, check_result_simple
 
 
-def create_check_result(self, frame_paper_check):
+def create_check_result(self):
     check_result, check_result_simple = check_paper()
-    create_check_result_frame(self, frame_paper_check, check_result_simple, check_result)
+    create_check_result_frame(self, check_result_simple, check_result)
 
 
 def create_detail_check_top(self, check_item):
@@ -194,7 +199,7 @@ def create_detail_check_top(self, check_item):
         label_paper_author.pack(side='top', anchor='w')
 
 
-def create_check_result_frame(self, frame_paper_check, check_result_simple, check_result):
+def create_check_result_frame(self, check_result_simple, check_result):
     for frame in check_result_frame:
         frame.destroy()
     check_result_frame.clear()
@@ -221,6 +226,7 @@ def create_check_result_frame(self, frame_paper_check, check_result_simple, chec
 
 def create_frame_paper_check(self):
     canvas_paper_check = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
+    global frame_paper_check
     frame_paper_check = tk.Frame(canvas_paper_check, width=800, height=1200)
     self.frame_list["frame_paper_check"] = canvas_paper_check
     frame_paper_check.pack(side='top', anchor='n')
@@ -262,7 +268,7 @@ def create_frame_paper_check(self):
     frame_paper_check_result.pack(side='top', anchor='n')
 
     button_paper_check.config(
-        command=lambda: create_check_result(self, frame_paper_check_result))
+        command=lambda: create_check_result(self))
 
     # 创建查询结果显示框label
     label_paper_check_result = tk.Label(frame_paper_check_result, text="查询结果", font=("宋体", 10))

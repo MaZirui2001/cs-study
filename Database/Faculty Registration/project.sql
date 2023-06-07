@@ -1,5 +1,5 @@
 use register_system;
-# 插入一篇论文，检查教师是否存在
+# 插入一篇项目，检查教师是否存在
 delimiter //
 drop procedure if exists insert_project//
 create procedure insert_project(
@@ -34,7 +34,7 @@ begin
 
 end//
 
-# 插入教师-论文关系
+# 插入教师-项目关系
 drop procedure if exists insert_teacher_project//
 create procedure insert_teacher_project(
     in teacher_id char(5),
@@ -53,7 +53,7 @@ begin
     if not exists(select * from teacher where id = teacher_id and name = teacher_name) then
         signal sqlstate '45102' set message_text = '教师姓名不一致';
     end if;
-    # 检查教师是否已经在论文中,若插入信息已经存在，则不做任何操作
+    # 检查教师是否已经在项目中,若插入信息已经存在，则不做任何操作
     if exists(select *
               from undertake_project
               where undertake_project.teacher_id = teacher_id
@@ -67,16 +67,32 @@ begin
                     and undertake_project.expenditure = expenditure) then
             leave insert_;
         end if;
-        signal sqlstate '45103' set message_text = '有教师已经在本论文中登记，且本次插入信息不一致';
+        signal sqlstate '45103' set message_text = '有教师已经在本项目中登记，且本次插入信息不一致';
     end if;
-    # 检查论文是否存在
-    if not exists(select * from paper where id = project_id) then
-        signal sqlstate '45104' set message_text = '论文不存在';
+    # 检查项目是否存在
+    if not exists(select * from project where id = project_id) then
+        signal sqlstate '45104' set message_text = '项目不存在';
     end if;
     # 检查教师排名不能重复
     if exists(select * from undertake_project where project_id = undertake_project.project_id and undertake_project.ranking = ranking) then
         signal sqlstate '45105' set message_text = '教师排名重复';
     end if;
-    # 通过检查，插入教师-论文关系
+    # 通过检查，插入教师-项目关系
     insert into undertake_project values (teacher_id, project_id, ranking, expenditure);
+end //
+
+# 删除一个项目
+drop procedure if exists delete_project//
+create procedure delete_project(
+    in project_id int
+)
+begin
+    # 检查项目是否存在
+    if not exists(select * from project where id = project_id) then
+        signal sqlstate '45007' set message_text = '项目不存在';
+    end if;
+
+    # 删除项目-教师关系
+    delete from undertake_project where project_id = undertake_project.project_id;
+    delete from project where id = project_id;
 end //
