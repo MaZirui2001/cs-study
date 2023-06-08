@@ -2,8 +2,8 @@ import tkinter as tk
 from tkinter import messagebox
 import pymysql as sql
 import common as common
-import paper_check
-import paper_add
+from paper import paper_check
+from paper import paper_add
 
 paper_mod_items = {}
 paper_check_items = {}

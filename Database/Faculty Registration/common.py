@@ -3,10 +3,15 @@ import tkinter as tk
 paper_type_map = {'full-paper': 1, 'short-paper': 2, 'poster-paper': 3, 'demo-paper': 4}
 paper_level_map = {'CCF-A': 1, 'CCF-B': 2, 'CCF-C': 3, '中文 CCF-A': 4, '中文 CCF-B': 5, '无级别': 6}
 proj_type_map = {'国家级': 1, '省部级': 2, '市厅级': 3, '企业合作项目': 4, '其他': 5}
+course_type_map = {'本科生课程': 1, '研究生课程': 2}
+course_semester_map = {'春季学期': 1, '夏季学期': 2, '秋季学期': 3, '不限': ""}
 
 paper_id2type = ['none', 'full-paper', 'short-paper', 'poster-paper', 'demo-paper']
 paper_id2level = ['none', 'CCF-A', 'CCF-B', 'CCF-C', '中文 CCF-A', '中文 CCF-B', '无级别']
 proj_id2type = ['none', '国家级', '省部级', '市厅级', '企业合作项目', '其他']
+course_id2type = ['none', '本科生课程', '研究生课程']
+course_id2semester = ['none', '春季学期', '夏季学期', '秋季学期']
+
 id2id_name = ['none', '博士后', '助教', '讲师', '副教授', '特任教授', '教授', '助理研究员', '特任副研究员',
               '副研究员', '特任研究员', '研究员']
 id2gender = ['none', '男', '女']

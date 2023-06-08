@@ -1,12 +1,7 @@
 import tkinter as tk
-import paper_check
-import paper_add
-import paper_delete
-import paper_modify
-import proj_check
-import proj_add
-import proj_delete
-import proj_modify
+from paper import paper_check, paper_modify, paper_delete, paper_add
+from project import proj_modify, proj_add, proj_delete, proj_check
+from course import course_check
 
 
 class Root:
@@ -80,6 +75,11 @@ class Root:
         self.frame_fresh_list["frame_proj_check"] = proj_check.fresh
         self.__create_paper_choose_button("frame_proj_check", "proj")
 
+    def create_frame_course_check(self):
+        course_check.create_frame_course_check(self)
+        self.frame_fresh_list["frame_course_check"] = course_check.fresh
+        self.__create_paper_choose_button("frame_course_check", "course")
+
     def create_frame_main(self):
         frame_main = tk.Frame(self.root, height=600, width=800, bg='pink')
         frame_button = tk.Frame(frame_main, height=10, width=800, bg='white')
@@ -91,7 +91,8 @@ class Root:
         button_proj = tk.Button(frame_button, text="登记项目情况",
                                 command=lambda: self.switch_to_frame("frame_proj_check"), height=5, width=20)
         button_proj.pack(side='left', anchor='center')
-        button_teach = tk.Button(frame_button, text="登记教学情况", command=show, height=5, width=20)
+        button_teach = tk.Button(frame_button, text="登记教学情况",
+                                 command=lambda: self.switch_to_frame("frame_course_check"), height=5, width=20)
         button_teach.pack(side='left', anchor='center')
         button_check = tk.Button(frame_button, text="查询统计", command=show, height=5, width=20)
         button_check.pack(side='left', anchor='center')

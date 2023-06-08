@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 import pymysql as sql
-import paper_check
+from paper import paper_check
 import common as common
 
 paper_del_items = {}

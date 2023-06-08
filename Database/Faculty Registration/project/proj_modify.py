@@ -3,8 +3,8 @@ from tkinter import messagebox
 import pymysql as sql
 import common as common
 from common import proj_id2type
-import proj_check
-import proj_add
+from project import proj_check
+from project import proj_add
 
 proj_mod_items = {}
 proj_check_items = {}

@@ -26,7 +26,7 @@ def generate_check_sql(check_items):
         join undertake_project up on project.id = up.project_id \
         join teacher on up.teacher_id = teacher.id "
     t = ()
-    if proj_name != "" or proj_id != "" or teacher_name != "" or teacher_id != "":
+    if proj_name != "" or proj_id != "" or teacher_name != "" or teacher_id != "" or proj_source != "":
         sql_sentence += "where "
     if proj_name != "":
         sql_sentence += "project.name = %s"
@@ -113,6 +113,7 @@ def check_proj():
 
     # 将查询结果存入全局变量中
     result = data_detail
+    print(result)
     # 处理数据
     check_result = []
     for i in range(len(result)):

@@ -83,7 +83,7 @@ create table teach_course
     year           int,
     semester       int, # 1-春季学期，2-夏季学期，3-秋季学期
     undertake_hour int,
-    constraint teach_course_pk primary key (teacher_id, course_id),
+    constraint teach_course_pk primary key (teacher_id, course_id, year, semester),
     constraint teach_course_teacher_id_fk foreign key (teacher_id) references teacher (id),
     constraint teach_course_course_id_fk foreign key (course_id) references course (id)
 );

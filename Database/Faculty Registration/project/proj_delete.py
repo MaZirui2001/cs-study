@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 import pymysql as sql
-import proj_check
+from project import proj_check
 import common as common
 from common import proj_id2type
 
