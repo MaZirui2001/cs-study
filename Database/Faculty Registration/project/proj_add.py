@@ -242,7 +242,8 @@ def create_basic_info(self, canvas_proj, frame_proj, proj_items, check_items):
 
     # 项目类型，下拉菜单
     types = ['国家级', '省部级', '市厅级', '企业合作项目', '其他']
-    proj_items["proj_type"] = common.create_option_menu(frame_proj_info, "项目类型", proj_id2type[int(check_items[3])], types)
+    proj_items["proj_type"] = common.create_option_menu(frame_proj_info, "项目类型",
+                                                        proj_id2type[int(check_items[3])], types)
     return frame_proj_info
 
 

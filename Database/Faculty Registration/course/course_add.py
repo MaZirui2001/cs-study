@@ -60,7 +60,8 @@ def insert_info_get_and_check(course_add_items_local, teacher_num, teacher_info_
     temp_seme_list = []
     temp_hour_list = []
     for i in range(teacher_num):
-        if teacher_id_list[i] == '' or teacher_name_list[i] == '' or teacher_hour_list[i] == '' or teacher_year_list[i] == '':
+        if teacher_id_list[i] == '' or teacher_name_list[i] == '' or teacher_hour_list[i] == '' \
+                or teacher_year_list[i] == '':
             listnum -= 1
         else:
             temp_id_list.append(teacher_id_list[i])
@@ -216,7 +217,8 @@ def create_basic_info(self, canvas_course_add, frame_course_add, course_items, c
 
     # 课程类型
     types = ['本科生课程', '研究生课程']
-    course_items["course_type"] = common.create_option_menu(frame_course_info, "课程类型", course_id2type[int(check_item[3])], types)
+    course_items["course_type"] = common.create_option_menu(frame_course_info, "课程类型",
+                                                            course_id2type[int(check_item[3])], types)
 
     return frame_course_info
 

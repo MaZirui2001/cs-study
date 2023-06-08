@@ -3,7 +3,6 @@ from tkinter import messagebox
 import pymysql as sql
 from course import course_check
 import common as common
-from common import course_id2type
 
 course_del_items = {}
 del_result_frame = []

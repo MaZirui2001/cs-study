@@ -200,6 +200,7 @@ def delete_frame_paper_author():
     frame_paper_author_list[author_num_view - 1].pack_forget()
     author_num_view -= 1
 
+
 def create_basic_info(self, canvas_paper, frame_paper, paper_items, check_item):
     # 创建滚动条
     common.create_scrollbar(canvas_paper)
@@ -235,7 +236,8 @@ def create_basic_info(self, canvas_paper, frame_paper, paper_items, check_item):
 
     # 论文级别， 下拉菜单
     levels = ["CCF-A", "CCF-B", "CCF-C", "中文 CCF-A", "中文 CCF-B", "无级别"]
-    paper_items["paper_level"] = common.create_option_menu(frame_paper_info, "论文级别", paper_id2level[check_item[5]], levels)
+    paper_items["paper_level"] = common.create_option_menu(frame_paper_info, "论文级别",
+                                                           paper_id2level[check_item[5]], levels)
 
     return frame_paper_info
 
@@ -247,7 +249,8 @@ def create_frame_paper_add(self):
     canvas_paper_add.create_window(400, 0, anchor='n', window=frame_paper_add)
     self.frame_list["frame_paper_add"] = canvas_paper_add
 
-    frame_paper_info = create_basic_info(self, canvas_paper_add, frame_paper_add, paper_add_items, ["", "", "", "", 1, 1])
+    frame_paper_info = create_basic_info(self, canvas_paper_add, frame_paper_add, paper_add_items,
+                                         ["", "", "", "", 1, 1])
 
     # 论文作者信息：作者编号、作者姓名、作者排名、是否为通讯作者
     # 作者可能有多个，默认显示一个，点击按钮添加新的作者信息或删除新的对话框

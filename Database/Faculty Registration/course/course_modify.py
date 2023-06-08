@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import pymysql as sql
 import common as common
-from common import course_semester_map, course_id2semester, course_id2type
+from common import course_semester_map, course_id2semester
 from course import course_check
 from course import course_add
 
@@ -122,10 +122,6 @@ def create_modify_window(self, check_item):
     window_modify.title("修改课程信息")
     # window_modify.resizable(False, False)
     # 获取当前课程信息
-    course_name = check_item[0]
-    course_id = check_item[1]
-    course_type = check_item[3]
-    course_hour = check_item[2]
     course_teachers = []
     for key in check_item[4].keys():
         for i in range(len(check_item[4][key])):

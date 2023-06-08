@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import messagebox
 import pymysql as sql
 import common as common
 from common import course_id2type, course_semester_map
@@ -27,7 +26,8 @@ def generate_check_sql(check_items):
         join teach_course tc on course.id = tc.course_id \
         join teacher on tc.teacher_id = teacher.id "
     t = ()
-    if course_name != "" or course_id != "" or teacher_name != "" or teacher_id != "" or course_year != "" or course_semester != '不限':
+    if course_name != "" or course_id != "" or teacher_name != "" or teacher_id != "" or course_year != "" \
+            or course_semester != '不限':
         sql_sentence += "where "
     if course_name != "":
         sql_sentence += "course.name = %s"

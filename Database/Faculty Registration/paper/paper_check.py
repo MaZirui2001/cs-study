@@ -223,20 +223,20 @@ def create_check_result_frame(self, check_result_simple, check_result):
                                                                                                                 arg2))
         button_paper_detail.grid(row=0, column=4, padx=2)
         detail_button_list.append((button_paper_detail, i))
-        
-        
-def create_basic_info_frame(self, canvas_paper, paper_items, create_result, frame_paper_check, name="论文信息查找"):
+
+
+def create_basic_info_frame(self, canvas_paper, paper_items, create_result, frame_check, name="论文信息查找"):
     # 创建滚动条
     common.create_scrollbar(canvas_paper)
 
     # 创建label
-    tk.Label(frame_paper_check, text=name, font=("宋体", 15)).pack(side='top', anchor='n')
+    tk.Label(frame_check, text=name, font=("宋体", 15)).pack(side='top', anchor='n')
 
-    button_paper_check = tk.Button(frame_paper_check, text="查询", width=10, height=1)
+    button_paper_check = tk.Button(frame_check, text="查询", width=10, height=1)
     button_paper_check.pack(side='top', anchor='n')
 
     # 创建输入框, 获取输入的论文信息
-    frame_paper_info = tk.Frame(frame_paper_check, width=200, height=600)
+    frame_paper_info = tk.Frame(frame_check, width=200, height=600)
     frame_paper_info.pack(side='top', anchor='n')
 
     # 论文编号
@@ -258,7 +258,7 @@ def create_basic_info_frame(self, canvas_paper, paper_items, create_result, fram
     paper_items["author_name"] = common.create_label_and_entry(frame_paper_info, "作者姓名", "")
 
     # 创建查询结果显示框
-    frame_paper_check_result = tk.Frame(frame_paper_check, width=800, height=600)
+    frame_paper_check_result = tk.Frame(frame_check, width=800, height=600)
     frame_paper_check_result.pack(side='top', anchor='n')
 
     button_paper_check.config(
@@ -288,4 +288,4 @@ def create_frame_paper_check(self):
     frame_paper_check.pack(side='top', anchor='n')
     canvas_paper_check.create_window(400, 0, anchor='n', window=frame_paper_check)
 
-    create_basic_info_frame(self,canvas_paper_check, paper_check_items, create_check_result, frame_paper_check)
+    create_basic_info_frame(self, canvas_paper_check, paper_check_items, create_check_result, frame_paper_check)

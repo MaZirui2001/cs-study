@@ -33,7 +33,6 @@ def modify_proj_info(self, origin_proj_id, message_parent):
         return
     listnum, proj_id, proj_name, proj_source, proj_type, proj_expend, proj_start, proj_end, \
         teacher_id_list, teacher_name_list, teacher_rank_list, teacher_expend_list = temp
-    # print(listnum, proj_id, proj_name, proj_source, proj_date, proj_type, proj_level)
     # 通过基本检查，开始删除原有记录
     # 对话框：确认提交修改
     if not tk.messagebox.askyesno(title='确认', message='确认提交修改？', parent=message_parent):
