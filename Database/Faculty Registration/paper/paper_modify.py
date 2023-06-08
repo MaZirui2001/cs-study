@@ -119,12 +119,6 @@ def create_modify_window(self, check_item):
     window_modify.title("修改论文信息")
     window_modify.resizable(False, False)
     # 获取当前论文信息
-    paper_id = check_item[1]
-    paper_name = check_item[0]
-    paper_source = check_item[2]
-    paper_date = check_item[3]
-    paper_type = check_item[4]
-    paper_level = check_item[5]
     paper_authors = check_item[6]
 
     canvas_paper_add = tk.Canvas(window_modify, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
@@ -133,43 +127,7 @@ def create_modify_window(self, check_item):
     frame_paper_add.pack(side='top', anchor='n')
     canvas_paper_add.create_window(400, 0, anchor='n', window=frame_paper_add)
 
-    # 创建滚动条
-    common.create_scrollbar(canvas_paper_add)
-
-    # 创建label
-    label_paper_name = tk.Label(frame_paper_add, text="论文信息修改", font=("宋体", 15))
-    label_paper_name.pack(side='top', anchor='n')
-
-    # 创建输入框, 获取输入的论文信息
-    frame_paper_info = tk.Frame(frame_paper_add, width=200, height=600)
-    frame_paper_info.pack(side='top', anchor='n')
-
-    # 创建提交按钮
-    button_paper_submit = tk.Button(frame_paper_info, text="提交", font=("宋体", 10),
-                                    command=lambda arg1=paper_id, arg2=window_modify:
-                                    modify_paper_info(self, arg1, arg2))
-    button_paper_submit.pack(side='top', anchor='e')
-
-    # 论文编号
-    paper_add_items["paper_id"] = common.create_label_and_entry(frame_paper_info, "论文编号", paper_id)
-
-    # 论文名称
-    paper_add_items["paper_name"] = common.create_label_and_entry(frame_paper_info, "论文名称", paper_name)
-
-    # 论文来源
-    paper_add_items["paper_source"] = common.create_label_and_entry(frame_paper_info, "论文来源", paper_source)
-
-    # 论文发表日期
-    paper_add_items["paper_date"] = common.create_label_and_entry(frame_paper_info, "发表日期", paper_date)
-
-    # 论文类型，下拉菜单
-    types = ["none", "full-paper", "short-paper", "poster-paper", "demo-paper"]
-    paper_add_items["paper_type"] = common.create_option_menu(frame_paper_info, "论文类型", types[paper_type], types)
-
-    # 论文级别， 下拉菜单
-    levels = ["none", "CCF-A", "CCF-B", "CCF-C", "中文 CCF-A", "中文 CCF-B", "无级别"]
-    paper_add_items["paper_level"] = common.create_option_menu(frame_paper_info, "论文级别", levels[paper_level],
-                                                               levels)
+    frame_paper_info = paper_add.create_basic_info(self, canvas_paper_add, frame_paper_add, paper_add_items, check_item)
 
     # 论文作者信息：作者编号、作者姓名、作者排名、是否为通讯作者
     # 作者可能有多个，默认显示一个，点击按钮添加新的作者信息或删除新的对话框
@@ -230,55 +188,7 @@ def create_frame_paper_modify(self):
     self.frame_list["frame_paper_modify"] = canvas_paper_mod
     frame_paper_check.pack(side='top', anchor='n')
     canvas_paper_mod.create_window(400, 0, anchor='n', window=frame_paper_check)
-
-    # 创建滚动条
-    common.create_scrollbar(canvas_paper_mod)
-
-    # 创建label
-    label_paper_name = tk.Label(frame_paper_check, text="论文信息修改", font=("宋体", 15))
-    label_paper_name.pack(side='top', anchor='n')
-
-    # 创建查询按钮
-    button_paper_check = tk.Button(frame_paper_check, text="查询", width=10, height=1)
-    button_paper_check.pack(side='top', anchor='n')
-
-    # 创建输入框, 获取输入的论文信息
-    frame_paper_info = tk.Frame(frame_paper_check, width=200, height=600)
-    frame_paper_info.pack(side='top', anchor='n')
-
-    # 论文编号
-    paper_mod_items["paper_id"] = common.create_label_and_entry(frame_paper_info, "论文编号", "")
-
-    # 论文名称
-    paper_mod_items["paper_name"] = common.create_label_and_entry(frame_paper_info, "论文名称", "")
-
-    # 论文来源
-    paper_mod_items["paper_source"] = common.create_label_and_entry(frame_paper_info, "论文来源", "")
-
-    # 论文发表日期
-    paper_mod_items["publish_time"] = common.create_label_and_entry(frame_paper_info, "发表日期", "")
-
-    # 作者编号
-    paper_mod_items["author_id"] = common.create_label_and_entry(frame_paper_info, "作者编号", "")
-
-    # 作者姓名
-    paper_mod_items["author_name"] = common.create_label_and_entry(frame_paper_info, "作者姓名", "")
-
-    # 创建查询结果显示框
-    frame_paper_check_result = tk.Frame(frame_paper_check, width=800, height=600)
-    frame_paper_check_result.pack(side='top', anchor='n')
-    button_paper_check.config(
-        command=lambda: check_modify_paper(self))
-
-    # 创建查询结果显示框label
-    label_paper_check_result = tk.Label(frame_paper_check_result, text="查询结果", font=("宋体", 15))
-    label_paper_check_result.pack(side='top', anchor='n')
-
-    frame_paper_check_label = tk.Frame(frame_paper_check_result, width=800, height=50)
-    tk.Label(frame_paper_check_label, text="论文名称", font=("宋体", 10), width=20, height=2).grid(row=0, column=0)
-    tk.Label(frame_paper_check_label, text="最高作者", font=("宋体", 10), width=20, height=2).grid(row=0, column=1)
-    tk.Label(frame_paper_check_label, text="发表时间", font=("宋体", 10), width=20, height=2).grid(row=0, column=2)
-    tk.Label(frame_paper_check_label, text="论文来源", font=("宋体", 10), width=20, height=2).grid(row=0, column=3)
-    tk.Label(frame_paper_check_label, text="", font=("宋体", 10), width=10, height=2).grid(row=0, column=4, padx=2)
+    frame_paper_check_label = paper_check.create_basic_info_frame(self, canvas_paper_mod, paper_mod_items,
+                                                                  check_modify_paper, frame_paper_check, "论文信息修改")
     tk.Label(frame_paper_check_label, text="", font=("宋体", 10), width=10, height=2).grid(row=0, column=5, padx=2)
     frame_paper_check_label.pack(side='top', anchor='n')

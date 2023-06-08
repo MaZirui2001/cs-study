@@ -3,7 +3,7 @@ from tkinter import messagebox
 import pymysql as sql
 import pandas as pd
 import common
-from common import paper_type_map, paper_level_map
+from common import paper_type_map, paper_level_map, paper_id2type, paper_id2level
 
 frame_paper_author_list = []
 author_num_view = 0
@@ -200,23 +200,16 @@ def delete_frame_paper_author():
     frame_paper_author_list[author_num_view - 1].pack_forget()
     author_num_view -= 1
 
-
-def create_frame_paper_add(self):
-    canvas_paper_add = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
-    frame_paper_add = tk.Frame(canvas_paper_add, width=800, height=1200)
-    frame_paper_add.pack(side='top', anchor='n')
-    canvas_paper_add.create_window(400, 0, anchor='n', window=frame_paper_add)
-    self.frame_list["frame_paper_add"] = canvas_paper_add
-
+def create_basic_info(self, canvas_paper, frame_paper, paper_items, check_item):
     # 创建滚动条
-    common.create_scrollbar(canvas_paper_add)
+    common.create_scrollbar(canvas_paper)
 
     # 创建label
-    label_paper_name = tk.Label(frame_paper_add, text="论文信息登记", font=("宋体", 15))
+    label_paper_name = tk.Label(frame_paper, text="论文信息登记", font=("宋体", 15))
     label_paper_name.pack(side='top', anchor='n')
 
     # 创建输入框, 获取输入的论文信息
-    frame_paper_info = tk.Frame(frame_paper_add, width=200, height=600)
+    frame_paper_info = tk.Frame(frame_paper, width=200, height=600)
     frame_paper_info.pack(side='top', anchor='n')
 
     # 创建提交按钮
@@ -225,24 +218,36 @@ def create_frame_paper_add(self):
     button_paper_submit.pack(side='top', anchor='e')
 
     # 论文编号
-    paper_add_items["paper_id"] = common.create_label_and_entry(frame_paper_info, "论文编号", "")
+    paper_items["paper_id"] = common.create_label_and_entry(frame_paper_info, "论文编号", check_item[1])
 
     # 论文名称
-    paper_add_items["paper_name"] = common.create_label_and_entry(frame_paper_info, "论文名称", "")
+    paper_items["paper_name"] = common.create_label_and_entry(frame_paper_info, "论文名称", check_item[0])
 
     # 论文来源
-    paper_add_items["paper_source"] = common.create_label_and_entry(frame_paper_info, "论文来源", "")
+    paper_items["paper_source"] = common.create_label_and_entry(frame_paper_info, "论文来源", check_item[2])
 
     # 论文发表日期
-    paper_add_items["paper_date"] = common.create_label_and_entry(frame_paper_info, "发表日期", "")
+    paper_items["paper_date"] = common.create_label_and_entry(frame_paper_info, "发表日期", check_item[3])
 
     # 论文类型，下拉菜单
     types = ["full-paper", "short-paper", "poster-paper", "demo-paper"]
-    paper_add_items["paper_type"] = common.create_option_menu(frame_paper_info, "论文类型", types[0], types)
+    paper_items["paper_type"] = common.create_option_menu(frame_paper_info, "论文类型", paper_id2type[check_item[4]], types)
 
     # 论文级别， 下拉菜单
     levels = ["CCF-A", "CCF-B", "CCF-C", "中文 CCF-A", "中文 CCF-B", "无级别"]
-    paper_add_items["paper_level"] = common.create_option_menu(frame_paper_info, "论文级别", levels[0], levels)
+    paper_items["paper_level"] = common.create_option_menu(frame_paper_info, "论文级别", paper_id2level[check_item[5]], levels)
+
+    return frame_paper_info
+
+
+def create_frame_paper_add(self):
+    canvas_paper_add = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
+    frame_paper_add = tk.Frame(canvas_paper_add, width=800, height=1200)
+    frame_paper_add.pack(side='top', anchor='n')
+    canvas_paper_add.create_window(400, 0, anchor='n', window=frame_paper_add)
+    self.frame_list["frame_paper_add"] = canvas_paper_add
+
+    frame_paper_info = create_basic_info(self, canvas_paper_add, frame_paper_add, paper_add_items, ["", "", "", "", 1, 1])
 
     # 论文作者信息：作者编号、作者姓名、作者排名、是否为通讯作者
     # 作者可能有多个，默认显示一个，点击按钮添加新的作者信息或删除新的对话框

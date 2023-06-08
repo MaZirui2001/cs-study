@@ -3,7 +3,7 @@ from tkinter import messagebox
 import pymysql as sql
 import pandas as pd
 import common
-from common import course_type_map, course_semester_map
+from common import course_type_map, course_semester_map, course_id2type
 
 frame_course_teacher_list = []
 teacher_num_view = 0
@@ -15,11 +15,11 @@ def fresh(self):
     pass
 
 
-def insert_info_get_and_check(cource_add_items_local, teacher_num, teacher_info_local, message_parent):
-    course_id = cource_add_items_local["course_id"].get()
-    course_name = cource_add_items_local["course_name"].get()
-    course_type = course_type_map[cource_add_items_local["course_type"].get()]
-    course_hour = cource_add_items_local["course_hour"].get()
+def insert_info_get_and_check(course_add_items_local, teacher_num, teacher_info_local, message_parent):
+    course_id = course_add_items_local["course_id"].get()
+    course_name = course_add_items_local["course_name"].get()
+    course_type = course_type_map[course_add_items_local["course_type"].get()]
+    course_hour = course_add_items_local["course_hour"].get()
     teacher_id_list = []
     teacher_name_list = []
     teacher_year_list = []
@@ -188,13 +188,7 @@ def delete_frame_course_teacher():
     teacher_num_view -= 1
 
 
-def create_frame_course_add(self):
-    canvas_course_add = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
-    frame_course_add = tk.Frame(canvas_course_add, width=800, height=1200)
-    frame_course_add.pack(side='top', anchor='n')
-    canvas_course_add.create_window(400, 0, anchor='n', window=frame_course_add)
-    self.frame_list["frame_course_add"] = canvas_course_add
-
+def create_basic_info(self, canvas_course_add, frame_course_add, course_items, check_item):
     # 创建滚动条
     common.create_scrollbar(canvas_course_add)
 
@@ -212,17 +206,29 @@ def create_frame_course_add(self):
     button_course_submit.pack(side='top', anchor='e')
 
     # 课程编号
-    course_add_items["course_id"] = common.create_label_and_entry(frame_course_info, "课程编号", "")
+    course_items["course_id"] = common.create_label_and_entry(frame_course_info, "课程编号", check_item[1])
 
     # 课程名称
-    course_add_items["course_name"] = common.create_label_and_entry(frame_course_info, "课程名称", "")
+    course_items["course_name"] = common.create_label_and_entry(frame_course_info, "课程名称", check_item[0])
 
     # 课程学时
-    course_add_items["course_hour"] = common.create_label_and_entry(frame_course_info, "课程学时", "")
+    course_items["course_hour"] = common.create_label_and_entry(frame_course_info, "课程学时", check_item[2])
 
     # 课程类型
     types = ['本科生课程', '研究生课程']
-    course_add_items["course_type"] = common.create_option_menu(frame_course_info, "课程类型", types[0], types)
+    course_items["course_type"] = common.create_option_menu(frame_course_info, "课程类型", course_id2type[int(check_item[3])], types)
+
+    return frame_course_info
+
+
+def create_frame_course_add(self):
+    canvas_course_add = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
+    frame_course_add = tk.Frame(canvas_course_add, width=800, height=1200)
+    frame_course_add.pack(side='top', anchor='n')
+    canvas_course_add.create_window(400, 0, anchor='n', window=frame_course_add)
+    self.frame_list["frame_course_add"] = canvas_course_add
+
+    frame_course_info = create_basic_info(self, canvas_course_add, frame_course_add, course_add_items, ["", "", "", 1])
 
     # 课程作者信息：作者编号、作者姓名、作者排名、是否为通讯作者
     # 作者可能有多个，默认显示一个，点击按钮添加新的作者信息或删除新的对话框

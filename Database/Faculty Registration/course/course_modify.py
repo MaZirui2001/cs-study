@@ -130,7 +130,6 @@ def create_modify_window(self, check_item):
     for key in check_item[4].keys():
         for i in range(len(check_item[4][key])):
             course_teachers.append(check_item[4][key][i] + (int(key.split(" ")[0]), int(key.split(" ")[1])))
-    print(course_teachers)
 
     canvas_course_add = tk.Canvas(window_modify, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
     frame_course_add = tk.Frame(canvas_course_add, width=800, height=1200)
@@ -138,39 +137,13 @@ def create_modify_window(self, check_item):
     frame_course_add.pack(side='top', anchor='n')
     canvas_course_add.create_window(400, 0, anchor='n', window=frame_course_add)
 
-    # 创建滚动条
-    common.create_scrollbar(canvas_course_add)
-
-    # 创建label
-    label_course_name = tk.Label(frame_course_add, text="课程信息登记", font=("宋体", 15))
-    label_course_name.pack(side='top', anchor='n')
-
-    # 创建输入框, 获取输入的课程信息
-    frame_course_info = tk.Frame(frame_course_add, width=200, height=600)
-    frame_course_info.pack(side='top', anchor='n')
-
-    # 创建提交按钮
-    button_course_submit = tk.Button(frame_course_info, text="提交", font=("宋体", 10),
-                                     command=lambda: modify_course_info(self, course_id, window_modify))
-    button_course_submit.pack(side='top', anchor='e')
-
-    # 课程编号
-    course_add_items["course_id"] = common.create_label_and_entry(frame_course_info, "课程编号", course_id)
-
-    # 课程名称
-    course_add_items["course_name"] = common.create_label_and_entry(frame_course_info, "课程名称", course_name)
-
-    # 课程学时
-    course_add_items["course_hour"] = common.create_label_and_entry(frame_course_info, "课程学时", course_hour)
-
-    # 课程类型
-    types = ['本科生课程', '研究生课程']
-    course_add_items["course_type"] = common.create_option_menu(frame_course_info, "课程类型", course_id2type[int(course_type)], types)
-
+    frame_course_info = course_add.create_basic_info(self, canvas_course_add, frame_course_add, course_add_items,
+                                                     check_item)
     # 课程作者信息：作者编号、作者姓名、作者排名、是否为通讯作者
     # 作者可能有多个，默认显示一个，点击按钮添加新的作者信息或删除新的对话框
     common.create_label_with_button2(frame_course_info, "课程教师", "添加教师",
-                                     lambda: create_frame_course_teacher(frame_course_info, ['', '', '', "", 1]), "删除教师",
+                                     lambda: create_frame_course_teacher(frame_course_info, ['', '', '', "", 1]),
+                                     "删除教师",
                                      lambda: delete_frame_course_teacher())
 
     global teacher_num_view, frame_course_teacher_list, teacher_info

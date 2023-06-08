@@ -112,6 +112,7 @@ def delete_frame_proj_teacher():
         return
     frame_proj_teacher_list[teacher_num_view - 1].pack_forget()
     teacher_num_view -= 1
+    return teacher_num_view
 
 
 def create_modify_window(self, check_item):
@@ -121,13 +122,6 @@ def create_modify_window(self, check_item):
     window_modify.title("修改项目信息")
     window_modify.resizable(False, False)
     # 获取当前项目信息
-    proj_id = check_item[1]
-    proj_name = check_item[0]
-    proj_source = check_item[2]
-    proj_type = check_item[3]
-    proj_expend = check_item[4]
-    proj_start = check_item[5]
-    proj_end = check_item[6]
     proj_teachers = check_item[7]
 
     canvas_proj_add = tk.Canvas(window_modify, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
@@ -136,44 +130,7 @@ def create_modify_window(self, check_item):
     frame_proj_add.pack(side='top', anchor='n')
     canvas_proj_add.create_window(400, 0, anchor='n', window=frame_proj_add)
 
-    # 创建滚动条
-    common.create_scrollbar(canvas_proj_add)
-
-    # 创建label
-    label_proj_name = tk.Label(frame_proj_add, text="项目信息修改", font=("宋体", 15))
-    label_proj_name.pack(side='top', anchor='n')
-
-    # 创建输入框, 获取输入的项目信息
-    frame_proj_info = tk.Frame(frame_proj_add, width=200, height=600)
-    frame_proj_info.pack(side='top', anchor='n')
-
-    # 创建提交按钮
-    button_proj_submit = tk.Button(frame_proj_info, text="提交", font=("宋体", 10),
-                                   command=lambda arg1=proj_id, arg2=window_modify:
-                                   modify_proj_info(self, arg1, arg2))
-    button_proj_submit.pack(side='top', anchor='e')
-
-    # 项目编号
-    proj_add_items["proj_id"] = common.create_label_and_entry(frame_proj_info, "项目编号", proj_id)
-
-    # 项目名称
-    proj_add_items["proj_name"] = common.create_label_and_entry(frame_proj_info, "项目名称", proj_name)
-
-    # 项目来源
-    proj_add_items["proj_source"] = common.create_label_and_entry(frame_proj_info, "项目来源", proj_source)
-
-    # 项目经费
-    proj_add_items["proj_expend"] = common.create_label_and_entry(frame_proj_info, "项目经费", proj_expend)
-
-    # 项目发表日期
-    proj_add_items["proj_start"] = common.create_label_and_entry(frame_proj_info, "开始年份", proj_start)
-
-    # 项目结束日期
-    proj_add_items["proj_end"] = common.create_label_and_entry(frame_proj_info, "结束年份", proj_end)
-
-    # 项目类型，下拉菜单
-    types = ['国家级', '省部级', '市厅级', '企业合作项目', '其他']
-    proj_add_items["proj_type"] = common.create_option_menu(frame_proj_info, "项目类型", types[proj_type], types)
+    frame_proj_info = proj_add.create_basic_info(self, canvas_proj_add, frame_proj_add, proj_add_items, check_item)
 
     # 项目员工信息：员工编号、员工姓名、员工排名、是否为通讯员工
     # 员工可能有多个，默认显示一个，点击按钮添加新的员工信息或删除新的对话框

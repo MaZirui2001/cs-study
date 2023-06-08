@@ -65,7 +65,7 @@ def generate_check_sql(check_items):
 def check_course(check_items):
     temp = generate_check_sql(check_items)
     if temp is None:
-        return
+        return [], []
     sql_sentence, t = temp
     print(sql_sentence)
     # 链接数据库

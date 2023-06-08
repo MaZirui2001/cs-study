@@ -95,54 +95,8 @@ def create_frame_paper_delete(self):
     frame_paper_check.pack(side='top', anchor='n')
     canvas_paper_del.create_window(400, 0, anchor='n', window=frame_paper_check)
 
-    # 创建滚动条
-    common.create_scrollbar(canvas_paper_del)
-
-    # 创建label
-    label_paper_name = tk.Label(frame_paper_check, text="论文信息删除", font=("宋体", 15))
-    label_paper_name.pack(side='top', anchor='n')
-
-    # 创建查询按钮
-    button_paper_check = tk.Button(frame_paper_check, text="查询", width=10, height=1)
-    button_paper_check.pack(side='top', anchor='n')
-
-    # 创建输入框, 获取输入的论文信息
-    frame_paper_info = tk.Frame(frame_paper_check, width=200, height=600)
-    frame_paper_info.pack(side='top', anchor='n')
-
-    # 论文编号
-    paper_del_items["paper_id"] = common.create_label_and_entry(frame_paper_info, "论文编号", "")
-
-    # 论文名称
-    paper_del_items["paper_name"] = common.create_label_and_entry(frame_paper_info, "论文名称", "")
-
-    # 论文来源
-    paper_del_items["paper_source"] = common.create_label_and_entry(frame_paper_info, "论文来源", "")
-
-    # 论文发表日期
-    paper_del_items["publish_time"] = common.create_label_and_entry(frame_paper_info, "发表日期", "")
-
-    # 作者编号
-    paper_del_items["author_id"] = common.create_label_and_entry(frame_paper_info, "作者编号", "")
-
-    # 作者姓名
-    paper_del_items["author_name"] = common.create_label_and_entry(frame_paper_info, "作者姓名", "")
-
-    # 创建查询结果显示框
-    frame_paper_check_result = tk.Frame(frame_paper_check, width=800, height=600)
-    frame_paper_check_result.pack(side='top', anchor='n')
-    button_paper_check.config(
-        command=lambda: check_del_paper(self))
-
-    # 创建查询结果显示框label
-    label_paper_check_result = tk.Label(frame_paper_check_result, text="查询结果", font=("宋体", 15))
-    label_paper_check_result.pack(side='top', anchor='n')
-
-    frame_paper_check_label = tk.Frame(frame_paper_check_result, width=800, height=50)
-    tk.Label(frame_paper_check_label, text="论文名称", font=("宋体", 10), width=20, height=2).grid(row=0, column=0)
-    tk.Label(frame_paper_check_label, text="最高作者", font=("宋体", 10), width=20, height=2).grid(row=0, column=1)
-    tk.Label(frame_paper_check_label, text="发表时间", font=("宋体", 10), width=20, height=2).grid(row=0, column=2)
-    tk.Label(frame_paper_check_label, text="论文来源", font=("宋体", 10), width=20, height=2).grid(row=0, column=3)
-    tk.Label(frame_paper_check_label, text="", font=("宋体", 10), width=10, height=2).grid(row=0, column=4, padx=2)
+    frame_paper_check_label = paper_check.create_basic_info_frame(self, canvas_paper_del, paper_del_items,
+                                                                  check_del_paper, frame_paper_check,
+                                                                  name="论文信息删除")
     tk.Label(frame_paper_check_label, text="", font=("宋体", 10), width=10, height=2).grid(row=0, column=5, padx=2)
     frame_paper_check_label.pack(side='top', anchor='n')

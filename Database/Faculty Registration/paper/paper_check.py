@@ -79,7 +79,10 @@ def generate_check_sql(check_items):
 
 
 def check_paper(check_items):
-    sql_sentence, t = generate_check_sql(check_items)
+    temp = generate_check_sql(check_items)
+    if temp is None:
+        return [], []
+    sql_sentence, t = temp
     # 链接数据库
     try:
         db = sql.connect(
@@ -152,7 +155,6 @@ def create_check_result(self):
 
 
 def create_detail_check_top(self, check_item):
-    # print("ok")
     top = tk.Toplevel(self.root, width=400, height=400)
     top.title("论文详情")
     top.geometry("400x400")
@@ -221,21 +223,14 @@ def create_check_result_frame(self, check_result_simple, check_result):
                                                                                                                 arg2))
         button_paper_detail.grid(row=0, column=4, padx=2)
         detail_button_list.append((button_paper_detail, i))
-
-
-def create_frame_paper_check(self):
-    canvas_paper_check = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
-    global frame_paper_check
-    frame_paper_check = tk.Frame(canvas_paper_check, width=800, height=1200)
-    self.frame_list["frame_paper_check"] = canvas_paper_check
-    frame_paper_check.pack(side='top', anchor='n')
-    canvas_paper_check.create_window(400, 0, anchor='n', window=frame_paper_check)
-
+        
+        
+def create_basic_info_frame(self, canvas_paper, paper_items, create_result, frame_paper_check, name="论文信息查找"):
     # 创建滚动条
-    common.create_scrollbar(canvas_paper_check)
+    common.create_scrollbar(canvas_paper)
 
     # 创建label
-    tk.Label(frame_paper_check, text="论文信息查找", font=("宋体", 15)).pack(side='top', anchor='n')
+    tk.Label(frame_paper_check, text=name, font=("宋体", 15)).pack(side='top', anchor='n')
 
     button_paper_check = tk.Button(frame_paper_check, text="查询", width=10, height=1)
     button_paper_check.pack(side='top', anchor='n')
@@ -245,29 +240,29 @@ def create_frame_paper_check(self):
     frame_paper_info.pack(side='top', anchor='n')
 
     # 论文编号
-    paper_check_items["paper_id"] = common.create_label_and_entry(frame_paper_info, "论文编号", "")
+    paper_items["paper_id"] = common.create_label_and_entry(frame_paper_info, "论文编号", "")
 
     # 论文名称
-    paper_check_items["paper_name"] = common.create_label_and_entry(frame_paper_info, "论文名称", "")
+    paper_items["paper_name"] = common.create_label_and_entry(frame_paper_info, "论文名称", "")
 
     # 论文来源
-    paper_check_items["paper_source"] = common.create_label_and_entry(frame_paper_info, "论文来源", "")
+    paper_items["paper_source"] = common.create_label_and_entry(frame_paper_info, "论文来源", "")
 
     # 论文发表日期
-    paper_check_items["publish_time"] = common.create_label_and_entry(frame_paper_info, "发表日期", "")
+    paper_items["publish_time"] = common.create_label_and_entry(frame_paper_info, "发表日期", "")
 
     # 作者编号
-    paper_check_items["author_id"] = common.create_label_and_entry(frame_paper_info, "作者编号", "")
+    paper_items["author_id"] = common.create_label_and_entry(frame_paper_info, "作者编号", "")
 
     # 作者姓名
-    paper_check_items["author_name"] = common.create_label_and_entry(frame_paper_info, "作者姓名", "")
+    paper_items["author_name"] = common.create_label_and_entry(frame_paper_info, "作者姓名", "")
 
     # 创建查询结果显示框
     frame_paper_check_result = tk.Frame(frame_paper_check, width=800, height=600)
     frame_paper_check_result.pack(side='top', anchor='n')
 
     button_paper_check.config(
-        command=lambda: create_check_result(self))
+        command=lambda: create_result(self))
 
     # 创建查询结果显示框label
     label_paper_check_result = tk.Label(frame_paper_check_result, text="查询结果", font=("宋体", 10))
@@ -281,3 +276,16 @@ def create_frame_paper_check(self):
     tk.Label(frame_paper_check_label, text="发表时间", font=("宋体", 10), width=20, height=2).grid(row=0, column=2)
     tk.Label(frame_paper_check_label, text="论文来源", font=("宋体", 10), width=20, height=2).grid(row=0, column=3)
     tk.Label(frame_paper_check_label, text="", font=("宋体", 10), width=12, height=2).grid(row=0, column=4)
+
+    return frame_paper_check_label
+
+
+def create_frame_paper_check(self):
+    canvas_paper_check = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
+    global frame_paper_check
+    frame_paper_check = tk.Frame(canvas_paper_check, width=800, height=1200)
+    self.frame_list["frame_paper_check"] = canvas_paper_check
+    frame_paper_check.pack(side='top', anchor='n')
+    canvas_paper_check.create_window(400, 0, anchor='n', window=frame_paper_check)
+
+    create_basic_info_frame(self,canvas_paper_check, paper_check_items, create_check_result, frame_paper_check)
