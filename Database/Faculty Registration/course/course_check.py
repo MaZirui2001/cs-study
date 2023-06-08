@@ -126,7 +126,7 @@ def check_course(check_items):
                 check_result[i][4][key].append((result[i][j][4], result[i][j][5], result[i][j][8]))
             else:
                 check_result[i][4][key] = [(result[i][j][4], result[i][j][5], result[i][j][8])]
-    print(check_result)
+    # print(check_result)
     # 对每一个课程中，year + semester排序
     # for i in range(len(check_result)):
     #     check_result[i][4] = ordered_dict(sorted(check_result[i][4].items(),
@@ -160,11 +160,11 @@ def create_detail_check_top(self, check_item):
     label_course_id.pack(side='top', anchor='w')
 
     # 15号字体靠左显示课程学时
-    label_course_source = tk.Label(top, text="课程学时：" + str(check_item[3]), font=("宋体", 10), anchor='w')
+    label_course_source = tk.Label(top, text="课程学时：" + str(check_item[2]), font=("宋体", 10), anchor='w')
     label_course_source.pack(side='top', anchor='w')
-
+    print(check_item)
     # 10号字体靠左显示课程性质
-    label_course_type = tk.Label(top, text="课程类型：" + course_id2type[int(check_item[2])], font=("宋体", 10),
+    label_course_type = tk.Label(top, text="课程类型：" + course_id2type[int(check_item[3])], font=("宋体", 10),
                                  anchor='w')
     label_course_type.pack(side='top', anchor='w')
 

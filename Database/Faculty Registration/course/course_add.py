@@ -15,11 +15,11 @@ def fresh(self):
     pass
 
 
-def insert_info_get_and_check(paper_add_items_local, teacher_num, teacher_info_local, message_parent):
-    course_id = paper_add_items_local["course_id"].get()
-    course_name = paper_add_items_local["course_name"].get()
-    course_type = course_type_map[paper_add_items_local["course_type"].get()]
-    course_hour = paper_add_items_local["course_hour"].get()
+def insert_info_get_and_check(cource_add_items_local, teacher_num, teacher_info_local, message_parent):
+    course_id = cource_add_items_local["course_id"].get()
+    course_name = cource_add_items_local["course_name"].get()
+    course_type = course_type_map[cource_add_items_local["course_type"].get()]
+    course_hour = cource_add_items_local["course_hour"].get()
     teacher_id_list = []
     teacher_name_list = []
     teacher_year_list = []
@@ -180,7 +180,7 @@ def create_frame_course_teacher(frame_course_info):
          'year': entry_course_year, 'seme': menu_course_teacher_seme})
 
 
-def delete_frame_course_author():
+def delete_frame_course_teacher():
     global frame_course_teacher_list, teacher_num_view
     if teacher_num_view <= 1:
         return
@@ -228,6 +228,6 @@ def create_frame_course_add(self):
     # 作者可能有多个，默认显示一个，点击按钮添加新的作者信息或删除新的对话框
     common.create_label_with_button2(frame_course_info, "课程教师", "添加教师",
                                      lambda: create_frame_course_teacher(frame_course_info), "删除教师",
-                                     lambda: delete_frame_course_author())
+                                     lambda: delete_frame_course_teacher())
     # 创建初始一个frame
     create_frame_course_teacher(frame_course_info)
