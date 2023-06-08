@@ -192,7 +192,7 @@ def create_modify_window(self, check_item):
 
 
 def check_modify_proj(self):
-    check_result, check_result_simple = proj_check.check_proj()
+    check_result, check_result_simple = proj_check.check_proj(proj_mod_items)
     create_modify_result_frame(self, check_result_simple, check_result)
 
 

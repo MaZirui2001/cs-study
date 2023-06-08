@@ -62,8 +62,8 @@ def generate_check_sql(check_items):
     return sql_sentence, t
 
 
-def check_course():
-    temp = generate_check_sql(course_check_items)
+def check_course(check_items):
+    temp = generate_check_sql(check_items)
     if temp is None:
         return
     sql_sentence, t = temp
@@ -142,7 +142,7 @@ def check_course():
 
 
 def create_check_result(self):
-    check_result, check_result_simple = check_course()
+    check_result, check_result_simple = check_course(course_check_items)
     create_check_result_frame(self, check_result_simple, check_result)
 
 

@@ -78,8 +78,8 @@ def generate_check_sql(check_items):
     return sql_sentence, t
 
 
-def check_paper():
-    sql_sentence, t = generate_check_sql(paper_check_items)
+def check_paper(check_items):
+    sql_sentence, t = generate_check_sql(check_items)
     # 链接数据库
     try:
         db = sql.connect(
@@ -147,7 +147,7 @@ def check_paper():
 
 
 def create_check_result(self):
-    check_result, check_result_simple = check_paper()
+    check_result, check_result_simple = check_paper(paper_check_items)
     create_check_result_frame(self, check_result_simple, check_result)
 
 

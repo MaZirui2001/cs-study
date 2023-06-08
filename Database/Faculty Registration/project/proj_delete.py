@@ -53,7 +53,7 @@ def delete_proj(self, proj_id):
 
 
 def create_check_del_proj(self):
-    check_result, check_result_simple = proj_check.check_proj()
+    check_result, check_result_simple = proj_check.check_proj(proj_del_items)
     create_del_result_frame(self, check_result_simple, check_result)
 
 

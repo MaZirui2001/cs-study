@@ -64,8 +64,8 @@ def generate_check_sql(check_items):
     return sql_sentence, t
 
 
-def check_proj():
-    temp = generate_check_sql(proj_check_items)
+def check_proj(check_items):
+    temp = generate_check_sql(check_items)
     if temp is None:
         return
     sql_sentence, t = temp
@@ -138,7 +138,7 @@ def check_proj():
 
 
 def create_check_result(self):
-    check_result, check_result_simple = check_proj()
+    check_result, check_result_simple = check_proj(proj_check_items)
     create_check_result_frame(self, check_result_simple, check_result)
 
 

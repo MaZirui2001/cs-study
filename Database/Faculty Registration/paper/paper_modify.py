@@ -188,7 +188,7 @@ def create_modify_window(self, check_item):
 
 
 def check_modify_paper(self):
-    check_result, check_result_simple = paper_check.check_paper()
+    check_result, check_result_simple = paper_check.check_paper(paper_mod_items)
     create_modify_result_frame(self, check_result_simple, check_result)
 
 

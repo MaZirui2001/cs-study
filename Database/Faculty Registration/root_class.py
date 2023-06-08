@@ -1,7 +1,7 @@
 import tkinter as tk
 from paper import paper_check, paper_modify, paper_delete, paper_add
 from project import proj_modify, proj_add, proj_delete, proj_check
-from course import course_check
+from course import course_check, course_add, course_delete
 
 
 class Root:
@@ -74,6 +74,16 @@ class Root:
         proj_check.create_frame_proj_check(self)
         self.frame_fresh_list["frame_proj_check"] = proj_check.fresh
         self.__create_paper_choose_button("frame_proj_check", "proj")
+
+    def create_frame_course_add(self):
+        course_add.create_frame_course_add(self)
+        self.frame_fresh_list["frame_course_add"] = course_add.fresh
+        self.__create_paper_choose_button("frame_course_add", "course")
+
+    def create_frame_course_delete(self):
+        course_delete.create_frame_course_delete(self)
+        self.frame_fresh_list["frame_course_delete"] = course_delete.fresh
+        self.__create_paper_choose_button("frame_course_delete", "course")
 
     def create_frame_course_check(self):
         course_check.create_frame_course_check(self)

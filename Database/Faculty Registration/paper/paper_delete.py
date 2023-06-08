@@ -52,7 +52,7 @@ def delete_paper(self, paper_id):
 
 
 def check_del_paper(self):
-    check_result, check_result_simple = paper_check.check_paper()
+    check_result, check_result_simple = paper_check.check_paper(paper_del_items)
     create_del_result_frame(self, check_result_simple, check_result)
 
 
