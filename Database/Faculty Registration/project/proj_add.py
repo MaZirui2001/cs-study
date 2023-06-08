@@ -108,8 +108,21 @@ def insert_info_get_and_check(paper_add_items_local, teacher_num, teacher_info_l
     for i in range(listnum):
         try:
             teacher_expend_list[i] = float(teacher_expend_list[i])
+            if teacher_expend_list[i] < 0:
+                tk.messagebox.showerror(title='错误', message='员工经费不能为负数！', parent=message_parent)
+                return None
         except ValueError:
             tk.messagebox.showerror(title='错误', message='员工经费不合法！', parent=message_parent)
+            return None
+    # 检查排名必须为正整数
+    for i in range(listnum):
+        try:
+            teacher_rank_list[i] = int(teacher_rank_list[i])
+            if teacher_rank_list[i] <= 0:
+                tk.messagebox.showerror(title='错误', message='作者排名必须为正整数！', parent=message_parent)
+                return None
+        except ValueError:
+            tk.messagebox.showerror(title='错误', message='作者排名不合法！', parent=message_parent)
             return None
     # 检查是否有相同的排名
     for i in range(listnum):

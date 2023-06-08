@@ -105,6 +105,15 @@ def insert_info_get_and_check(paper_add_items_local, author_num, author_info_loc
             if author_id_list[i] == author_id_list[j]:
                 tk.messagebox.showerror(title='错误', message='作者编号不能相同！', parent=message_parent)
                 return None
+    # 检查排名必须为正整数
+    for i in range(listnum):
+        try:
+            author_rank_list[i] = int(author_rank_list[i])
+            if author_rank_list[i] <= 0:
+                raise ValueError
+        except ValueError:
+            tk.messagebox.showerror(title='错误', message='作者排名必须为正整数！', parent=message_parent)
+            return None
     # 检查是否有相同的排名
     for i in range(listnum):
         for j in range(i + 1, listnum):

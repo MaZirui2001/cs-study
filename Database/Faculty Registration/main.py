@@ -1,4 +1,3 @@
-import tkinter as tk
 from root_class import Root
 
 
