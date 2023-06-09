@@ -1,4 +1,5 @@
 import tkinter as tk
+import ttkbootstrap as ttk
 import pymysql as sql
 import common as common
 from common import course_id2type, course_semester_map
@@ -147,37 +148,36 @@ def create_check_result(self):
 
 
 def create_detail_check_top(self, check_item):
-    top = tk.Toplevel(self.root, width=400, height=400)
+    top = ttk.Toplevel(self.root, minsize=(800, 800))
     top.title("课程详情")
-    top.geometry("400x400")
 
     # 30号字体靠左显示课程名称
-    label_course_name = tk.Label(top, text=check_item[0], font=("宋体", 20), anchor='w')
-    label_course_name.pack(side='top', anchor='w')
+    label_course_name = ttk.Label(top, text=check_item[0], font=("宋体", 20, "bold"), anchor='w')
+    label_course_name.pack(side='top', anchor='w', pady=20)
 
     # 15号字体靠左显示课程编号
-    label_course_id = tk.Label(top, text="课程编号：" + str(check_item[1]), font=("宋体", 10), anchor='w')
-    label_course_id.pack(side='top', anchor='w')
+    label_course_id = ttk.Label(top, text="课程编号：" + str(check_item[1]), font=("宋体", 10), anchor='w')
+    label_course_id.pack(side='top', anchor='w', pady=10)
 
     # 15号字体靠左显示课程学时
-    label_course_source = tk.Label(top, text="课程学时：" + str(check_item[2]), font=("宋体", 10), anchor='w')
-    label_course_source.pack(side='top', anchor='w')
+    label_course_source = ttk.Label(top, text="课程学时：" + str(check_item[3]), font=("宋体", 10), anchor='w')
+    label_course_source.pack(side='top', anchor='w', pady=10)
     print(check_item)
     # 10号字体靠左显示课程性质
-    label_course_type = tk.Label(top, text="课程类型：" + course_id2type[int(check_item[3])], font=("宋体", 10),
+    label_course_type = ttk.Label(top, text="课程类型：" + course_id2type[int(check_item[2])], font=("宋体", 10),
                                  anchor='w')
-    label_course_type.pack(side='top', anchor='w')
+    label_course_type.pack(side='top', anchor='w', pady=10)
 
     # 10号字体靠左显示所有学期的所有课程教师
     for key in check_item[4].keys():
         string_info = key.split(' ')[0] + '年' + common.course_id2semester[int(key.split(' ')[1])]
-        tk.Label(top, text=string_info, font=("宋体", 10), anchor='w').pack(side='top', anchor='w')
+        ttk.Label(top, text=string_info, font=("宋体", 10, 'bold'), anchor='w').pack(side='top', anchor='w', pady=5)
         for i in range(len(check_item[4][key])):
             string_info = '课程教师' + str(i+1) + ": " + check_item[4][key][i][0] + '（'
             string_info += '工号: ' + str(check_item[4][key][i][1]) + '\t'
             string_info += '承担学时: ' + str(check_item[4][key][i][2]) + '）'
-            label_course_teacher = tk.Label(top, text=string_info, font=("宋体", 10), anchor='w')
-            label_course_teacher.pack(side='top', anchor='w')
+            label_course_teacher = ttk.Label(top, text=string_info, font=("宋体", 10), anchor='w')
+            label_course_teacher.pack(side='top', anchor='w', pady=5)
 
 
 def create_check_result_frame(self, check_result_simple, check_result):
@@ -185,7 +185,7 @@ def create_check_result_frame(self, check_result_simple, check_result):
         frame.destroy()
     check_result_frame.clear()
     for i in range(len(check_result_simple)):
-        frame_course_check_result = tk.Frame(frame_check, width=800, height=50)
+        frame_course_check_result = ttk.Frame(frame_check, width=800, height=50)
         frame_course_check_result.pack(side='top', anchor='w')
         check_result_frame.append(frame_course_check_result)
         # 显示四栏：课程编号、课程名称、课程学时、课程类型, 用Text组件, 每一个后面跟一个详情按钮
@@ -196,9 +196,9 @@ def create_check_result_frame(self, check_result_simple, check_result):
         # 课程学时
         common.create_text(frame_course_check_result, str(check_result_simple[i][2]), 1, 2)
         # 课程类型
-        common.create_text(frame_course_check_result, str(check_result_simple[i][3]), 1, 3)
+        common.create_text(frame_course_check_result, course_id2type[int(check_result_simple[i][3])], 1, 3)
         # 详情按钮
-        button_course_detail = tk.Button(frame_course_check_result, text="详情", width=10, height=1,
+        button_course_detail = ttk.Button(frame_course_check_result, text="详情", width=5, style='success',
                                          command=lambda arg1=self, arg2=check_result[i]: create_detail_check_top(arg1,
                                                                                                                  arg2))
         button_course_detail.grid(row=0, column=4, padx=2)
@@ -210,13 +210,13 @@ def create_basic_info_frame(self, canvas_course, course_items, create_result, fr
     common.create_scrollbar(canvas_course)
 
     # 创建label
-    tk.Label(frame_course_check, text=name, font=("宋体", 15)).pack(side='top', anchor='n')
+    ttk.Label(frame_course_check, text=name, font=("微软雅黑", 15, 'bold')).pack(side='top', anchor='n')
 
-    button_course_check = tk.Button(frame_course_check, text="查询", width=10, height=1)
+    button_course_check = ttk.Button(frame_course_check, text="查询", width=10, style='success')
     button_course_check.pack(side='top', anchor='n')
 
     # 创建输入框, 获取输入的课程信息
-    frame_course_info = tk.Frame(frame_course_check, width=200, height=600)
+    frame_course_info = ttk.Frame(frame_course_check, width=200, height=600)
     frame_course_info.pack(side='top', anchor='n')
 
     # 课程编号
@@ -239,33 +239,33 @@ def create_basic_info_frame(self, canvas_course, course_items, create_result, fr
     course_items["course_semester"] = common.create_option_menu(frame_course_info, "开课学期", seme[0], seme)
 
     # 创建查询结果显示框
-    frame_course_check_result = tk.Frame(frame_course_check, width=800, height=600)
+    frame_course_check_result = ttk.Frame(frame_course_check, width=800, height=600)
     frame_course_check_result.pack(side='top', anchor='n')
 
     button_course_check.config(command=lambda: create_result(self))
 
     # 创建查询结果显示框label
-    label_course_check_result = tk.Label(frame_course_check_result, text="查询结果", font=("宋体", 10))
+    label_course_check_result = ttk.Label(frame_course_check_result, text="查询结果", font=("宋体", 10))
     label_course_check_result.pack(side='top', anchor='n')
 
-    frame_course_check_label = tk.Frame(frame_course_check_result, width=800, height=50)
+    frame_course_check_label = ttk.Frame(frame_course_check_result, width=800, height=50)
     frame_course_check_label.pack(side='top', anchor='n')
 
-    tk.Label(frame_course_check_label, text="课程编号", font=("宋体", 10), width=20, height=2).grid(row=0, column=0)
-    tk.Label(frame_course_check_label, text="课程名称", font=("宋体", 10), width=20, height=2).grid(row=0, column=1)
-    tk.Label(frame_course_check_label, text="课程学时", font=("宋体", 10), width=20, height=2).grid(row=0, column=2)
-    tk.Label(frame_course_check_label, text="课程类型", font=("宋体", 10), width=20, height=2).grid(row=0, column=3)
+    ttk.Label(frame_course_check_label, text="课程编号", font=("宋体", 10), width=20).grid(row=0, column=0)
+    ttk.Label(frame_course_check_label, text="课程名称", font=("宋体", 10), width=20).grid(row=0, column=1)
+    ttk.Label(frame_course_check_label, text="课程学时", font=("宋体", 10), width=20).grid(row=0, column=2)
+    ttk.Label(frame_course_check_label, text="课程类型", font=("宋体", 10), width=20).grid(row=0, column=3)
     return frame_course_check_label
 
 
 def create_frame_course_check(self):
     global frame_check, course_check_items
-    canvas_course_check = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
-    frame_check = tk.Frame(canvas_course_check, width=800, height=1200)
+    canvas_course_check = ttk.Canvas(self.root, width=1600, height=2400, scrollregion=(0, 0, 1600, 2400))
+    frame_check = ttk.Frame(canvas_course_check, width=800, height=1200)
     self.frame_list["frame_course_check"] = canvas_course_check
     frame_check.pack(side='top', anchor='n')
-    canvas_course_check.create_window(400, 0, anchor='n', window=frame_check)
+    canvas_course_check.create_window(820, 0, anchor='n', window=frame_check)
 
     frame_course_check_label = create_basic_info_frame(self, canvas_course_check, course_check_items,
                                                        create_check_result, frame_check)
-    tk.Label(frame_course_check_label, text="", font=("宋体", 10), width=12, height=2).grid(row=0, column=4)
+    ttk.Label(frame_course_check_label, text="", font=("宋体", 10), width=10).grid(row=0, column=4)

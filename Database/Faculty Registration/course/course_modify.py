@@ -1,8 +1,9 @@
 import tkinter as tk
 from tkinter import messagebox
+import ttkbootstrap as ttk
 import pymysql as sql
 import common as common
-from common import course_semester_map, course_id2semester
+from common import course_semester_map, course_id2semester, course_id2type
 from course import course_check
 from course import course_add
 
@@ -85,7 +86,7 @@ def create_frame_course_teacher(frame_course_info, course_teacher):
         frame_course_teacher_list[teacher_num_view].pack(side='top', anchor='n')
         teacher_num_view += 1
         return
-    frame_course_teacher = tk.Frame(frame_course_info, width=800, height=50)
+    frame_course_teacher = ttk.Frame(frame_course_info, width=800, height=50)
     teacher_num_view += 1
 
     # 输入教师编号和承担学时
@@ -117,8 +118,7 @@ def delete_frame_course_teacher():
 
 def create_modify_window(self, check_item):
     # 创建新窗口
-    window_modify = tk.Toplevel(self.root)
-    window_modify.geometry("800x600")
+    window_modify = ttk.Toplevel(self.root, minsize=(1600, 1200))
     window_modify.title("修改课程信息")
     # window_modify.resizable(False, False)
     # 获取当前课程信息
@@ -127,11 +127,11 @@ def create_modify_window(self, check_item):
         for i in range(len(check_item[4][key])):
             course_teachers.append(check_item[4][key][i] + (int(key.split(" ")[0]), int(key.split(" ")[1])))
 
-    canvas_course_add = tk.Canvas(window_modify, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
-    frame_course_add = tk.Frame(canvas_course_add, width=800, height=1200)
+    canvas_course_add = ttk.Canvas(window_modify, width=1600, height=2400, scrollregion=(0, 0, 1600, 2400))
+    frame_course_add = ttk.Frame(canvas_course_add, width=800, height=1200)
     canvas_course_add.pack(side='top', anchor='center', fill='both', expand=1)
     frame_course_add.pack(side='top', anchor='n')
-    canvas_course_add.create_window(400, 0, anchor='n', window=frame_course_add)
+    canvas_course_add.create_window(820, 0, anchor='n', window=frame_course_add)
 
     frame_course_info = course_add.create_basic_info(self, canvas_course_add, frame_course_add, course_add_items,
                                                      check_item)
@@ -139,8 +139,7 @@ def create_modify_window(self, check_item):
     # 作者可能有多个，默认显示一个，点击按钮添加新的作者信息或删除新的对话框
     common.create_label_with_button2(frame_course_info, "课程教师", "添加教师",
                                      lambda: create_frame_course_teacher(frame_course_info, ['', '', '', "", 1]),
-                                     "删除教师",
-                                     lambda: delete_frame_course_teacher())
+                                     "删除教师", lambda: delete_frame_course_teacher())
 
     global teacher_num_view, frame_course_teacher_list, teacher_info
     teacher_num_view = 0
@@ -163,7 +162,7 @@ def create_modify_result_frame(self, check_result_simple, check_result):
         frame.destroy()
     mod_result_frame.clear()
     for i in range(len(check_result_simple)):
-        frame_course_check_result = tk.Frame(frame_check, width=800, height=50)
+        frame_course_check_result = ttk.Frame(frame_check, width=800, height=50)
         frame_course_check_result.pack(side='top', anchor='w')
         mod_result_frame.append(frame_course_check_result)
         # 显示四栏：课程编号、课程名称、课程学时、课程类型, 用Text组件, 每一个后面跟一个详情按钮
@@ -174,15 +173,15 @@ def create_modify_result_frame(self, check_result_simple, check_result):
         # 课程学时
         common.create_text(frame_course_check_result, str(check_result_simple[i][2]), 1, 2, 18)
         # 课程类型
-        common.create_text(frame_course_check_result, str(check_result_simple[i][3]), 1, 3, 18)
+        common.create_text(frame_course_check_result, course_id2type[int(check_result_simple[i][3])], 1, 3, 18)
         # 详情按钮
-        button_course_detail = tk.Button(frame_course_check_result, text="详情", width=10, height=1,
+        button_course_detail = ttk.Button(frame_course_check_result, text="详情", width=5, style='success',
                                          command=lambda arg1=self, arg2=check_result[i]:
                                          course_check.create_detail_check_top(arg1, arg2))
         button_course_detail.grid(row=0, column=4, padx=2)
         detail_button_list.append((button_course_detail, i))
         # 修改按钮
-        button_course_modify = tk.Button(frame_course_check_result, text="修改", width=8, height=1,
+        button_course_modify = ttk.Button(frame_course_check_result, text="修改", width=5, style='warning',
                                          command=lambda arg1=self, arg2=check_result[i]:
                                          create_modify_window(arg1, arg2))
         button_course_modify.grid(row=0, column=5, padx=2)
@@ -190,15 +189,14 @@ def create_modify_result_frame(self, check_result_simple, check_result):
 
 
 def create_frame_course_modify(self):
-    canvas_course_mod = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 800, 1200))
+    canvas_course_mod = ttk.Canvas(self.root, width=1600, height=2400, scrollregion=(0, 0, 1600, 2400))
     global frame_check
-    frame_check = tk.Frame(canvas_course_mod, width=800, height=1200)
+    frame_check = ttk.Frame(canvas_course_mod, width=800, height=1200)
     self.frame_list["frame_course_modify"] = canvas_course_mod
     frame_check.pack(side='top', anchor='n')
-    canvas_course_mod.create_window(400, 0, anchor='n', window=frame_check)
+    canvas_course_mod.create_window(820, 0, anchor='n', window=frame_check)
 
     frame_course_check_label = course_check.create_basic_info_frame(self, canvas_course_mod, course_mod_items,
                                                                     check_modify_course, frame_check, "课程信息修改")
-    tk.Label(frame_course_check_label, text="", font=("宋体", 10), width=10, height=2).grid(row=0, column=4, padx=2)
-    tk.Label(frame_course_check_label, text="", font=("宋体", 10), width=10, height=2).grid(row=0, column=5, padx=2)
+    ttk.Label(frame_course_check_label, text="", font=("宋体", 10), width=10).grid(row=0, column=4, padx=2)
     frame_course_check_label.pack(side='top', anchor='n')

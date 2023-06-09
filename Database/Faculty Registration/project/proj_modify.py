@@ -117,18 +117,17 @@ def delete_frame_proj_teacher():
 
 def create_modify_window(self, check_item):
     # 创建新窗口
-    window_modify = ttk.Toplevel(self.root)
-    window_modify.geometry("800x600")
+    window_modify = ttk.Toplevel(self.root, minsize=(1600, 1200))
     window_modify.title("修改项目信息")
     window_modify.resizable(False, False)
     # 获取当前项目信息
     proj_teachers = check_item[7]
 
-    canvas_proj_add = ttk.Canvas(window_modify, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
+    canvas_proj_add = ttk.Canvas(window_modify, width=1600, height=2400, scrollregion=(0, 0, 1600, 2400))
     frame_proj_add = ttk.Frame(canvas_proj_add, width=800, height=1200)
     canvas_proj_add.pack(side='top', anchor='center', fill='both', expand=1)
     frame_proj_add.pack(side='top', anchor='n')
-    canvas_proj_add.create_window(400, 0, anchor='n', window=frame_proj_add)
+    canvas_proj_add.create_window(820, 0, anchor='n', window=frame_proj_add)
 
     frame_proj_info = proj_add.create_basic_info(self, canvas_proj_add, frame_proj_add, proj_add_items, check_item)
 

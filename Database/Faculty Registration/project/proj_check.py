@@ -143,41 +143,40 @@ def create_check_result(self):
 
 
 def create_detail_check_top(self, check_item):
-    top = ttk.Toplevel(self.root, width=400, height=400)
+    top = ttk.Toplevel(self.root, minsize=(800, 800))
     top.title("项目详情")
-    top.geometry("400x400")
     # top.resizable(False, False)
     # 30号字体靠左显示项目名称
-    label_proj_name = ttk.Label(top, text=check_item[0], font=("宋体", 20), anchor='w')
-    label_proj_name.pack(side='top', anchor='w')
+    label_proj_name = ttk.Label(top, text=check_item[0], font=("宋体", 20, "bold"), anchor='w')
+    label_proj_name.pack(side='top', anchor='w', pady=20)
 
     # 15号字体靠左显示项目编号
     label_proj_id = ttk.Label(top, text="项目编号：" + str(check_item[1]), font=("宋体", 10), anchor='w')
-    label_proj_id.pack(side='top', anchor='w')
+    label_proj_id.pack(side='top', anchor='w', pady=10)
 
     # 15号字体靠左显示项目来源
     label_proj_source = ttk.Label(top, text="项目来源：" + str(check_item[2]), font=("宋体", 10), anchor='w')
-    label_proj_source.pack(side='top', anchor='w')
+    label_proj_source.pack(side='top', anchor='w', pady=10)
 
     # 10号字体靠左显示项目类型
     label_proj_type = ttk.Label(top, text="项目类型：" + proj_id2type[check_item[3]], font=("宋体", 10),
-                               anchor='w')
-    label_proj_type.pack(side='top', anchor='w')
+                                anchor='w')
+    label_proj_type.pack(side='top', anchor='w', pady=10)
 
     # 10号字体靠左显示项目总经费
     label_proj_expend = ttk.Label(top, text="项目经费：" + str(check_item[4]), font=("宋体", 10),
-                                 anchor='w')
-    label_proj_expend.pack(side='top', anchor='w')
+                                  anchor='w')
+    label_proj_expend.pack(side='top', anchor='w', pady=10)
 
     # 10号字体靠左显示开始时间
     label_proj_start = ttk.Label(top, text="开始时间：" + str(check_item[5]), font=("宋体", 10),
-                                anchor='w')
-    label_proj_start.pack(side='top', anchor='w')
+                                 anchor='w')
+    label_proj_start.pack(side='top', anchor='w', pady=10)
 
     # 10号字体靠左显示结束时间
     label_proj_start = ttk.Label(top, text="结束时间：" + str(check_item[5]), font=("宋体", 10),
-                                anchor='w')
-    label_proj_start.pack(side='top', anchor='w')
+                                 anchor='w')
+    label_proj_start.pack(side='top', anchor='w', pady=10)
 
     # 10号字体靠左显示所有项目员工
     for i in range(len(check_item[7])):
@@ -187,7 +186,7 @@ def create_detail_check_top(self, check_item):
         string_info += "\t经费：" + str(check_item[7][i][3])
         string_info += "）"
         label_proj_author = ttk.Label(top, text=string_info,
-                                     font=("宋体", 10), anchor='w')
+                                      font=("宋体", 10), anchor='w')
         label_proj_author.pack(side='top', anchor='w')
 
 
@@ -210,8 +209,8 @@ def create_check_result_frame(self, check_result_simple, check_result):
         common.create_text(frame_proj_check_result, proj_id2type[check_result_simple[i][3]], 1, 3)
         # 详情按钮
         button_proj_detail = ttk.Button(frame_proj_check_result, text="详情", width=5, style="success",
-                                       command=lambda arg1=self, arg2=check_result[i]: create_detail_check_top(arg1,
-                                                                                                               arg2))
+                                        command=lambda arg1=self, arg2=check_result[i]: create_detail_check_top(arg1,
+                                                                                                                arg2))
         button_proj_detail.grid(row=0, column=4, padx=2)
         detail_button_list.append((button_proj_detail, i))
 

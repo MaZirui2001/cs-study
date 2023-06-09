@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+import ttkbootstrap as ttk
 import pymysql as sql
 import pandas as pd
 import common
@@ -105,7 +106,8 @@ def insert_info_get_and_check(course_add_items_local, teacher_num, teacher_info_
             time_list[key] = teacher_hour_list[i]
     for item in time_list:
         if time_list[item] != course_hour:
-            tk.messagebox.showerror(title='错误', message='开课年份为' + item + '的教师学时总和不等于课程总学时！', parent=message_parent)
+            tk.messagebox.showerror(title='错误', message='开课年份为' + item + '的教师学时总和不等于课程总学时！',
+                                    parent=message_parent)
             return None
 
     return listnum, course_id, course_name, course_hour, course_type, teacher_id_list, \
@@ -161,7 +163,7 @@ def create_frame_course_teacher(frame_course_info):
         frame_course_teacher_list[teacher_num_view].pack(side='top', anchor='n')
         teacher_num_view += 1
         return
-    frame_course_teacher = tk.Frame(frame_course_info, width=800, height=50)
+    frame_course_teacher = ttk.Frame(frame_course_info, width=800, height=50)
     teacher_num_view += 1
 
     # 输入教师编号和承担学时
@@ -195,16 +197,16 @@ def create_basic_info(self, canvas_course_add, frame_course_add, course_items, c
     common.create_scrollbar(canvas_course_add)
 
     # 创建label
-    label_course_name = tk.Label(frame_course_add, text="课程信息登记", font=("宋体", 15))
+    label_course_name = ttk.Label(frame_course_add, text="课程信息登记", font=("微软雅黑", 15, 'bold'))
     label_course_name.pack(side='top', anchor='n')
 
     # 创建输入框, 获取输入的课程信息
-    frame_course_info = tk.Frame(frame_course_add, width=200, height=600)
+    frame_course_info = ttk.Frame(frame_course_add, width=200, height=600)
     frame_course_info.pack(side='top', anchor='n')
 
     # 创建提交按钮
-    button_course_submit = tk.Button(frame_course_info, text="提交", font=("宋体", 10),
-                                     command=lambda: insert_paper_info(self.root))
+    button_course_submit = ttk.Button(frame_course_info, text="提交", style='green',
+                                      command=lambda: insert_paper_info(self.root))
     button_course_submit.pack(side='top', anchor='e')
 
     # 课程编号
@@ -214,24 +216,25 @@ def create_basic_info(self, canvas_course_add, frame_course_add, course_items, c
     course_items["course_name"] = common.create_label_and_entry(frame_course_info, "课程名称", check_item[0])
 
     # 课程学时
-    course_items["course_hour"] = common.create_label_and_entry(frame_course_info, "课程学时", check_item[2])
+    course_items["course_hour"] = common.create_label_and_entry(frame_course_info, "课程学时", check_item[3])
 
     # 课程类型
     types = ['本科生课程', '研究生课程']
+    # print(check_item[3])
     course_items["course_type"] = common.create_option_menu(frame_course_info, "课程类型",
-                                                            course_id2type[int(check_item[3])], types)
+                                                            course_id2type[int(check_item[2])], types)
 
     return frame_course_info
 
 
 def create_frame_course_add(self):
-    canvas_course_add = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
-    frame_course_add = tk.Frame(canvas_course_add, width=800, height=1200)
+    canvas_course_add = ttk.Canvas(self.root, width=1600, height=2400, scrollregion=(0, 0, 1600, 2400))
+    frame_course_add = ttk.Frame(canvas_course_add, width=800, height=1200)
     frame_course_add.pack(side='top', anchor='n')
-    canvas_course_add.create_window(400, 0, anchor='n', window=frame_course_add)
+    canvas_course_add.create_window(820, 0, anchor='n', window=frame_course_add)
     self.frame_list["frame_course_add"] = canvas_course_add
 
-    frame_course_info = create_basic_info(self, canvas_course_add, frame_course_add, course_add_items, ["", "", "", 1])
+    frame_course_info = create_basic_info(self, canvas_course_add, frame_course_add, course_add_items, ["", "", 1, ""])
 
     # 课程作者信息：作者编号、作者姓名、作者排名、是否为通讯作者
     # 作者可能有多个，默认显示一个，点击按钮添加新的作者信息或删除新的对话框
