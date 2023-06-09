@@ -1,3 +1,4 @@
+import ttkbootstrap as ttk
 import tkinter as tk
 from tkinter import messagebox
 import pymysql as sql
@@ -41,7 +42,7 @@ def insert_info_get_and_check(paper_add_items_local, author_num, author_info_loc
         try:
             paper_id = int(paper_id)
         except ValueError:
-            tk.messagebox.showerror(title='错误', message='论文编号必须为整数！', parent=message_parent)
+            tt.messagebox.showerror(title='错误', message='论文编号必须为整数！', parent=message_parent)
             return None
     # 论文名称不能为空
     if paper_name == '':
@@ -183,7 +184,7 @@ def create_frame_paper_author(frame_paper_info):
         frame_paper_author_list[author_num_view].pack(side='top', anchor='n')
         author_num_view += 1
         return
-    frame_paper_author = tk.Frame(frame_paper_info, width=800, height=50)
+    frame_paper_author = ttk.Frame(frame_paper_info, width=800, height=50)
     author_num_view += 1
 
     # 输入作者编号和排名
@@ -215,15 +216,15 @@ def create_basic_info(self, canvas_paper, frame_paper, paper_items, check_item):
     common.create_scrollbar(canvas_paper)
 
     # 创建label
-    label_paper_name = tk.Label(frame_paper, text="论文信息登记", font=("宋体", 15))
+    label_paper_name = ttk.Label(frame_paper, text="论文信息登记", font=("微软雅黑", 15, "bold"))
     label_paper_name.pack(side='top', anchor='n')
 
     # 创建输入框, 获取输入的论文信息
-    frame_paper_info = tk.Frame(frame_paper, width=200, height=600)
+    frame_paper_info = ttk.Frame(frame_paper, width=200, height=600)
     frame_paper_info.pack(side='top', anchor='n')
 
     # 创建提交按钮
-    button_paper_submit = tk.Button(frame_paper_info, text="提交", font=("宋体", 10),
+    button_paper_submit = ttk.Button(frame_paper_info, text="提交", style='success',
                                     command=lambda: insert_paper_info(self.root))
     button_paper_submit.pack(side='top', anchor='e')
 
@@ -252,10 +253,10 @@ def create_basic_info(self, canvas_paper, frame_paper, paper_items, check_item):
 
 
 def create_frame_paper_add(self):
-    canvas_paper_add = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
-    frame_paper_add = tk.Frame(canvas_paper_add, width=800, height=1200)
+    canvas_paper_add = ttk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
+    frame_paper_add = ttk.Frame(canvas_paper_add, width=800, height=1200)
     frame_paper_add.pack(side='top', anchor='n')
-    canvas_paper_add.create_window(400, 0, anchor='n', window=frame_paper_add)
+    canvas_paper_add.create_window(800, 0, anchor='n', window=frame_paper_add)
     self.frame_list["frame_paper_add"] = canvas_paper_add
 
     frame_paper_info = create_basic_info(self, canvas_paper_add, frame_paper_add, paper_add_items,

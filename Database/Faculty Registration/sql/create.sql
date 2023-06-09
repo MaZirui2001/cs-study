@@ -52,7 +52,7 @@ create table course
 
 # 创建发表论文关系
 drop table if exists publish_paper;
-create table public_paper
+create table publish_paper
 (
     teacher_id              char(5),
     paper_id                int,

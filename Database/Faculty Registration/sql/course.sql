@@ -32,7 +32,7 @@ drop procedure if exists insert_teacher_course//
 create procedure insert_teacher_course(
     in teacher_id char(5),
     in teacher_name char(128),
-    in course_id int,
+    in course_id char(128),
     in year int,
     in semester int,
     in undertake_hour int
@@ -76,7 +76,7 @@ end //
 # 删除一篇课程
 drop procedure if exists delete_course//
 create procedure delete_course(
-    in course_id int
+    in course_id char(128)
 )
 begin
     # 检查课程是否存在

@@ -1,4 +1,5 @@
 import tkinter as tk
+import ttkbootstrap as ttk
 from tkinter import messagebox
 import pymysql as sql
 import pandas as pd
@@ -26,7 +27,7 @@ def generate_check_sql(check_items):
     # 使用sql语句，先将paper表、public_paper表、teacher表连接起来
     # 一旦有一个条件不为空，就将其加入sql语句中
     sql_sentence = "select distinct paper.id  from paper \
-        join public_paper pp on paper.id = pp.paper_id \
+        join publish_paper pp on paper.id = pp.paper_id \
         join teacher on pp.teacher_id = teacher.id "
     t = ()
     if paper_name != "" or paper_id != "" or author_name != "" or author_id != "":
@@ -110,7 +111,7 @@ def check_paper(check_items):
     data_detail = []
     sql_sentence = "select paper.name, paper.id, paper.public_source, paper.public_date, paper.type, paper.level, \
     teacher.name, teacher.id, pp.ranking, pp.is_corresponding_author from paper \
-    join public_paper pp on paper.id = pp.paper_id \
+    join publish_paper pp on paper.id = pp.paper_id \
     join teacher on pp.teacher_id = teacher.id where paper.id = %s order by paper.id;"
     for i in range(len(data)):
         # 对每一个论文编号，查询其详细信息
@@ -155,36 +156,34 @@ def create_check_result(self):
 
 
 def create_detail_check_top(self, check_item):
-    top = tk.Toplevel(self.root, width=400, height=400)
+    top = ttk.Toplevel(self.root, minsize=(800, 800))
     top.title("论文详情")
-    top.geometry("400x400")
-    # top.resizable(False, False)
     # 30号字体靠左显示论文名称
-    label_paper_name = tk.Label(top, text=check_item[0], font=("宋体", 20), anchor='w')
-    label_paper_name.pack(side='top', anchor='w')
+    label_paper_name = ttk.Label(top, text=check_item[0], font=("宋体", 20, 'bold'), anchor='w')
+    label_paper_name.pack(side='top', anchor='w', pady=20)
 
     # 15号字体靠左显示论文编号
-    label_paper_id = tk.Label(top, text="论文编号：" + str(check_item[1]), font=("宋体", 10), anchor='w')
-    label_paper_id.pack(side='top', anchor='w')
+    label_paper_id = ttk.Label(top, text="论文编号：" + str(check_item[1]), font=("宋体", 10), anchor='w')
+    label_paper_id.pack(side='top', anchor='w', pady=10)
 
     # 15号字体靠左显示论文来源
-    label_paper_source = tk.Label(top, text="论文来源：" + str(check_item[2]), font=("宋体", 10), anchor='w')
-    label_paper_source.pack(side='top', anchor='w')
+    label_paper_source = ttk.Label(top, text="论文来源：" + str(check_item[2]), font=("宋体", 10), anchor='w')
+    label_paper_source.pack(side='top', anchor='w', pady=10)
 
     # 15号字体靠左显示论文发表时间
-    label_paper_publish_time = tk.Label(top, text="发表时间：" + str(check_item[3]), font=("宋体", 10),
-                                        anchor='w')
-    label_paper_publish_time.pack(side='top', anchor='w')
+    label_paper_publish_time = ttk.Label(top, text="发表时间：" + str(check_item[3]), font=("宋体", 10),
+                                         anchor='w')
+    label_paper_publish_time.pack(side='top', anchor='w', pady=10)
 
     # 10号字体靠左显示论文类型
-    label_paper_type = tk.Label(top, text="论文类型：" + paper_id2type[int(check_item[4])], font=("宋体", 10),
-                                anchor='w')
-    label_paper_type.pack(side='top', anchor='w')
+    label_paper_type = ttk.Label(top, text="论文类型：" + paper_id2type[int(check_item[4])], font=("宋体", 10),
+                                 anchor='w')
+    label_paper_type.pack(side='top', anchor='w', pady=10)
 
     # 10号字体靠左显示论文等级
-    label_paper_level = tk.Label(top, text="论文等级：" + paper_id2level[int(check_item[5])], font=("宋体", 10),
-                                 anchor='w')
-    label_paper_level.pack(side='top', anchor='w')
+    label_paper_level = ttk.Label(top, text="论文等级：" + paper_id2level[int(check_item[5])], font=("宋体", 10),
+                                  anchor='w')
+    label_paper_level.pack(side='top', anchor='w', pady=10)
 
     # 10号字体靠左显示所有论文作者
     for i in range(len(check_item[6])):
@@ -195,9 +194,9 @@ def create_detail_check_top(self, check_item):
             string_info += ", "
             string_info += "通讯作者"
         string_info += "）"
-        label_paper_author = tk.Label(top, text=string_info,
-                                      font=("宋体", 10), anchor='w')
-        label_paper_author.pack(side='top', anchor='w')
+        label_paper_author = ttk.Label(top, text=string_info,
+                                       font=("宋体", 10), anchor='w')
+        label_paper_author.pack(side='top', anchor='w', pady=10)
 
 
 def create_check_result_frame(self, check_result_simple, check_result):
@@ -205,7 +204,7 @@ def create_check_result_frame(self, check_result_simple, check_result):
         frame.destroy()
     check_result_frame.clear()
     for i in range(len(check_result_simple)):
-        frame_paper_check_result = tk.Frame(frame_paper_check, width=800, height=50)
+        frame_paper_check_result = ttk.Frame(frame_paper_check, width=1600, height=100)
         frame_paper_check_result.pack(side='top', anchor='w')
         check_result_frame.append(frame_paper_check_result)
         # 显示四栏：论文名称、最高作者、发表时间、论文来源, 用Text组件, 每一个后面跟一个详情按钮
@@ -218,25 +217,25 @@ def create_check_result_frame(self, check_result_simple, check_result):
         # 论文来源
         common.create_text(frame_paper_check_result, str(check_result_simple[i][3]), 1, 3)
         # 详情按钮
-        button_paper_detail = tk.Button(frame_paper_check_result, text="详情", width=10, height=1,
-                                        command=lambda arg1=self, arg2=check_result[i]: create_detail_check_top(arg1,
-                                                                                                                arg2))
-        button_paper_detail.grid(row=0, column=4, padx=2)
+        button_paper_detail = ttk.Button(frame_paper_check_result, text="详情", width=5, style="warning",
+                                         command=lambda arg1=self, arg2=check_result[i]: create_detail_check_top(arg1,
+                                                                                                                 arg2))
+        button_paper_detail.grid(row=0, column=4, padx=10)
         detail_button_list.append((button_paper_detail, i))
 
 
-def create_basic_info_frame(self, canvas_paper, paper_items, create_result, frame_check, name="论文信息查找"):
+def create_basic_info_frame(self, canvas_paper, paper_items, create_result, frame_check, name="论文信息查找", width=20):
     # 创建滚动条
     common.create_scrollbar(canvas_paper)
 
     # 创建label
-    tk.Label(frame_check, text=name, font=("宋体", 15)).pack(side='top', anchor='n')
+    ttk.Label(frame_check, text=name, font=("微软雅黑", 15, 'bold')).pack(side='top', anchor='n', pady=5)
 
-    button_paper_check = tk.Button(frame_check, text="查询", width=10, height=1)
-    button_paper_check.pack(side='top', anchor='n')
+    button_paper_check = ttk.Button(frame_check, text="查询", width=10, style='success')
+    button_paper_check.pack(side='top', anchor='n', pady=20)
 
     # 创建输入框, 获取输入的论文信息
-    frame_paper_info = tk.Frame(frame_check, width=200, height=600)
+    frame_paper_info = ttk.Frame(frame_check, width=200, height=600)
     frame_paper_info.pack(side='top', anchor='n')
 
     # 论文编号
@@ -258,34 +257,34 @@ def create_basic_info_frame(self, canvas_paper, paper_items, create_result, fram
     paper_items["author_name"] = common.create_label_and_entry(frame_paper_info, "作者姓名", "")
 
     # 创建查询结果显示框
-    frame_paper_check_result = tk.Frame(frame_check, width=800, height=600)
+    frame_paper_check_result = ttk.Frame(frame_check, width=1600, height=800)
     frame_paper_check_result.pack(side='top', anchor='n')
 
     button_paper_check.config(
         command=lambda: create_result(self))
 
     # 创建查询结果显示框label
-    label_paper_check_result = tk.Label(frame_paper_check_result, text="查询结果", font=("宋体", 10))
-    label_paper_check_result.pack(side='top', anchor='n')
+    label_paper_check_result = ttk.Label(frame_paper_check_result, text="查询结果", font=("宋体", 15, 'bold'))
+    label_paper_check_result.pack(side='top', anchor='n', pady=20)
 
-    frame_paper_check_label = tk.Frame(frame_paper_check_result, width=800, height=50)
+    frame_paper_check_label = ttk.Frame(frame_paper_check_result, width=1600, height=800)
     frame_paper_check_label.pack(side='top', anchor='n')
 
-    tk.Label(frame_paper_check_label, text="论文名称", font=("宋体", 10), width=20, height=2).grid(row=0, column=0)
-    tk.Label(frame_paper_check_label, text="作者之一", font=("宋体", 10), width=20, height=2).grid(row=0, column=1)
-    tk.Label(frame_paper_check_label, text="发表时间", font=("宋体", 10), width=20, height=2).grid(row=0, column=2)
-    tk.Label(frame_paper_check_label, text="论文来源", font=("宋体", 10), width=20, height=2).grid(row=0, column=3)
-    tk.Label(frame_paper_check_label, text="", font=("宋体", 10), width=12, height=2).grid(row=0, column=4)
+    ttk.Label(frame_paper_check_label, text="论文名称", font=("宋体", 10), width=width).grid(row=0, column=0)
+    ttk.Label(frame_paper_check_label, text="作者之一", font=("宋体", 10), width=width).grid(row=0, column=1)
+    ttk.Label(frame_paper_check_label, text="发表时间", font=("宋体", 10), width=width).grid(row=0, column=2)
+    ttk.Label(frame_paper_check_label, text="论文来源", font=("宋体", 10), width=width).grid(row=0, column=3)
+    ttk.Label(frame_paper_check_label, text="", font=("宋体", 10), width=12).grid(row=0, column=4)
 
     return frame_paper_check_label
 
 
 def create_frame_paper_check(self):
-    canvas_paper_check = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
+    canvas_paper_check = ttk.Canvas(self.root, width=1600, height=2400, scrollregion=(0, 0, 1600, 2400))
     global frame_paper_check
-    frame_paper_check = tk.Frame(canvas_paper_check, width=800, height=1200)
+    frame_paper_check = ttk.Frame(canvas_paper_check, width=1600, height=2400)
     self.frame_list["frame_paper_check"] = canvas_paper_check
     frame_paper_check.pack(side='top', anchor='n')
-    canvas_paper_check.create_window(400, 0, anchor='n', window=frame_paper_check)
+    canvas_paper_check.create_window(840, 0, anchor='n', window=frame_paper_check)
 
     create_basic_info_frame(self, canvas_paper_check, paper_check_items, create_check_result, frame_paper_check)

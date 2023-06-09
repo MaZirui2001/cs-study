@@ -3,7 +3,7 @@ use register_system;
 delimiter //
 drop procedure if exists insert_project//
 create procedure insert_project(
-    in project_id int,
+    in project_id char(128),
     in project_name char(128),
     in project_source char(128),
     in project_type int,
@@ -39,7 +39,7 @@ drop procedure if exists insert_teacher_project//
 create procedure insert_teacher_project(
     in teacher_id char(5),
     in teacher_name char(128),
-    in project_id int,
+    in project_id char(128),
     in ranking int,
     in expenditure float
 )
@@ -84,7 +84,7 @@ end //
 # 删除一个项目
 drop procedure if exists delete_project//
 create procedure delete_project(
-    in project_id int
+    in project_id char(128)
 )
 begin
     # 检查项目是否存在

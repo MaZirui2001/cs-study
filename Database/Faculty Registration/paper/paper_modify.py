@@ -1,4 +1,5 @@
 import tkinter as tk
+import ttkbootstrap as ttk
 from tkinter import messagebox
 import pymysql as sql
 import common as common
@@ -86,7 +87,7 @@ def create_frame_paper_author(frame_paper_info, paper_author):
         author_num_view += 1
         return
 
-    frame_paper_author = tk.Frame(frame_paper_info, width=800, height=50)
+    frame_paper_author = ttk.Frame(frame_paper_info, width=800, height=50)
     author_num_view += 1
 
     # 输入作者编号和排名
@@ -114,18 +115,17 @@ def delete_frame_paper_author():
 
 def create_modify_window(self, check_item):
     # 创建新窗口
-    window_modify = tk.Toplevel(self.root)
-    window_modify.geometry("800x600")
+    window_modify = ttk.Toplevel(self.root, minsize=(1600, 1200))
     window_modify.title("修改论文信息")
     window_modify.resizable(False, False)
     # 获取当前论文信息
     paper_authors = check_item[6]
 
-    canvas_paper_add = tk.Canvas(window_modify, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
-    frame_paper_add = tk.Frame(canvas_paper_add, width=800, height=1200)
+    canvas_paper_add = ttk.Canvas(window_modify, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
+    frame_paper_add = ttk.Frame(canvas_paper_add, width=800, height=1200)
     canvas_paper_add.pack(side='top', anchor='center', fill='both', expand=1)
     frame_paper_add.pack(side='top', anchor='n')
-    canvas_paper_add.create_window(400, 0, anchor='n', window=frame_paper_add)
+    canvas_paper_add.create_window(820, 0, anchor='n', window=frame_paper_add)
 
     frame_paper_info = paper_add.create_basic_info(self, canvas_paper_add, frame_paper_add, paper_add_items, check_item)
 
@@ -155,7 +155,7 @@ def create_modify_result_frame(self, check_result_simple, check_result):
         frame.destroy()
     mod_result_frame.clear()
     for i in range(len(check_result_simple)):
-        frame_paper_check_result = tk.Frame(frame_paper_check, width=800, height=50)
+        frame_paper_check_result = ttk.Frame(frame_paper_check, width=800, height=50)
         frame_paper_check_result.pack(side='top', anchor='w')
         mod_result_frame.append(frame_paper_check_result)
         # 显示四栏：论文名称、最高作者、发表时间、论文来源, 用Text组件, 每一个后面跟一个详情按钮和一个删除按钮
@@ -168,13 +168,13 @@ def create_modify_result_frame(self, check_result_simple, check_result):
         # 论文来源
         common.create_text(frame_paper_check_result, str(check_result_simple[i][3]), 1, 3, 18)
         # 详情按钮
-        button_paper_detail = tk.Button(frame_paper_check_result, text="详情", width=8, height=1,
+        button_paper_detail = ttk.Button(frame_paper_check_result, text="详情", width=5, style='success',
                                         command=lambda arg2=check_result[i]: paper_check.create_detail_check_top(self,
                                                                                                                  arg2))
         button_paper_detail.grid(row=0, column=4, padx=2)
         detail_button_list.append((button_paper_detail, i))
         # 修改按钮
-        button_paper_modify = tk.Button(frame_paper_check_result, text="修改", width=8, height=1,
+        button_paper_modify = ttk.Button(frame_paper_check_result, text="修改", width=5, style='warning',
                                         command=lambda arg1=self, arg2=check_result[i]:
                                         create_modify_window(arg1, arg2))
         button_paper_modify.grid(row=0, column=5, padx=2)
@@ -182,13 +182,12 @@ def create_modify_result_frame(self, check_result_simple, check_result):
 
 
 def create_frame_paper_modify(self):
-    canvas_paper_mod = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 800, 1200))
+    canvas_paper_mod = ttk.Canvas(self.root, width=1600, height=2400, scrollregion=(0, 0,1600, 2400))
     global frame_paper_check
-    frame_paper_check = tk.Frame(canvas_paper_mod, width=800, height=1200)
+    frame_paper_check = ttk.Frame(canvas_paper_mod, width=800, height=1200)
     self.frame_list["frame_paper_modify"] = canvas_paper_mod
     frame_paper_check.pack(side='top', anchor='n')
-    canvas_paper_mod.create_window(400, 0, anchor='n', window=frame_paper_check)
+    canvas_paper_mod.create_window(820, 0, anchor='n', window=frame_paper_check)
     frame_paper_check_label = paper_check.create_basic_info_frame(self, canvas_paper_mod, paper_mod_items,
-                                                                  check_modify_paper, frame_paper_check, "论文信息修改")
-    tk.Label(frame_paper_check_label, text="", font=("宋体", 10), width=10, height=2).grid(row=0, column=5, padx=2)
+                                                                  check_modify_paper, frame_paper_check, "论文信息修改", 18)
     frame_paper_check_label.pack(side='top', anchor='n')

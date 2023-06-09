@@ -52,15 +52,15 @@ begin
     end if;
     # 检查教师是否已经在论文中,若插入信息已经存在，则不做任何操作
     if exists(select *
-              from public_paper
-              where public_paper.teacher_id = teacher_id and public_paper.paper_id = paper_id) then
+              from publish_paper
+              where publish_paper.teacher_id = teacher_id and publish_paper.paper_id = paper_id) then
         # 若插入信息与存储信息一致，则不做任何操作
         if exists(select *
-                  from public_paper
-                  where public_paper.teacher_id = teacher_id
-                    and public_paper.paper_id = paper_id
-                    and public_paper.ranking = ranking
-                    and public_paper.is_corresponding_author = is_corresponding_author) then
+                  from publish_paper
+                  where publish_paper.teacher_id = teacher_id
+                    and publish_paper.paper_id = paper_id
+                    and publish_paper.ranking = ranking
+                    and publish_paper.is_corresponding_author = is_corresponding_author) then
             leave insert_;
         end if;
         signal sqlstate '45003' set message_text = '有教师已经在本论文中登记，且本次插入信息不一致';
@@ -70,18 +70,18 @@ begin
         signal sqlstate '45004' set message_text = '论文不存在';
     end if;
     # 检查教师排名不能重复
-    if exists(select * from public_paper where paper_id = public_paper.paper_id and public_paper.ranking = ranking) then
+    if exists(select * from publish_paper where paper_id = publish_paper.paper_id and publish_paper.ranking = ranking) then
         signal sqlstate '45005' set message_text = '教师排名重复';
     end if;
     # 检查论文只能有一个通讯作者
     if is_corresponding_author and exists(select *
-                                          from public_paper
-                                          where public_paper.paper_id = paper_id
-                                            and public_paper.is_corresponding_author = 1) then
+                                          from publish_paper
+                                          where publish_paper.paper_id = paper_id
+                                            and publish_paper.is_corresponding_author = 1) then
         signal sqlstate '45006' set message_text = '论文已有通讯作者';
     end if;
     # 通过检查，插入教师-论文关系
-    insert into public_paper values (teacher_id, paper_id, ranking, is_corresponding_author);
+    insert into publish_paper values (teacher_id, paper_id, ranking, is_corresponding_author);
 end //
 
 # 删除一篇论文
@@ -96,6 +96,6 @@ begin
     end if;
 
     # 删除论文-教师关系
-    delete from public_paper where paper_id = public_paper.paper_id;
+    delete from publish_paper where paper_id = publish_paper.paper_id;
     delete from paper where id = paper_id;
 end //

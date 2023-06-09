@@ -18,5 +18,7 @@ if __name__ == '__main__':
     r.create_frame_course_delete()
     r.create_frame_course_modify()
     r.create_frame_course_check()
+
+    r.create_frame_statistic()
     r.switch_to_frame("frame_main")
     r.root.mainloop()

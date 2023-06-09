@@ -36,6 +36,7 @@ def insert_info_get_and_check(course_add_items_local, teacher_num, teacher_info_
     if course_id == '':
         tk.messagebox.showerror(title='错误', message='课程编号不能为空！', parent=message_parent)
         return None
+    course_id = str(course_id)
     # 课程名称不能为空
     if course_name == '':
         tk.messagebox.showerror(title='错误', message='课程名称不能为空！', parent=message_parent)

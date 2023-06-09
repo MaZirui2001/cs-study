@@ -1,33 +1,33 @@
-import tkinter as tk
+import ttkbootstrap as ttk
 from paper import paper_check, paper_modify, paper_delete, paper_add
 from project import proj_modify, proj_add, proj_delete, proj_check
 from course import course_check, course_add, course_delete, course_modify
+from statistic import statistic
 
 
 class Root:
     def __init__(self):
-        root = tk.Tk()
-        root.geometry("800x600")
+        root = ttk.Window(minsize=(1600, 1200), resizable=(False, True))
         root.title("教学科研登记系统")
         self.root = root
         self.frame_list = {}
         self.frame_fresh_list = {}
 
     def __create_paper_choose_button(self, frame_name, type_="paper"):
-        frame_button = tk.Frame(self.frame_list[frame_name], height=100, width=800, bg='green')
-        button_return = tk.Button(frame_button, text="返回",
+        frame_button = ttk.Frame(self.frame_list[frame_name], height=100, width=800)
+        button_return = ttk.Button(frame_button, text="返回", style="secondary-outline.TButton",
                                   command=lambda: self.switch_to_frame("frame_main"))
         button_return.grid(row=0, column=0, ipadx=10, ipady=10)
-        button_add = tk.Button(frame_button, text="添加",
+        button_add = ttk.Button(frame_button, text="添加", style="success-outline.TButton",
                                command=lambda: self.switch_to_frame("frame_" + type_ + "_add"))
         button_add.grid(row=0, column=1, ipadx=10, ipady=10)
-        button_delete = tk.Button(frame_button, text="删除",
+        button_delete = ttk.Button(frame_button, text="删除", style="danger-outline.TButton",
                                   command=lambda: self.switch_to_frame("frame_" + type_ + "_delete"))
         button_delete.grid(row=0, column=2, ipadx=10, ipady=10)
-        button_modify = tk.Button(frame_button, text="修改",
+        button_modify = ttk.Button(frame_button, text="修改", style="warning-outline.TButton",
                                   command=lambda: self.switch_to_frame("frame_" + type_ + "_modify"))
         button_modify.grid(row=0, column=3, ipadx=10, ipady=10)
-        button_check = tk.Button(frame_button, text="查询",
+        button_check = ttk.Button(frame_button, text="查询", style="info-outline.TButton",
                                  command=lambda: self.switch_to_frame("frame_" + type_ + "_check"))
         button_check.grid(row=0, column=4, ipadx=10, ipady=10)
         frame_button.pack(side='bottom', anchor='center')
@@ -95,23 +95,33 @@ class Root:
         self.frame_fresh_list["frame_course_check"] = course_check.fresh
         self.__create_paper_choose_button("frame_course_check", "course")
 
+    def create_frame_statistic(self):
+        statistic.create_stat_frame(self)
+        self.frame_fresh_list["frame_statistic"] = statistic.fresh
+        self.__create_paper_choose_button("frame_statistic")
+
     def create_frame_main(self):
-        frame_main = tk.Frame(self.root, height=600, width=800, bg='pink')
-        frame_button = tk.Frame(frame_main, height=10, width=800, bg='white')
+        frame_main = ttk.Frame(self.root, height=600, width=800)
+        frame_button = ttk.Frame(frame_main, height=10, width=800)
+        s = ttk.Style()
+        s.theme_use('cosmo')
+
+        s.configure('TButton', font=('微软雅黑', 12, 'bold'))
         self.frame_list["frame_main"] = frame_main
         self.frame_fresh_list["frame_main"] = self.fresh
-        button_paper = tk.Button(frame_button, text="登记论文发表情况",
-                                 command=lambda: self.switch_to_frame("frame_paper_check"), height=5, width=20)
-        button_paper.pack(side='left', anchor='center')
-        button_proj = tk.Button(frame_button, text="登记项目情况",
-                                command=lambda: self.switch_to_frame("frame_proj_check"), height=5, width=20)
-        button_proj.pack(side='left', anchor='center')
-        button_teach = tk.Button(frame_button, text="登记教学情况",
-                                 command=lambda: self.switch_to_frame("frame_course_check"), height=5, width=20)
-        button_teach.pack(side='left', anchor='center')
-        button_check = tk.Button(frame_button, text="查询统计", command=show, height=5, width=20)
-        button_check.pack(side='left', anchor='center')
-        frame_button.pack(side='bottom', anchor='center')
+        button_paper = ttk.Button(frame_button, text="登记论文发表情况", style='warning.TButton',
+                                  command=lambda: self.switch_to_frame("frame_paper_check"), width=20)
+        button_paper.pack(side='top', anchor='center', pady=20)
+        button_proj = ttk.Button(frame_button, text="登记项目情况", style='success.TButton',
+                                 command=lambda: self.switch_to_frame("frame_proj_check"), width=20)
+        button_proj.pack(side='top', anchor='center', pady=20)
+        button_teach = ttk.Button(frame_button, text="登记教学情况", style="primary.TButton",
+                                  command=lambda: self.switch_to_frame("frame_course_check"), width=20)
+        button_teach.pack(side='top', anchor='center', pady=20)
+        button_check = ttk.Button(frame_button, text="查询统计", style="danger.TButton",
+                                  command=lambda: self.switch_to_frame("frame_statistic"), width=20)
+        button_check.pack(side='top', anchor='center', pady=20)
+        frame_button.pack(side='bottom', anchor='center', pady=100)
 
     def switch_to_frame(self, frame_name):
         for frame in self.frame_list.values():

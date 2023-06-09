@@ -37,6 +37,7 @@ def insert_info_get_and_check(paper_add_items_local, teacher_num, teacher_info_l
     if project_id == '':
         tk.messagebox.showerror(title='错误', message='项目编号不能为空！', parent=message_parent)
         return None
+    project_id = str(project_id)
     # 项目名称不能为空
     if proj_name == '':
         tk.messagebox.showerror(title='错误', message='项目名称不能为空！', parent=message_parent)
@@ -165,7 +166,7 @@ def insert_paper_info(message_parent):
         exit(-1)
     # 插入项目信息
     cursor = db.cursor()
-    val = (project_id, proj_name, proj_source, proj_type, proj_expend, proj_start, proj_end)
+    val = (str(project_id), proj_name, proj_source, proj_type, proj_expend, proj_start, proj_end)
     # 执行sql语句，插入项目信息并捕捉异常编号
     try:
         cursor.callproc('insert_project', val)
