@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+import ttkbootstrap as ttk
 import pymysql as sql
 import pandas as pd
 import common
@@ -192,7 +193,7 @@ def create_frame_project_teacher(frame_project_info):
         frame_proj_teacher_list[teacher_num_view].pack(side='top', anchor='n')
         teacher_num_view += 1
         return
-    frame_project_teacher = tk.Frame(frame_project_info, width=800, height=50)
+    frame_project_teacher = ttk.Frame(frame_project_info, width=800, height=50)
     teacher_num_view += 1
 
     # 输入作者编号和排名
@@ -224,15 +225,15 @@ def create_basic_info(self, canvas_proj, frame_proj, proj_items, check_items):
     common.create_scrollbar(canvas_proj)
 
     # 创建label
-    label_proj_name = tk.Label(frame_proj, text="项目信息登记", font=("宋体", 15))
+    label_proj_name = ttk.Label(frame_proj, text="项目信息登记", font=("微软雅黑", 15, "bold"))
     label_proj_name.pack(side='top', anchor='n')
 
     # 创建输入框, 获取输入的项目信息
-    frame_proj_info = tk.Frame(frame_proj, width=200, height=600)
+    frame_proj_info = ttk.Frame(frame_proj, width=200, height=600)
     frame_proj_info.pack(side='top', anchor='n')
 
     # 创建提交按钮
-    button_proj_submit = tk.Button(frame_proj_info, text="提交", font=("宋体", 10),
+    button_proj_submit = ttk.Button(frame_proj_info, text="提交", style='success',
                                    command=lambda: insert_paper_info(self.root))
     button_proj_submit.pack(side='top', anchor='e')
 
@@ -262,10 +263,10 @@ def create_basic_info(self, canvas_proj, frame_proj, proj_items, check_items):
 
 
 def create_frame_proj_add(self):
-    canvas_proj_add = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
-    frame_proj_add = tk.Frame(canvas_proj_add, width=800, height=1200)
+    canvas_proj_add = ttk.Canvas(self.root, width=1600, height=2400, scrollregion=(0, 0, 1600, 2400))
+    frame_proj_add = ttk.Frame(canvas_proj_add, width=800, height=1200)
     frame_proj_add.pack(side='top', anchor='n')
-    canvas_proj_add.create_window(400, 0, anchor='n', window=frame_proj_add)
+    canvas_proj_add.create_window(820, 0, anchor='n', window=frame_proj_add)
     self.frame_list["frame_proj_add"] = canvas_proj_add
 
     frame_proj_info = create_basic_info(self, canvas_proj_add, frame_proj_add, proj_add_items,

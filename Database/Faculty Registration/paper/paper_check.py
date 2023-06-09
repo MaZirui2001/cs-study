@@ -232,7 +232,7 @@ def create_basic_info_frame(self, canvas_paper, paper_items, create_result, fram
     ttk.Label(frame_check, text=name, font=("微软雅黑", 15, 'bold')).pack(side='top', anchor='n', pady=5)
 
     button_paper_check = ttk.Button(frame_check, text="查询", width=10, style='success')
-    button_paper_check.pack(side='top', anchor='n', pady=20)
+    button_paper_check.pack(side='top', anchor='n')
 
     # 创建输入框, 获取输入的论文信息
     frame_paper_info = ttk.Frame(frame_check, width=200, height=600)

@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+import ttkbootstrap as ttk
 import pymysql as sql
 import common as common
 from common import proj_id2type
@@ -84,7 +85,7 @@ def create_frame_proj_teacher(frame_project_info, proj_teacher):
         frame_proj_teacher_list[teacher_num_view].pack(side='top', anchor='n')
         teacher_num_view += 1
         return
-    frame_project_teacher = tk.Frame(frame_project_info, width=800, height=50)
+    frame_project_teacher = ttk.Frame(frame_project_info, width=800, height=50)
     teacher_num_view += 1
 
     # 输入员工编号和排名
@@ -116,15 +117,15 @@ def delete_frame_proj_teacher():
 
 def create_modify_window(self, check_item):
     # 创建新窗口
-    window_modify = tk.Toplevel(self.root)
+    window_modify = ttk.Toplevel(self.root)
     window_modify.geometry("800x600")
     window_modify.title("修改项目信息")
     window_modify.resizable(False, False)
     # 获取当前项目信息
     proj_teachers = check_item[7]
 
-    canvas_proj_add = tk.Canvas(window_modify, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
-    frame_proj_add = tk.Frame(canvas_proj_add, width=800, height=1200)
+    canvas_proj_add = ttk.Canvas(window_modify, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
+    frame_proj_add = ttk.Frame(canvas_proj_add, width=800, height=1200)
     canvas_proj_add.pack(side='top', anchor='center', fill='both', expand=1)
     frame_proj_add.pack(side='top', anchor='n')
     canvas_proj_add.create_window(400, 0, anchor='n', window=frame_proj_add)
@@ -157,7 +158,7 @@ def create_modify_result_frame(self, check_result_simple, check_result):
         frame.destroy()
     mod_result_frame.clear()
     for i in range(len(check_result_simple)):
-        frame_proj_check_result = tk.Frame(frame_check, width=800, height=50)
+        frame_proj_check_result = ttk.Frame(frame_check, width=800, height=50)
         frame_proj_check_result.pack(side='top', anchor='w')
         mod_result_frame.append(frame_proj_check_result)
         # 显示四栏：项目名称、最高员工、发表时间、项目来源, 用Text组件, 每一个后面跟一个详情按钮和一个删除按钮
@@ -170,13 +171,13 @@ def create_modify_result_frame(self, check_result_simple, check_result):
         # 项目类型
         common.create_text(frame_proj_check_result, proj_id2type[int(check_result_simple[i][3])], 1, 3, 18)
         # 详情按钮
-        button_proj_detail = tk.Button(frame_proj_check_result, text="详情", width=8, height=1,
+        button_proj_detail = ttk.Button(frame_proj_check_result, text="详情", width=5, style='success',
                                        command=lambda arg2=check_result[i]: proj_check.create_detail_check_top(self,
                                                                                                                arg2))
         button_proj_detail.grid(row=0, column=4, padx=2)
         detail_button_list.append((button_proj_detail, i))
         # 修改按钮
-        button_proj_modify = tk.Button(frame_proj_check_result, text="修改", width=8, height=1,
+        button_proj_modify = ttk.Button(frame_proj_check_result, text="修改", width=5, style='warning',
                                        command=lambda arg1=self, arg2=check_result[i]:
                                        create_modify_window(arg1, arg2))
         button_proj_modify.grid(row=0, column=5, padx=2)
@@ -184,15 +185,14 @@ def create_modify_result_frame(self, check_result_simple, check_result):
 
 
 def create_frame_proj_modify(self):
-    canvas_proj_mod = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 800, 1200))
+    canvas_proj_mod = ttk.Canvas(self.root, width=1600, height=2400, scrollregion=(0, 0, 1600, 2400))
     global frame_check
-    frame_check = tk.Frame(canvas_proj_mod, width=800, height=1200)
+    frame_check = ttk.Frame(canvas_proj_mod, width=800, height=1200)
     self.frame_list["frame_proj_modify"] = canvas_proj_mod
     frame_check.pack(side='top', anchor='n')
-    canvas_proj_mod.create_window(400, 0, anchor='n', window=frame_check)
+    canvas_proj_mod.create_window(820, 0, anchor='n', window=frame_check)
 
     frame_proj_check_label = proj_check.create_basic_info_frame(self, canvas_proj_mod, proj_mod_items,
                                                                 check_modify_proj, frame_check, "项目信息修改")
-    tk.Label(frame_proj_check_label, text="", font=("宋体", 10), width=10, height=2).grid(row=0, column=4, padx=2)
-    tk.Label(frame_proj_check_label, text="", font=("宋体", 10), width=10, height=2).grid(row=0, column=5, padx=2)
+    ttk.Label(frame_proj_check_label, text="", font=("宋体", 10), width=10).grid(row=0, column=4, padx=2)
     frame_proj_check_label.pack(side='top', anchor='n')

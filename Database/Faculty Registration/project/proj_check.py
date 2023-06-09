@@ -1,5 +1,5 @@
-import tkinter as tk
 from tkinter import messagebox
+import ttkbootstrap as ttk
 import pymysql as sql
 import common as common
 from common import proj_id2type
@@ -143,39 +143,39 @@ def create_check_result(self):
 
 
 def create_detail_check_top(self, check_item):
-    top = tk.Toplevel(self.root, width=400, height=400)
+    top = ttk.Toplevel(self.root, width=400, height=400)
     top.title("项目详情")
     top.geometry("400x400")
     # top.resizable(False, False)
     # 30号字体靠左显示项目名称
-    label_proj_name = tk.Label(top, text=check_item[0], font=("宋体", 20), anchor='w')
+    label_proj_name = ttk.Label(top, text=check_item[0], font=("宋体", 20), anchor='w')
     label_proj_name.pack(side='top', anchor='w')
 
     # 15号字体靠左显示项目编号
-    label_proj_id = tk.Label(top, text="项目编号：" + str(check_item[1]), font=("宋体", 10), anchor='w')
+    label_proj_id = ttk.Label(top, text="项目编号：" + str(check_item[1]), font=("宋体", 10), anchor='w')
     label_proj_id.pack(side='top', anchor='w')
 
     # 15号字体靠左显示项目来源
-    label_proj_source = tk.Label(top, text="项目来源：" + str(check_item[2]), font=("宋体", 10), anchor='w')
+    label_proj_source = ttk.Label(top, text="项目来源：" + str(check_item[2]), font=("宋体", 10), anchor='w')
     label_proj_source.pack(side='top', anchor='w')
 
     # 10号字体靠左显示项目类型
-    label_proj_type = tk.Label(top, text="项目类型：" + proj_id2type[check_item[3]], font=("宋体", 10),
+    label_proj_type = ttk.Label(top, text="项目类型：" + proj_id2type[check_item[3]], font=("宋体", 10),
                                anchor='w')
     label_proj_type.pack(side='top', anchor='w')
 
     # 10号字体靠左显示项目总经费
-    label_proj_expend = tk.Label(top, text="项目经费：" + str(check_item[4]), font=("宋体", 10),
+    label_proj_expend = ttk.Label(top, text="项目经费：" + str(check_item[4]), font=("宋体", 10),
                                  anchor='w')
     label_proj_expend.pack(side='top', anchor='w')
 
     # 10号字体靠左显示开始时间
-    label_proj_start = tk.Label(top, text="开始时间：" + str(check_item[5]), font=("宋体", 10),
+    label_proj_start = ttk.Label(top, text="开始时间：" + str(check_item[5]), font=("宋体", 10),
                                 anchor='w')
     label_proj_start.pack(side='top', anchor='w')
 
     # 10号字体靠左显示结束时间
-    label_proj_start = tk.Label(top, text="结束时间：" + str(check_item[5]), font=("宋体", 10),
+    label_proj_start = ttk.Label(top, text="结束时间：" + str(check_item[5]), font=("宋体", 10),
                                 anchor='w')
     label_proj_start.pack(side='top', anchor='w')
 
@@ -186,7 +186,7 @@ def create_detail_check_top(self, check_item):
         string_info += "工号：" + str(check_item[7][i][1])
         string_info += "\t经费：" + str(check_item[7][i][3])
         string_info += "）"
-        label_proj_author = tk.Label(top, text=string_info,
+        label_proj_author = ttk.Label(top, text=string_info,
                                      font=("宋体", 10), anchor='w')
         label_proj_author.pack(side='top', anchor='w')
 
@@ -196,7 +196,7 @@ def create_check_result_frame(self, check_result_simple, check_result):
         frame.destroy()
     check_result_frame.clear()
     for i in range(len(check_result_simple)):
-        frame_proj_check_result = tk.Frame(frame_check, width=800, height=50)
+        frame_proj_check_result = ttk.Frame(frame_check, width=800, height=50)
         frame_proj_check_result.pack(side='top', anchor='w')
         check_result_frame.append(frame_proj_check_result)
         # 显示四栏：项目名称、最高员工、项目级别、项目来源, 用Text组件, 每一个后面跟一个详情按钮
@@ -209,7 +209,7 @@ def create_check_result_frame(self, check_result_simple, check_result):
         # 项目类型
         common.create_text(frame_proj_check_result, proj_id2type[check_result_simple[i][3]], 1, 3)
         # 详情按钮
-        button_proj_detail = tk.Button(frame_proj_check_result, text="详情", width=10, height=1,
+        button_proj_detail = ttk.Button(frame_proj_check_result, text="详情", width=5, style="success",
                                        command=lambda arg1=self, arg2=check_result[i]: create_detail_check_top(arg1,
                                                                                                                arg2))
         button_proj_detail.grid(row=0, column=4, padx=2)
@@ -221,13 +221,13 @@ def create_basic_info_frame(self, canvas_proj, proj_items, create_result, frame_
     common.create_scrollbar(canvas_proj)
 
     # 创建label
-    tk.Label(frame_proj_check, text=name, font=("宋体", 15)).pack(side='top', anchor='n')
+    ttk.Label(frame_proj_check, text=name, font=("微软雅黑", 15, 'bold')).pack(side='top', anchor='n')
 
-    button_proj_check = tk.Button(frame_proj_check, text="查询", width=10, height=1)
+    button_proj_check = ttk.Button(frame_proj_check, text="查询", width=10, style="success")
     button_proj_check.pack(side='top', anchor='n')
 
     # 创建输入框, 获取输入的项目信息
-    frame_proj_info = tk.Frame(frame_proj_check, width=200, height=600)
+    frame_proj_info = ttk.Frame(frame_proj_check, width=200, height=600)
     frame_proj_info.pack(side='top', anchor='n')
 
     # 项目编号
@@ -246,34 +246,34 @@ def create_basic_info_frame(self, canvas_proj, proj_items, create_result, frame_
     proj_items["teacher_name"] = common.create_label_and_entry(frame_proj_info, "员工姓名", "")
 
     # 创建查询结果显示框
-    frame_proj_check_result = tk.Frame(frame_proj_check, width=800, height=600)
+    frame_proj_check_result = ttk.Frame(frame_proj_check, width=800, height=600)
     frame_proj_check_result.pack(side='top', anchor='n')
 
     button_proj_check.config(command=lambda: create_result(self))
 
     # 创建查询结果显示框label
-    label_proj_check_result = tk.Label(frame_proj_check_result, text="查询结果", font=("宋体", 10))
-    label_proj_check_result.pack(side='top', anchor='n')
+    label_proj_check_result = ttk.Label(frame_proj_check_result, text="查询结果", font=("宋体", 15, 'bold'))
+    label_proj_check_result.pack(side='top', anchor='n', pady=20)
 
-    frame_proj_check_label = tk.Frame(frame_proj_check_result, width=800, height=50)
+    frame_proj_check_label = ttk.Frame(frame_proj_check_result, width=800, height=50)
     frame_proj_check_label.pack(side='top', anchor='n')
 
-    tk.Label(frame_proj_check_label, text="项目名称", font=("宋体", 10), width=20, height=2).grid(row=0, column=0)
-    tk.Label(frame_proj_check_label, text="最高员工", font=("宋体", 10), width=20, height=2).grid(row=0, column=1)
-    tk.Label(frame_proj_check_label, text="项目来源", font=("宋体", 10), width=20, height=2).grid(row=0, column=2)
-    tk.Label(frame_proj_check_label, text="项目类型", font=("宋体", 10), width=20, height=2).grid(row=0, column=3)
+    ttk.Label(frame_proj_check_label, text="项目名称", font=("宋体", 10), width=20).grid(row=0, column=0)
+    ttk.Label(frame_proj_check_label, text="最高员工", font=("宋体", 10), width=20).grid(row=0, column=1)
+    ttk.Label(frame_proj_check_label, text="项目来源", font=("宋体", 10), width=20).grid(row=0, column=2)
+    ttk.Label(frame_proj_check_label, text="项目类型", font=("宋体", 10), width=20).grid(row=0, column=3)
 
     return frame_proj_check_label
 
 
 def create_frame_proj_check(self):
     global frame_check, proj_check_items
-    canvas_proj_check = tk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
-    frame_check = tk.Frame(canvas_proj_check, width=800, height=1200)
+    canvas_proj_check = ttk.Canvas(self.root, width=1600, height=2400, scrollregion=(0, 0, 1600, 2400))
+    frame_check = ttk.Frame(canvas_proj_check, width=800, height=1200)
     self.frame_list["frame_proj_check"] = canvas_proj_check
     frame_check.pack(side='top', anchor='n')
-    canvas_proj_check.create_window(400, 0, anchor='n', window=frame_check)
+    canvas_proj_check.create_window(820, 0, anchor='n', window=frame_check)
 
     frame_proj_check_label = create_basic_info_frame(self, canvas_proj_check, proj_check_items, create_check_result,
                                                      frame_check)
-    tk.Label(frame_proj_check_label, text="", font=("宋体", 10), width=12, height=2).grid(row=0, column=4)
+    ttk.Label(frame_proj_check_label, text="", font=("宋体", 10), width=10).grid(row=0, column=4)
