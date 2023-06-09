@@ -113,7 +113,7 @@ def check_proj(check_items):
 
     # 将查询结果存入全局变量中
     result = data_detail
-    print(result)
+    # print(result)
     # 处理数据
     check_result = []
     for i in range(len(result)):

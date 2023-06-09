@@ -34,7 +34,7 @@ def modify_paper_info(self, origin_paper_id, message_parent):
     listnum, paper_id, paper_name, paper_source, paper_date, paper_type, paper_level, \
         author_id_list, author_name_list, author_rank_list, \
         author_is_communicate_list = temp
-    print(paper_id)
+    # print(paper_id)
     # print(listnum, paper_id, paper_name, paper_source, paper_date, paper_type, paper_level)
     # 通过基本检查，开始删除原有记录
     # 对话框：确认提交修改
@@ -169,25 +169,26 @@ def create_modify_result_frame(self, check_result_simple, check_result):
         common.create_text(frame_paper_check_result, str(check_result_simple[i][3]), 1, 3, 18)
         # 详情按钮
         button_paper_detail = ttk.Button(frame_paper_check_result, text="详情", width=5, style='success',
-                                        command=lambda arg2=check_result[i]: paper_check.create_detail_check_top(self,
-                                                                                                                 arg2))
+                                         command=lambda arg2=check_result[i]: paper_check.create_detail_check_top(self,
+                                                                                                                  arg2))
         button_paper_detail.grid(row=0, column=4, padx=2)
         detail_button_list.append((button_paper_detail, i))
         # 修改按钮
         button_paper_modify = ttk.Button(frame_paper_check_result, text="修改", width=5, style='warning',
-                                        command=lambda arg1=self, arg2=check_result[i]:
-                                        create_modify_window(arg1, arg2))
+                                         command=lambda arg1=self, arg2=check_result[i]:
+                                         create_modify_window(arg1, arg2))
         button_paper_modify.grid(row=0, column=5, padx=2)
         modify_button_list.append((button_paper_modify, i))
 
 
 def create_frame_paper_modify(self):
-    canvas_paper_mod = ttk.Canvas(self.root, width=1600, height=2400, scrollregion=(0, 0,1600, 2400))
+    canvas_paper_mod = ttk.Canvas(self.root, width=1600, height=2400, scrollregion=(0, 0, 1600, 2400))
     global frame_paper_check
     frame_paper_check = ttk.Frame(canvas_paper_mod, width=800, height=1200)
     self.frame_list["frame_paper_modify"] = canvas_paper_mod
     frame_paper_check.pack(side='top', anchor='n')
     canvas_paper_mod.create_window(820, 0, anchor='n', window=frame_paper_check)
     frame_paper_check_label = paper_check.create_basic_info_frame(self, canvas_paper_mod, paper_mod_items,
-                                                                  check_modify_paper, frame_paper_check, "论文信息修改", 18)
+                                                                  check_modify_paper, frame_paper_check, "论文信息修改",
+                                                                  18)
     frame_paper_check_label.pack(side='top', anchor='n')

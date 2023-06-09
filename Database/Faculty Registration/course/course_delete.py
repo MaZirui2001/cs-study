@@ -1,4 +1,3 @@
-import tkinter as tk
 from tkinter import messagebox
 import ttkbootstrap as ttk
 import pymysql as sql

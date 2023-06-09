@@ -1,4 +1,3 @@
-import tkinter as tk
 import ttkbootstrap as ttk
 import pymysql as sql
 import common as common
@@ -68,7 +67,7 @@ def check_course(check_items):
     if temp is None:
         return [], []
     sql_sentence, t = temp
-    print(sql_sentence)
+    # print(sql_sentence)
     # 链接数据库
     try:
         db = sql.connect(
@@ -162,10 +161,10 @@ def create_detail_check_top(self, check_item):
     # 15号字体靠左显示课程学时
     label_course_source = ttk.Label(top, text="课程学时：" + str(check_item[3]), font=("宋体", 10), anchor='w')
     label_course_source.pack(side='top', anchor='w', pady=10)
-    print(check_item)
+    # print(check_item)
     # 10号字体靠左显示课程性质
     label_course_type = ttk.Label(top, text="课程类型：" + course_id2type[int(check_item[2])], font=("宋体", 10),
-                                 anchor='w')
+                                  anchor='w')
     label_course_type.pack(side='top', anchor='w', pady=10)
 
     # 10号字体靠左显示所有学期的所有课程教师
@@ -173,7 +172,7 @@ def create_detail_check_top(self, check_item):
         string_info = key.split(' ')[0] + '年' + common.course_id2semester[int(key.split(' ')[1])]
         ttk.Label(top, text=string_info, font=("宋体", 10, 'bold'), anchor='w').pack(side='top', anchor='w', pady=5)
         for i in range(len(check_item[4][key])):
-            string_info = '课程教师' + str(i+1) + ": " + check_item[4][key][i][0] + '（'
+            string_info = '课程教师' + str(i + 1) + ": " + check_item[4][key][i][0] + '（'
             string_info += '工号: ' + str(check_item[4][key][i][1]) + '\t'
             string_info += '承担学时: ' + str(check_item[4][key][i][2]) + '）'
             label_course_teacher = ttk.Label(top, text=string_info, font=("宋体", 10), anchor='w')
@@ -199,8 +198,8 @@ def create_check_result_frame(self, check_result_simple, check_result):
         common.create_text(frame_course_check_result, course_id2type[int(check_result_simple[i][3])], 1, 3)
         # 详情按钮
         button_course_detail = ttk.Button(frame_course_check_result, text="详情", width=5, style='success',
-                                         command=lambda arg1=self, arg2=check_result[i]: create_detail_check_top(arg1,
-                                                                                                                 arg2))
+                                          command=lambda arg1=self, arg2=check_result[i]: create_detail_check_top(arg1,
+                                                                                                                  arg2))
         button_course_detail.grid(row=0, column=4, padx=2)
         detail_button_list.append((button_course_detail, i))
 

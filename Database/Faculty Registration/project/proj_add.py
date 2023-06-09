@@ -234,7 +234,7 @@ def create_basic_info(self, canvas_proj, frame_proj, proj_items, check_items):
 
     # 创建提交按钮
     button_proj_submit = ttk.Button(frame_proj_info, text="提交", style='success',
-                                   command=lambda: insert_paper_info(self.root))
+                                    command=lambda: insert_paper_info(self.root))
     button_proj_submit.pack(side='top', anchor='e')
 
     # 项目编号

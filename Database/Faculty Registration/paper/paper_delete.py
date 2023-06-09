@@ -76,14 +76,14 @@ def create_del_result_frame(self, check_result_simple, check_result):
         common.create_text(frame_paper_check_result, str(check_result_simple[i][3]), 1, 3, 18)
         # 详情按钮
         button_paper_detail = ttk.Button(frame_paper_check_result, text="详情", width=5, style="success",
-                                        command=lambda arg2=check_result[i]: paper_check.create_detail_check_top(self,
-                                                                                                                 arg2))
+                                         command=lambda arg2=check_result[i]: paper_check.create_detail_check_top(self,
+                                                                                                                  arg2))
         button_paper_detail.grid(row=0, column=4, padx=2)
         detail_button_list.append((button_paper_detail, i))
         # # 删除按钮
         button_paper_delete = ttk.Button(frame_paper_check_result, text="删除", width=5, style="danger",
-                                        command=lambda arg3=check_result[i][1]: delete_paper(self,
-                                                                                             arg3))
+                                         command=lambda arg3=check_result[i][1]: delete_paper(self,
+                                                                                              arg3))
         button_paper_delete.grid(row=0, column=5, padx=2)
         delete_button_list.append((button_paper_delete, i))
 

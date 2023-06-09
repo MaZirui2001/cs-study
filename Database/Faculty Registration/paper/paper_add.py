@@ -42,7 +42,7 @@ def insert_info_get_and_check(paper_add_items_local, author_num, author_info_loc
         try:
             paper_id = int(paper_id)
         except ValueError:
-            tt.messagebox.showerror(title='错误', message='论文编号必须为整数！', parent=message_parent)
+            tk.messagebox.showerror(title='错误', message='论文编号必须为整数！', parent=message_parent)
             return None
     # 论文名称不能为空
     if paper_name == '':
@@ -253,7 +253,7 @@ def create_basic_info(self, canvas_paper, frame_paper, paper_items, check_item):
 
 
 def create_frame_paper_add(self):
-    canvas_paper_add = ttk.Canvas(self.root, width=800, height=1200, scrollregion=(0, 0, 1200, 800))
+    canvas_paper_add = ttk.Canvas(self.root, width=1600, height=2400, scrollregion=(0, 0, 1600, 2400))
     frame_paper_add = ttk.Frame(canvas_paper_add, width=800, height=1200)
     frame_paper_add.pack(side='top', anchor='n')
     canvas_paper_add.create_window(800, 0, anchor='n', window=frame_paper_add)

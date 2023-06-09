@@ -176,14 +176,14 @@ def create_modify_result_frame(self, check_result_simple, check_result):
         common.create_text(frame_course_check_result, course_id2type[int(check_result_simple[i][3])], 1, 3, 18)
         # 详情按钮
         button_course_detail = ttk.Button(frame_course_check_result, text="详情", width=5, style='success',
-                                         command=lambda arg1=self, arg2=check_result[i]:
-                                         course_check.create_detail_check_top(arg1, arg2))
+                                          command=lambda arg1=self, arg2=check_result[i]:
+                                          course_check.create_detail_check_top(arg1, arg2))
         button_course_detail.grid(row=0, column=4, padx=2)
         detail_button_list.append((button_course_detail, i))
         # 修改按钮
         button_course_modify = ttk.Button(frame_course_check_result, text="修改", width=5, style='warning',
-                                         command=lambda arg1=self, arg2=check_result[i]:
-                                         create_modify_window(arg1, arg2))
+                                          command=lambda arg1=self, arg2=check_result[i]:
+                                          create_modify_window(arg1, arg2))
         button_course_modify.grid(row=0, column=5, padx=2)
         modify_button_list.append((button_course_modify, i))
 
