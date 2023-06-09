@@ -133,8 +133,9 @@ def create_modify_window(self, check_item):
     frame_course_add.pack(side='top', anchor='n')
     canvas_course_add.create_window(820, 0, anchor='n', window=frame_course_add)
 
-    frame_course_info = course_add.create_basic_info(self, canvas_course_add, frame_course_add, course_add_items,
-                                                     check_item)
+    frame_course_info, button_submit = course_add.create_basic_info(self, canvas_course_add, frame_course_add,
+                                                                    course_add_items, check_item)
+    button_submit.config(command=lambda: modify_course_info(self, check_item[1], window_modify))
     # 课程作者信息：作者编号、作者姓名、作者排名、是否为通讯作者
     # 作者可能有多个，默认显示一个，点击按钮添加新的作者信息或删除新的对话框
     common.create_label_with_button2(frame_course_info, "课程教师", "添加教师",
@@ -195,7 +196,6 @@ def create_frame_course_modify(self):
     self.frame_list["frame_course_modify"] = canvas_course_mod
     frame_check.pack(side='top', anchor='n')
     canvas_course_mod.create_window(820, 0, anchor='n', window=frame_check)
-
     frame_course_check_label = course_check.create_basic_info_frame(self, canvas_course_mod, course_mod_items,
                                                                     check_modify_course, frame_check, "课程信息修改")
     ttk.Label(frame_course_check_label, text="", font=("宋体", 10), width=10).grid(row=0, column=4, padx=2)

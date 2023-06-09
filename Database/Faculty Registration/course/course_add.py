@@ -137,7 +137,7 @@ def insert_paper_info(message_parent):
         exit(-1)
     # 插入课程信息
     cursor = db.cursor()
-    val = (course_id, course_name, course_type, course_hour)
+    val = (course_id, course_name, course_hour, course_type)
     # 执行sql语句，插入课程信息并捕捉异常编号
     try:
         cursor.callproc('insert_course', val)
@@ -205,8 +205,8 @@ def create_basic_info(self, canvas_course_add, frame_course_add, course_items, c
     frame_course_info.pack(side='top', anchor='n')
 
     # 创建提交按钮
-    button_course_submit = ttk.Button(frame_course_info, text="提交", style='green',
-                                      command=lambda: insert_paper_info(self.root))
+    button_course_submit = ttk.Button(frame_course_info, text="提交", style='success')
+
     button_course_submit.pack(side='top', anchor='e')
 
     # 课程编号
@@ -220,11 +220,10 @@ def create_basic_info(self, canvas_course_add, frame_course_add, course_items, c
 
     # 课程类型
     types = ['本科生课程', '研究生课程']
-    # print(check_item[3])
+    print(check_item[2])
     course_items["course_type"] = common.create_option_menu(frame_course_info, "课程类型",
                                                             course_id2type[int(check_item[2])], types)
-
-    return frame_course_info
+    return frame_course_info, button_course_submit
 
 
 def create_frame_course_add(self):
@@ -233,9 +232,10 @@ def create_frame_course_add(self):
     frame_course_add.pack(side='top', anchor='n')
     canvas_course_add.create_window(820, 0, anchor='n', window=frame_course_add)
     self.frame_list["frame_course_add"] = canvas_course_add
+    print('ok')
+    frame_course_info, button_submit = create_basic_info(self, canvas_course_add, frame_course_add, course_add_items, ["", "", 1, ""])
 
-    frame_course_info = create_basic_info(self, canvas_course_add, frame_course_add, course_add_items, ["", "", 1, ""])
-
+    button_submit.config(command=lambda: insert_paper_info(self.root))
     # 课程作者信息：作者编号、作者姓名、作者排名、是否为通讯作者
     # 作者可能有多个，默认显示一个，点击按钮添加新的作者信息或删除新的对话框
     common.create_label_with_button2(frame_course_info, "课程教师", "添加教师",

@@ -144,7 +144,7 @@ def insert_info_get_and_check(paper_add_items_local, teacher_num, teacher_info_l
         teacher_name_list, teacher_rank_list, teacher_expend_list
 
 
-def insert_paper_info(message_parent):
+def insert_proj_info(message_parent):
     global frame_proj_teacher_list, teacher_num_view, proj_add_items, teacher_info
     temp = insert_info_get_and_check(proj_add_items, teacher_num_view, teacher_info, message_parent)
     if temp is None:
@@ -233,8 +233,7 @@ def create_basic_info(self, canvas_proj, frame_proj, proj_items, check_items):
     frame_proj_info.pack(side='top', anchor='n')
 
     # 创建提交按钮
-    button_proj_submit = ttk.Button(frame_proj_info, text="提交", style='success',
-                                    command=lambda: insert_paper_info(self.root))
+    button_proj_submit = ttk.Button(frame_proj_info, text="提交", style='success')
     button_proj_submit.pack(side='top', anchor='e')
 
     # 项目编号
@@ -259,7 +258,7 @@ def create_basic_info(self, canvas_proj, frame_proj, proj_items, check_items):
     types = ['国家级', '省部级', '市厅级', '企业合作项目', '其他']
     proj_items["proj_type"] = common.create_option_menu(frame_proj_info, "项目类型",
                                                         proj_id2type[int(check_items[3])], types)
-    return frame_proj_info
+    return frame_proj_info, button_proj_submit
 
 
 def create_frame_proj_add(self):
@@ -269,9 +268,9 @@ def create_frame_proj_add(self):
     canvas_proj_add.create_window(820, 0, anchor='n', window=frame_proj_add)
     self.frame_list["frame_proj_add"] = canvas_proj_add
 
-    frame_proj_info = create_basic_info(self, canvas_proj_add, frame_proj_add, proj_add_items,
+    frame_proj_info, button_submit = create_basic_info(self, canvas_proj_add, frame_proj_add, proj_add_items,
                                         ["", "", "", 1, "", "", "", ""])
-
+    button_submit.config(command=lambda: insert_proj_info(self.root))
     # 项目作者信息：作者编号、作者姓名、作者排名、是否为通讯作者
     # 作者可能有多个，默认显示一个，点击按钮添加新的作者信息或删除新的对话框
     common.create_label_with_button2(frame_proj_info, "项目作者", "添加作者",

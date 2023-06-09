@@ -67,7 +67,6 @@ def check_course(check_items):
     if temp is None:
         return [], []
     sql_sentence, t = temp
-    # print(sql_sentence)
     # 链接数据库
     try:
         db = sql.connect(
@@ -126,18 +125,11 @@ def check_course(check_items):
                 check_result[i][4][key].append((result[i][j][4], result[i][j][5], result[i][j][8]))
             else:
                 check_result[i][4][key] = [(result[i][j][4], result[i][j][5], result[i][j][8])]
-    # print(check_result)
-    # 对每一个课程中，year + semester排序
-    # for i in range(len(check_result)):
-    #     check_result[i][4] = ordered_dict(sorted(check_result[i][4].items(),
-    #                                 key=lambda x: (int(x[0].split(' ')[0]) * 10 + int(x[0].split(' ')[1])),
-    #                                 reverse=True))
     # 显示简短信息
     check_result_simple = []
     for i in range(len(check_result)):
         check_result_simple.append(
             (check_result[i][1], check_result[i][0], check_result[i][3], check_result[i][2]))
-    # create_check_result_frame(self, frame_paper_check)
     return check_result, check_result_simple
 
 
@@ -161,8 +153,8 @@ def create_detail_check_top(self, check_item):
     # 15号字体靠左显示课程学时
     label_course_source = ttk.Label(top, text="课程学时：" + str(check_item[3]), font=("宋体", 10), anchor='w')
     label_course_source.pack(side='top', anchor='w', pady=10)
-    # print(check_item)
     # 10号字体靠左显示课程性质
+    # print(check_item[2])
     label_course_type = ttk.Label(top, text="课程类型：" + course_id2type[int(check_item[2])], font=("宋体", 10),
                                   anchor='w')
     label_course_type.pack(side='top', anchor='w', pady=10)
@@ -261,6 +253,7 @@ def create_frame_course_check(self):
     global frame_check, course_check_items
     canvas_course_check = ttk.Canvas(self.root, width=1600, height=2400, scrollregion=(0, 0, 1600, 2400))
     frame_check = ttk.Frame(canvas_course_check, width=800, height=1200)
+
     self.frame_list["frame_course_check"] = canvas_course_check
     frame_check.pack(side='top', anchor='n')
     canvas_course_check.create_window(820, 0, anchor='n', window=frame_check)

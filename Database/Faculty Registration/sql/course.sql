@@ -12,7 +12,7 @@ begin
     # 检查course是否存在
     if not exists(select * from course where id = course_id) then
         insert into course
-        values (course_id, course_name, course_type, course_hour);
+        values (course_id, course_name, course_hour, course_type);
     else
         # 检查course其他信息是否一致
         if not exists(select *

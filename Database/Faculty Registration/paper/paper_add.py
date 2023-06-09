@@ -224,8 +224,7 @@ def create_basic_info(self, canvas_paper, frame_paper, paper_items, check_item):
     frame_paper_info.pack(side='top', anchor='n')
 
     # 创建提交按钮
-    button_paper_submit = ttk.Button(frame_paper_info, text="提交", style='success',
-                                    command=lambda: insert_paper_info(self.root))
+    button_paper_submit = ttk.Button(frame_paper_info, text="提交", style='success')
     button_paper_submit.pack(side='top', anchor='e')
 
     # 论文编号
@@ -249,7 +248,7 @@ def create_basic_info(self, canvas_paper, frame_paper, paper_items, check_item):
     paper_items["paper_level"] = common.create_option_menu(frame_paper_info, "论文级别",
                                                            paper_id2level[check_item[5]], levels)
 
-    return frame_paper_info
+    return frame_paper_info, button_paper_submit
 
 
 def create_frame_paper_add(self):
@@ -259,8 +258,9 @@ def create_frame_paper_add(self):
     canvas_paper_add.create_window(800, 0, anchor='n', window=frame_paper_add)
     self.frame_list["frame_paper_add"] = canvas_paper_add
 
-    frame_paper_info = create_basic_info(self, canvas_paper_add, frame_paper_add, paper_add_items,
+    frame_paper_info, button_paper_submit = create_basic_info(self, canvas_paper_add, frame_paper_add, paper_add_items,
                                          ["", "", "", "", 1, 1])
+    button_paper_submit.config(command=lambda: insert_paper_info(self.root))
 
     # 论文作者信息：作者编号、作者姓名、作者排名、是否为通讯作者
     # 作者可能有多个，默认显示一个，点击按钮添加新的作者信息或删除新的对话框
@@ -269,3 +269,4 @@ def create_frame_paper_add(self):
                                      lambda: delete_frame_paper_author())
     # 创建初始一个frame
     create_frame_paper_author(frame_paper_info)
+

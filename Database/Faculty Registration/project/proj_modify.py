@@ -129,8 +129,8 @@ def create_modify_window(self, check_item):
     frame_proj_add.pack(side='top', anchor='n')
     canvas_proj_add.create_window(820, 0, anchor='n', window=frame_proj_add)
 
-    frame_proj_info = proj_add.create_basic_info(self, canvas_proj_add, frame_proj_add, proj_add_items, check_item)
-
+    frame_proj_info, button_submit = proj_add.create_basic_info(self, canvas_proj_add, frame_proj_add, proj_add_items, check_item)
+    button_submit.config(command=lambda: modify_proj_info(self, check_item[1], window_modify))
     # 项目员工信息：员工编号、员工姓名、员工排名、是否为通讯员工
     # 员工可能有多个，默认显示一个，点击按钮添加新的员工信息或删除新的对话框
     common.create_label_with_button2(frame_proj_info, "项目员工", "添加员工",
@@ -191,7 +191,7 @@ def create_frame_proj_modify(self):
     frame_check.pack(side='top', anchor='n')
     canvas_proj_mod.create_window(820, 0, anchor='n', window=frame_check)
 
-    frame_proj_check_label = proj_check.create_basic_info_frame(self, canvas_proj_mod, proj_mod_items,
-                                                                check_modify_proj, frame_check, "项目信息修改")
+    frame_proj_check_label= proj_check.create_basic_info_frame(self, canvas_proj_mod, proj_mod_items,
+                                                            check_modify_proj, frame_check, "项目信息修改")
     ttk.Label(frame_proj_check_label, text="", font=("宋体", 10), width=10).grid(row=0, column=4, padx=2)
     frame_proj_check_label.pack(side='top', anchor='n')

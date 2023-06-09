@@ -127,8 +127,8 @@ def create_modify_window(self, check_item):
     frame_paper_add.pack(side='top', anchor='n')
     canvas_paper_add.create_window(820, 0, anchor='n', window=frame_paper_add)
 
-    frame_paper_info = paper_add.create_basic_info(self, canvas_paper_add, frame_paper_add, paper_add_items, check_item)
-
+    frame_paper_info, button_submit = paper_add.create_basic_info(self, canvas_paper_add, frame_paper_add, paper_add_items, check_item)
+    button_submit.config(command=lambda: modify_paper_info(self, check_item[1], window_modify))
     # 论文作者信息：作者编号、作者姓名、作者排名、是否为通讯作者
     # 作者可能有多个，默认显示一个，点击按钮添加新的作者信息或删除新的对话框
     common.create_label_with_button2(frame_paper_info, "论文作者", "添加作者",
