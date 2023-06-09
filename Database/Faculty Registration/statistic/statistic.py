@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+import ttkbootstrap as ttk
 import common
 import pymysql as sql
 import pandas as pd
@@ -35,27 +36,23 @@ def statistic(items):
         tk.messagebox.showerror(title='错误', message='时间输入不合法！')
         return None
     # 查询教师信息
-    teacher_info = []
     sql_info = "select teacher.id, teacher.name, teacher.gender, teacher.title from teacher where id = %s "
     var_info = (teacher_id,)
     print(sql_info)
 
     # 查询教师教授课程信息
-    teach_course = []
     sql_teach = "select c.id, c.name, tc.undertake_hour, tc.year, tc.semester " \
                 "from course c join teach_course tc on c.id = tc.course_id " \
                 "where tc.teacher_id = %s and tc.year >= %s and tc.year <= %s"
     var_teach = (teacher_id, start_year, end_year)
 
     # 查询教师发表论文情况
-    public_paper = []
     sql_paper = "select p.name, p.public_source, p.public_date, p.level, pp.ranking, pp.is_corresponding_author " \
                 "from paper p join publish_paper pp on p.id = pp.paper_id " \
                 "where pp.teacher_id = %s and p.public_date >= %s and p.public_date <= %s"
-    var = (teacher_id, str(start_year)+'-01-01', str(end_year) + '-12-31')
+    var = (teacher_id, str(start_year) + '-01-01', str(end_year) + '-12-31')
 
     # 查询教师项目情况
-    undertake_project = []
     sql_project = "select p.name, p.source, p.type, p.start_year, p.end_year, p.expenditure, up.expenditure " \
                   "from project p join undertake_project up on p.id = up.project_id " \
                   "where up.teacher_id = %s and p.start_year >= %s and p.end_year <= %s"
@@ -114,22 +111,26 @@ def make_stat_markdown(teacher_info, teach_course, public_paper, undertake_proje
     stat += "## 教师基本信息\n"
     stat += "| 工号 | 姓名 | 性别 | 职称 |\n"
     stat += "| :----: | :----: | :----: | :----: |\n"
-    stat += "| " + teacher_info[0] + " | " + teacher_info[1] + " | " + id2gender[teacher_info[2]] + " | " + id2id_name[teacher_info[3]] + " |\n"
+    stat += "| " + teacher_info[0] + " | " + teacher_info[1] + " | " + id2gender[teacher_info[2]] + " | " + id2id_name[
+        teacher_info[3]] + " |\n"
     stat += "## 教学情况\n"
     stat += "| 课程号 | 课程名 | 主讲学时 | 授课年份 | 授课学期 |\n"
     stat += "| :----: | :----: | :----: | :----: | :----: |\n"
     for item in teach_course:
-        stat += "| " + item[0] + " | " + item[1] + " | " + str(item[2]) + " | " + str(item[3]) + " | " + course_id2semester[int(item[4])] + " |\n"
+        stat += "| " + item[0] + " | " + item[1] + " | " + str(item[2]) + " | " + str(item[3]) + " | " + \
+                course_id2semester[int(item[4])] + " |\n"
     stat += "## 发表论文情况\n"
     stat += "| 论文名 | 发表源 | 发表年份 | 级别 | 排名 | 是否通讯作者 |\n"
     stat += "| :----: | :----: | :----: | :----: | :----: | :----: |\n"
     for item in public_paper:
-        stat += "| " + item[0] + " | " + item[1] + " | " + str(pd.to_datetime(item[2]).year) + " | " + paper_id2level[int(item[3])] + " | " + str(item[4]) + " | " + '是' if int(item[5]) else '否' + " |\n"
+        stat += "| " + item[0] + " | " + item[1] + " | " + str(pd.to_datetime(item[2]).year) + " | " + paper_id2level[
+            int(item[3])] + " | " + str(item[4]) + " | " + '是' if int(item[5]) else '否' + " |\n"
     stat += "## 承担项目情况\n"
     stat += "| 项目名 | 项目来源 | 项目类型 | 项目时间 | 总经费 | 承担经费 |\n"
     stat += "| :----: | :----: | :----: | :----: | :----: | :----: |\n"
     for item in undertake_project:
-        stat += "| " + item[0] + " | " + item[1] + " | " + proj_id2type[int(item[2])] + " | " + str(item[3]) + "—" + str(item[4]) + " | " + str(item[5]) + " | " + str(item[6]) + " |\n"
+        stat += "| " + item[0] + " | " + item[1] + " | " + proj_id2type[int(item[2])] + " | " + str(
+            item[3]) + "—" + str(item[4]) + " | " + str(item[5]) + " | " + str(item[6]) + " |\n"
     with open("./stat.md", "w", encoding="utf-8") as f:
         f.write(stat)
     messagebox.showinfo("提示", "统计完成，结果已保存在stat.md中")
@@ -144,18 +145,18 @@ def statistic_cope(items):
 
 
 def create_stat_frame(self):
-    canvas_stat = tk.Canvas(self.root, width=800, height=600)
-    frame_stat = tk.Frame(canvas_stat, width=800, height=600)
-    canvas_stat.create_window((400, 0), window=frame_stat, anchor='n')
+    canvas_stat = ttk.Canvas(self.root, width=1600, height=1200)
+    frame_stat = ttk.Frame(canvas_stat, width=800, height=600)
+    canvas_stat.create_window(820, 0, window=frame_stat, anchor='n')
     self.frame_list["frame_statistic"] = canvas_stat
     # 创建label
-    tk.Label(frame_stat, text="科研情况查询", font=("宋体", 15)).pack(side='top', anchor='n')
-    button_paper_check = tk.Button(frame_stat, text="查询", width=10, height=1)
+    ttk.Label(frame_stat, text="科研情况查询", font=("宋体", 15)).pack(side='top', anchor='n')
+    button_paper_check = ttk.Button(frame_stat, text="导出", width=10, style='info')
     button_paper_check.pack(side='top', anchor='n')
     button_paper_check.config(command=lambda: statistic_cope(stat_items))
 
     # 创建输入框, 获取输入的信息
-    frame_paper_info = tk.Frame(frame_stat, width=200, height=600)
+    frame_paper_info = ttk.Frame(frame_stat, width=200, height=600)
     frame_paper_info.pack(side='top', anchor='n')
 
     # 论文编号
@@ -166,4 +167,3 @@ def create_stat_frame(self):
 
     # 论文来源
     stat_items["end_year"] = common.create_label_and_entry(frame_paper_info, "结束时间", "")
-
