@@ -107,3 +107,8 @@ def create_four_text(frame_base, text, disable, column, width=20):
     text_frame.insert(1.0, str(text))
     if disable:
         text_frame.config(state='disabled')
+
+
+def close_window(root, window):
+    root.attributes("-disabled", False)
+    window.destroy()

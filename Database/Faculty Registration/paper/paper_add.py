@@ -17,21 +17,21 @@ def fresh(self):
 
 
 def insert_info_get_and_check(paper_add_items_local, author_num, author_info_local, message_parent):
-    paper_id = paper_add_items_local["paper_id"].get()
-    paper_name = paper_add_items_local["paper_name"].get()
-    paper_source = paper_add_items_local["paper_source"].get()
-    paper_date = paper_add_items_local["paper_date"].get()
-    paper_type = paper_type_map[paper_add_items_local["paper_type"].get()]
-    paper_level = paper_level_map[paper_add_items_local["paper_level"].get()]
+    paper_id = paper_add_items_local["paper_id"].get().strip()
+    paper_name = paper_add_items_local["paper_name"].get().strip()
+    paper_source = paper_add_items_local["paper_source"].get().strip()
+    paper_date = paper_add_items_local["paper_date"].get().strip()
+    paper_type = paper_type_map[paper_add_items_local["paper_type"].get().strip()]
+    paper_level = paper_level_map[paper_add_items_local["paper_level"].get().strip()]
     author_id_list = []
     author_name_list = []
     author_rank_list = []
     author_is_communicate_list = []
     for i in range(author_num):
-        author_id_list.append(author_info_local[i]['id'].get())
-        author_name_list.append(author_info_local[i]['name'].get())
-        author_rank_list.append(author_info_local[i]['rank'].get())
-        author_is_communicate_list.append(author_info_local[i]['comm'].get())
+        author_id_list.append(author_info_local[i]['id'].get().strip())
+        author_name_list.append(author_info_local[i]['name'].get().strip())
+        author_rank_list.append(author_info_local[i]['rank'].get().strip())
+        author_is_communicate_list.append(author_info_local[i]['comm'].get().strip())
 
     # 论文编号不能为空
     if paper_id == '':

@@ -13,6 +13,7 @@ class Root:
         root = ttk.Window(minsize=(1600, 1080), resizable=(False, True))
         root.title("教学科研登记系统")
         root.resizable(False, False)
+
         self.root = root
         self.frame_list = {}
         self.frame_fresh_list = {}

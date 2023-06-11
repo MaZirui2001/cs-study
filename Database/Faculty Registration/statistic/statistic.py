@@ -24,9 +24,18 @@ def statistic(items):
     if start_year == '':
         tk.messagebox.showerror(title='错误', message='起始时间不能为空！')
         return None
+    else:
+        try:
+            start_year = pd.to_datetime(start_year).year
+        except ValueError:
+            tk.messagebox.showerror(title='错误', message='起始时间输入不合法！')
+            return None
     if end_year == '':
-        tk.messagebox.showerror(title='错误', message='结束时间不能为空！')
-        return None
+        try:
+            end_year = pd.to_datetime(end_year).year
+        except ValueError:
+            tk.messagebox.showerror(title='错误', message='结束时间输入不合法！')
+            return None
     try:
         start_year = int(start_year)
         end_year = int(end_year)
@@ -117,13 +126,13 @@ def make_stat_markdown(teacher_info, teach_course, public_paper, undertake_proje
     stat += "| :----: | :----: | :----: | :----: | :----: |\n"
     for item in teach_course:
         stat += "| " + item[0] + " | " + item[1] + " | " + str(item[2]) + " | " + str(item[3]) + " | " + \
-                course_id2semester[int(item[4])] + " |\n"
+                course_id2semester[int(item[4])] + " | \n"
     stat += "## 发表论文情况\n"
     stat += "| 论文名 | 发表源 | 发表年份 | 级别 | 排名 | 是否通讯作者 |\n"
     stat += "| :----: | :----: | :----: | :----: | :----: | :----: |\n"
     for item in public_paper:
         stat += "| " + item[0] + " | " + item[1] + " | " + str(pd.to_datetime(item[2]).year) + " | " + paper_id2level[
-            int(item[3])] + " | " + str(item[4]) + " | " + '是' if int(item[5]) else '否' + " |\n"
+            int(item[3])] + " | " + str(item[4]) + " | " + ('是' if int(item[5]) else '否') + " | \n"
     stat += "## 承担项目情况\n"
     stat += "| 项目名 | 项目来源 | 项目类型 | 项目时间 | 总经费 | 承担经费 |\n"
     stat += "| :----: | :----: | :----: | :----: | :----: | :----: |\n"

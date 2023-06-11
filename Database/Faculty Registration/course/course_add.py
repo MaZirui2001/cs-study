@@ -17,21 +17,21 @@ def fresh(self):
 
 
 def insert_info_get_and_check(course_add_items_local, teacher_num, teacher_info_local, message_parent):
-    course_id = course_add_items_local["course_id"].get()
-    course_name = course_add_items_local["course_name"].get()
-    course_type = course_type_map[course_add_items_local["course_type"].get()]
-    course_hour = course_add_items_local["course_hour"].get()
+    course_id = course_add_items_local["course_id"].get().strip()
+    course_name = course_add_items_local["course_name"].get().strip()
+    course_type = course_type_map[course_add_items_local["course_type"].get().strip()]
+    course_hour = course_add_items_local["course_hour"].get().strip()
     teacher_id_list = []
     teacher_name_list = []
     teacher_year_list = []
     teacher_seme_list = []
     teacher_hour_list = []
     for i in range(teacher_num):
-        teacher_id_list.append(teacher_info_local[i]['id'].get())
-        teacher_name_list.append(teacher_info_local[i]['name'].get())
-        teacher_year_list.append(teacher_info_local[i]['year'].get())
-        teacher_seme_list.append(teacher_info_local[i]['seme'].get())
-        teacher_hour_list.append(teacher_info_local[i]['hour'].get())
+        teacher_id_list.append(teacher_info_local[i]['id'].get().strip())
+        teacher_name_list.append(teacher_info_local[i]['name'].get().strip())
+        teacher_year_list.append(teacher_info_local[i]['year'].get().strip())
+        teacher_seme_list.append(teacher_info_local[i]['seme'].get().strip())
+        teacher_hour_list.append(teacher_info_local[i]['hour'].get().strip())
 
     # 课程编号不能为空
     if course_id == '':
@@ -54,7 +54,7 @@ def insert_info_get_and_check(course_add_items_local, teacher_num, teacher_info_
         except ValueError:
             tk.messagebox.showerror(title='错误', message='课程总学时必须为正整数！', parent=message_parent)
             return None
-    # 检查作者列表是否有空值
+    # 检查员工列表是否有空值
     listnum = teacher_num
     temp_id_list = []
     temp_name_list = []
@@ -210,6 +210,7 @@ def create_basic_info(self, canvas_course_add, frame_course_add, course_items, c
     button_course_submit.pack(side='top', anchor='e')
 
     # 课程编号
+
     course_items["course_id"] = common.create_label_and_entry(frame_course_info, "课程编号", check_item[1])
 
     # 课程名称
@@ -234,8 +235,8 @@ def create_frame_course_add(self):
     frame_course_info, button_submit = create_basic_info(self, canvas_course_add, frame_course_add, course_add_items, ["", "", 1, ""])
 
     button_submit.config(command=lambda: insert_paper_info(self.root))
-    # 课程作者信息：作者编号、作者姓名、作者排名、是否为通讯作者
-    # 作者可能有多个，默认显示一个，点击按钮添加新的作者信息或删除新的对话框
+    # 课程员工信息：员工编号、员工姓名、员工排名、是否为通讯员工
+    # 员工可能有多个，默认显示一个，点击按钮添加新的员工信息或删除新的对话框
     common.create_label_with_button2(frame_course_info, "课程教师", "添加教师",
                                      lambda: create_frame_course_teacher(frame_course_info), "删除教师",
                                      lambda: delete_frame_course_teacher())

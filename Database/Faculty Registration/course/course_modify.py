@@ -120,6 +120,8 @@ def create_modify_window(self, check_item):
     # 创建新窗口
     window_modify = ttk.Toplevel(self.root, minsize=(1600, 1200))
     window_modify.title("修改课程信息")
+    self.root.attributes("-disabled", True)
+    window_modify.protocol("WM_DELETE_WINDOW", lambda: common.close_window(self.root, window_modify))
     # window_modify.resizable(False, False)
     # 获取当前课程信息
     course_teachers = []

@@ -17,28 +17,27 @@ def fresh(self):
 
 
 def insert_info_get_and_check(paper_add_items_local, teacher_num, teacher_info_local, message_parent):
-    project_id = paper_add_items_local["proj_id"].get()
-    proj_name = paper_add_items_local["proj_name"].get()
-    proj_source = paper_add_items_local["proj_source"].get()
-    proj_type = proj_type_map[paper_add_items_local["proj_type"].get()]
-    proj_expend = paper_add_items_local["proj_expend"].get()
-    proj_start = paper_add_items_local["proj_start"].get()
-    proj_end = paper_add_items_local["proj_end"].get()
+    project_id = paper_add_items_local["proj_id"].get().strip()
+    proj_name = paper_add_items_local["proj_name"].get().strip()
+    proj_source = paper_add_items_local["proj_source"].get().strip()
+    proj_type = proj_type_map[paper_add_items_local["proj_type"].get().strip()]
+    proj_expend = paper_add_items_local["proj_expend"].get().strip()
+    proj_start = paper_add_items_local["proj_start"].get().strip()
+    proj_end = paper_add_items_local["proj_end"].get().strip()
     teacher_id_list = []
     teacher_name_list = []
     teacher_rank_list = []
     teacher_expend_list = []
     for i in range(teacher_num):
-        teacher_id_list.append(teacher_info_local[i]['id'].get())
-        teacher_name_list.append(teacher_info_local[i]['name'].get())
-        teacher_rank_list.append(teacher_info_local[i]['rank'].get())
-        teacher_expend_list.append(teacher_info_local[i]['expend'].get())
+        teacher_id_list.append(teacher_info_local[i]['id'].get().strip())
+        teacher_name_list.append(teacher_info_local[i]['name'].get().strip())
+        teacher_rank_list.append(teacher_info_local[i]['rank'].get().strip())
+        teacher_expend_list.append(teacher_info_local[i]['expend'].get().strip())
 
     # 项目编号不能为空
     if project_id == '':
         tk.messagebox.showerror(title='错误', message='项目编号不能为空！', parent=message_parent)
         return None
-    project_id = str(project_id)
     # 项目名称不能为空
     if proj_name == '':
         tk.messagebox.showerror(title='错误', message='项目名称不能为空！', parent=message_parent)
@@ -53,6 +52,10 @@ def insert_info_get_and_check(paper_add_items_local, teacher_num, teacher_info_l
         return None
     else:
         try:
+            loc = proj_expend.find('.')
+            if len(proj_expend) - loc > 3 and loc != -1:
+                tk.messagebox.showerror(title='错误', message='项目经费不合法！', parent=message_parent)
+                return None
             proj_expend = float(proj_expend)
         except ValueError:
             tk.messagebox.showerror(title='错误', message='项目经费不合法！', parent=message_parent)
@@ -79,7 +82,7 @@ def insert_info_get_and_check(paper_add_items_local, teacher_num, teacher_info_l
     if proj_start > proj_end:
         tk.messagebox.showerror(title='错误', message='项目开始日期不能晚于结束日期！', parent=message_parent)
         return None
-    # 检查作者列表是否有空值
+    # 检查员工列表是否有空值
     listnum = teacher_num
     temp_id_list = []
     temp_name_list = []
@@ -94,21 +97,25 @@ def insert_info_get_and_check(paper_add_items_local, teacher_num, teacher_info_l
             temp_rank_list.append(teacher_rank_list[i])
             temp_expend.append(teacher_expend_list[i])
     if listnum == 0:
-        tk.messagebox.showerror(title='错误', message='作者列表不能全为不完整的信息！', parent=message_parent)
+        tk.messagebox.showerror(title='错误', message='员工列表不能全为不完整的信息！', parent=message_parent)
         return None
     teacher_id_list = temp_id_list
     teacher_name_list = temp_name_list
     teacher_rank_list = temp_rank_list
     teacher_expend_list = temp_expend
-    # 检查是否有相同的作者编号
+    # 检查是否有相同的员工编号
     for i in range(listnum):
         for j in range(i + 1, listnum):
             if teacher_id_list[i] == teacher_id_list[j]:
-                tk.messagebox.showerror(title='错误', message='作者编号不能相同！', parent=message_parent)
+                tk.messagebox.showerror(title='错误', message='员工编号不能相同！', parent=message_parent)
                 return None
     # 检查员工经费是否为钱的形式
     for i in range(listnum):
         try:
+            loc = teacher_expend_list[i].find('.')
+            if len(teacher_expend_list[i]) - loc > 3 and loc != -1:
+                tk.messagebox.showerror(title='错误', message='员工经费小数点后最多两位！', parent=message_parent)
+                return None
             teacher_expend_list[i] = float(teacher_expend_list[i])
             if teacher_expend_list[i] < 0:
                 tk.messagebox.showerror(title='错误', message='员工经费不能为负数！', parent=message_parent)
@@ -121,22 +128,22 @@ def insert_info_get_and_check(paper_add_items_local, teacher_num, teacher_info_l
         try:
             teacher_rank_list[i] = int(teacher_rank_list[i])
             if teacher_rank_list[i] <= 0:
-                tk.messagebox.showerror(title='错误', message='作者排名必须为正整数！', parent=message_parent)
+                tk.messagebox.showerror(title='错误', message='员工排名必须为正整数！', parent=message_parent)
                 return None
         except ValueError:
-            tk.messagebox.showerror(title='错误', message='作者排名不合法！', parent=message_parent)
+            tk.messagebox.showerror(title='错误', message='员工排名不合法！', parent=message_parent)
             return None
     # 检查是否有相同的排名
     for i in range(listnum):
         for j in range(i + 1, listnum):
             if teacher_rank_list[i] == teacher_rank_list[j]:
-                tk.messagebox.showerror(title='错误', message='作者排名不能相同！', parent=message_parent)
+                tk.messagebox.showerror(title='错误', message='员工排名不能相同！', parent=message_parent)
                 return None
     # 检查总经费是否等于各经费之和
     total_expend = proj_expend
     for i in range(listnum):
         total_expend -= teacher_expend_list[i]
-    if total_expend != 0:
+    if abs(total_expend) > 1e-6:
         tk.messagebox.showerror(title='错误', message='总经费必须等于各个员工经费之和！', parent=message_parent)
         return None
 
@@ -167,7 +174,7 @@ def insert_proj_info(message_parent):
         exit(-1)
     # 插入项目信息
     cursor = db.cursor()
-    val = (str(project_id), proj_name, proj_source, proj_type, proj_expend, proj_start, proj_end)
+    val = (project_id, proj_name, proj_source, proj_type, proj_expend, proj_start, proj_end)
     # 执行sql语句，插入项目信息并捕捉异常编号
     try:
         cursor.callproc('insert_project', val)
@@ -196,11 +203,11 @@ def create_frame_project_teacher(frame_project_info):
     frame_project_teacher = ttk.Frame(frame_project_info, width=800, height=50)
     teacher_num_view += 1
 
-    # 输入作者编号和排名
+    # 输入员工编号和排名
     entry_project_teacher_id, entry_project_teacher_rank = common.create_label_and_entry2(
         frame_project_teacher, "员工" + str(teacher_num_view) + "编号", "", "员工" + str(teacher_num_view) + "排名", "")
 
-    # 输入作者姓名和是否为通讯作者
+    # 输入员工姓名和是否为通讯员工
     entry_project_teacher_name, entry_project_expenditure = common.create_label_and_entry2(
         frame_project_teacher, "员工" + str(teacher_num_view) + "姓名", "", "员工" + str(teacher_num_view) + "经费", "")
 
@@ -237,6 +244,7 @@ def create_basic_info(self, canvas_proj, frame_proj, proj_items, check_items):
     button_proj_submit.pack(side='top', anchor='e')
 
     # 项目编号
+    print (check_items)
     proj_items["proj_id"] = common.create_label_and_entry(frame_proj_info, "项目编号", check_items[1])
 
     # 项目名称
@@ -271,10 +279,10 @@ def create_frame_proj_add(self):
     frame_proj_info, button_submit = create_basic_info(self, canvas_proj_add, frame_proj_add, proj_add_items,
                                         ["", "", "", 1, "", "", "", ""])
     button_submit.config(command=lambda: insert_proj_info(self.root))
-    # 项目作者信息：作者编号、作者姓名、作者排名、是否为通讯作者
-    # 作者可能有多个，默认显示一个，点击按钮添加新的作者信息或删除新的对话框
-    common.create_label_with_button2(frame_proj_info, "项目作者", "添加作者",
-                                     lambda: create_frame_project_teacher(frame_proj_info), "删除作者",
+    # 项目员工信息：员工编号、员工姓名、员工排名、是否为通讯员工
+    # 员工可能有多个，默认显示一个，点击按钮添加新的员工信息或删除新的对话框
+    common.create_label_with_button2(frame_proj_info, "项目员工", "添加员工",
+                                     lambda: create_frame_project_teacher(frame_proj_info), "删除员工",
                                      lambda: delete_frame_project_teacher())
     # 创建初始一个frame
     create_frame_project_teacher(frame_proj_info)

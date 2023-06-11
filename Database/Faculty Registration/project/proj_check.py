@@ -1,4 +1,3 @@
-from tkinter import messagebox
 import ttkbootstrap as ttk
 import pymysql as sql
 import common as common
@@ -32,14 +31,6 @@ def generate_check_sql(check_items):
         sql_sentence += "project.name = %s"
         t = t + (proj_name,)
     if proj_id != "":
-        # 检查proj_id是否为正整数
-        try:
-            proj_id = int(proj_id)
-            if proj_id <= 0:
-                raise ValueError
-        except ValueError:
-            messagebox.showerror("错误", "项目编号必须为正整数")
-            return
         if not sql_sentence.endswith("where "):
             sql_sentence += " and "
         sql_sentence += "project.id = %s"
@@ -115,6 +106,7 @@ def check_proj(check_items):
     result = data_detail
     # print(result)
     # 处理数据
+    print(result)
     check_result = []
     for i in range(len(result)):
         check_result.append([])
@@ -145,6 +137,8 @@ def create_check_result(self):
 def create_detail_check_top(self, check_item):
     top = ttk.Toplevel(self.root, minsize=(800, 800))
     top.title("项目详情")
+    self.root.attributes("-disabled", True)
+    top.protocol("WM_DELETE_WINDOW", lambda: common.close_window(self.root, top))
     # top.resizable(False, False)
     # 30号字体靠左显示项目名称
     label_proj_name = ttk.Label(top, text=check_item[0], font=("宋体", 20, "bold"), anchor='w')

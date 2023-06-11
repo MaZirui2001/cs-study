@@ -113,11 +113,18 @@ def delete_frame_paper_author():
     author_num_view -= 1
 
 
+def close_window(root, window):
+    root.attributes("-disabled", False)
+    window.destroy()
+
+
 def create_modify_window(self, check_item):
     # 创建新窗口
     window_modify = ttk.Toplevel(self.root, minsize=(1600, 1200))
     window_modify.title("修改论文信息")
-    window_modify.resizable(False, False)
+    window_modify.resizable(False, True)
+    self.root.attributes("-disabled", True)
+    window_modify.protocol("WM_DELETE_WINDOW", lambda: common.close_window(self.root, window_modify))
     # 获取当前论文信息
     paper_authors = check_item[6]
 
