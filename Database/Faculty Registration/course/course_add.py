@@ -174,8 +174,8 @@ def create_frame_course_teacher(frame_course_info):
     entry_course_teacher_name, entry_course_year = common.create_label_and_entry2(
         frame_course_teacher, "教师" + str(teacher_num_view) + "姓名", "", "开课年份", "")
     # 输入开课学期
-    seme = ['春季学期', '夏季学期', '秋季学期']
-    menu_course_teacher_seme = common.create_option_menu(frame_course_teacher, "开课学期", seme[0], seme)
+    seme = ['none', '春季学期', '夏季学期', '秋季学期']
+    menu_course_teacher_seme = common.create_option_menu(frame_course_teacher, "开课学期", seme[1], seme)
     frame_course_teacher.pack(side='top', anchor='n')
     frame_course_teacher_list.append(frame_course_teacher)
 
@@ -219,8 +219,7 @@ def create_basic_info(self, canvas_course_add, frame_course_add, course_items, c
     course_items["course_hour"] = common.create_label_and_entry(frame_course_info, "课程学时", check_item[3])
 
     # 课程类型
-    types = ['本科生课程', '研究生课程']
-    print(check_item[2])
+    types = ['none', '本科生课程', '研究生课程']
     course_items["course_type"] = common.create_option_menu(frame_course_info, "课程类型",
                                                             course_id2type[int(check_item[2])], types)
     return frame_course_info, button_course_submit
@@ -232,7 +231,6 @@ def create_frame_course_add(self):
     frame_course_add.pack(side='top', anchor='n')
     canvas_course_add.create_window(820, 0, anchor='n', window=frame_course_add)
     self.frame_list["frame_course_add"] = canvas_course_add
-    print('ok')
     frame_course_info, button_submit = create_basic_info(self, canvas_course_add, frame_course_add, course_add_items, ["", "", 1, ""])
 
     button_submit.config(command=lambda: insert_paper_info(self.root))

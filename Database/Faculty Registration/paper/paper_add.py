@@ -240,11 +240,11 @@ def create_basic_info(self, canvas_paper, frame_paper, paper_items, check_item):
     paper_items["paper_date"] = common.create_label_and_entry(frame_paper_info, "发表日期", check_item[3])
 
     # 论文类型，下拉菜单
-    types = ["full-paper", "short-paper", "poster-paper", "demo-paper"]
+    types = ['none', "full-paper", "short-paper", "poster-paper", "demo-paper"]
     paper_items["paper_type"] = common.create_option_menu(frame_paper_info, "论文类型", paper_id2type[check_item[4]], types)
 
     # 论文级别， 下拉菜单
-    levels = ["CCF-A", "CCF-B", "CCF-C", "中文 CCF-A", "中文 CCF-B", "无级别"]
+    levels = ['none', "CCF-A", "CCF-B", "CCF-C", "中文 CCF-A", "中文 CCF-B", "无级别"]
     paper_items["paper_level"] = common.create_option_menu(frame_paper_info, "论文级别",
                                                            paper_id2level[check_item[5]], levels)
 

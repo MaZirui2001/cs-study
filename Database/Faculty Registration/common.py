@@ -79,10 +79,9 @@ def create_option_menu(frame_base, label_text, default_option, option_list):
     label = ttk.Label(frame, text=label_text, font=("微软雅黑", 10))
     label.pack(side='left', anchor='center')
     var = ttk.StringVar()
-    var.set(default_option)
-    # s = ttk.Style()
-    # s.configure('warning-outline.TMenubutton', font=('微软雅黑', 8), foreground='black')
+
     option_menu = ttk.OptionMenu(frame, var, *option_list, style='primary-outline.TMenubutton')
+    var.set(default_option)
     option_menu.pack(side='left', anchor='center')
     frame.pack(side='top', anchor='w')
     return var

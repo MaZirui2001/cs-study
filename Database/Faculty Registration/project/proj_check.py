@@ -183,7 +183,7 @@ def create_detail_check_top(self, check_item):
         string_info = "项目员工" + str(check_item[7][i][2]) + ": " + str(check_item[7][i][0])
         string_info += "（"
         string_info += "工号：" + str(check_item[7][i][1])
-        string_info += "\t经费：" + str(check_item[7][i][3])
+        string_info += " 经费：" + str(check_item[7][i][3])
         string_info += "）"
         label_proj_author = ttk.Label(top, text=string_info,
                                       font=("宋体", 10), anchor='w')

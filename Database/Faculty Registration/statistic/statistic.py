@@ -81,7 +81,6 @@ def statistic(items):
         print(e)
         db.close()
         exit(-1)
-    print('ok')
     try:
         cursor.execute(sql_teach, var_teach)
         teach_course = cursor.fetchall()
@@ -150,7 +149,7 @@ def create_stat_frame(self):
     canvas_stat.create_window(820, 0, window=frame_stat, anchor='n')
     self.frame_list["frame_statistic"] = canvas_stat
     # 创建label
-    ttk.Label(frame_stat, text="科研情况查询", font=("宋体", 15)).pack(side='top', anchor='n')
+    ttk.Label(frame_stat, text="科研情况查询", font=("微软雅黑", 15, 'bold')).pack(side='top', anchor='n')
     button_paper_check = ttk.Button(frame_stat, text="导出", width=10, style='info')
     button_paper_check.pack(side='top', anchor='n')
     button_paper_check.config(command=lambda: statistic_cope(stat_items))

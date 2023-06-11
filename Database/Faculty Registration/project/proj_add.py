@@ -255,7 +255,7 @@ def create_basic_info(self, canvas_proj, frame_proj, proj_items, check_items):
     proj_items["proj_end"] = common.create_label_and_entry(frame_proj_info, "结束年份", check_items[6])
 
     # 项目类型，下拉菜单
-    types = ['国家级', '省部级', '市厅级', '企业合作项目', '其他']
+    types = ['none', '国家级', '省部级', '市厅级', '企业合作项目', '其他']
     proj_items["proj_type"] = common.create_option_menu(frame_proj_info, "项目类型",
                                                         proj_id2type[int(check_items[3])], types)
     return frame_proj_info, button_proj_submit
