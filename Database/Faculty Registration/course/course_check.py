@@ -237,8 +237,8 @@ def create_basic_info_frame(self, canvas_course, course_items, create_result, fr
     button_course_check.config(command=lambda: create_result(self))
 
     # 创建查询结果显示框label
-    label_course_check_result = ttk.Label(frame_course_check_result, text="查询结果", font=("宋体", 10))
-    label_course_check_result.pack(side='top', anchor='n')
+    label_course_check_result = ttk.Label(frame_course_check_result, text="查询结果", font=("宋体", 15, 'bold'))
+    label_course_check_result.pack(side='top', anchor='n', pady=20)
 
     frame_course_check_label = ttk.Frame(frame_course_check_result, width=800, height=50)
     frame_course_check_label.pack(side='top', anchor='n')

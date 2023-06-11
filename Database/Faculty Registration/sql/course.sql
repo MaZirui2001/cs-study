@@ -53,21 +53,15 @@ begin
         signal sqlstate '45203' set message_text = '课程不存在';
     end if;
 
-    # 检查教师是否已经在课程中,若插入信息已经存在，则不做任何操作
+    # 若插入信息与存储信息一致，则不做任何操作
     if exists(select *
               from teach_course
-              where teach_course.teacher_id = teacher_id and teach_course.course_id = course_id) then
-        # 若插入信息与存储信息一致，则不做任何操作
-        if exists(select *
-                  from teach_course
-                  where teach_course.teacher_id = teacher_id
-                    and teach_course.course_id = course_id
-                    and teach_course.year = year
-                    and teach_course.semester = semester
-                    and teach_course.undertake_hour = undertake_hour) then
-            leave insert_;
-        end if;
-        signal sqlstate '45204' set message_text = '有教师已经在本课程中登记，且本次插入信息不一致';
+              where teach_course.teacher_id = teacher_id
+                and teach_course.course_id = course_id
+                and teach_course.year = year
+                and teach_course.semester = semester
+                and teach_course.undertake_hour = undertake_hour) then
+        leave insert_;
     end if;
     # 通过检查，插入教师-课程关系
     insert into teach_course values (teacher_id, course_id, year, semester, undertake_hour);
