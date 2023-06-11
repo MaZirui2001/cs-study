@@ -31,7 +31,7 @@ def insert_info_get_and_check(paper_add_items_local, author_num, author_info_loc
         author_id_list.append(author_info_local[i]['id'].get().strip())
         author_name_list.append(author_info_local[i]['name'].get().strip())
         author_rank_list.append(author_info_local[i]['rank'].get().strip())
-        author_is_communicate_list.append(author_info_local[i]['comm'].get().strip())
+        author_is_communicate_list.append(author_info_local[i]['comm'].get())
 
     # 论文编号不能为空
     if paper_id == '':

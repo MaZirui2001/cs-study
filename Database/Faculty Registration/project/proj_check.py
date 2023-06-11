@@ -106,7 +106,6 @@ def check_proj(check_items):
     result = data_detail
     # print(result)
     # 处理数据
-    print(result)
     check_result = []
     for i in range(len(result)):
         check_result.append([])

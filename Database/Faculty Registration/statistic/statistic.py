@@ -5,6 +5,7 @@ import common
 import pymysql as sql
 import pandas as pd
 from common import paper_id2level, proj_id2type, course_id2semester, id2gender, id2id_name
+import markdown
 
 stat_items = {}
 
@@ -47,7 +48,6 @@ def statistic(items):
     # 查询教师信息
     sql_info = "select teacher.id, teacher.name, teacher.gender, teacher.title from teacher where id = %s "
     var_info = (teacher_id,)
-    print(sql_info)
 
     # 查询教师教授课程信息
     sql_teach = "select c.id, c.name, tc.undertake_hour, tc.year, tc.semester " \
