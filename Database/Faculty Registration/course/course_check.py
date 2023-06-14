@@ -165,7 +165,7 @@ def create_detail_check_top(self, check_item):
         ttk.Label(top, text=string_info, font=("宋体", 10, 'bold'), anchor='w').pack(side='top', anchor='w', pady=5)
         for i in range(len(check_item[4][key])):
             string_info = '课程教师' + str(i + 1) + ": " + check_item[4][key][i][0] + '（'
-            string_info += '工号: ' + str(check_item[4][key][i][1]) + '\t'
+            string_info += '工号: ' + str(check_item[4][key][i][1]) + ' '
             string_info += '承担学时: ' + str(check_item[4][key][i][2]) + '）'
             label_course_teacher = ttk.Label(top, text=string_info, font=("宋体", 10), anchor='w')
             label_course_teacher.pack(side='top', anchor='w', pady=5)
