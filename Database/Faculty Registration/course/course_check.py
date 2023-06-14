@@ -141,7 +141,8 @@ def create_check_result(self):
 def create_detail_check_top(self, check_item):
     top = ttk.Toplevel(self.root, minsize=(800, 800))
     top.title("课程详情")
-
+    self.root.attributes("-disabled", True)
+    top.protocol("WM_DELETE_WINDOW", lambda: common.close_window(self.root, top))
     # 30号字体靠左显示课程名称
     label_course_name = ttk.Label(top, text=check_item[0], font=("宋体", 20, "bold"), anchor='w')
     label_course_name.pack(side='top', anchor='w', pady=20)
@@ -226,8 +227,8 @@ def create_basic_info_frame(self, canvas_course, course_items, create_result, fr
     course_items["course_year"] = common.create_label_and_entry(frame_course_info, "开课年份", "")
 
     # 开课学期
-    seme = ["不限", "春季学期", "夏季学期", "秋季学期"]
-    course_items["course_semester"] = common.create_option_menu(frame_course_info, "开课学期", seme[0], seme)
+    seme = ["none", "不限", "春季学期", "夏季学期", "秋季学期"]
+    course_items["course_semester"] = common.create_option_menu(frame_course_info, "开课学期", seme[1], seme)
 
     # 创建查询结果显示框
     frame_course_check_result = ttk.Frame(frame_course_check, width=800, height=600)
@@ -236,8 +237,8 @@ def create_basic_info_frame(self, canvas_course, course_items, create_result, fr
     button_course_check.config(command=lambda: create_result(self))
 
     # 创建查询结果显示框label
-    label_course_check_result = ttk.Label(frame_course_check_result, text="查询结果", font=("宋体", 10))
-    label_course_check_result.pack(side='top', anchor='n')
+    label_course_check_result = ttk.Label(frame_course_check_result, text="查询结果", font=("宋体", 15, 'bold'))
+    label_course_check_result.pack(side='top', anchor='n', pady=20)
 
     frame_course_check_label = ttk.Frame(frame_course_check_result, width=800, height=50)
     frame_course_check_label.pack(side='top', anchor='n')

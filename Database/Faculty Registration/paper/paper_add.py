@@ -17,20 +17,20 @@ def fresh(self):
 
 
 def insert_info_get_and_check(paper_add_items_local, author_num, author_info_local, message_parent):
-    paper_id = paper_add_items_local["paper_id"].get()
-    paper_name = paper_add_items_local["paper_name"].get()
-    paper_source = paper_add_items_local["paper_source"].get()
-    paper_date = paper_add_items_local["paper_date"].get()
-    paper_type = paper_type_map[paper_add_items_local["paper_type"].get()]
-    paper_level = paper_level_map[paper_add_items_local["paper_level"].get()]
+    paper_id = paper_add_items_local["paper_id"].get().strip()
+    paper_name = paper_add_items_local["paper_name"].get().strip()
+    paper_source = paper_add_items_local["paper_source"].get().strip()
+    paper_date = paper_add_items_local["paper_date"].get().strip()
+    paper_type = paper_type_map[paper_add_items_local["paper_type"].get().strip()]
+    paper_level = paper_level_map[paper_add_items_local["paper_level"].get().strip()]
     author_id_list = []
     author_name_list = []
     author_rank_list = []
     author_is_communicate_list = []
     for i in range(author_num):
-        author_id_list.append(author_info_local[i]['id'].get())
-        author_name_list.append(author_info_local[i]['name'].get())
-        author_rank_list.append(author_info_local[i]['rank'].get())
+        author_id_list.append(author_info_local[i]['id'].get().strip())
+        author_name_list.append(author_info_local[i]['name'].get().strip())
+        author_rank_list.append(author_info_local[i]['rank'].get().strip())
         author_is_communicate_list.append(author_info_local[i]['comm'].get())
 
     # 论文编号不能为空
@@ -240,11 +240,11 @@ def create_basic_info(self, canvas_paper, frame_paper, paper_items, check_item):
     paper_items["paper_date"] = common.create_label_and_entry(frame_paper_info, "发表日期", check_item[3])
 
     # 论文类型，下拉菜单
-    types = ["full-paper", "short-paper", "poster-paper", "demo-paper"]
+    types = ['none', "full-paper", "short-paper", "poster-paper", "demo-paper"]
     paper_items["paper_type"] = common.create_option_menu(frame_paper_info, "论文类型", paper_id2type[check_item[4]], types)
 
     # 论文级别， 下拉菜单
-    levels = ["CCF-A", "CCF-B", "CCF-C", "中文 CCF-A", "中文 CCF-B", "无级别"]
+    levels = ['none', "CCF-A", "CCF-B", "CCF-C", "中文 CCF-A", "中文 CCF-B", "无级别"]
     paper_items["paper_level"] = common.create_option_menu(frame_paper_info, "论文级别",
                                                            paper_id2level[check_item[5]], levels)
 

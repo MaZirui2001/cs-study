@@ -120,6 +120,8 @@ def create_modify_window(self, check_item):
     window_modify = ttk.Toplevel(self.root, minsize=(1600, 1200))
     window_modify.title("修改项目信息")
     window_modify.resizable(False, False)
+    self.root.attributes("-disabled", True)
+    window_modify.protocol("WM_DELETE_WINDOW", lambda: common.close_window(self.root, window_modify))
     # 获取当前项目信息
     proj_teachers = check_item[7]
 

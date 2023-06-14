@@ -97,7 +97,7 @@ def create_frame_course_teacher(frame_course_info, course_teacher):
     entry_course_teacher_name, entry_course_year = common.create_label_and_entry2(
         frame_course_teacher, "教师" + str(teacher_num_view) + "姓名", course_teacher[0], "开课年份", course_teacher[3])
     # 输入开课学期
-    seme = ['春季学期', '夏季学期', '秋季学期']
+    seme = ['none', '春季学期', '夏季学期', '秋季学期']
     menu_course_teacher_seme = common.create_option_menu(frame_course_teacher, "开课学期",
                                                          course_id2semester[course_teacher[4]], seme)
     frame_course_teacher.pack(side='top', anchor='n')
@@ -120,6 +120,8 @@ def create_modify_window(self, check_item):
     # 创建新窗口
     window_modify = ttk.Toplevel(self.root, minsize=(1600, 1200))
     window_modify.title("修改课程信息")
+    self.root.attributes("-disabled", True)
+    window_modify.protocol("WM_DELETE_WINDOW", lambda: common.close_window(self.root, window_modify))
     # window_modify.resizable(False, False)
     # 获取当前课程信息
     course_teachers = []

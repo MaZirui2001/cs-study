@@ -5,6 +5,7 @@ from course import course_check, course_add, course_delete, course_modify
 from statistic import statistic
 import os
 from PIL import Image, ImageTk
+
 img = None
 
 
@@ -13,6 +14,7 @@ class Root:
         root = ttk.Window(minsize=(1600, 1080), resizable=(False, True))
         root.title("教学科研登记系统")
         root.resizable(False, False)
+
         self.root = root
         self.frame_list = {}
         self.frame_fresh_list = {}
@@ -20,22 +22,21 @@ class Root:
     def __create_paper_choose_button(self, frame_name, type_="paper"):
         frame_button = ttk.Frame(self.frame_list[frame_name], height=100, width=800)
         button_return = ttk.Button(frame_button, text="返回", style="secondary-outline.TButton",
-                                  command=lambda: self.switch_to_frame("frame_main"))
+                                   command=lambda: self.switch_to_frame("frame_main"))
         button_return.grid(row=0, column=0, ipadx=10, ipady=10)
         button_add = ttk.Button(frame_button, text="添加", style="success-outline.TButton",
-                               command=lambda: self.switch_to_frame("frame_" + type_ + "_add"))
+                                command=lambda: self.switch_to_frame("frame_" + type_ + "_add"))
         button_add.grid(row=0, column=1, ipadx=10, ipady=10)
         button_delete = ttk.Button(frame_button, text="删除", style="danger-outline.TButton",
-                                  command=lambda: self.switch_to_frame("frame_" + type_ + "_delete"))
+                                   command=lambda: self.switch_to_frame("frame_" + type_ + "_delete"))
         button_delete.grid(row=0, column=2, ipadx=10, ipady=10)
         button_modify = ttk.Button(frame_button, text="修改", style="warning-outline.TButton",
-                                  command=lambda: self.switch_to_frame("frame_" + type_ + "_modify"))
+                                   command=lambda: self.switch_to_frame("frame_" + type_ + "_modify"))
         button_modify.grid(row=0, column=3, ipadx=10, ipady=10)
         button_check = ttk.Button(frame_button, text="查询", style="info-outline.TButton",
-                                 command=lambda: self.switch_to_frame("frame_" + type_ + "_check"))
+                                  command=lambda: self.switch_to_frame("frame_" + type_ + "_check"))
         button_check.grid(row=0, column=4, ipadx=10, ipady=10)
         frame_button.pack(side='bottom', anchor='center')
-
 
     def fresh(self, name):
         pass
@@ -103,10 +104,9 @@ class Root:
     def create_frame_statistic(self):
         statistic.create_stat_frame(self)
         self.frame_fresh_list["frame_statistic"] = statistic.fresh
-        self.__create_paper_choose_button("frame_statistic")
+        self.__create_paper_choose_button("frame_statistic", "stat")
 
     def create_frame_main(self):
-
         # 获取当前路径
         path = os.path.abspath('.')
         global img
@@ -142,6 +142,8 @@ class Root:
     def switch_to_frame(self, frame_name):
         for frame in self.frame_list.values():
             frame.pack_forget()
+        if frame_name.startswith("frame_stat"):
+            frame_name = "frame_statistic"
         self.frame_list[frame_name].pack(side='top', anchor='center', fill='both', expand='yes')
         self.frame_fresh_list[frame_name](self)
 

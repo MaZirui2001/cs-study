@@ -157,6 +157,8 @@ def create_check_result(self):
 def create_detail_check_top(self, check_item):
     top = ttk.Toplevel(self.root, minsize=(800, 800))
     top.title("论文详情")
+    self.root.attributes("-disabled", True)
+    top.protocol("WM_DELETE_WINDOW", lambda: common.close_window(self.root, top))
     # 30号字体靠左显示论文名称
     label_paper_name = ttk.Label(top, text=check_item[0], font=("宋体", 20, 'bold'), anchor='w')
     label_paper_name.pack(side='top', anchor='w', pady=20)
