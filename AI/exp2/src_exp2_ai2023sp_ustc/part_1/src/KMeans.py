@@ -2,17 +2,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2
 
+
 def read_image(filepath='./data/ustc-cow.png'):
-    img = cv2.imread(filepath) # Replace with the actual path to your image
+    img = cv2.imread(filepath)  # Replace with the actual path to your image
     # Convert the image from BGR to RGB
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     return img
+
 
 class KMeans:
     def __init__(self, k=4, max_iter=10):
         self.k = k
         self.max_iter = max_iter
-    
 
     # Randomly initialize the centers
     def initialize_centers(self, points):
@@ -28,7 +29,6 @@ class KMeans:
             centers[k] = points[random_index].mean(axis=0)
 
         return centers
-    
 
     # Assign each point to the closest center
     def assign_points(self, centers, points):
@@ -43,7 +43,6 @@ class KMeans:
         # and Assign each point to the closest center
 
         return labels
-    
 
     # Update the centers based on the new assignment of points
     def update_centers(self, centers, labels, points):
@@ -56,7 +55,6 @@ class KMeans:
         # TODO: Update the centers based on the new assignment of points
 
         return centers
-    
 
     # k-means clustering
     def fit(self, points):
@@ -66,7 +64,6 @@ class KMeans:
         '''
         # TODO: Implement k-means clustering
         pass
-        
 
     def compress(self, img):
         '''
@@ -84,7 +81,7 @@ if __name__ == '__main__':
     img = read_image(filepath='../data/ustc-cow.png')
     kmeans = KMeans(k=8, max_iter=10)
     compressed_img = kmeans.compress(img).round().astype(np.uint8)
-    
+
     plt.figure(figsize=(10, 10))
     plt.imshow(compressed_img)
     plt.title('Compressed Image')
