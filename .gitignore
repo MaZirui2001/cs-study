@@ -33,4 +33,6 @@ uboot*/
 __pycache__/
 model/
 model_save/
-/
+data/*
+test.csv
+train.csv
