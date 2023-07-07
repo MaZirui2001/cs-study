@@ -25,7 +25,7 @@ class BayesianNetwork:
         labels: (n_samples, )
         """
         n_samples = len(labels)
-        # TODO: calculate prior probability and conditional probability
+        # calculate prior probability and conditional probability
         # 计算先验概率
         for i in range(n_samples):
             # 计算结果的先验概率
@@ -52,7 +52,7 @@ class BayesianNetwork:
         """
         n_samples = len(pixels)
         labels = np.zeros(n_samples)
-        # TODO: predict for new data
+        # predict for new data
         for i in range(n_samples):
             # 计算每一个结果的后验概率
             posterior = np.zeros(self.n_labels)

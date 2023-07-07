@@ -31,3 +31,6 @@ discopy-main/
 Python/
 uboot*/
 __pycache__/
+model/
+model_save/
+/

@@ -2,41 +2,37 @@
 from sys import argv
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
+import torch.nn.functional as funct
 from typing import List
 
 
-class char_tokenizer:
+class CharTokenizer:
     """
     a very simple char-based tokenizer. the tokenizer turns a string into a list of integers.
     """
 
     def __init__(self, corpus: List[str]):
         self.corpus = corpus
-        # TODO: calculate the vocab size and create a dictionary that maps each character to a unique integer
-        # calculate the vocab size
+        # calculate the vocab size and create a dictionary that maps each character to a unique integer
         self.n_vocab = len(set("".join(corpus)))
-        # create a dictionary that maps each character to a unique integer
         self.char2int = {char: i for i, char in enumerate(set("".join(corpus)))}
-        # End of your code
 
     def encode(self, string: str):
-        # TODO: convert a string into a list of integers and return, using the dictionary you created above
-        # convert a string into a list of integers
+        # convert a string into a list of integers and return, using the dictionary you created above
         encoded = [self.char2int[char] for char in string]
         return encoded
-        # End of your code
 
     def decode(self, codes: List[int]):
-        # TODO: convert a list of integers into a string and return, using the dictionary you created above
-        # convert a list of integers into a string
+        # convert a list of integers into a string and return, using the dictionary you created above
         decoded = [list(self.char2int.keys())[list(self.char2int.values()).index(code)] for code in codes]
         return "".join(decoded)
-        # End of your code
+
     def save(self, path):
+        # save the dictionary to a file
         torch.save(self.char2int, path)
 
     def load(self, path):
+        # load the dictionary from a file
         self.char2int = torch.load(path)
         self.n_vocab = len(self.char2int)
 
@@ -46,118 +42,104 @@ class Head(nn.Module):
 
     def __init__(self, head_size):
         super().__init__()
-        # TODO: create three linear layers, Key, Query, and Value, each of which maps from n_embd to head_size
-        #       and assign them to self.Key, self.Query, and self.Value, respectively
-        # create three linear layers
+        # create three linear layers, Key, Query, and Value, each of which maps from n_embd to head_size
 
         self.Key = nn.Linear(n_embd, head_size)
         self.Query = nn.Linear(n_embd, head_size)
         self.Value = nn.Linear(n_embd, head_size)
-        # End of your code
         self.register_buffer("tril", torch.tril(torch.ones(block_size, block_size)))
 
     def forward(self, inputs):
-        # TODO: implement the forward function of the head
-        #       the input is a tensor of shape (batch, time, n_embd)
-        #       the output should be a tensor of shape (batch, time, head_size)
-        #       you may use the tril buffer defined above to mask out the upper triangular part of the affinity matrix
+        # the input is a tensor of shape (batch, time, n_embd)
+        # the output should be a tensor of shape (batch, time, head_size)
+        # you may use the tril buffer defined above to mask out the upper triangular part of the affinity matrix
 
         Key = self.Key(inputs)
         Query = self.Query(inputs)
         Value = self.Value(inputs)
+
+        # Q @ K^T / sqrt(d_k)
         affinity = torch.matmul(Query, Key.transpose(-1, -2)) / (Key.size(-1) ** 0.5)
-        # affinity = affinity * self.tril[:affinity.size(1), :affinity.size(2)]
+        # mask out the upper triangular part of the affinity matrix
         time = inputs.size(1)
         affinity = affinity.masked_fill(self.tril[:time, :time] == 0, -torch.inf)
-        affinity = F.softmax(affinity, dim=-1)
-        # out:(batch, time, head_size)
+        affinity = funct.softmax(affinity, dim=-1)
+        # V @ softmax(Q @ K^T / sqrt(d_k))
         out = torch.matmul(affinity, Value)
-        # End of your code
         return out
 
 
 class MultiHeadAttention(nn.Module):
-    def __init__(self, n_heads, head_size):
+    def __init__(self, _n_heads, head_size):
         super().__init__()
-        # TODO: implement heads and projection
-        # heads: a list of heads
-        # projection: a linear layer that maps from n_heads * head_size to n_embd
         # create a list of heads
-        self.heads = nn.ModuleList([Head(head_size) for _ in range(n_heads)])
+        self.heads = nn.ModuleList([Head(head_size) for _ in range(_n_heads)])
         # create a linear layer that maps from n_heads * head_size to n_embd
-        self.projection = nn.Linear(n_heads * head_size, n_embd)
-        # End of your code
+        self.projection = nn.Linear(_n_heads * head_size, n_embd)
 
     def forward(self, inputs):
-        # TODO: implement the forward function of the multi-head attention
+        # implement the forward function of the multi-head attention
         out = torch.cat([head(inputs) for head in self.heads], dim=-1)
         return self.projection(out)
 
 
 class FeedForward(nn.Module):
-    def __init__(self, n_embd):
+    def __init__(self, _n_embd):
         super().__init__()
-        # TODO: implement the feed-forward network
+        # implement the feed-forward network
         self.net = nn.Sequential(
-            nn.Linear(n_embd, 16 * n_embd),
+            nn.Linear(_n_embd, 32 * _n_embd),
             nn.ReLU(),
-            nn.Linear(16 * n_embd, n_embd),
+            nn.Linear(32 * _n_embd, _n_embd),
         )
-        # End of your code
 
     def forward(self, inputs):
         return self.net(inputs)
 
 
 class Block(nn.Module):
-    def __init__(self, n_embd, n_heads):
+    def __init__(self, _n_embd, _n_heads):
         super().__init__()
-        # TODO: implement the block of transformer using the MultiHeadAttention and 
-        #       FeedForward modules, along with the layer normalization layers
         # create a layer normalization layer
-        self.norm1 = nn.LayerNorm(n_embd)
+        self.norm1 = nn.LayerNorm(_n_embd)
         # create a multi-head attention layer
-        self.attn = MultiHeadAttention(n_heads, n_embd // n_heads)
+        self.attn = MultiHeadAttention(_n_heads, _n_embd // _n_heads)
         # create another layer normalization layer
-        self.norm2 = nn.LayerNorm(n_embd)
+        self.norm2 = nn.LayerNorm(_n_embd)
         # create a feed-forward network layer
-        self.ff = FeedForward(n_embd)
-        # End of your code
+        self.ff = FeedForward(_n_embd)
 
     def forward(self, inputs):
-        # TODO: implement the forward function of the block, you may refer to the docs of this experiment
-        # inputs:(batch, time, n_embd)
-        # out1:(batch, time, n_embd)
+        # Residual Connections
         out1 = self.norm1(inputs + self.attn(inputs))
-        # out2:(batch, time, n_embd)
         out2 = self.norm2(out1 + self.ff(out1))
-        # End of your code
         return out2
 
 
 class PositionalEncoding(nn.Module):
-    def __init__(self, n_embd):
+    def __init__(self, _n_embd):
         super().__init__()
-        self.n_embd = n_embd
-        self.encoding = torch.zeros(block_size, n_embd, device=device)
+        # calculate the positional encoding and store it in a buffer
+        self.n_embd = _n_embd
+        self.encoding = torch.zeros(block_size, _n_embd, device=device)
         self.encoding.requires_grad = False
         pos = torch.arange(0, block_size, device=device).unsqueeze(1)
-        step = torch.arange(0, n_embd, 2, device=device).float()
-        self.encoding[:, 0::2] = torch.sin(pos / 10000 ** (step / n_embd))
-        self.encoding[:, 1::2] = torch.cos(pos / 10000 ** (step / n_embd))
+        step = torch.arange(0, _n_embd, 2, device=device).float()
+        self.encoding[:, 0::2] = torch.sin(pos / 10000 ** (step / _n_embd))
+        self.encoding[:, 1::2] = torch.cos(pos / 10000 ** (step / _n_embd))
 
     def forward(self, inputs):
-        batch, time = inputs.shape
+        _, time = inputs.shape
         return self.encoding[:time, :]
 
 
 class Transformer(nn.Module):
     def __init__(self):
         super().__init__()
-        # TODO: create the embedding table, the stack of blocks, the layer normalization layer, and the linear layers.
-        #       assign them to self.embedding, self.blocks, self.norm, and self.linear, respectively
         # create the embedding table
         self.embedding = nn.Embedding(n_vocab, n_embd)
+        # create the positional encoding layer
+        self.positional_encoding = PositionalEncoding(n_embd)
         # create the stack of blocks
         self.blocks = nn.Sequential(*[Block(n_embd, n_heads) for _ in range(n_layers)])
         # create the layer normalization layer
@@ -165,60 +147,42 @@ class Transformer(nn.Module):
         # create the linear layers
         self.linear = nn.Linear(n_embd, n_vocab)
 
-        self.positional_encoding = PositionalEncoding(n_embd)
-        # End of your code
-
     def forward(self, inputs, labels=None):
-        # TODO: implement the forward function of the transformer
 
         # embedding:(batch, context, embedding)
         embedding = self.embedding(inputs)
-
+        # positional_encoding:(context, embedding)
         positional_encoding = self.positional_encoding(inputs)
         # attens:(batch, context, embedding)
         attens = self.blocks(embedding + positional_encoding)
-
         # attens:(batch, context, embedding)
         attens = self.norm(attens)
-
         # logits:(batch, context, attens)
         logits = self.linear(attens)
 
-        # End of your code
-
         # compute the loss
-
         if labels is None:
             loss = None
         else:
             batch, time, channel = logits.shape
             logits = logits.view(batch * time, channel)
             labels = labels.view(batch * time)
-            loss = F.cross_entropy(logits, labels)
+            loss = funct.cross_entropy(logits, labels)
         return logits, loss
 
     def generate(self, inputs, max_new_tokens):
-        # TODO: generate new tokens from the transformer, using the inputs as the context,
-        #  and return the generated tokens with length of max_new_tokens
+        # generate new tokens from the transformer, using the inputs as the context,
+        # and return the generated tokens with length of max_new_tokens
         for _ in range(max_new_tokens):
             # generates new tokens by iteratively sampling from the model's predicted probability distribution,
             # concatenating the sampled tokens to the input sequence, and returning the updated sequence.
-            # inputs:(batch, context)
             batch, time = inputs.shape
-            # logits:(batch, context, attens)
-            logits, _ = self.forward(inputs[:, max(0, time+1-block_size):time+1])
-            # logits:(batch, context)
-            logits = logits[:, -1, :]
-            # logits:(batch, 1)
-            logits = torch.softmax(logits, dim=-1)
-            # logits:(batch, 1)
+            logits, _ = self.forward(inputs[:, max(0, time + 1 - block_size):time + 1])
+            logits = torch.softmax(logits[:, -1, :], dim=-1)
             logits = torch.multinomial(logits, num_samples=1)
-            # logits:(batch, 1)
             logits = logits.view(batch, 1)
-            # inputs:(batch, context+1)
             inputs = torch.cat([inputs, logits], dim=-1)
 
-        # End of your code
         return inputs
 
 
@@ -232,43 +196,41 @@ def get_batch(split):
 
 
 @torch.no_grad()
-def estimate_loss(model):
+def estimate_loss(_model):
     out = {}
-    model.eval()
+    _model.eval()
     for split in ["train", "val"]:
         losses = torch.zeros(eval_iters)
         for k in range(eval_iters):
             x, y = get_batch(split)
-            logits, loss = model(x, y)
+            _, loss = _model(x, y)
             losses[k] = loss.item()
         out[split] = losses.mean()
     return out
 
 
-def generate(model, context_test):
-    # context = torch.zeros((1, 1), device=device, dtype=torch.long)
-    # context_test = "I have a dream that one day"
-    if(len(context_test) == 0):
+def generate(_model, context_test):
+    if len(context_test) == 0:
         context = torch.zeros((1, 1), device=device, dtype=torch.long)
     else:
         context = torch.tensor([tokenizer.encode(context_test)], device=device, dtype=torch.long)
-    print(decode(model.generate(context, max_new_tokens=100)[0].tolist()))
+    print(decode(_model.generate(context, max_new_tokens=100)[0].tolist()))
 
 
-def train(model):
-    optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
+def train(_model):
+    optimizer = torch.optim.AdamW(_model.parameters(), lr=learning_rate)
 
-    for iter in range(max_iters):
+    for _iter in range(max_iters):
 
-        if iter % eval_interval == 0:
-            losses = estimate_loss(model)
+        if _iter % eval_interval == 0:
+            losses = estimate_loss(_model)
             print(
-                f"step {iter}: train loss {losses['train']:.4f}, val loss {losses['val']:.4f}"
+                f"step {_iter}: train loss {losses['train']:.4f}, val loss {losses['val']:.4f}"
             )
 
         inputs, labels = get_batch("train")
 
-        logits, loss = model(inputs, labels)
+        _, loss = _model(inputs, labels)
         optimizer.zero_grad(set_to_none=True)
         loss.backward()
         optimizer.step()
@@ -277,8 +239,8 @@ def train(model):
 # define the hyperparameters
 batch_size = 16
 block_size = 256
-max_iters = 5000  # set the number of training iterations as you like
-eval_interval = 50
+max_iters = 5000
+eval_interval = 500
 learning_rate = 1e-3
 device = "cuda" if torch.cuda.is_available() else "cpu"
 eval_iters = 200
@@ -287,14 +249,18 @@ n_heads = 8
 n_layers = 6
 n_vocab = 0
 
-if(len(argv) == 1):
+if len(argv) == 1:
     # read the dataset
     with open("../data/input.txt", "r", encoding="utf-8") as f:
-        text = f.read()
+        text = f.readlines()
+    for i in range(len(text)-2, -1, -1):
+        if text[i] == "\n" and text[i+1].endswith(":\n") or text[i+1] == "\n":
+            text.pop(i+1)
+    text = "".join(text)
     chars = sorted(list(set(text)))
 
     # initialize the vocabulary
-    tokenizer = char_tokenizer(chars)
+    tokenizer = CharTokenizer(chars)
     encode = tokenizer.encode
     decode = tokenizer.decode
     n_vocab = tokenizer.n_vocab
@@ -306,12 +272,12 @@ if(len(argv) == 1):
     # define the model
     model = Transformer().to(device)
     train(model)
-    char_tokenizer.save(tokenizer, "../model/vocab.json")
+    CharTokenizer.save(tokenizer, "../model/vocab.json")
     torch.save(model.state_dict(), "../model/model.json")
     generate(model, "To be, or not to be: that is the ")
 else:
     to_trans = argv[1]
-    tokenizer = char_tokenizer([])
+    tokenizer = CharTokenizer([])
     encode = tokenizer.encode
     decode = tokenizer.decode
     tokenizer.load("../model/vocab.json")

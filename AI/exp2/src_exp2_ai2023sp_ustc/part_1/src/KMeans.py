@@ -39,7 +39,7 @@ class KMeans:
         """
         n_samples, n_dims = points.shape
         labels = np.zeros(n_samples)
-        # TODO: Compute the distance between each point and each center and Assign each point to the closest center
+        # Compute the distance between each point and each center and Assign each point to the closest center
         for i in range(n_samples):
             min_dist = np.inf
             for j in range(self.k):
@@ -57,7 +57,7 @@ class KMeans:
         points: (n_samples, n_dims,)
         return centers: (n_clusters, n_dims,)
         """
-        # TODO: Update the centers based on the new assignment of points
+        # Update the centers based on the new assignment of points
         for i in range(self.k):
             centers[i] = points[labels == i].mean(axis=0)
         return centers
@@ -68,7 +68,7 @@ class KMeans:
         points: (n_samples, n_dims,)
         return centers: (n_clusters, n_dims,)
         """
-        # TODO: Implement k-means clustering
+        # Implement k-means clustering
         centers = self.initialize_centers(points)
         for i in range(self.max_iter):
             labels = self.assign_points(centers, points)
@@ -82,7 +82,7 @@ class KMeans:
         """
         # flatten the image pixels
         points = _img.reshape((-1, _img.shape[-1]))
-        # TODO: fit the points and Replace each pixel value with its nearby center value
+        # fit the points and Replace each pixel value with its nearby center value
         centers = self.fit(points)
         labels = self.assign_points(centers, points)
         for i in range(self.k):
