@@ -31,13 +31,14 @@ class char_tokenizer:
         # TODO: convert a list of integers into a string and return, using the dictionary you created above
         # convert a list of integers into a string
         decoded = [list(self.char2int.keys())[list(self.char2int.values()).index(code)] for code in codes]
-        return decoded
+        return "".join(decoded)
         # End of your code
     def save(self, path):
         torch.save(self.char2int, path)
 
     def load(self, path):
         self.char2int = torch.load(path)
+        self.n_vocab = len(self.char2int)
 
 
 class Head(nn.Module):
@@ -247,7 +248,10 @@ def estimate_loss(model):
 def generate(model, context_test):
     # context = torch.zeros((1, 1), device=device, dtype=torch.long)
     # context_test = "I have a dream that one day"
-    context = torch.tensor([tokenizer.encode(context_test)], device=device, dtype=torch.long)
+    if(len(context_test) == 0):
+        context = torch.zeros((1, 1), device=device, dtype=torch.long)
+    else:
+        context = torch.tensor([tokenizer.encode(context_test)], device=device, dtype=torch.long)
     print(decode(model.generate(context, max_new_tokens=100)[0].tolist()))
 
 
@@ -274,7 +278,7 @@ def train(model):
 batch_size = 16
 block_size = 256
 max_iters = 5000  # set the number of training iterations as you like
-eval_interval = 500
+eval_interval = 50
 learning_rate = 1e-3
 device = "cuda" if torch.cuda.is_available() else "cpu"
 eval_iters = 200
@@ -299,18 +303,20 @@ if(len(argv) == 1):
     train_data = torch.tensor(encode(text[: -len(text) // 10]), dtype=torch.long)
     val_data = torch.tensor(encode(text[-len(text) // 10:]), dtype=torch.long)
 
-    test_data = torch.tensor(encode("The meaning of life is "), dtype=torch.long)
     # define the model
     model = Transformer().to(device)
     train(model)
-    char_tokenizer.save_vocab(tokenizer, "../model/vocab.json")
+    char_tokenizer.save(tokenizer, "../model/vocab.json")
     torch.save(model.state_dict(), "../model/model.json")
-    generate(model, "To be, or not to be: that is the")
+    generate(model, "To be, or not to be: that is the ")
 else:
     to_trans = argv[1]
     tokenizer = char_tokenizer([])
-    model = Transformer().to(device)
+    encode = tokenizer.encode
+    decode = tokenizer.decode
     tokenizer.load("../model/vocab.json")
     n_vocab = tokenizer.n_vocab
+
+    model = Transformer().to(device)
     model.load_state_dict(torch.load("../model/model.json", map_location=device))
     generate(model, to_trans)
