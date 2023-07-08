@@ -239,9 +239,9 @@ def train(_model):
 # define the hyperparameters
 batch_size = 16
 block_size = 256
-max_iters = 5000
+max_iters = 20000
 eval_interval = 500
-learning_rate = 1e-3
+learning_rate = 1e-4
 device = "cuda" if torch.cuda.is_available() else "cpu"
 eval_iters = 200
 n_embd = 64
